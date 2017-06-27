@@ -18,7 +18,7 @@ body {
 	background-image: -o-linear-gradient(to bottom, #a6c0fe, #f68084);
 	background-image: -moz-linear-gradient(to bottom, #a6c0fe, #f68084);
 	background-image: -webkit-linear-gradient(to bottom, #a6c0fe, #f68084);
-	background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a6c0fe), color-stop(100%, #f68084));
+	background-image: url('../img/architect.svg'), -webkit-linear-gradient(0deg, #f68084, #f68084);
 	background-image: url('../img/architect.svg'), linear-gradient(to bottom, #a6c0fe, #f68084);
 	background-attachment: fixed;
 }
