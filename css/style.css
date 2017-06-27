@@ -15,7 +15,7 @@ html, body {
 }
 body {
 	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	background: url('../img/architect.svg'), #f68084;
+	/*background: url('../img/architect.svg'), #f68084;*/
 	background: url('../img/architect.svg'), linear-gradient(to bottom, #a6c0fe, #f68084);
 	background-attachment: fixed;
 }
