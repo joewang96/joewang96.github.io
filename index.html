@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Three important meta tags that come before everything else -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<!-- Title -->
+	<title>Joseph Wang | Developer &amp; Designer</title>
+	<!-- Icon -->
+	<link rel="icon" href="img/purple_diamond.png">
+
+	<!-- SEO Metatags -->
+	<meta name="description" content="Developer, designer, student. I'm Joseph Wang, currently pursuing a degree at Northeastern University with skills in front-end development, responsive design, and object-oriented programming.">
+    <meta name="keywords" content="Joseph, Wang, developer, designer, website, interaction design, responsive, programming, user interface">
+    <meta name="author" content="Joseph Wang">
+    <meta name="robots" content="index, follow">
+
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Google Fonts and Typography -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" type="text/css" href="pe-icon/css/pe-icon-7-stroke.css">
+    <link rel="stylesheet" type="text/css" href="pe-icon/css/helper.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/devicons.min.css">
+
+</head>
+
+<body>
+
+	<div class="menu-overlay flex-parent">
+		<ul class="text-center flex-content">
+			<li><a class="home-link" onclick="scrollTo('#hero');">Home</a></li>
+			<li><a class="about-link" onclick="scrollTo('#about');">About</a></li>
+			<li><a class="work-link" onclick="scrollTo('#work');">Work</a></li>
+			<li><a class="contact-link" onclick="scrollTo('#contact');">Contact</a></li>
+		</ul>
+		<div class="bottom-social">
+			<div class="social-icons text-center">
+				<a href="mailto:wang.jo@husky.neu.edu" class="fa fa-google"></a>
+				<a href="https://www.linkedin.com/in/joseph-wang-7b0751129/" target="_blank" class="fa fa-linkedin"></a>
+				<a href="https://github.com/joewang96/" target="_blank" class="fa fa-github-alt"></a>
+			</div>
+		</div>
+	</div>
+
+	<div id="main">
+
+		<!-- Top navigation -->
+		<nav class="nav nav-container">
+			<div class="nav-items nav-pad">
+				<div class="nav-launcher pull-right">
+					<span class="launcher-line"></span>
+					<span class="launcher-line"></span>
+					<span class="launcher-line"></span>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Hero Banner -->
+		<div id="hero" class="text-center fixed-bg flex-parent">
+			<div class="flex-content">
+				<div class="title-square flex-parent">
+            		<h1 class="inner-title flex-content">Joseph Wang</h1>
+        		</div>
+          		<p class="subtitle">Front End Developer // Designer</p>
+			</div>
+			<div class="scroll-icon"><div class="scroll-rel"><div class="scroll-wheel"></div></div></div>
+			<p class="scroll-text"><i class="fa fa-angle-double-down"></i></p>
+		</div>
+
+		<!-- About Section -->
+		<div class="container-pad flex-parent flex-column">
+			<div class="section text-center" id="about">
+				<img class="about-pic" src="img/profpic2.jpg">
+				<h3 class="section-title">A Little About Myself</h3>
+				<p>Hello there - I'm currently a student at Northeastern University pursuing a B.S. in Computer Science and Interactive Media. I have a background in both the front and back end of software development as well as user interface and interaction design.</p>
+				<p style="margin-bottom: 3rem">Below are links to my portfolio as well as information on how to contact me. Feel free to use the link below to learn more about me.</p>
+				<button class="button-primary primary-gradient bugfix" onclick="scrollTo('#skills');">Learn More</button>
+			</div>
+		</div>
+
+		<!-- Skills Section -->
+		<div class="container-pad flex-parent flex-column">
+			<div class="section flex-parent text-center" id="skills">
+				<div class="third-w">
+					<h3 class="skill-title">Design Skills</h3>
+					<hr>
+					<p class="skill-para">What started as a passion and hobby grew into another aspect of my desired career path. I have experience in interaction design, UI and UX design, and responsive web-design. Here are a few tools I use to create powerful designs.</p>
+					<hr class="light">
+					<ul class="skill-list">
+						<li>Photoshop</li>
+						<li>Illustrator</li>
+						<li>InDesign</li>
+						<li>Balsamiq</li>
+						<li>inVision</li>
+					</ul>
+				</div>
+
+				<div class="third-w">
+					<h3 class="skill-title">Front-End Skills</h3>
+					<hr>
+					<p class="skill-para">Not just a developer&nbsp;- with an eye for design I am able to elevate my work above that of a strict programmer. With my past experience in the industry, I have had time to develop my front-end knowledge through use of current technologies and languages.</p>
+					<hr class="light">
+					<ul class="skill-list">
+						<li>Javascript</li>
+						<li>jQuery</li>
+						<li>Vue.js</li>
+						<li>Bootstrap</li>
+					</ul>
+				</div>
+
+				<div class="third-w">
+					<h3 class="skill-title">Back-End Skills</h3>
+					<hr>
+					<p class="skill-para">Through coursework and work experience I have been exposed to various aspects of software development and the back-end stack. Below are some programming languages and design patterns I am familiar with.</p>
+					<hr class="light">
+					<ul class="skill-list">
+						<li>Java</li>
+						<li>Python</li>
+						<li>PHP</li>
+						<li>MySQL</li>
+						<li>MVC Pattern</li>
+					</ul>
+				</div>
+			</div>
+			<a href="misc/Joseph_Wang_Resume.pdf" download><button class="button-primary primary-gradient bugfix mar-bottom">Download My Resume</button></a>
+		</div>
+
+		<!-- Experience (Timeline) Section -->
+		<div class="container-pad flex-parent flex-column light-gray">
+			<div class="section text-center" id="experience">
+				<h3 class="section-title">Experiences</h3>
+				
+				<!-- main timeline container -->
+				<div class="timeline-container">
+					<!-- these are the time points in them -->
+					<time>2015</time>
+
+					<!-- a timeline event -->
+					<div class="timeline-block right transition-prep fade-in-up">
+						<!-- the icon (circle) part -->
+						<div class="timeline-icon">
+							
+						</div>
+						<!-- the actual text content of the timeline block -->
+						<div class="timeline-content">
+							<h3>Graduated Thomas Jefferson HSST</h3>
+							<p>After four years, I graduated from <strong>the number one high school in the country</strong>. My time there helped identify my passion for learning and drive to constantly be improving myself.</p>
+						</div>
+					</div>
+
+					<!-- a timeline event -->
+					<div class="timeline-block left transition-prep fade-in-up">
+						<!-- the icon (circle) part -->
+						<div class="timeline-icon">
+							
+						</div>
+						<!-- the actual text content of the timeline block -->
+						<div class="timeline-content">
+							<h3>Started First Year at NEU</h3>
+							<p><strong>So begins my journey</strong> to complete my degree and learn as much as I can in the next 5 years. Pursuing a <strong>B.S. in Computer Science and Interactive Media.</strong></p>
+						</div>
+					</div>
+
+					<time>2016</time>
+
+					<!-- a timeline event -->
+					<div class="timeline-block right transition-prep fade-in-up">
+						<!-- the icon (circle) part -->
+						<div class="timeline-icon">
+							
+						</div>
+						<!-- the actual text content of the timeline block -->
+						<div class="timeline-content">
+							<h3>Completed First Year at NEU</h3>
+							<p>With two semesters under my belt, <strong>my skills in both computer science and design have grown significantly</strong> since my first day. </p>
+						</div>
+					</div>
+					
+					<!-- a timeline event -->
+					<div class="timeline-block left transition-prep fade-in-up">
+						<!-- the icon (circle) part -->
+						<div class="timeline-icon">
+							
+						</div>
+						<!-- the actual text content of the timeline block -->
+						<div class="timeline-content">
+							<h3>Work Study : Web Assistant</h3>
+							<p><strong>My first job</strong> at the Northeastern Univeristy Marketing and Communications / University Publications office. Tasks included calculating data metrics as well as <strong>building Facebook Instant Articles</strong> for mobile viewers</p>
+						</div>
+					</div>		
+
+					<time>2017</time>
+
+					<!-- a timeline event -->
+					<div class="timeline-block right transition-prep fade-in-up">
+						<!-- the icon (circle) part -->
+						<div class="timeline-icon">
+							
+						</div>
+						<!-- the actual text content of the timeline block -->
+						<div class="timeline-content">
+							<h3>First Co-op : SparkCo Inc.</h3>
+							<p>After a semester of searching, I found my first co-op as a <strong>Software Engineer</strong> for a new start-up based out of the <strong>Harvard Launch Lab.</strong> Helped build both a <strong>client-facing web application</strong> as well as an <strong>agent based chat platform.</strong></p>
+						</div>
+					</div>
+
+					<!-- a timeline event -->
+					<div class="timeline-block left transition-prep fade-in-up">
+						<!-- the icon (circle) part -->
+						<div class="timeline-icon">
+							
+						</div>
+						<!-- the actual text content of the timeline block -->
+						<div class="timeline-content">
+							<h3>Co-op Extension : SparkCo Inc.</h3>
+							<p>Through my time at SparkCo I have contributed heavily to their final product, and <strong>was asked to continue working with them</strong> through an extension of my co-op. <strong>Currently still employed there</strong> as a Software Engineer.</p>
+						</div>
+					</div>			
+
+					<time>Present</time>
+					
+				</div>
+				<button class="button-primary primary-gradient bugfix mar-bottom" onclick="scrollTo('#work');">View My Work</button>
+			</div>
+		</div>
+
+		<!-- Work Section -->
+		<div class="container-pad flex-parent mobile-full-w">
+			<div class="section pad-bottom" id="work">
+				<h3 class="section-title text-center">My Work</h3>
+				<!-- Project Blocks First -->
+				<div class="project-container">
+					<div class="project-hover">
+						<a href="https://github.com/joewang96/phototracker" target="_blank">
+							<div class="image-crop">
+								<div class="project-image" id="project-phototracker"></div>
+							</div>
+							<h4 class="project-title offset-pad" target="_blank">Instagram PhotoTracker <i class="pe-7s-link"></i></h4>
+						</a>
+					</div>
+					<ul class="project-tags offset-pad">
+						<li>UI / UX</li>
+						<li>API Management</li>
+						<li>Processing (Java)</li>
+					</ul>
+					<p class="project-info offset-pad">
+						Making use of Instagram's API and created using Processing (a framework focused for designers built on Java), the Instagram PhotoTracker is a data visualization program which allows users to view recent posts around the downtown Boston area based on the location it was posted. Additionally, these posts can be narrowed down by searching for specific tags.
+					</p>
+				</div>
+
+				<div class="project-container">
+					<div class="project-hover">
+						<a href="https://github.com/joewang96/music-editor" target="_blank">
+							<div class="image-crop">
+								<div class="project-image" id="project-musiceditor"></div>
+							</div>
+							<h4 class="project-title offset-pad">Music Editor <i class="pe-7s-link"></i></h4>
+						</a>
+					</div>
+					<ul class="project-tags offset-pad">
+						<li>Software Design</li>
+						<li>MVC Framework</li>
+						<li>Java</li>
+					</ul>
+					<p class="project-info offset-pad">
+						Transforming text to audio, this program loads notes from a file and plays back the corresponding tune in real-time. The user can pause, rewind, or skip at any point during the playback of the song. Additionally, the user can add or delete notes from the track using the UI. This project was built using the MVC framework, and components can be swapped out at will!
+					</p>
+				</div>
+
+				<div class="project-container">
+					<div class="project-hover">
+						<a href="https://github.com/joewang96/nuontrack" target="_blank">
+							<div class="image-crop">
+								<div class="project-image" id="project-nuontrack"></div>
+							</div>
+							<h4 class="project-title offset-pad">nu:OnTrack <i class="pe-7s-link"></i></h4>
+						</a>
+					</div>
+					<ul class="project-tags offset-pad">
+						<li>Responsive Design</li>
+						<!--<li>Mobile-First</li>-->
+						<li>UI / UX</li>
+						<li>HTML / CSS / JS</li>
+					</ul>
+					<p class="project-info offset-pad">
+						A redesign of Northeastern's current nuCareers site, this project utilizes mobile-first and responsive design practices to create a better user experience for students seeking co-ops. Additionally, it was designed to fit with Northeastern's current branding and themes while still providing a modern update.
+					</p>
+				</div>
+				<!-- Finally the button -->
+				<div class="text-center">
+					<button class="button-primary primary-gradient bugfix" onclick="scrollTo('#contact');">Get In Touch</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Contact Section -->
+		<div class="container-pad clear flex-parent">
+			<div class="section text-center pad-bottom" id="contact">				
+				<h3 class="section-title">Questions or Comments?</h3>
+				<p>Whether it be for a buisness inquiry, general comment on a project, or even a job offer&nbsp;- feel free to get in touch with me! Below is a contact form which you can use to send me an email. For other contact methods, view my social profiles in the footer. Reach out, and I'll make sure to respond as quickly as I can!</p>
+				<div class="flex-parent">
+					<form class="contact-form" id="contact-form">
+						<div class="input-container">
+							<input type="email" name="email" class="floating-input" required>
+							<label for="email" class="floating-label">Email</label>
+
+						</div>
+						<div class="input-container">
+							<input type="text" name="subject" class="floating-input" required>
+							<label for="subject" class="floating-label">Subject</label>
+							<!--<span class="notif-tag">*Optional</span>-->
+						</div>
+						<div class="input-container">
+							<textarea name="body" class="floating-input" rows="3" required></textarea>
+							<label for="body" class="floating-label">Message</label>
+						</div>
+						<input type="submit" name="submit" value="Send Message">
+					</form>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<footer class="footer-primary flex-parent fixed-bg">
+		<div class="menu-shrink flex-content">
+			<div class="social-icons text-center">
+				<a href="mailto:wang.jo@husky.neu.edu" class="fa fa-google"></a>
+				<a href="https://www.linkedin.com/in/joseph-wang-7b0751129/" target="_blank" class="fa fa-linkedin"></a>
+				<a href="https://github.com/joewang96/" target="_blank" class="fa fa-github-alt"></a>
+			</div>
+			<p class="copy-text text-center">Copyright &copy; <span id="current-year"></span> Joseph Wang. All Rights Reserved</p>
+		</div>
+	</footer>
+
+	<!-- JQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<!-- JQuery UI CDN -->
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script> 
+	<!-- Waypoints Script -->
+	<script type="text/javascript" src="waypoints/jquery.waypoints.min.js"></script>
+	<!-- Custom Scripts -->
+	<script type="text/javascript" src="js/script.js"></script>
+
+</body>
+</html>
+
