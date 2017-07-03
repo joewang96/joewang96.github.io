@@ -12,6 +12,7 @@ linear-gradient(180deg,#66a5ff,#0069ff)
 */
 html, body {
 	margin: 0;
+	height: 100%;
 }
 body {
 	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -21,6 +22,7 @@ body {
 	background-image: url('../img/architect.svg'), -webkit-linear-gradient(0deg, #f68084, #f68084);
 	background-image: url('../img/architect.svg'), linear-gradient(to bottom, #a6c0fe, #f68084);
 	background-attachment: fixed;
+	background-repeat: repeat;
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Source Sans Pro', sans-serif;
