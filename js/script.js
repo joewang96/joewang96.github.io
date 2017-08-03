@@ -92,11 +92,6 @@ function detectSection() {
 	}
 }
 
-$(window).scroll(function() {
-	$('.menu-overlay li a').removeClass("active");
-	$(detectSection()).addClass("active");
-});
-
 // ------------------ Sidebar Functions -------------------
 
 function resetMenu() {
@@ -107,70 +102,78 @@ function resetMenu() {
 	$('body').removeClass("noscroll");
 }
 
-// These three functions deal with closing menu on click 
-$('.menu-overlay').click(function() {
-	resetMenu();
-});
-$('.nav-container').click(function(event){
-    event.stopPropagation();
-});
-$('.sidebar-inner li').click(function() {
-	resetMenu();
-});
+// Wrap these functions on a document.ready function
+$(document).ready(function() {
+	$(window).scroll(function() {
+		$('.menu-overlay li a').removeClass("active");
+		$(detectSection()).addClass("active");
+	});
+	
+	// These three functions deal with closing menu on click 
+	$('.menu-overlay').click(function() {
+		resetMenu();
+	});
+	$('.nav-container').click(function(event){
+	    event.stopPropagation();
+	});
+	$('.sidebar-inner li').click(function() {
+		resetMenu();
+	});
 
-// Toggle the sidebar on click of the nav-launcher class
-$('.nav-container').on('click', function() {
-	$('.nav-launcher span.launcher-line').toggleClass('active');
-	// if you want to switch back, then uncomment and remove false, if not then clean up unused elements and styles
-	if (/*window.innerWidth > 850*/ false) {
-		$('.nav-toggle').toggleClass('visible');
-		console.log('working');
-	}
-	else {
-		// swap this out for manipulating the sidebar or whatever
-		$('.menu-overlay').toggleClass("active");
-		$('.menu-shrink').toggleClass("active");
-		$('body').toggleClass("noscroll");
-	}
-});
-
-// ----------- Floating Input Functions --------------
-$('textarea.material-input').on('input', function(e){
-    var that = $(this);
-    if (that.scrollTop()) {
-        $(this).height(function(i,h){
-            return h + 20;
-        });
-    }
-});
-$('.floating-input').on('focusout', function(e){
-    var that = $(this);
-    if (!that.val() == "") {
-      that.addClass('active');
-    } else {
-      that.removeClass('active');
-    }
-});
-
-// ----------- AJAX to Email Script Form -----------
-$('#contact-form').on('submit', function(e) {
-	e.preventDefault();
-	$.ajax({
-		method: 'POST',
-		url: "https://script.google.com/macros/s/AKfycbzX29BtfLzAXEvRF19VJk3ksPQUd6XlBhy8N9I_qjZyR_o3l4E/exec",
-		data: { 
-			email: $('#contact-form input[name=email]').val() , 
-			subject: $('#contact-form input[name=subject]').val() , 
-			body: $('#contact-form textarea[name=body]').val()
-		}, 
-		success: function(returnData) {
-			$('#contact-form').trigger('reset');
-			$('#contact-form input[type=submit]').addClass('success');
-			$('#contact-form input[type=submit]').val('Message Sent!');
-		}, 
-		error: function(jqXHR, status, error) {
-			console.log(error);
+	// Toggle the sidebar on click of the nav-launcher class
+	$('.nav-container').on('click', function() {
+		$('.nav-launcher span.launcher-line').toggleClass('active');
+		// if you want to switch back, then uncomment and remove false, if not then clean up unused elements and styles
+		if (/*window.innerWidth > 850*/ false) {
+			$('.nav-toggle').toggleClass('visible');
+			console.log('working');
 		}
+		else {
+			// swap this out for manipulating the sidebar or whatever
+			$('.menu-overlay').toggleClass("active");
+			$('.menu-shrink').toggleClass("active");
+			$('body').toggleClass("noscroll");
+		}
+	});
+
+	// ----------- Floating Input Functions --------------
+	$('textarea.material-input').on('input', function(e){
+	    var that = $(this);
+	    if (that.scrollTop()) {
+	        $(this).height(function(i,h){
+	            return h + 20;
+	        });
+	    }
+	});
+	$('.floating-input').on('focusout', function(e){
+	    var that = $(this);
+	    if (!that.val() == "") {
+	      that.addClass('active');
+	    } else {
+	      that.removeClass('active');
+	    }
+	});
+
+	// ----------- AJAX to Email Script Form -----------
+	$('#contact-form').on('submit', function(e) {
+		e.preventDefault();
+		$.ajax({
+			method: 'POST',
+			url: "https://script.google.com/macros/s/AKfycbzX29BtfLzAXEvRF19VJk3ksPQUd6XlBhy8N9I_qjZyR_o3l4E/exec",
+			data: { 
+				email: $('#contact-form input[name=email]').val() , 
+				subject: $('#contact-form input[name=subject]').val() , 
+				body: $('#contact-form textarea[name=body]').val()
+			}, 
+			success: function(returnData) {
+				$('#contact-form').trigger('reset');
+				$('#contact-form input[type=submit]').addClass('success');
+				$('#contact-form input[type=submit]').val('Message Sent!');
+			}, 
+			error: function(jqXHR, status, error) {
+				console.log(error);
+			}
+		});
 	});
 });
 
