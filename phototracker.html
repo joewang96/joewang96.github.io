@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Three important meta tags that come before everything else -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<!-- Title -->
+	<title>PhotoTracker Project | Joseph Wang | Developer &amp; Designer</title>
+	<!-- Icon -->
+	<link rel="icon" href="img/purple_diamond.png">
+
+	<!-- SEO Metatags -->
+	<meta name="description" content="Developer, designer, student. I'm Joseph Wang, currently pursuing a degree at Northeastern University with skills in front-end development, responsive design, and object-oriented programming.">
+    <meta name="keywords" content="Joseph, Wang, developer, designer, website, interaction design, responsive, programming, user interface">
+    <meta name="author" content="Joseph Wang">
+    <meta name="robots" content="index, follow">
+
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Google Fonts and Typography -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" type="text/css" href="pe-icon/css/pe-icon-7-stroke.css">
+    <link rel="stylesheet" type="text/css" href="pe-icon/css/helper.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/devicons.min.css">
+
+</head>
+
+<body>
+
+
+	<div id="main">
+
+		<!-- Top navigation -->
+		<nav class="nav-bar nav-pad">
+			<a href="https://joewang96.github.io">
+				<div class="brand-icon" >
+					<div class="img-container">
+						<img src="img/purple_diamond.png">
+					</div>
+					<p class="brand-text">Joseph Wang</p>
+				</div>
+			</a>
+			<ul class="nav-list">
+				<li onclick="scrollTo($('#task'));">Intro</li>
+				<li onclick="scrollTo($('#process'));">Process</li>
+				<li onclick="scrollTo($('#results'));">Results</li>
+			</ul>
+		</nav>
+
+		<!-- About Section -->
+		<div class="container-pad flex-parent flex-row md-break light-gray pad-bottom">
+			<div class="section text-left">
+				<h3 class="section-title">Instagram PhotoTracker - Processing</h3>
+				<p>Built in Processing, a programming language built on Java targeted toward designers, the <strong>Instagram PhotoTracker makes use of Instagram's API to display posts geographically around the downton Boston area.</strong> The program allows for the user to search based on hashtags, and each result links to the post on Instagram.</p>
+				<p style="margin-bottom: 3rem">Below details the task, thought-process, and features of the project, as well as providing links to the code on Github.</p>
+				<div class="double-btn-container">
+					<button class="button-primary primary-gradient bugfix" onclick="scrollTo('#task');">Learn More</button>
+					<a href="https://github.com/joewang96/phototracker" target="_blank"><button class="button-primary inverse bugfix">View Github</button></a>
+				</div>
+			</div>
+			<div class="section text-right pos-rel project-img-container">
+				<img src="img/projects/phototracker.png" class="project-img-hero">
+			</div>
+		</div>
+
+		<!-- "The Task"/Intro Section -->
+		<div class="container-pad flex-parent flex-column" id="task">
+			<div class="section text-left justified left">
+				<h3 class="section-title">The Task at Hand</h3>
+				<p>The Instagram PhotoTracker is an application which came out of one of my <strong>interactive media courses</strong>, in which we were tasked with creating something that makes use of the programming skills learned in that class, as well as having a good user experience and design behind it.</p>
+				<p>Having taken many Computer Science courses in the past, and currently enrolled in Object-Oriented Design, <strong>the programming aspects of the project came together very easily</strong>. Thus, I had more time to figure out the design I wanted to go for, as well as how the user experience would tie in.</p>
+			</div>
+			<div class="section justified right" id="process">
+				<h3 class="section-title">The Design Process</h3>
+				<p>One of the first aspects of the project which I had to tackle was what exactly my application would focus on. The project allowed us to explore different technologies as well as different areas of focus - graphics, animation, games, data visualization, etc. <strong>I decided to focus on data visualization, focusing on the use of an open API</strong>. I decided to go this route since I wanted to create a project that seems engaging to most audiences, and since it had potential for future revisits if I ever wanted to improve upon it.</p>
+				<p>After deciding upon data-vis, I chose the Instagram API since it was one that I haven't worked with in the past and wanted to experiment with. Since I was working with Instagram, a very popular mobile app, I decided that my user experience <strong>would mimic that of their website</strong>. The opening screen of my app was influenced by the site, <strong>having the different posts explain how to use the application.</strong></p>
+			</div>
+			<div class="section pad-bottom justified left">
+				<h3 class="section-title">The Development Process</h3>
+				<p>After having the idea planned out, it was time to start coding and bring the idea to life. As said previously, the majority of the coding was familiar to me, however I did reach a key point in the development process - <strong>deciding which enviornment to utilize</strong>. Processing is built on top of Java, and thus doesn't have all the features a web app would (such as built in input fields and scrolling). There was an alternative which was P5, a program to convert Processing code into P5 code, which is similar to Javascript. When trying to migrate to P5, my code didn't seem to work in it's current state, so <strong>I decided to stay in Processing, opting to take on the challenge of creating those custom components</strong> rather than having to go back and rewrite the code I had already written.</p>
+				<p>Creating an input field and scroll action did seem a bit challenging at first, however <strong>once I started I found the process interesting and actually fun!</strong> I had never had to think about the code that went into those components before, and building them myself was a unique experience to say the least.</p>
+			</div>
+		</div>
+
+		<!-- Results Section -->
+		<div class="container-pad flex-parent light-gray">
+			<div class="section pad-bottom" id="results">
+				<h3 class="section-title text-center">Final Results</h3>
+				<p>After creating the custom components and putting together the intro page, I had a working program which I was proud to display. While the program wasn't a web app like I intended it to be in the start, it had the same functionality and similar to feel to one. <strong>The extra time not spent trying to refactor code was put to use in optimizing the user experience</strong>, and that decision paid off.</p>
+				<p>The program itself allows the user to view different posts around the Boston area, and filter by the different tags associated with the post. The input field is a way add the new filters, and you can toggle between displaying all posts and the ones you currently have filtered through tags. <strong>I plan to revisit this project in the future</strong>, possibly creating a web app next time utilizing tools such as Node.js and Google APIs.</p>
+				<br>
+				<div class="video-wrapper">
+					<iframe src="https://www.youtube.com/embed/jMrwLfqYCN4" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<footer class="footer-primary flex-parent fixed-bg">
+		<div class="menu-shrink flex-content">
+			<div class="social-icons text-center">
+				<a href="mailto:wang.jo@husky.neu.edu" class="fa fa-google"></a>
+				<a href="https://www.linkedin.com/in/joseph-wang-7b0751129/" target="_blank" class="fa fa-linkedin"></a>
+				<a href="https://github.com/joewang96/" target="_blank" class="fa fa-github-alt"></a>
+			</div>
+			<p class="copy-text text-center">Copyright &copy; <span id="current-year"></span> Joseph Wang. All Rights Reserved</p>
+		</div>
+	</footer>
+
+	<!-- JQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<!-- JQuery UI CDN -->
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script> 
+	<!-- Waypoints Script -->
+	<script type="text/javascript" src="waypoints/jquery.waypoints.min.js"></script>
+	<!-- Custom Scripts -->
+	<script type="text/javascript" src="js/project.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Three important meta tags that come before everything else -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<!-- Title -->
+	<title>NU:OnTrack | Joseph Wang | Developer &amp; Designer</title>
+	<!-- Icon -->
+	<link rel="icon" href="img/purple_diamond.png">
+
+	<!-- SEO Metatags -->
+	<meta name="description" content="Developer, designer, student. I'm Joseph Wang, currently pursuing a degree at Northeastern University with skills in front-end development, responsive design, and object-oriented programming.">
+    <meta name="keywords" content="Joseph, Wang, developer, designer, website, interaction design, responsive, programming, user interface">
+    <meta name="author" content="Joseph Wang">
+    <meta name="robots" content="index, follow">
+
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Google Fonts and Typography -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" type="text/css" href="pe-icon/css/pe-icon-7-stroke.css">
+    <link rel="stylesheet" type="text/css" href="pe-icon/css/helper.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/devicons.min.css">
+
+</head>
+
+<body>
+
+
+	<div id="main">
+
+		<!-- Top navigation -->
+		<nav class="nav-bar nav-pad">
+			<a href="https://joewang96.github.io">
+				<div class="brand-icon" >
+					<div class="img-container">
+						<img src="img/purple_diamond.png">
+					</div>
+					<p class="brand-text">Joseph Wang</p>
+				</div>
+			</a>
+			<ul class="nav-list">
+				<li onclick="scrollTo($('#task'));">Intro</li>
+				<li onclick="scrollTo($('#process'));">Process</li>
+				<li onclick="scrollTo($('#results'));">Results</li>
+			</ul>
+		</nav>
+
+		<!-- About Section -->
+		<div class="container-pad flex-parent flex-row md-break light-gray pad-bottom">
+			<div class="section text-left">
+				<h3 class="section-title">NU:OnTrack - HTML/CSS/JS</h3>
+				<p>Created as a final project for my Interaction Design 1 course, <strong>NU:OnTrack is a take on Northeastern's Co-op search web portal</strong> that is revamped with responsive design as well as an improved user experience. The site keeps with the brand of Northeastern, and the mobile first perspective makes sure it <strong>transitions cross-platform.</strong></p>
+				<p style="margin-bottom: 3rem">Below details the task, thought-process, and features of the project, as well as providing links to the code on Github.</p>
+				<div class="double-btn-container">
+					<button class="button-primary primary-gradient bugfix" onclick="scrollTo('#task');">Learn More</button>
+					<a href="https://github.com/joewang96/nuontrack" target="_blank"><button class="button-primary inverse bugfix">View Github</button></a>
+				</div>
+			</div>
+			<div class="section text-right pos-rel project-img-container">
+				<img src="img/projects/nuontrack.png" class="project-img-hero">
+			</div>
+		</div>
+
+		<!-- "The Task"/Intro Section -->
+		<div class="container-pad flex-parent flex-column">
+			<div class="section text-left justified left" id="task">
+				<h3 class="section-title">The Task at Hand</h3>
+				<p>Through my <strong>Interaction Design: Responsivness course</strong>, I was tasked with creating a web page for an application, real or fake, that worked across all devices. After using Northeastern's Co-op search portal, NuCareers, I decided to try and revamp that site, since it is often a pain to use for many students.</p>
+				<p>The main changes I wanted to make were to make the site <strong>accessible on mobile devices</strong>, <strong>easy to navigate and find specific functionality</strong>, and to reorganize the hierarchy of the site in a way <strong>more intuitive to current students</strong>. Additionally I wanted to try and keep the site somewhat in-line with the Northeastern brand, since it would be a resource used by the University in theory.</p>
+			</div>
+			<div class="section pad-bottom justified right" id="process">
+				<h3 class="section-title">The Design Process</h3>
+				<p>Before designing the site, <strong>I started brainstorming the different use cases</strong> - creating <strong>personas to help understand user needs</strong>. The list I came up with had the following tasks as priorities: view new job listings, manage and review current submissions and documents, and applying to jobs quickly and easily.</p>
+				<p>After creating my initial list of percieved needs and core functionality, I developed wireframes to draft the navigation and design of the site. Once completed, <strong>I started user-testing to get feedback from actual students</strong> at Northeastern. This process was very enlightening and helped revise my designs to accommodate for what I hadn't thought of.</p>
+				<p>With feedback in hand, I began creating the digital designs directly with HTML and CSS. Throughout the process I kept my stylings clean, eliminating redundant declarations wherever necessary. Each section took multiple iterations to get to a point where I was pleased, but in the end came together to create a cohesive website.</p>
+			</div>
+		</div>
+
+		<!-- Results Section -->
+		<div class="container-pad flex-parent light-gray">
+			<div class="section pad-bottom" id="results">
+				<h3 class="section-title text-center">Final Results</h3>
+				<p>At the end of the process I came up with a revamped Northeastern Co-op search site, dubbed <strong>NU:OnTrack.</strong> The site was much easier to use than the current site, and held up across devices. While the direct functionality of the site wasn't implemented, <strong>I created mock actions</strong> such as uploading documents, logging in, and applying for co-op positions which <strong>helped showcase the potential user experience.</strong></p>
+				<p>NU:OnTrack is certainly better than the exisitng solution of NuCareers, however I would like to revisit and update the project at a later date. The project was created during my second year, and I have learned much since then. My <strong>goals for future iterations would be to create real functionality</strong>, most likely <strong>achieved through PHP and MySQL or the MEAN stack.</strong> Until then, the current site is live on my Github, and accessible through the link below.</p>
+				<div class="double-btn-container text-center" style="margin-top: 3rem;">
+					<a href="https://joewang96.github.io/nuontrack/"><button class="button-primary primary-gradient bugfix">View Website</button></a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<footer class="footer-primary flex-parent fixed-bg">
+		<div class="menu-shrink flex-content">
+			<div class="social-icons text-center">
+				<a href="mailto:wang.jo@husky.neu.edu" class="fa fa-google"></a>
+				<a href="https://www.linkedin.com/in/joseph-wang-7b0751129/" target="_blank" class="fa fa-linkedin"></a>
+				<a href="https://github.com/joewang96/" target="_blank" class="fa fa-github-alt"></a>
+			</div>
+			<p class="copy-text text-center">Copyright &copy; <span id="current-year"></span> Joseph Wang. All Rights Reserved</p>
+		</div>
+	</footer>
+
+	<!-- JQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<!-- JQuery UI CDN -->
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script> 
+	<!-- Waypoints Script -->
+	<script type="text/javascript" src="waypoints/jquery.waypoints.min.js"></script>
+	<!-- Custom Scripts -->
+	<script type="text/javascript" src="js/project.js"></script>
+
+</body>
+</html>
+
