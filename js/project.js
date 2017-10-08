@@ -17,7 +17,7 @@ function _scrollTo(element) {
 	else {
 		timing = 2000;
 	}
-	console.log(timing);
+	// console.log(timing);
 	$('html, body').animate({
         scrollTop: element.offset().top
     }, timing);
