@@ -1,5 +1,5 @@
 // --------------------- Functions ----------------------
-function scrollTo(element) {
+function _scrollTo(element) {
 	var diff = Math.abs($(element).offset().top - $(window).scrollTop());
 	var timing;
 	if (diff < 2000) {

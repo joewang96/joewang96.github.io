@@ -6,7 +6,7 @@ $(document).ready(function(){
 });
 
 function scrollTo(element) {
-	var diff = Math.abs($(element).offset().top - $(window).scrollTop());
+	var diff = Math.abs(element.offset().top - $(window).scrollTop());
 	var timing;
 	if (diff < 2000) {
 		timing = 1000;
@@ -19,6 +19,6 @@ function scrollTo(element) {
 	}
 	console.log(timing);
 	$('html, body').animate({
-        scrollTop: $(element).offset().top
+        scrollTop: element.offset().top
     }, timing);
 }
