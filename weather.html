@@ -8,7 +8,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 	<!-- Title -->
-	<title>Music Editor Project | Joseph Wang | Developer &amp; Designer</title>
+	<title>Minimalist Weather | Joseph Wang | Developer &amp; Designer</title>
 	<!-- Icon -->
 	<link rel="icon" href="img/purple_diamond.png">
 
@@ -54,34 +54,34 @@
 				<li onclick="_scrollTo($('#results'));">Results</li>
 			</ul>
 		</nav>
-		
+
 		<!-- About Section -->
 		<div class="container-pad flex-parent flex-row md-break light-gray pad-bottom">
 			<div class="section text-left">
-				<h3 class="section-title">Music Editor - Java</h3>
-				<p>The Music Editor is a Java app <strong>which allows users to load, edit, and playback music they create</strong>. The user can expand and rescale the window, as well as scroll through the track via the arrow keys as well as the scrollbars. Additional features include being able to jump to the start or end of the song, pause and resume whenever necessary, and even <strong>add or remove notes at whim!</strong></p>
-				<p style="margin-bottom: 3rem">Below details the task, thought-process, and features of the project, as well as providing links to the code on Github.</p>
+				<h3 class="section-title">Minimalist Weather - Vue.js &amp; Python Flask</h3>
+				<p>A <strong>clean and simple</strong> solution to the popular idea of a weather app. Choosing to forgo visually intense graphics and a screen dump of information, I created this web application to give the user useful information about the current weather and display it in a way that is <strong>easy to understand</strong>.</p>
+				<p style="margin-bottom: 3rem">Below details the process I went through in developing this web app, as well as providing links to the deployed app on Heroku.</p>
 				<div class="double-btn-container">
 					<button class="button-primary primary-gradient bugfix" onclick="_scrollTo($('#task'));">Learn More</button>
-					<a href="https://github.com/joewang96/music-editor" target="_blank"><button class="button-primary inverse bugfix">View Github</button></a>
+					<a href="https://github.com/joewang96/minimal-weather" target="_blank"><button class="button-primary inverse bugfix">View Github</button></a>
 				</div>
 			</div>
 			<div class="section text-right pos-rel project-img-container">
-				<img src="img/projects/music.png" class="project-img-hero">
+				<img src="img/projects/weather-data.png" class="project-img-hero">
 			</div>
 		</div>
 
 		<!-- "The Task"/Intro Section -->
 		<div class="container-pad flex-parent flex-column">
 			<div class="section text-left justified left" id="task">
-				<h3 class="section-title">The Task at Hand</h3>
-				<p>Given as a task in my <strong>Object-Oriented Design</strong> course, the purpose of the project was to familiarize students with new software design concepts and patterns, particularly the <strong>Model-View-Controller (MVC) Pattern</strong>. The project consisted of multiple parts, in which we built the different aspects of the software application, improving upon at the previous iteration at each step.</p>
-				<p>Each student developed their own version of the program, and then was paired up with another to create the best version they possibly could. When I was paired with my partner we realized that <strong>my design pattern allowed for the components to be swapped out more easily</strong>, and the model was more intuitive for in terms of what a measure or note was. Thus, my version became the base of the project.</p>
+				<h3 class="section-title">The Design Process</h3>
+				<p>When I began this project I had a design concept in mind for the landing page of the web app. Since most users I talked to listed speed and efficiency as important factors to them, I made the two location options as <strong>clear and simple as possible</strong>. However, designing the data view state proved more difficult than expected. Initially I had the idea of incorporating a large weather icon and temperature card to quickly convey to the user both the relative temperature and the main weather condition. However, this design seemed a little too cluttered and was very similar to existing applications.</p>
+				<p>Upon <strong>multiple iterative design cycles</strong>, I finally settled on a design for the data view that I liked. Opting to move away from the "graphic with icon" direction, I instead decided to make the data as easy to understand as possible, <strong>transforming the data into a few concise sentances</strong>. To further aid the user in being able to quickly understand the data, I added color codes to the text to help with differentiation. Addtionally, I incorporated a dynamic color gradient on the temperature text, moving from blue to red as the temperature increases.</p>
 			</div>
 			<div class="section pad-bottom justified right" id="process">
 				<h3 class="section-title">The Development Process</h3>
-				<p>After the individual attempt and being paired up, the development process began to complete the final version of the project. Not knowing what the tasks down the road would be, my partner and I <strong>planned out the necessary parts of the project, as well as key details to remember</strong>. The most important detail that came out of the brainstorming session was making sure that each component was seperate, and able to be swapped out if need be (since again, the main purpose of the assignment was to utilize the MVC pattern).</p>
-				<p>The process as a whole went smoothly, with us splitting the work and bringing it together at various steps along the way. I was <strong>responsible for creating the various aspects of the View (both the auditory and visual representations)</strong>, as well as handling the keyboard. My partner dealt with setting up communication between the Controller and Model, and we both shared responsibility in fixing any bugs found in previous steps of the cycle.</p>
+				<p>Right off the bat I knew I wanted to incorporate <strong>Vue.js</strong> into this project. The framework is relativley lightweight and is perfect to handle state transitions and data-driven views. I opted to use <strong>Python's Flask framework</strong> as the back-end due to it's simplicity and my familiarity with it. The app works by sending the user's requested location information to the weather API and transmitting the returned data back to the Vue element. Once the data is returned, the state and data update and the view is automatically refreshed.</p>
+				<p>The development aspect of the project was more straightforward than the design, needing less iteration due to the main data being pulled from at most two API's - the weather data and the geolocation data for current location requests. Once I had the final design changes solidified and working locally, I pushed the project to Github and <strong>deployed the repo to a Heroku instance</strong>.</p>
 			</div>
 		</div>
 
@@ -89,11 +89,11 @@
 		<div class="container-pad flex-parent light-gray">
 			<div class="section pad-bottom" id="results">
 				<h3 class="section-title text-center">Final Results</h3>
-				<p>After completing the multiple Views and setting up the Controller, my partner and I were able to link everything together, and the project was finally finished. At the end we produced a program which can dynamically load in notes from a file, read and play audio at real time, as well as allow for direct user control at any point. Additionally users could add notes directly inside the program, <strong>eliminating the need to have to load a new file each time</strong>.</p>
-				<p>However, we were surpised with one final task - <strong>having to switch Views with another team</strong>. Since our components were designed to do just that, we had no issue passing our View along to another team. The team which recieved our View had <strong>no issues with our code</strong>, and were able to complete that task easily. However, <strong>the View which we recieved was written poorly</strong>, and key aspects didn't allow for use to swap it in as is, one being a lack of separation from View and Controller. Once the other team reworked it with appropriate separations, it was able to fit in with out program spectacularly.</p>
-				<br>
-				<div class="video-wrapper">
-					<iframe src="https://www.youtube.com/embed/aSyc44_R-fU" frameborder="0" allowfullscreen></iframe>
+				<div class="project-deployed-container">
+					<img src="img/projects/weather-landing.png">
+				</div>
+				<div class="double-btn-container text-center" style="margin-top: 3rem;">
+					<a href="https://py-vue-weather.herokuapp.com/" target="_blank"><button class="button-primary primary-gradient bugfix">View Deployed App</button></a>
 				</div>
 			</div>
 		</div>

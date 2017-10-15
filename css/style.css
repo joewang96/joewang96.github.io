@@ -928,6 +928,9 @@ time {
 .project-image#project-nuontrack {
 	background-image: url('../img/projects/nuontrack.png');
 }
+.project-image#project-weather {
+	background-image: url('../img/projects/weather-data.png');
+}
 .project-container a {
 	text-decoration: none;
 	color: inherit;
@@ -1280,6 +1283,16 @@ img.project-img-hero {
 	opacity: 1;
 	transform: scale(1);
 }
+
+.project-deployed-container {
+	width: 100%;
+	position: relative;
+}
+.project-deployed-container img {
+	width: 100%;
+	box-shadow: 0 6px 35px -5px rgba(191, 143, 255, 0.4);
+}
+
 .video-wrapper {
 	position: relative;
 	padding-bottom: 56.25%; /* 16:9 */
