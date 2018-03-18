@@ -1,0 +1,35 @@
+#hero
+	padding-bottom: 100px
+	box-sizing: border-box
+	padding-top: 100px + $nav--height
+	background: linear-gradient($gradient-color 70%, rgba(255, 255, 255, 0) 100%)
+	position: relative
+	@media (max-width: $mdscreen)
+		padding-top: 80px + $nav--height
+	@media (max-width: $smscreen)
+		padding-bottom: 80px
+		padding-top: 60px + $nav--height
+	.hero--head
+		margin-top: 20px
+		font-size: 40px
+		font-weight: 400
+		color: $primary
+		margin-bottom: 40px
+		max-width: 850px
+	.hero--sub
+		font-size: 18px
+		max-width: 600px
+		margin-bottom: 50px
+	.hero--cta
+		@media (min-width: $smscreen+1px)
+			.btn:nth-child(1)
+				margin-right: 10px
+	@media (max-width: $smscreen)
+		.hero--head
+			font-size: 34px
+		.hero--sub
+			font-size: 15px
+			margin-bottom: 45px
+
+.gradient--wrapper
+	background: linear-gradient(rgba(255, 255, 255, 0) 0%, $gradient-color--light 30%)

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Three important meta tags that come before everything else -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<!-- Title -->
+	<title>Joseph Wang | Design-minded Developer</title>
+	<!-- Icon -->
+	<link rel="icon" href="img/favicon.png">
+
+	<!-- SEO Metatags -->
+	<meta name="description" content="Developer, designer, student. I'm Joseph Wang, currently a student at Northeastern University pursuing a B.S. in Computer Science and Interactive Media. I have a background in software engineering and web development, specializing in the front-end.">
+    <meta name="keywords" content="Joseph Wang, Joseph, Wang, developer, designer, front end, interaction design, web design, user interface, Northeastern, portfolio">
+    <meta name="author" content="Joseph Wang">
+    <meta name="robots" content="index, follow">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114961201-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-114961201-1');
+	</script>
+
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Google Fonts and Typography -->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" type="text/css" href="css/devicon.min.css">
+    <link rel="stylesheet" type="text/css" href="css/logo-icon.css">
+
+</head>
+
+<body class="preset">
+	<!--
+		Translate logo to the far right
+		But "Go back" with arrow on hte top left
+	-->
+	<nav class="navbar">
+		<div class="nav--container pad pad-md-max">
+			<div class="brand--container">
+				<a class="nav-logo flex-parent flex-ac flex-jc" href="./index.html">
+					<i class="icon-logo"></i>
+				</a>
+			</div>
+			<div class="nav--list flex-parent flex-ac no-hide">
+				<a class="nav--item" href="./index.html#portfolio">Back to Portfolio</a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="section flex-parent flex-ac case-study--hero">
+		<div class="container pad pad-md-max">
+			<h2 class="case-study--hero--head text-center text-left-sm">
+				Motiv8: A Social Web App Built for Human Computer Interaction
+			</h2>
+		</div>
+	</div>
+
+	<div class="section vertical-pad off-white case-study--content">
+		<div class="case-study--info pad">
+			<div class="case-study--info--content flex-parent flex-row ">
+				<div class="case-study--info--column">
+					<p class="case-study--info--column--title">Course:</p>
+					<p class="case-study--info--column--text">IS 4300: Human Computer Interaction</p>
+				</div>
+
+				<div class="case-study--info--column">
+					<p class="case-study--info--column--title">Dates:</p>
+					<p class="case-study--info--column--text">Sep. - Dec. 2017</p>
+				</div>
+
+				<div class="case-study--info--column">
+					<p class="case-study--info--column--title">Tags:</p>
+					<p class="case-study--info--column--text">HCI, project management, usability testing</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container pad case-study--container">
+
+			<h3 class="case-study--content--title">Beginning of the project and ideation</h3>
+			<p class="section--body case-study--content--para">Motiv8 is the final product of my semester long project from my human computer interaction course. The idea behind it was to come up with a platform or app that had a core user group and was designed with usability in mind. For this project I worked in a group of four, including myself. Each of us had a background in computer science, with myself and one of the other members also having a background in design. While working on the project I assumed the role as project manager, guiding the group and taking charge of presenting our work.</p>
+			<p class="section--body case-study--content--para">The first step in the project was coming up with an idea to base our product around. Initially we decided to use one of my ideas, which was based around the idea of a <em>"social contract"</em> where users could form a pact to complete given tasks and hold each other accountable for. However, that later evolved into a commitment based motivation platform, with a focus on collaborative goals rather than assigning each other responsibilities. Both concepts had a similar concept of a social platform to help increase accountability, however the latter allowed more flexibility in terms of use cases and was more likely to be used by actual individuals.</p>
+
+			<div class="case-study--content--break m-x-auto flex-parent flex-ac">
+				<span class="dot"></span><span class="dot"></span><span class="dot"></span>
+			</div>
+
+			<h3 class="case-study--content--title">Defining personas and task analysis</h3>
+			<p class="section--body case-study--content--para">After finalizing our concept for the platform, our next goal was to creat the user personas and formulate an approximation of the average use case using <em>hierarchical task analysis</em> diagrams. We decided our primary users would be college students our own age, both because they would be more likely to adopt a social web platform and that we would be able to find enough of that demographic to conduct our interviews with. Each persona revolved around the user wanting to make a lifestyle change, whether it be small like going to the gym with a friend as a sort of new years resolution, to a larger goal such as quiting smoking.</p>
+			<p class="section--body case-study--content--para">With our personas in mind we began thinking through the high level tasks that they would need to complete when using our system. This step took many iterations to get right, having to narrow our scope with what we would be able to get done in the allotted time frame. Finally, we came up with our three main actions in the system: creating a commitment, managing a commitment, and congratulating a user on their success towards a shared commitment. Below is an example HTA diagram we created as well as a picture from our brainstorming session.</p>
+		</div>
+	</div>
+
+	<div class="section white vertical-pad flex-parent flex-ac case-study--image">
+		<div class="container pad">
+			<img class="showcase-img vertical" src="img/projects/motiv8/white-wall-hta.jpg">
+			<p class="showcase-caption m-x-auto sm-max m-bottom-30">White wall brainstorming of the user tasks.</p>
+
+			<br>
+
+			<img class="showcase-img vertical" src="img/projects/motiv8/create-commitment-hta.png">
+			<p class="showcase-caption m-x-auto sm-max">Task analysis diagram for creating a commitment.</p>
+		</div>
+	</div>
+
+	<div class="section vertical-pad off-white case-study--content">
+		<div class="container pad case-study--container">
+			<h3 class="case-study--content--title">Paper prototyping and first usability tests</h3>
+			<p class="section--body case-study--content--para">Before starting on either the development process or creating higher fidelity designs, our group created a paper prototype to be used during an initial round of usability tests. These tests would help us identify any glaring issues in our system before we spent time and effort building it out. Additionally, we started testing early in order to give us a chance to do more testing later on, getting feedback at multiple stages of the cycle.</p>
+			<p class="section--body case-study--content--para">From the usability tests we found that users were able to follow along with the tasks given to them, with the majority being able to complete two of the three primary tasks very quickly. However, the main issue we found was that users were unfamiliar with the concept of a <em>commitment</em>, and thus did not know what to fill out when creating it in the interface. After observing this pattern emerge, we made sure to setup the idea in the final designs, giving more context for each input field in order to guide the user throught the process.</p>
+		</div>
+	</div>
+
+	<div class="section white vertical-pad flex-parent flex-ac case-study--image">
+		<div class="container pad">
+			<img class="showcase-img vertical" src="img/projects/motiv8/paper-prototype.jpg">
+			<p class="showcase-caption m-x-auto sm-max m-bottom-30">Example states from our paper prototype (marker stains present after user testing).</p>
+		</div>
+	</div>
+
+	<div class="section vertical-pad off-white case-study--content">
+		<div class="container pad case-study--container">
+			<h3 class="case-study--content--title">Development path and refined designs</h3>
+			<p class="section--body case-study--content--para">In terms of deciding how to logistically create Motiv8, I suggeseted the idea of using a combination of Flask as the "back-end" and framework for the larger application and Vue.js to manage the front-end. Both of which I was previously familiar with, with one of my teammates being familiar with React and was down to learn a new system. For full disclosure, both him and I worked on the entirety of the system, picking up the slack for our other two team members who had no experience in web tech. Regardless, we decided to push on through, delegating other tasks such as future write-ups to the other team members to make sure we kept the project moving forward.</p>
+			<p class="section--body case-study--content--para">During our development cycles we refined our interface designs, shifting features around, coming up with brand colors, and creating a rough system for the tone we wanted our platform to portray. We ended up using blue as the primary color of the brand, playing into the idea of trying to create a calm and collaborative enviornment. We opted to keep the controls large and use negative space since we wanted to clean up what could potentially be a crowded interface. The tones we decided on were <em>fun</em>, <em>polished</em>, and <em>organized</em> - trying to have our system primarily in the background having the interaction between users being the focus.</p>
+		</div>
+	</div>
+
+	<div class="section white vertical-pad flex-parent flex-ac case-study--image">
+		<div class="container pad">
+			<img class="showcase-img vertical" src="img/projects/motiv8/sketch-flow.png">
+			<p class="showcase-caption m-x-auto sm-max m-bottom-30">Example of a sketched out screen flow.</p>
+
+			<br>
+
+			<img class="showcase-img" src="img/projects/motiv8/final-hifi-screens.png">
+			<p class="showcase-caption m-x-auto sm-max m-bottom-30">Final screen designs minus branding assets (i.e. hero image).</p>
+
+			<br>
+
+			<img class="showcase-img vertical" src="img/projects/motiv8/motiv8-landing.png">
+			<p class="showcase-caption m-x-auto sm-max">Landing page complete with hero branding image.</p>
+		</div>
+	</div>
+
+	<div class="section vertical-pad off-white case-study--content">
+		<div class="container pad case-study--container">
+			<h3 class="case-study--content--title">Final deliverables and evaluation</h3>
+			<p class="section--body case-study--content--para">After a full semester of design, iterative development, and usability testing we ended up with a project that we were proud to share. We were able to deploy our prototype to the web on the team-members's server, which helped push the idea that Motiv8 was close to being a real system.</p> 
+			<p class="section--body case-study--content--para m-bottom-30">We presented our process and findings of the user tests to our peers and professor, both of which were impressed by our attention to detail and design skills (since most were back-end developers). If given the opportunity we would have liked to build out a more finished back-end that allowed for persisted data, as well as expanded on the interactions between users.</p>
+
+			<div class="text-left-sm text-center">
+				<a href="http://motiv8.jpegdev.win" target="_blank"><button class="btn primary">View the final project</button></a>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer flex-parent flex-ac flex-jc flex-row">
+		<div class="container pad flex-parent flex-ac flex-col-md">
+			<div class="sitemap flex-parent flex-row">
+				<a class="list-item" href="./index.html#portfolio">Portfolio</a>
+				<a class="list-item" href="./index.html#experience">Experience</a>
+				<a class="list-item" href="./index.html#about">About</a>
+			</div>
+			<div class="content-right">
+				<div class="site-map"></div>
+				<div class="social-icons">
+					<a class="social-item" href="https://github.com/joewang96" target="_blank"><i class="icon devicon-github-plain"></i></a>
+					<a class="social-item" href="https://www.linkedin.com/in/joseph-wang-7b0751129/" target="_blank"><i class="icon devicon-linkedin-plain"></i></a>
+					<a class="social-item" href="mailto:wang.jo@husky.neu.edu"><i class="icon devicon-google-plain"></i></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
+

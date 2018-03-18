@@ -1,0 +1,88 @@
+body
+	opacity: 1
+	transition-duration: 1000ms
+	transition-timing-function: ease-in-out
+	transition-property: opacity
+	will-change: opacity
+	@media (min-width: $mdscreen+1px)
+		.portfolio--block
+			transition-timing-function: ease-out
+			transition-duration: 500ms
+			transition-delay: 200ms
+			transition-property: opacity, transform
+			will-change: opacity, transform
+			&:nth-child(2) 
+				transition-delay: 350ms
+			&:nth-child(3) 
+				transition-delay: 500ms
+			&:nth-child(4)
+				transition-delay: 650ms
+			&:nth-child(5)
+				transition-delay: 800ms
+			&:nth-child(6)
+				transition-delay: 950ms
+			&:nth-child(7)
+				transition-delay: 1100ms
+			&:nth-child(8)
+				transition-delay: 1250ms
+			&:nth-child(9)
+				transition-delay: 1400ms
+			&:nth-child(10)
+				transition-delay: 1550ms
+	#experience, #about
+		transition-timing-function: ease-out
+		transition-duration: 500ms
+		transition-property: opacity, transform
+		will-change: opacity, transform
+	#hero
+		.hero--head
+			transition-timing-function: ease-in-out
+			transition-duration: 500ms
+			transition-property: opacity, transform
+			will-change: opacity, transform
+		.hero--sub
+			transition-timing-function: ease-out
+			transition-duration: 500ms
+			transition-delay: 100ms
+			transition-property: opacity, transform
+			will-change: opacity, transform
+		.hero--cta	
+			transition-timing-function: ease-out
+			transition-duration: 500ms
+			transition-delay: 200ms
+			transition-property: opacity, transform
+			will-change: opacity, transform
+	.case-study--hero--head
+		transition-timing-function: ease-out
+		transition-duration: 500ms
+		transition-property: opacity, transform
+		will-change: opacity, transform
+	.case-study--content .container, .case-study--info
+		transition-timing-function: ease-out
+		transition-duration: 500ms
+		transition-delay: 200ms
+		transition-property: opacity, transform
+		will-change: opacity, transform
+
+	&.preset
+		opacity: 0
+		@media (min-width: $mdscreen+1px)
+			.portfolio--block
+				opacity: 0
+				&:nth-child(odd)
+					transform: translateY(30%)
+				&:nth-child(even)
+					transform: translateY(55%) !important
+		#experience, #about, .case-study--content .container, .case-study--info
+			opacity: 0
+			transform: translateY(50px)
+		.case-study--hero--head
+			opacity: 0
+			transform: translateY(-30px)
+		#hero
+			.hero--head
+				opacity: 0
+				transform: translateY(-50px)
+			.hero--sub, .hero--cta	
+				opacity: 0
+				transform: translateY(50px)

@@ -8,369 +8,315 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 	<!-- Title -->
-	<title>Joseph Wang | Developer &amp; Designer</title>
+	<title>Joseph Wang | Design-minded Developer</title>
 	<!-- Icon -->
-	<link rel="icon" href="img/purple_diamond.png">
+	<link rel="icon" href="img/favicon.png">
 
 	<!-- SEO Metatags -->
-	<meta name="description" content="Developer, designer, student. I'm Joseph Wang, currently pursuing a degree at Northeastern University with skills in front-end development, responsive design, and object-oriented programming.">
-    <meta name="keywords" content="Joseph, Wang, developer, designer, website, interaction design, responsive, programming, user interface">
+	<meta name="description" content="Developer, designer, student. I'm Joseph Wang, currently a student at Northeastern University pursuing a B.S. in Computer Science and Interactive Media. I have a background in software engineering and web development, specializing in the front-end.">
+    <meta name="keywords" content="Joseph Wang, Joseph, Wang, developer, designer, front end, interaction design, web design, user interface, Northeastern, portfolio">
     <meta name="author" content="Joseph Wang">
     <meta name="robots" content="index, follow">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114961201-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-114961201-1');
+	</script>
 
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <!-- Google Fonts and Typography -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500" rel="stylesheet">
 
     <!-- Icons -->
-    <link rel="stylesheet" type="text/css" href="pe-icon/css/pe-icon-7-stroke.css">
-    <link rel="stylesheet" type="text/css" href="pe-icon/css/helper.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/devicons.min.css">
+    <link rel="stylesheet" type="text/css" href="css/devicon.min.css">
+    <link rel="stylesheet" type="text/css" href="css/logo-icon.css">
 
 </head>
 
-<body>
-
-	<div class="menu-overlay flex-parent">
-		<ul class="text-center flex-content">
-			<li><a class="home-link" onclick="_scrollTo($('#hero'));">Home</a></li>
-			<li><a class="about-link" onclick="_scrollTo($('#about'));">About</a></li>
-			<li><a class="work-link" onclick="_scrollTo($('#work'));">Work</a></li>
-			<li><a class="contact-link" onclick="_scrollTo($('#contact'));">Contact</a></li>
-		</ul>
-		<div class="bottom-social">
-			<div class="social-icons text-center">
-				<a href="mailto:wang.jo@husky.neu.edu" class="fa fa-google"></a>
-				<a href="https://www.linkedin.com/in/joseph-wang-7b0751129/" target="_blank" class="fa fa-linkedin"></a>
-				<a href="https://github.com/joewang96/" target="_blank" class="fa fa-github-alt"></a>
+<body class="preset">
+	<nav class="navbar">
+		<div class="nav--container pad pad-md-max">
+			<div class="brand--container">
+				<a class="nav-logo flex-parent flex-ac flex-jc" href="#">
+					<i class="icon-logo"></i>
+				</a>
 			</div>
+			<div class="nav--list flex-parent flex-ac">
+				<a class="nav--item">Portfolio</a>
+				<a class="nav--item">Experience</a>
+				<a class="nav--item">About</a>
+				<a class="nav--button" href="misc/Joseph_Wang_Resume.pdf" target="_blank"><button class="btn secondary btn-xs sm-translate">Resume</button></a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="section flex-parent flex-ac off-white" id="hero">
+		<div class="container pad pad-md-max">
+			<h1 class="hero--head text-center text-left-sm m-x-auto">Joseph is a design minded front-end engineer based in Boston</h1>
+			<p class="hero--sub m-x-auto text-center text-left-sm">Part developer, part interaction designer. Building pixel perfect products fit for the user's needs.</p>
+
+			<div class="hero--cta m-x-auto flex-parent flex-ac flex-jc flex-start-sm text-center m-bottom-20">
+				<button class="btn primary">View portfolio</button>
+				<button class="btn unstyled hover-arrow">Learn about me <span class="anim-arrow flex-parent flex-ac">→</span></button>
+			</div>
+
 		</div>
 	</div>
 
-	<div id="main">
+	<div class="section vertical-pad flex-parent" id="portfolio">
+		<div class="container pad pad-lg-max sm-pad-lg">
 
-		<!-- Top navigation -->
-		<nav class="nav nav-container">
-			<div class="nav-items">
-				<div class="nav-launcher pull-right">
-					<span class="launcher-line"></span>
-					<span class="launcher-line"></span>
-					<span class="launcher-line"></span>
-				</div>
-			</div>
-		</nav>
-
-		<!-- Hero Banner -->
-		<div id="hero" class="text-center fixed-bg flex-parent">
-			<div class="flex-content">
-				<div class="title-square flex-parent">
-            		<h1 class="inner-title flex-content">Joseph Wang</h1>
-        		</div>
-          		<p class="subtitle">Full Stack Developer // Designer</p>
-			</div>
-			<div class="scroll-icon"><div class="scroll-rel"><div class="scroll-wheel"></div></div></div>
-			<p class="scroll-text"><i class="fa fa-angle-double-down"></i></p>
-		</div>
-
-		<!-- About Section -->
-		<div class="container-pad flex-parent flex-column">
-			<div class="section text-center" id="about">
-				<img class="about-pic" src="img/profpic2.jpg">
-				<h3 class="section-title">A Little About Myself</h3>
-				<p>Hello there - I'm currently a student at Northeastern University pursuing a B.S. in Computer Science and Interactive Media. I have a background in both the front and back end of software development as well as user interface and interaction design.</p>
-				<p style="margin-bottom: 3rem">Below are links to my portfolio as well as information on how to contact me. Feel free to use the link below to learn more about me.</p>
-				<button class="button-primary primary-gradient bugfix" onclick="_scrollTo($('#skills'));">Learn More</button>
-			</div>
-		</div>
-
-		<!-- Skills Section -->
-		<div class="container-pad flex-parent flex-column">
-			<div class="section flex-parent text-center" id="skills">
-				<div class="third-w">
-					<h3 class="skill-title">Design Skills</h3>
-					<hr>
-					<p class="skill-para">What started as a passion and hobby grew into another aspect of my desired career path. I have experience in interaction design, UI and UX design, and responsive web-design. Here are a few tools I use to create powerful designs.</p>
-					<hr class="light">
-					<ul class="skill-list">
-						<li>Photoshop</li>
-						<li>Illustrator</li>
-						<li>InDesign</li>
-						<li>Balsamiq</li>
-						<li>inVision</li>
-					</ul>
-				</div>
-
-				<div class="third-w">
-					<h3 class="skill-title">Front-End Skills</h3>
-					<hr>
-					<p class="skill-para">Not just a developer&nbsp;- with an eye for design I am able to elevate my work above that of a strict programmer. With my past experience in the industry, I have had time to develop my front-end knowledge through use of current technologies and languages.</p>
-					<hr class="light">
-					<ul class="skill-list">
-						<li>Javascript</li>
-						<li>jQuery</li>
-						<li>Vue.js</li>
-						<li>Bootstrap</li>
-					</ul>
-				</div>
-
-				<div class="third-w">
-					<h3 class="skill-title">Back-End Skills</h3>
-					<hr>
-					<p class="skill-para">Through coursework and work experience I have been exposed to various aspects of software development and the back-end stack. Below are some programming languages and design patterns I am familiar with.</p>
-					<hr class="light">
-					<ul class="skill-list">
-						<li>Java</li>
-						<li>Python</li>
-						<li>PHP</li>
-						<li>MySQL</li>
-						<li>MVC Pattern</li>
-					</ul>
-				</div>
-			</div>
-			<a href="misc/Joseph_Wang_Resume.pdf" download><button class="button-primary primary-gradient bugfix mar-bottom">Download My Resume</button></a>
-		</div>
-
-		<!-- Experience (Timeline) Section -->
-		<div class="container-pad flex-parent flex-column light-gray">
-			<div class="section text-center" id="experience">
-				<h3 class="section-title">Experiences</h3>
+			<div class="portfolio--container flex-parent flex-row">
 				
-				<!-- main timeline container -->
-				<div class="timeline-container">
-					<!-- these are the time points in them -->
-					<time>2015</time>
-
-					<!-- a timeline event -->
-					<div class="timeline-block right transition-prep fade-in-up">
-						<!-- the icon (circle) part -->
-						<div class="timeline-icon"></div>
-						<!-- the actual text content of the timeline block -->
-						<div class="timeline-content">
-							<h3>Graduated Thomas Jefferson HSST</h3>
-							<p>After four years, I graduated from <strong>the number one high school in the country</strong>. My time there helped identify my passion for learning and drive to constantly be improving myself.</p>
+				<a class="portfolio--block" href="./drkris.html">
+					<div class="portfolio--block-content">
+						<div class="portfolio--block-img" data-src="dr-kris/mentalligence-preview.png"></div>
+						<div class="portfolio--block-overlay flex-parent flex-ac flex-jc flex-col">
+							<p class="portfolio--block-title">Dr. Kris' Website</p>
+							<ul class="portfolio--block--tags flex-parent m-x-auto flex-jc">
+								<li class="portfolio--block--tag-item">[Scout Studio]</li>
+								<li class="portfolio--block--tag-item">[Web Development]</li>
+								<li class="portfolio--block--tag-item">[Interaction Design]</li>
+								<li class="portfolio--block--tag-item">[Brand Identity]</li>
+							</ul>
 						</div>
 					</div>
+				</a>
 
-					<!-- a timeline event -->
-					<div class="timeline-block left transition-prep fade-in-up">
-						<!-- the icon (circle) part -->
-						<div class="timeline-icon"></div>
-						<!-- the actual text content of the timeline block -->
-						<div class="timeline-content">
-							<h3>Started First Year at NEU</h3>
-							<p><strong>So begins my journey</strong> to complete my degree and learn as much as I can in the next 5 years. Pursuing a <strong>B.S. in Computer Science and Interactive Media.</strong></p>
+				<a class="portfolio--block" href="./boo-boston.html">
+					<div class="portfolio--block-content">
+						<div class="portfolio--block-img" data-src="boo-boston/boo-boston-promo.png"></div>
+						<div class="portfolio--block-overlay flex-parent flex-ac flex-jc flex-col">
+							<p class="portfolio--block-title">Boo!Boston App Concept</p>
+							<ul class="portfolio--block--tags flex-parent m-x-auto flex-jc">
+								<li class="portfolio--block--tag-item">[Interaction Design]</li>
+								<li class="portfolio--block--tag-item">[Service Design]</li>
+								<li class="portfolio--block--tag-item">[Experience Design]</li>
+							</ul>
 						</div>
 					</div>
+				</a>
 
-					<time>2016</time>
-
-					<!-- a timeline event -->
-					<div class="timeline-block right transition-prep fade-in-up">
-						<!-- the icon (circle) part -->
-						<div class="timeline-icon"></div>
-						<!-- the actual text content of the timeline block -->
-						<div class="timeline-content">
-							<h3>Completed First Year at NEU</h3>
-							<p>With two semesters under my belt, <strong>my skills in both computer science and design have grown significantly</strong> since my first day. </p>
+				<a class="portfolio--block" href="./motiv8.html">
+					<div class="portfolio--block-content">
+						<div class="portfolio--block-img" data-src="motiv8/motiv8-landing.png"></div>
+						<div class="portfolio--block-overlay flex-parent flex-ac flex-jc flex-col">
+							<p class="portfolio--block-title">Motiv8 Platform</p>
+							<ul class="portfolio--block--tags flex-parent m-x-auto flex-jc">
+								<li class="portfolio--block--tag-item">[Web Development]</li>
+								<li class="portfolio--block--tag-item">[HCI]</li>
+								<li class="portfolio--block--tag-item">[Usability]</li>
+								<li class="portfolio--block--tag-item">[Project Management]</li>
+							</ul>
 						</div>
 					</div>
-					
-					<!-- a timeline event -->
-					<div class="timeline-block left transition-prep fade-in-up">
-						<!-- the icon (circle) part -->
-						<div class="timeline-icon"></div>
-						<!-- the actual text content of the timeline block -->
-						<div class="timeline-content">
-							<h3>Work Study : Web Assistant</h3>
-							<p><strong>My first job</strong> at the Northeastern Univeristy Marketing and Communications / University Publications office. Tasks included calculating data metrics as well as <strong>building Facebook Instant Articles</strong> for mobile viewers</p>
-						</div>
-					</div>		
+				</a>
 
-					<time>2017</time>
-
-					<!-- a timeline event -->
-					<div class="timeline-block right transition-prep fade-in-up">
-						<!-- the icon (circle) part -->
-						<div class="timeline-icon"></div>
-						<!-- the actual text content of the timeline block -->
-						<div class="timeline-content">
-							<h3>First Co-op : SparkCo Inc.</h3>
-							<p>After a semester of searching, I found my first co-op as a <strong>Full-Stack Developer</strong> for a new start-up based out of the <strong>Harvard Launch Lab.</strong> Helped build both a <strong>client-facing web application</strong> as well as an <strong>agent based chat platform.</strong></p>
+				<a class="portfolio--block" href="./sparkco.html">
+					<div class="portfolio--block-content">
+						<div class="portfolio--block-img" data-src="sparkco/spark-librium.png"></div>
+						<div class="portfolio--block-overlay flex-parent flex-ac flex-jc flex-col">
+							<p class="portfolio--block-title">SparkCo &amp; Librium</p>
+							<ul class="portfolio--block--tags flex-parent m-x-auto flex-jc">
+								<li class="portfolio--block--tag-item">[Full Stack Development]</li>
+								<li class="portfolio--block--tag-item">[Web Design]</li>
+								<li class="portfolio--block--tag-item">[Start-Up Development]</li>
+							</ul>
 						</div>
 					</div>
+				</a>
 
-					<!-- a timeline event -->
-					<div class="timeline-block left transition-prep fade-in-up">
-						<!-- the icon (circle) part -->
-						<div class="timeline-icon"></div>
-						<!-- the actual text content of the timeline block -->
-						<div class="timeline-content">
-							<h3>Co-op Extension : SparkCo Inc.</h3>
-							<p>Through my time at SparkCo I have contributed heavily to their final product, and <strong>was asked to continue working with them</strong> through an extension of my co-op. <strong>Currently still employed there</strong> as a Full-Stack Developer.</p>
+				<a class="portfolio--block" href="./minimal-weather.html">
+					<div class="portfolio--block-content">
+						<div class="portfolio--block-img" data-src="weather/weather-landing.png"></div>
+						<div class="portfolio--block-overlay flex-parent flex-ac flex-jc flex-col">
+							<p class="portfolio--block-title">Minimal Weather App</p>
+							<ul class="portfolio--block--tags flex-parent m-x-auto flex-jc">
+								<li class="portfolio--block--tag-item">[Vue.js]</li>
+								<li class="portfolio--block--tag-item">[UI Design]</li>
+								<li class="portfolio--block--tag-item">[Python]</li>
+							</ul>
 						</div>
-					</div>	
+					</div>
+				</a>
 
-					<!-- a timeline event -->
-					<div class="timeline-block right transition-prep fade-in-up">
-						<!-- the icon (circle) part -->
-						<div class="timeline-icon"></div>
-						<!-- the actual text content of the timeline block -->
-						<div class="timeline-content">
-							<h3>Acceptance to Scout Studio</h3>
-							<p>After applying to the design studio based out of Northeastern, I was accepted to become a <strong>Studio Developer</strong> for the Fall 2017 semester. While there I collaborate with many talented designers and developers to create stunning projects for clients.</p>
+				<a class="portfolio--block" href="./nuontrack.html">
+					<div class="portfolio--block-content">
+						<div class="portfolio--block-img" data-src="nuontrack/nuontrack-landing.png"></div>
+						<div class="portfolio--block-overlay flex-parent flex-ac flex-jc flex-col">
+							<p class="portfolio--block-title">NuCareers Redesign</p>
+							<ul class="portfolio--block--tags flex-parent m-x-auto flex-jc">
+								<li class="portfolio--block--tag-item">[Interaction Design]</li>
+								<li class="portfolio--block--tag-item">[UI Design]</li>
+								<li class="portfolio--block--tag-item">[Usability]</li>
+							</ul>
 						</div>
-					</div>			
+					</div>
+				</a>
 
-					<time>Present</time>
-					
-				</div>
-				<button class="button-primary primary-gradient bugfix mar-bottom" onclick="_scrollTo($('#work'));">View My Work</button>
 			</div>
+
 		</div>
-
-		<!-- Work Section -->
-		<div class="container-pad flex-parent mobile-full-w">
-			<div class="section pad-bottom" id="work">
-				<h3 class="section-title text-center">My Work</h3>
-				
-				<!-- Project Blocks First -->
-
-				<div class="project-container">
-					<div class="project-hover">
-						<a href="weather.html">
-							<div class="image-crop">
-								<div class="project-image" id="project-weather"></div>
-							</div>
-							<h4 class="project-title offset-pad">Minimalist Weather <i class="pe-7s-link"></i></h4>
-						</a>
-					</div>
-					<ul class="project-tags offset-pad">
-						<li>UI / UX</li>
-						<li>Visual Design</li>
-						<li>Full Stack</li>
-					</ul>
-					<p class="project-info offset-pad">
-						A weather app for those who want clear cut information. Redesign of traditional weather apps and websites to use less graphics and clutter, showing the key information users want to know about the weather at that moment. Utilizes Vue.js as the front-end framework and Python Flask as the backend and server configuration, hosted on Heroku.
-					</p>
-				</div>
-
-				<div class="project-container">
-					<div class="project-hover">
-						<a href="phototracker.html">
-							<div class="image-crop">
-								<div class="project-image" id="project-phototracker"></div>
-							</div>
-							<h4 class="project-title offset-pad">Instagram PhotoTracker <i class="pe-7s-link"></i></h4>
-						</a>
-					</div>
-					<ul class="project-tags offset-pad">
-						<li>UI / UX</li>
-						<li>API Management</li>
-						<li>Processing (Java)</li>
-					</ul>
-					<p class="project-info offset-pad">
-						Making use of Instagram's API and created using Processing (a framework focused for designers built on Java), the Instagram PhotoTracker is a data visualization program which allows users to view recent posts around the downtown Boston area based on the location it was posted. Additionally, these posts can be narrowed down by searching for specific tags.
-					</p>
-				</div>
-
-				<div class="project-container">
-					<div class="project-hover">
-						<a href="music.html">
-							<div class="image-crop">
-								<div class="project-image" id="project-musiceditor"></div>
-							</div>
-							<h4 class="project-title offset-pad">Music Editor <i class="pe-7s-link"></i></h4>
-						</a>
-					</div>
-					<ul class="project-tags offset-pad">
-						<li>Software Design</li>
-						<li>MVC Framework</li>
-						<li>Java</li>
-					</ul>
-					<p class="project-info offset-pad">
-						Transforming text to audio, this program loads notes from a file and plays back the corresponding tune in real-time. The user can pause, rewind, or skip at any point during the playback of the song. Additionally, the user can add or delete notes from the track using the UI. This project was built using the MVC framework, and components can be swapped out at will!
-					</p>
-				</div>
-
-				<div class="project-container">
-					<div class="project-hover">
-						<a href="nuontrack.html">
-							<div class="image-crop">
-								<div class="project-image" id="project-nuontrack"></div>
-							</div>
-							<h4 class="project-title offset-pad">nu:OnTrack <i class="pe-7s-link"></i></h4>
-						</a>
-					</div>
-					<ul class="project-tags offset-pad">
-						<li>Responsive Design</li>
-						<!--<li>Mobile-First</li>-->
-						<li>UI / UX</li>
-						<li>HTML / CSS / JS</li>
-					</ul>
-					<p class="project-info offset-pad">
-						A redesign of Northeastern's current nuCareers site, this project utilizes mobile-first and responsive design practices to create a better user experience for students seeking co-ops. Additionally, it was designed to fit with Northeastern's current branding and themes while still providing a modern update.
-					</p>
-				</div>
-				<!-- Finally the button -->
-				<div class="text-center">
-					<button class="button-primary primary-gradient bugfix" onclick="_scrollTo($('#contact'));">Get In Touch</button>
-				</div>
-			</div>
-		</div>
-
-		<!-- Contact Section -->
-		<div class="container-pad clear flex-parent">
-			<div class="section text-center pad-bottom" id="contact">				
-				<h3 class="section-title">Questions or Comments?</h3>
-				<p>Whether it be for a buisness inquiry, general comment on a project, or even a job offer&nbsp;- feel free to get in touch with me! Below is a contact form which you can use to send me an email. For other contact methods, view my social profiles in the footer. Reach out, and I'll make sure to respond as quickly as I can!</p>
-				<div class="flex-parent">
-					<form class="contact-form" id="contact-form">
-						<div class="input-container">
-							<input type="email" name="email" class="floating-input" required>
-							<label for="email" class="floating-label">Email</label>
-
-						</div>
-						<div class="input-container">
-							<input type="text" name="subject" class="floating-input" required>
-							<label for="subject" class="floating-label">Subject</label>
-							<!--<span class="notif-tag">*Optional</span>-->
-						</div>
-						<div class="input-container">
-							<textarea name="body" class="floating-input" rows="3" required></textarea>
-							<label for="body" class="floating-label">Message</label>
-						</div>
-						<input type="submit" name="submit" value="Send Message">
-					</form>
-				</div>
-			</div>
-		</div>
-		
 	</div>
 
-	<footer class="footer-primary flex-parent fixed-bg">
-		<div class="menu-shrink flex-content">
-			<div class="social-icons text-center">
-				<a href="mailto:wang.jo@husky.neu.edu" class="fa fa-google"></a>
-				<a href="https://www.linkedin.com/in/joseph-wang-7b0751129/" target="_blank" class="fa fa-linkedin"></a>
-				<a href="https://github.com/joewang96/" target="_blank" class="fa fa-github-alt"></a>
+	<div class="gradient--wrapper">
+
+		<div class="section vertical-pad flex-parent " id="experience">
+			<div class="container pad">
+				
+				<p class="section--title">Experience</p>
+
+				<div class="work-module flex-parent flex-row flex-col-sm m-bottom-20">
+					<div class="work-module--controls flex-parent flex-col">
+						<a class="work-module--controls--option flex-parent flex-ac">HubSpot, Inc.</a>
+						<a class="work-module--controls--option flex-parent flex-ac">Scout Studio</a>
+						<a class="work-module--controls--option flex-parent flex-ac">SparkCo, Inc.</a>
+					</div>
+
+					<div class="work-module--content">
+						<!-- HubSpot, Inc. -->
+						<div class="work-module--content--inner">
+							<div class="work-module--content--head">
+								<div class="work-module--content--company flex-parent flex-row">
+									<p class="tag">Company:</p> 
+									<p class="content"><a class="highlight" href="https://hubspot.com" target="_blank">HubSpot, Inc.</a></p>
+								</div>
+								<div class="work-module--content--position flex-parent flex-row">
+									<p class="tag">Position:</p> 
+									<p class="content">Front-end Software Engineering Co-op</p>
+								</div>
+								<div class="work-module--content--dates flex-parent flex-row">
+									<p class="tag">Dates:</p> 
+									<p class="content">January 2018 - Present</p>
+								</div>
+							</div>
+							<div class="work-module--content--body">
+								<span class="tag">Summary:</span>
+								<p class="section--body m-bottom-20">HubSpot is a SaaS company in Cambridge, where I am currently completing my second co-op. I joined the Product side of their engineering department, working as a member of the Rich Text Editor (RiTE) team. The team's goal is to optimize the text editing experience across all content-driven apps for HubSpot's core products.</p>
+
+								<span class="tag">Key Takeaways:</span>
+								<p class="section--body">While I won't be completing my co-op until the end of August 2018, I can already say that I have learned a great deal. HubSpot urges co-ops to dive straight in, and I was shipping code to production my second week in. Additionally I am gaining insight into what it means to be a developer in a large company.</p>
+							</div>
+						</div>
+						<!-- Scout Studio (Fall 2017) -->
+						<div class="work-module--content--inner">
+							<div class="work-module--content--head">
+								<div class="work-module--content--company flex-parent flex-row">
+									<p class="tag">Company:</p> 
+									<p class="content"><a class="highlight" href="https://web.northeastern.edu/scout" target="_blank">Scout Studios</a></p>
+								</div>
+								<div class="work-module--content--position flex-parent flex-row">
+									<p class="tag">Position:</p> 
+									<p class="content">Studio Developer</p>
+								</div>
+								<div class="work-module--content--dates flex-parent flex-row">
+									<p class="tag">Dates:</p> 
+									<p class="content">Sepetember 2017 - December 2017</p>
+								</div>
+							</div>
+							<div class="work-module--content--body">
+								<span class="tag">Summary:</span>
+								<p class="section--body m-bottom-20">Scout Studio is a student-lead design studio working to create products and design brands for start-ups and clients in the Boston area. During my first semester on the team I helped build a brand and website for Dr. Kristen Lee - the head of the Behavioral Sciences department at Northeastern.</p>
+
+								<span class="tag">Key Takeaways:</span>
+								<p class="section--body">At Scout it's all about self-growth, and I was able to accomplish so much in only four months. I was able to build a complete website (fully able to scale and change with the client) and helped hone my skills in design and interacting and working directly with clients.</p>
+							</div>
+						</div>
+						<!-- SparkCo, Inc. -->
+						<div class="work-module--content--inner">
+							<div class="work-module--content--head">
+								<div class="work-module--content--company flex-parent flex-row">
+									<p class="tag">Company:</p> 
+									<p class="content"><a class="highlight" href="https://sparksales.io" target="_blank">SparkCo, Inc.</a></p>
+								</div>
+								<div class="work-module--content--position flex-parent flex-row">
+									<p class="tag">Position:</p> 
+									<p class="content">Full Stack Developer</p>
+								</div>
+								<div class="work-module--content--dates flex-parent flex-row">
+									<p class="tag">Dates:</p> 
+									<p class="content">January 2017 - November 2017</p>
+								</div>
+							</div>
+							<div class="work-module--content--body">
+								<span class="tag">Summary:</span>
+								<p class="section--body m-bottom-20">SparkCo was my first co-op, where I was able to build out the SparkSales Platform from the ground up, and helped launch their ICO toward the end of my time there - Librium. Originally hired until the end of June, I was given an extension to help further build the platform, transitioning into part-time work during the following fall semester.</p>
+
+								<span class="tag">Key Takeaways:</span>
+								<p class="section--body">SparkCo was undoubtedly the best possible match for my first co-op. I learned a variety of new languages and was a key contributor to the growth of their core platform. I was able to make an impact from day one, and learned not only how to become a better developer, but also how to grow a start-up.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
 			</div>
-			<p class="copy-text text-center">Copyright &copy; <span id="current-year"></span> Joseph Wang. All Rights Reserved</p>
+		</div>
+
+		<div class="section vertical-pad flex-parent no-top" id="about">
+			<div class="container pad flex-parent flex-col-md about--container m-bottom-20 ">
+				<div class="half about--block">
+					<p class="section--title">About Myself</p>
+					<p class="section--body">Currently a student at Northeastern University, pursuing a B.S. in Computer Science and Interactive Media. I have a background in software engineering and web development, specializing in the front-end. I am also a member of <strong><a class="highlight" href="https://web.northeastern.edu/scout/" target="_blank">Scout Studio</a></strong>, where I collaborate with talented designers.</p>
+					<br>
+					<p class="section--body">Co-oping at <strong><a class="highlight" href="https://hubspot.com" target="_blank">HubSpot, Inc.</a></strong> until the end of August.</p>
+					<br>
+					<p class="section--body">Some of my skills include:</p>
+					<div class="skill--list flex-parent flex-row">
+
+						<div class="skill--list-col">
+							<p class="skill--list-item">Javascript(ES6)</p>
+							<p class="skill--list-item">React.js</p>
+							<p class="skill--list-item">Vue.js</p>
+							<p class="skill--list-item">Python</p>
+							<p class="skill--list-item">PHP</p>
+						</div>
+
+						<div class="skill--list-col">
+							<p class="skill--list-item">Sketch</p>
+							<p class="skill--list-item">Invision</p>
+							<p class="skill--list-item">CSS/SASS</p>
+							<p class="skill--list-item">Illustrator</p>
+							<p class="skill--list-item">Prototyping</p>
+						</div>
+						
+					</div>
+				</div>
+				<div class="half img--block flex-parent flex-ac flex-jc">
+					<div class="img--wrapper">
+						<img class="about--img" src="img/profpic.jpg">
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<footer class="footer flex-parent flex-ac flex-jc flex-row">
+		<div class="container pad flex-parent flex-ac flex-col-md">
+			<div class="sitemap flex-parent flex-row">
+				<a class="list-item">Portfolio</a>
+				<a class="list-item">Experience</a>
+				<a class="list-item">About</a>
+			</div>
+			<div class="content-right">
+				<div class="site-map"></div>
+				<div class="social-icons">
+					<a class="social-item" href="https://github.com/joewang96" target="_blank"><i class="icon devicon-github-plain"></i></a>
+					<a class="social-item" href="https://www.linkedin.com/in/joseph-wang-7b0751129/" target="_blank"><i class="icon devicon-linkedin-plain"></i></a>
+					<a class="social-item" href="mailto:wang.jo@husky.neu.edu"><i class="icon devicon-google-plain"></i></a>
+				</div>
+			</div>
 		</div>
 	</footer>
 
-	<!-- JQuery CDN -->
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	<!-- JQuery UI CDN -->
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script> 
-	<!-- Waypoints Script -->
-	<script type="text/javascript" src="waypoints/jquery.waypoints.min.js"></script>
-	<!-- Custom Scripts -->
 	<script type="text/javascript" src="js/script.js"></script>
-
 </body>
 </html>
 
