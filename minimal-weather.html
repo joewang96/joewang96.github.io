@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Three important meta tags that come before everything else -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<!-- Title -->
+	<title>Joseph Wang | Design-minded Developer</title>
+	<!-- Icon -->
+	<link rel="icon" href="img/favicon.png">
+
+	<!-- SEO Metatags -->
+	<meta name="description" content="Developer, designer, student. I'm Joseph Wang, currently a student at Northeastern University pursuing a B.S. in Computer Science and Interactive Media. I have a background in software engineering and web development, specializing in the front-end.">
+    <meta name="keywords" content="Joseph Wang, Joseph, Wang, developer, designer, front end, interaction design, web design, user interface, Northeastern, portfolio">
+    <meta name="author" content="Joseph Wang">
+    <meta name="robots" content="index, follow">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114961201-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-114961201-1');
+	</script>
+
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Google Fonts and Typography -->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" type="text/css" href="css/devicon.min.css">
+    <link rel="stylesheet" type="text/css" href="css/logo-icon.css">
+
+</head>
+
+<body class="preset">
+	<!--
+		Translate logo to the far right
+		But "Go back" with arrow on hte top left
+	-->
+	<nav class="navbar">
+		<div class="nav--container pad pad-md-max">
+			<div class="brand--container">
+				<a class="nav-logo flex-parent flex-ac flex-jc" href="./index.html">
+					<i class="icon-logo"></i>
+				</a>
+			</div>
+			<div class="nav--list flex-parent flex-ac no-hide">
+				<a class="nav--item" href="./index.html#portfolio">Back to Portfolio</a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="section flex-parent flex-ac case-study--hero">
+		<div class="container pad pad-md-max">
+			<h2 class="case-study--hero--head text-center text-left-sm">
+				Lose the Graphics: Building a Simple, Function-First Weather App
+			</h2>
+		</div>
+	</div>
+
+	<div class="section vertical-pad off-white case-study--content">
+		<div class="case-study--info pad">
+			<div class="case-study--info--content flex-parent flex-row ">
+				<div class="case-study--info--column">
+					<p class="case-study--info--column--title">Position:</p>
+					<p class="case-study--info--column--text">N/A, personal project</p>
+				</div>
+
+				<div class="case-study--info--column">
+					<p class="case-study--info--column--title">Dates:</p>
+					<p class="case-study--info--column--text">October 2017</p>
+				</div>
+
+				<div class="case-study--info--column">
+					<p class="case-study--info--column--title">Tags:</p>
+					<p class="case-study--info--column--text">Vue.js, Flask, web app, UI design</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container pad case-study--container">
+
+			<h3 class="case-study--content--title">The reasoning behind the project</h3>
+			<p class="section--body case-study--content--para">Weather applications are a very common theme for development projects however most share a similar design, opting for intense graphics or full background colors to symbolize the current state of the weather. From self experience I have had issues trying to find myself around weather sites or just find the experience cluttered with data that isn't relevant to what I want to know at the time. The solution -  <strong>create a weather app tailored for a user</strong> that wants to get the current weather data and be able to understand it quickly.</p>
+
+			<div class="case-study--content--break m-x-auto flex-parent flex-ac">
+				<span class="dot"></span><span class="dot"></span><span class="dot"></span>
+			</div>
+
+			<h3 class="case-study--content--title">Creating a clean interface</h3>
+			<p class="section--body case-study--content--para">The main purpose of this project was to <strong>parse down all available information</strong> regarding the weather <strong>into what is most relevant</strong> for the average user. After talking to a few people, I came up with a set of primary features to display based on common patterns. The app ended up showing the current, daily high, and daily low temperature as well as current humidity, wind speed, and any <em>weather features</em> (such as rain, hail, fog, etc.).</p>
+			<p class="section--body case-study--content--para">With the content in mind I went about creating the layout that would be both functional and aesthetically pleasing. I ended up going with a muted off-white background accompanied with large user controls showing the clear actions. Lastly, I formatted the data being displayed in terms of heirarchy, based on what would be most pertinent to a user wanting to find quick information. I strucutred the information in a word-based format, allowing the user to quickly read the text at a glance and get the most pertinent information.</p>
+			<p class="section--body case-study--content--para"></p>
+			<p class="section--body case-study--content--para"></p>
+		</div>
+	</div>
+
+	<div class="section white vertical-pad flex-parent flex-ac case-study--image">
+		<div class="container pad">
+			<img class="showcase-img" src="img/projects/weather/weather-landing.png">
+			<p class="showcase-caption m-x-auto sm-max">Final landing page design of the web app. Showcases the two options of either using current location or entering a zip code.</p>
+
+			<br>
+			<br>
+
+			<img class="showcase-img" src="img/projects/weather/weather-data.png">
+			<p class="showcase-caption m-x-auto sm-max">The resulting view showing the data for the location being used. Clean language based interface, with colored text denoting importance and feel (cold vs. warm tones denoting temperature)</p>
+		</div>
+	</div>
+
+	<div class="section vertical-pad off-white case-study--content">
+		<div class="container pad case-study--container">
+			<h3 class="case-study--content--title">Development and deploying to Heroku</h3>
+			<p class="section--body case-study--content--para">The final step in the development processes was getting the site accessible to the public. Initially I was thinking about coding the site as a static webpage allowing it to be deployed through Github pages, however I believed that this would limit the fluid experience by requiring the user to give browser permissions in order to use the geolocation features.</p>
+			<p class="section--body case-study--content--para m-bottom-30">Additionally, I wanted to gain the experience of deploying an actual web app on my own for a project. I decided to use Flask as the application framework due to prior experience, and Waitress to help manage server performance since multiple users could be using the app at the same time. After a few sessions of debugging my Procfiles and server side code, I finally managed to deploy to Heroku.</p>
+			<div class="text-left-sm text-center">
+				<a href="https://py-vue-weather.herokuapp.com" target="_blank"><button class="btn primary">View the deployed app</button></a>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer flex-parent flex-ac flex-jc flex-row">
+		<div class="container pad flex-parent flex-ac flex-col-md">
+			<div class="sitemap flex-parent flex-row">
+				<a class="list-item" href="./index.html#portfolio">Portfolio</a>
+				<a class="list-item" href="./index.html#experience">Experience</a>
+				<a class="list-item" href="./index.html#about">About</a>
+			</div>
+			<div class="content-right">
+				<div class="site-map"></div>
+				<div class="social-icons">
+					<a class="social-item" href="https://github.com/joewang96" target="_blank"><i class="icon devicon-github-plain"></i></a>
+					<a class="social-item" href="https://www.linkedin.com/in/joseph-wang-7b0751129/" target="_blank"><i class="icon devicon-linkedin-plain"></i></a>
+					<a class="social-item" href="mailto:wang.jo@husky.neu.edu"><i class="icon devicon-google-plain"></i></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
+

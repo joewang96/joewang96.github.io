@@ -1,0 +1,181 @@
+body
+	margin: 0
+	-webkit-font-smoothing: subpixel-antialiased
+h1, h2, h3, h4, h5, h6
+	font-family: $font--header
+	font-weight: 400
+	margin: 0
+ul
+	padding: 0
+	list-style: none
+	margin: 0
+p, li, span
+	font-family: $font--body
+	font-weight: 300
+	margin: 0
+	color: $sub-black
+	line-height: 1.5
+a
+	font-family: $font--body
+	color: inherit
+	text-decoration: none
+
+::selection
+	background-color: rgba(255, 235, 135, 0.6)
+
+.text-left
+	text-align: left
+.text-center
+	text-align: center
+.text-right
+	text-align: right
+.text-left-lg
+	@media (max-width: $lgscreen)
+		text-align: left
+.text-left-md
+	@media (max-width: $mdscreen)
+		text-align: left
+.text-left-sm
+	@media (max-width: $smscreen)
+		text-align: left
+.pull-left
+	float: left
+.pull-right
+	float: right
+
+.width--100
+	width: 100%
+
+.pad-left
+	padding-left: $nav-padh
+
+.flex-parent
+	display: flex
+.flex-ac
+	align-items: center
+.flex-jc
+	justify-content: center
+.flex-end
+	justify-content: flex-end
+.flex-row
+	flex-direction: row
+.flex-col
+	flex-direction: column
+		
+@media (max-width: $smscreen)
+	.flex-start-sm
+		justify-content: start
+	.flex-col-sm
+		flex-direction: column
+@media (max-width: $mdscreen)
+	.flex-col-md
+		flex-direction: column
+	.md-hide
+		display: none
+@media (min-width: $mdscreen+1px)
+	.flex-reverse-desktop
+		flex-direction: row-reverse
+	.md-show
+		display: none
+@media (max-width: $lgscreen)
+	.flex-col-lg
+		flex-direction: column
+	.lg-hide
+		display: none
+.hidden
+	display: none
+
+.bugfix
+	-webkit-transform: translateZ(0) scale(1.0, 1.0)
+	-webkit-backface-visibility: hidden
+
+.no-overflow
+	overflow: hidden
+
+.section
+	position: relative
+	&.vertical-pad
+		padding-top: $gutter-padh
+		padding-bottom: $gutter-padh
+		@media (max-width: $mdscreen)
+			padding-top: $gutter-padh/2
+			padding-bottom: $gutter-padh/2
+	&.vertical-pad-sm
+		@media (min-width: $mdscreen)
+			padding-top: $gutter-padh/4
+			padding-bottom: $gutter-padh/4
+	&.no-top
+		padding-top: 0px
+	&.no-bottom
+		padding-bottom: 0px
+	&.off-white
+		background: $alt-background
+	&.white
+		background: $white
+	&.black
+		background: $black
+		::selection
+			color: $dark-black
+			background-color: rgba(255, 255, 255, 0.85)
+		.section--title, 
+			color: $white
+		.section--body, p[class*="-title"]
+			color: $sub-white
+		p[class*="-body"]
+			color: $gray--sub-text
+	&.yellow
+		background: $yellow
+
+.body
+	.dashed
+		border-bottom: 2px dashed rgba(246, 128, 132, 0.5)
+		transition-timing-function: ease-in-out
+		transition-duration: 250ms
+		&:hover
+			color: rgba(246, 128, 132, 0.5)
+
+.m-x-auto
+	margin-left: auto
+	margin-right: auto
+
+.mar-lf-10
+	margin-left: 10px
+
+.m-y-20
+	margin-top: 20px
+	margin-bottom: 20px
+.m-top-20
+	margin-top: 20px !important
+.m-top-30
+	margin-top: 30px !important
+.m-bottom-20
+	margin-bottom: 20px !important
+.m-bottom-30
+	margin-bottom: 30px !important
+	
+.pad
+	padding-left: $gutter-padh
+	padding-right: $gutter-padh
+	box-sizing: border-box
+	max-width: 1100px
+	margin-left: auto
+	margin-right: auto
+	@media (max-width: $mdscreen)
+		padding-left: $gutter-padh/2
+		padding-right: $gutter-padh/2
+	@media (max-width: $xsscreen)
+		padding-left: 25px
+		padding-right: 25px
+	@media (max-width: $mobile)
+		padding-left: 15px
+		padding-right: 15px
+	&.pad-lg-max
+		max-width: 1260px
+	&.pad-md-max
+		max-width: 1200px
+	@media (max-width: $lgscreen)
+		&.sm-pad-lg
+			padding-left: $gutter-padh/2
+			padding-right: $gutter-padh/2
+
+
