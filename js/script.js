@@ -46,16 +46,37 @@ function handleExperienceModule() {
 		document.querySelector('.work-module').classList += ' state-3';
 	};
 }
+function onReady(func) {
+	// in case the document is already rendered
+	if (document.readyState!=='loading') func();
+	// modern browsers
+	else if (document.addEventListener) document.addEventListener('DOMContentLoaded', func);
+	// IE <= 8
+	else document.attachEvent('onreadystatechange', function(){
+	    if (document.readyState=='complete') func();
+	});
+}
+function onComplete(func) {
+	// in case the document is already rendered
+	if (document.readyState!=='loading' && document.readyState!=='interactive') func();
+	// modern browsers
+	else if (document.addEventListener) document.addEventListener('readystatechange', function(){
+	    if (document.readyState==='complete') func();
+	});
+	// IE <= 8
+	else document.attachEvent('onreadystatechange', function(){
+	    if (document.readyState==='complete') func();
+	});
+}
 
-document.addEventListener('readystatechange', function() { 
-	if (document.readyState === 'complete') {
-		document.querySelector('body').classList.remove('preset');
-	}
-});
-document.addEventListener('DOMContentLoaded', function() {
+onReady(function() {
 	addPortfolioImages();
 	registerNavClick();
 	if (document.querySelector('.work-module') !== null) {
 		handleExperienceModule();
 	}
 });
+onComplete(function() {
+	document.querySelector('body').classList.remove('preset');
+});
+
