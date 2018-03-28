@@ -69,6 +69,7 @@ function onComplete(func) {
 	});
 }
 
+document.querySelector('body').classList.add('preset');
 onReady(function() {
 	addPortfolioImages();
 	registerNavClick();
