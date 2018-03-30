@@ -66,8 +66,10 @@ body
 
 	&.preset
 		opacity: 0
+		transition: none
 		@media (min-width: $mdscreen+1px)
 			.portfolio--block
+				transition: none
 				opacity: 0
 				&:nth-child(odd)
 					transform: translateY(30%)
@@ -76,13 +78,17 @@ body
 		#experience, #about, .case-study--content .container, .case-study--info
 			opacity: 0
 			transform: translateY(50px)
+			transition: none
 		.case-study--hero--head
 			opacity: 0
 			transform: translateY(-30px)
+			transition: none
 		#hero
 			.hero--head
 				opacity: 0
 				transform: translateY(-50px)
+				transition: none
 			.hero--sub, .hero--cta	
 				opacity: 0
 				transform: translateY(50px)
+				transition: none
