@@ -36,14 +36,22 @@ function handleExperienceModule() {
 	document.querySelector('.work-module .work-module--controls--option:nth-child(1)').onclick = function() {
 		document.querySelector('.work-module').classList.remove('state-2');
 		document.querySelector('.work-module').classList.remove('state-3');
+		document.querySelector('.work-module').classList.remove('state-4');
 	};
 	document.querySelector('.work-module .work-module--controls--option:nth-child(2)').onclick = function() {
-		document.querySelector('.work-module').classList += ' state-2';
+		document.querySelector('.work-module').classList.add('state-2');
 		document.querySelector('.work-module').classList.remove('state-3');
+		document.querySelector('.work-module').classList.remove('state-4');
 	};
 	document.querySelector('.work-module .work-module--controls--option:nth-child(3)').onclick = function() {
 		document.querySelector('.work-module').classList.remove('state-2');
-		document.querySelector('.work-module').classList += ' state-3';
+		document.querySelector('.work-module').classList.add('state-3');
+		document.querySelector('.work-module').classList.remove('state-4');
+	};
+	document.querySelector('.work-module .work-module--controls--option:nth-child(4)').onclick = function() {
+		document.querySelector('.work-module').classList.remove('state-2');
+		document.querySelector('.work-module').classList.remove('state-3');
+		document.querySelector('.work-module').classList.add('state-4');
 	};
 }
 function onReady(func) {

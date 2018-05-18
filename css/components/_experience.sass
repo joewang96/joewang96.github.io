@@ -81,16 +81,18 @@
 					display: inline-block
 					margin-bottom: 5px
 		.work-module--content--inner:nth-child(2),
-		.work-module--content--inner:nth-child(3)
+		.work-module--content--inner:nth-child(3),
+		.work-module--content--inner:nth-child(4)
 			display: none 
-		&:not(.state-2):not(.state-3)
+		&:not(.state-2):not(.state-3):not(.state-4)
 			.work-module--controls--option:first-child
 				opacity: 1
 		&.state-2
 			.work-module--controls:after
 				top: 50px
 			.work-module--content--inner:nth-child(1),
-			.work-module--content--inner:nth-child(3)
+			.work-module--content--inner:nth-child(3),
+			.work-module--content--inner:nth-child(4)
 				display: none 
 			.work-module--content--inner:nth-child(2)
 				display: block
@@ -100,9 +102,21 @@
 			.work-module--controls:after
 				top: 100px
 			.work-module--content--inner:nth-child(1),
-			.work-module--content--inner:nth-child(2)
+			.work-module--content--inner:nth-child(2),
+			.work-module--content--inner:nth-child(4)
 				display: none 
 			.work-module--content--inner:nth-child(3)
 				display: block
 			.work-module--controls--option:nth-child(3)
+				opacity: 1
+		&.state-4
+			.work-module--controls:after
+				top: 150px
+			.work-module--content--inner:nth-child(1),
+			.work-module--content--inner:nth-child(2),
+			.work-module--content--inner:nth-child(3)
+				display: none 
+			.work-module--content--inner:nth-child(4)
+				display: block
+			.work-module--controls--option:nth-child(4)
 				opacity: 1
