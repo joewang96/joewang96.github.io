@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { PrismicWrapper } from 'prismic-react-router';
-import PrismicConfig from './prismic/prismic-configuration';
+import './styles/app.scss';
 
 import Routes from './routes';
 

@@ -2,36 +2,11 @@ import React, { Component } from 'react';
 import { RichText } from 'prismic-reactjs';
 import PrismicPageApi from '../prismic/PrismicPageApi';
 
-import WorkItem from '../components/WorkItem';
-
-class Home extends Component {
-  static pageType = 'homepage';
+class Work extends Component {
+  static pageType = 'work_page';
 
   constructor(props) {
     super(props);
-    this.state = {
-      work: [],
-    };
-  }
-
-  componentDidMount() {
-    this.populateWork();
-  }
-
-  fetchById(id) {
-    if (this.props.api) {
-      return this.props.api.getByID(id);
-    }
-  }
-
-  populateWork() {
-    this.props.doc.data.portfolio_items.map(({ portfolio_piece: p }, index) => {
-      this.fetchById(p.id).then(({ data }) => {
-        this.setState({
-          work: [...this.state.work, { id: p.id, data }],
-        });
-      });
-    });
   }
 
   render() {
@@ -65,11 +40,6 @@ class Home extends Component {
           <h2 className="title">
             {RichText.asText(this.props.doc.data.portfolio_preview_title)}
           </h2>
-          <div className="work-grid home--work-grid">
-            {this.state.work.map((p, index) => (
-              <WorkItem key={p.id} featured={index < 2} data={p.data} />
-            ))}
-          </div>
         </div>
         <div className="sock">
           <div className="btn-group">
@@ -83,4 +53,4 @@ class Home extends Component {
   }
 }
 
-export default PrismicPageApi(Home);
+export default PrismicPageApi(Work);
