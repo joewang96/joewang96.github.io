@@ -9,12 +9,13 @@ import Home from './containers/Home';
 import Work from './containers/Work';
 import About from './containers/About';
 import NotFound from './containers/NotFound';
+import ScrollToTop from './containers/ScrollToTop';
 
 const Routes = props => {
   return (
     <div>
       <Router>
-        <>
+        <ScrollToTop>
           <Nav />
           <Switch>
             <PrismicRoute
@@ -41,7 +42,7 @@ const Routes = props => {
             <Route component={NotFound} />
           </Switch>
           <Footer />
-        </>
+        </ScrollToTop>
       </Router>
     </div>
   );

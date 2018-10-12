@@ -3,6 +3,8 @@ import { RichText } from 'prismic-reactjs';
 import PrismicPageApi from '../prismic/PrismicPageApi';
 
 import WorkItem from '../components/WorkItem';
+import Button from '../components/Button';
+import { Link } from 'react-router-dom';
 
 import { populateData, fetchById } from '../lib/fetch';
 
@@ -13,11 +15,13 @@ class Home extends Component {
     super(props);
     this.state = {
       work: [],
+      buttonList: [],
     };
   }
 
   componentDidMount() {
     this.populateWork();
+    this.populateButtons();
   }
 
   populateWork() {
@@ -25,6 +29,15 @@ class Home extends Component {
     populateData(doc.data.portfolio_items, api)('portfolio_piece', payload => {
       this.setState({
         work: [...this.state.work, payload],
+      });
+    });
+  }
+
+  populateButtons() {
+    const { doc, api } = this.props;
+    populateData(doc.data.button_list, api)('button', payload => {
+      this.setState({
+        buttonList: [...this.state.buttonList, payload],
       });
     });
   }
@@ -47,12 +60,15 @@ class Home extends Component {
           <h2 className="title">{RichText.asText(section_1_title)}</h2>
           <p className="body">{RichText.asText(section_1_body)}</p>
           <div className="btn-group">
-            <a href="/misc/Joseph_Wang_Resume.pdf" target="_blank">
+            {this.state.buttonList.map((button, index) => (
+              <Button data={button.data} key={index} />
+            ))}
+            {/* <a href="/misc/Joseph_Wang_Resume.pdf" target="_blank">
               <button className="btn primary">View resume</button>
             </a>
-            <a href="/about">
+            <Link to="/about">
               <button className="btn secondary">Learn more</button>
-            </a>
+            </Link> */}
           </div>
         </div>
         <div className="section-block">
@@ -65,9 +81,9 @@ class Home extends Component {
         </div>
         <div className="sock">
           <div className="btn-group">
-            <a href="/work">
+            <Link to="/work">
               <button className="btn primary">See all work</button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

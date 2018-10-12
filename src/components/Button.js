@@ -7,18 +7,27 @@ class Button extends Component {
     super(props);
   }
 
+  createLinkedButton(child, className) {
+    const { link_to } = this.props.data;
+    return link_to.link_type === 'Media' ? (
+      <a href={link_to.url} target="_blank" className={className}>
+        {child}
+      </a>
+    ) : (
+      <Link to={link_to.uid} className={className}>
+        {child}
+      </Link>
+    );
+  }
+
   render() {
     const { data } = this.props;
-    return data ? (
-      <Link
-        to={data.link_to.url}
-        className={
+    return data
+      ? this.createLinkedButton(
+          <button>{RichText.asText(data.display_text)}</button>,
           data.type === 'Primary' ? 'btn btn-primary' : 'btn btn-secondary'
-        }
-      >
-        <button>{RichText.asText(data.display_text)}</button>
-      </Link>
-    ) : null;
+        )
+      : null;
   }
 }
 

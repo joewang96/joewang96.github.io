@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Footer extends Component {
   render() {
@@ -6,15 +7,15 @@ class Footer extends Component {
       <footer className="footer flex-parent flex-ac flex-jc flex-row">
         <div className="container pad flex-parent flex-ac flex-col-md">
           <div className="sitemap flex-parent flex-row">
-            <a className="list-item" href="/">
+            <Link className="list-item" to="/">
               Home
-            </a>
-            <a className="list-item" href="/work">
+            </Link>
+            <Link className="list-item" to="/work">
               Work
-            </a>
-            <a className="list-item" href="/about">
+            </Link>
+            <Link className="list-item" to="/about">
               About
-            </a>
+            </Link>
           </div>
           <div className="content-right">
             <div className="site-map" />
