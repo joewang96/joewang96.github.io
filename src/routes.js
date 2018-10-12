@@ -13,36 +13,36 @@ import NotFound from './containers/NotFound';
 const Routes = props => {
   return (
     <div>
-      <Nav />
       <Router>
-        <Switch>
-          <PrismicRoute
-            path="/"
-            exact
-            routerProps={props}
-            componentProps={{
-              uid: 'home',
-            }} // pass in page UID if not in path
-            component={Home} // components should be of type PrismicPage
-          />
-          <PrismicRoute
-            path="/work"
-            exact
-            routerProps={props}
-            componentProps={{ uid: 'work' }} // pass in page UID if not in path
-            component={Work} // components should be of type PrismicPage
-          />
-          <PrismicRoute
-            path="/about"
-            exact
-            routerProps={props}
-            componentProps={{ uid: 'about' }} // pass in page UID if not in path
-            component={About} // components should be of type PrismicPage
-          />
-          <Route component={NotFound} />
-        </Switch>
+        <>
+          <Nav />
+          <Switch>
+            <PrismicRoute
+              path="/"
+              exact
+              routerProps={props}
+              componentProps={{
+                uid: 'home',
+              }} // pass in page UID if not in path
+              component={Home} // components should be of type PrismicPage
+            />
+            <PrismicRoute
+              path="/work"
+              routerProps={props}
+              componentProps={{ uid: 'work' }} // pass in page UID if not in path
+              component={Work} // components should be of type PrismicPage
+            />
+            <PrismicRoute
+              path="/about"
+              routerProps={props}
+              componentProps={{ uid: 'about' }} // pass in page UID if not in path
+              component={About} // components should be of type PrismicPage
+            />
+            <Route component={NotFound} />
+          </Switch>
+          <Footer />
+        </>
       </Router>
-      <Footer />
     </div>
   );
 };

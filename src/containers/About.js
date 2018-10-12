@@ -4,7 +4,7 @@ import PrismicPageApi from '../prismic/PrismicPageApi';
 
 import JobItem from '../components/JobItem';
 
-import { populateData } from '../lib/fetch';
+import { populateData, fetchById } from '../lib/fetch';
 
 class About extends Component {
   static pageType = 'about_page';
@@ -30,21 +30,26 @@ class About extends Component {
   }
 
   render() {
+    const {
+      hero_title,
+      bio,
+      headshot,
+      current_info_title,
+      current_info,
+      jobs_title,
+    } = this.props.doc.data;
     return (
       <div>
         <div className="hero-section">
-          <h1 className="title">
-            {RichText.asText(this.props.doc.data.hero_title)}
-          </h1>
-          <p className="subtext">{RichText.asText(this.props.doc.data.bio)}</p>
+          <h1 className="title">{RichText.asText(hero_title)}</h1>
+          <p className="subtext">{RichText.asText(bio)}</p>
+        </div>
+        <div className="headshot-image">
+          <img src={headshot.url} width={350} />
         </div>
         <div className="section-block">
-          <h2 className="title">
-            {RichText.asText(this.props.doc.data.current_info_title)}
-          </h2>
-          <p className="body">
-            {RichText.asText(this.props.doc.data.current_info)}
-          </p>
+          <h2 className="title">{RichText.asText(current_info_title)}</h2>
+          <p className="body">{RichText.asText(current_info)}</p>
           <div className="btn-group">
             <a href="mailto:wang.jo@husky.neu.edu">
               <button className="btn primary">Get in touch</button>
@@ -52,9 +57,7 @@ class About extends Component {
           </div>
         </div>
         <div className="section-block">
-          <h2 className="title">
-            {RichText.asText(this.props.doc.data.jobs_title)}
-          </h2>
+          <h2 className="title">{RichText.asText(jobs_title)}</h2>
           <div className="job-listings">
             {this.state.jobs.map(job => (
               <JobItem key={job.id} data={job.data} />

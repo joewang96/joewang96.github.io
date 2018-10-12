@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Nav extends Component {
   render() {
@@ -6,20 +7,20 @@ class Nav extends Component {
       <nav className="navigation">
         <div className="nav--container pad pad-md-max">
           <div className="brand--container">
-            <a className="nav-logo flex-parent flex-ac flex-jc" href="/">
+            <Link className="nav-logo flex-parent flex-ac flex-jc" to="/">
               <i className="icon-logo" />
-            </a>
+            </Link>
           </div>
           <div className="nav--list flex-parent flex-ac">
-            <a className="nav--item" href="/">
+            <Link className="nav--item" to="/">
               Home
-            </a>
-            <a className="nav--item" href="/work">
+            </Link>
+            <Link className="nav--item" to="/work">
               Work
-            </a>
-            <a className="nav--item" href="/about">
+            </Link>
+            <Link className="nav--item" to="/about">
               About
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
