@@ -19,7 +19,9 @@ class WorkItem extends Component {
             {RichText.asText(this.props.data.title)}
           </p>
           <p className="work-block--summary">
-            {RichText.asText(this.props.data.short_bio)}
+            {this.props.data.short_bio
+              ? RichText.asText(this.props.data.short_bio)
+              : ''}
           </p>
         </div>
       </div>

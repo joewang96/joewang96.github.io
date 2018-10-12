@@ -27,7 +27,7 @@ class JobItem extends Component {
           ) : null}
           {this.props.data.takeaways ? (
             <>
-              <p className="job-block--tag">Summary</p>
+              <p className="job-block--tag">Key Takeaways</p>
               <p className="job-block--takeaway">
                 {RichText.asText(this.props.data.takeaways)}
               </p>

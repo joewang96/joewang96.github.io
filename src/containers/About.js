@@ -4,6 +4,8 @@ import PrismicPageApi from '../prismic/PrismicPageApi';
 
 import JobItem from '../components/JobItem';
 
+import { populateData } from '../lib/fetch';
+
 class About extends Component {
   static pageType = 'about_page';
 
@@ -18,18 +20,11 @@ class About extends Component {
     this.populateJobs();
   }
 
-  fetchById(id) {
-    if (this.props.api) {
-      return this.props.api.getByID(id);
-    }
-  }
-
   populateJobs() {
-    this.props.doc.data.job_list.map(({ job }, index) => {
-      this.fetchById(job.id).then(({ data }) => {
-        this.setState({
-          jobs: [...this.state.jobs, { id: job.id, data }],
-        });
+    const { doc, api } = this.props;
+    populateData(doc.data.job_list, api)('job', payload => {
+      this.setState({
+        jobs: [...this.state.jobs, payload],
       });
     });
   }
@@ -61,7 +56,7 @@ class About extends Component {
             {RichText.asText(this.props.doc.data.jobs_title)}
           </h2>
           <div className="job-listings">
-            {this.state.jobs.map((job, index) => (
+            {this.state.jobs.map(job => (
               <JobItem key={job.id} data={job.data} />
             ))}
           </div>

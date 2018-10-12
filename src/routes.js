@@ -21,7 +21,7 @@ const Routes = props => {
             exact
             routerProps={props}
             componentProps={{
-              uid: 'home-page',
+              uid: 'home',
             }} // pass in page UID if not in path
             component={Home} // components should be of type PrismicPage
           />
@@ -29,14 +29,14 @@ const Routes = props => {
             path="/work"
             exact
             routerProps={props}
-            componentProps={{ uid: 'work-page' }} // pass in page UID if not in path
+            componentProps={{ uid: 'work' }} // pass in page UID if not in path
             component={Work} // components should be of type PrismicPage
           />
           <PrismicRoute
             path="/about"
             exact
             routerProps={props}
-            componentProps={{ uid: 'about-page' }} // pass in page UID if not in path
+            componentProps={{ uid: 'about' }} // pass in page UID if not in path
             component={About} // components should be of type PrismicPage
           />
           <Route component={NotFound} />
