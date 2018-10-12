@@ -2,11 +2,36 @@ import React, { Component } from 'react';
 import { RichText } from 'prismic-reactjs';
 import PrismicPageApi from '../prismic/PrismicPageApi';
 
+import JobItem from '../components/JobItem';
+
 class About extends Component {
   static pageType = 'about_page';
 
   constructor(props) {
     super(props);
+    this.state = {
+      jobs: [],
+    };
+  }
+
+  componentDidMount() {
+    this.populateJobs();
+  }
+
+  fetchById(id) {
+    if (this.props.api) {
+      return this.props.api.getByID(id);
+    }
+  }
+
+  populateJobs() {
+    this.props.doc.data.job_list.map(({ job }, index) => {
+      this.fetchById(job.id).then(({ data }) => {
+        this.setState({
+          jobs: [...this.state.jobs, { id: job.id, data }],
+        });
+      });
+    });
   }
 
   render() {
@@ -35,6 +60,11 @@ class About extends Component {
           <h2 className="title">
             {RichText.asText(this.props.doc.data.jobs_title)}
           </h2>
+          <div className="job-listings">
+            {this.state.jobs.map((job, index) => (
+              <JobItem key={job.id} data={job.data} />
+            ))}
+          </div>
         </div>
         <div className="sock">
           <div className="btn-group">
