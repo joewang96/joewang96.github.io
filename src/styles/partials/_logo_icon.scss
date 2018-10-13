@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'logoicon';
+  src: url('../fonts/logoicon.eot?fnhs3x');
+  src: url('../fonts/logoicon.eot?fnhs3x#iefix') format('embedded-opentype'),
+    url('../fonts/logoicon.ttf?fnhs3x') format('truetype'),
+    url('../fonts/logoicon.woff?fnhs3x') format('woff'),
+    url('../fonts/logoicon.svg?fnhs3x#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'logoicon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-logo:before {
+  content: '\e900';
+}
+.icon-dribbble:before {
+  content: '\eaa7';
+}

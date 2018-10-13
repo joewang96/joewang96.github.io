@@ -10,6 +10,11 @@
         width: 32px;
         height: 32px;
         background: $darkblack;
+        border-radius: 4px;
+        .icon-logo {
+          font-size: 20px;
+          color: $white;
+        }
       }
     }
     .nav--list {

@@ -18,12 +18,13 @@
     }
     .social-icons {
       .social-item {
-        width: 32px;
-        height: 32px;
-        display: inline-block;
-        background: $darkblack;
         &:not(:last-child) {
           margin-right: 40px;
+        }
+        .icon {
+          display: inline-block;
+          color: $darkblack;
+          font-size: 32px;
         }
       }
     }

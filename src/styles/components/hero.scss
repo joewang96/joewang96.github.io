@@ -1,0 +1,26 @@
+.section.hero-section {
+  margin-top: 100px;
+  // padding-left: 61px;
+  max-width: 800px;
+  .title {
+    margin-bottom: 40px;
+  }
+  .subtext {
+    padding-left: 60px;
+    font-size: $bodysizelg;
+    max-width: 600px;
+    letter-spacing: $kerning-lg;
+  }
+  margin-bottom: 287px;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    z-index: -1;
+    background: $offwhite;
+    top: 0;
+    left: 0;
+    height: 297px;
+    width: 50%;
+  }
+}

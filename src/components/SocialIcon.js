@@ -9,7 +9,7 @@ class SocialIcon extends Component {
     const { href, targetBlank, iconClass } = this.props;
     return (
       <a
-        className="social-item"
+        className="social-item flex-parent flex-ac flex-jc"
         href={href}
         target={targetBlank ? '_blank' : ''}
       >
