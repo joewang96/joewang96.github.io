@@ -4,6 +4,7 @@ import PrismicPageApi from '../prismic/PrismicPageApi';
 
 import WorkItem from '../components/WorkItem';
 import Button from '../components/Button';
+import Sock from '../components/Sock';
 
 import { populateData, fetchById } from '../lib/fetch';
 import { htmlSerializer } from '../lib/parse';
@@ -91,11 +92,9 @@ class Home extends Component {
             ))}
           </div>
         </div>
-        <div className="section section--sock">
-          <div className="btn-group flex-parent flex-jc">
-            <Button data={this.state.sock_btn} />
-          </div>
-        </div>
+        <Sock>
+          <Button data={this.state.sock_btn} />
+        </Sock>
       </div>
     );
   }

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import SocialIcon from './SocialIcon';
 
 class Footer extends Component {
   render() {
     return (
       <footer className="footer flex-parent flex-ac flex-jc flex-row">
         <div className="container pad flex-parent flex-ac flex-col-md">
-          <div className="sitemap flex-parent flex-row">
+          <div className="sitemap flex-parent flex-row flex-ac">
             <Link className="list-item" to="/">
               Home
             </Link>
@@ -18,31 +19,27 @@ class Footer extends Component {
             </Link>
           </div>
           <div className="content-right">
-            <div className="social-icons">
-              <a
-                className="social-item"
+            <div className="social-icons flex-parent flex-row flex-ac">
+              <SocialIcon
                 href="https://github.com/joewang96"
-                target="_blank"
-              >
-                <i className="icon devicon-github-plain" />
-              </a>
-              <a
-                className="social-item"
+                targetBlank={true}
+                iconClass="devicon-github-plain"
+              />
+              <SocialIcon
                 href="https://www.linkedin.com/in/joseph-wang-7b0751129/"
-                target="_blank"
-              >
-                <i className="icon devicon-linkedin-plain" />
-              </a>
-              <a className="social-item" href="mailto:wang.jo@husky.neu.edu">
-                <i className="icon devicon-google-plain" />
-              </a>
-              <a
-                className="social-item"
+                targetBlank={true}
+                iconClass="devicon-linkedin-plain"
+              />
+              <SocialIcon
+                href="mailto:wang.jo@husky.neu.edu"
+                targetBlank={false}
+                iconClass="devicon-google-plain"
+              />
+              <SocialIcon
                 href="https://dribbble.com/josephwang"
-                target="_blank"
-              >
-                <i className="icon icon-dribbble" />
-              </a>
+                targetBlank={true}
+                iconClass="icon-dribbble"
+              />
             </div>
           </div>
         </div>

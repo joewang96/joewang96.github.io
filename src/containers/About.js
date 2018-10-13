@@ -4,6 +4,7 @@ import PrismicPageApi from '../prismic/PrismicPageApi';
 
 import Button from '../components/Button';
 import JobItem from '../components/JobItem';
+import Sock from '../components/Sock';
 
 import { populateData, fetchById } from '../lib/fetch';
 
@@ -87,11 +88,9 @@ class About extends Component {
             ))}
           </div>
         </div>
-        <div className="sock">
-          <div className="btn-group">
-            <Button data={this.state.sock_btn} />
-          </div>
-        </div>
+        <Sock>
+          <Button data={this.state.sock_btn} />
+        </Sock>
       </div>
     );
   }
