@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { RichText } from 'prismic-reactjs';
 import PrismicPageApi from '../prismic/PrismicPageApi';
 
+import Hero from '../components/Hero';
 import WorkItem from '../components/WorkItem';
 import Button from '../components/Button';
 import Sock from '../components/Sock';
@@ -74,11 +75,11 @@ class Work extends Component {
     } = this.props.doc.data;
     return (
       <div>
-        <div className="hero-section">
-          <h1 className="title">{RichText.asText(hero_title)}</h1>
-          <p className="subtext">{RichText.asText(subhero_text)}</p>
-        </div>
-        <div className="section-block">
+        <Hero
+          title={RichText.asText(hero_title)}
+          subtitle={RichText.asText(subhero_text)}
+        />
+        <div className="section">
           <h2 className="title">{RichText.asText(featured_title)}</h2>
           <div className="featured-project-grid">
             {this.state.work.featured.map(project => (
@@ -86,7 +87,7 @@ class Work extends Component {
             ))}
           </div>
         </div>
-        <div className="section-block">
+        <div className="section">
           <h2 className="title">{RichText.asText(additional_title)}</h2>
           <div className="additional-project-grid">
             {this.state.work.additional.map(project => (

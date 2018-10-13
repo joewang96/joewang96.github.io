@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { RichText } from 'prismic-reactjs';
 import PrismicPageApi from '../prismic/PrismicPageApi';
 
+import Hero from '../components/Hero';
 import WorkItem from '../components/WorkItem';
 import Button from '../components/Button';
 import Sock from '../components/Sock';
@@ -65,10 +66,10 @@ class Home extends Component {
     } = this.props.doc.data;
     return (
       <div>
-        <div className="section hero-section pad-1-col">
-          <h1 className="title">{RichText.asText(hero_text)}</h1>
-          <p className="subtext">{RichText.asText(hero_subtext)}</p>
-        </div>
+        <Hero
+          title={RichText.asText(hero_text)}
+          subtitle={RichText.asText(hero_subtext)}
+        />
         <div className="section section-m-bottom-lg">
           <h2 className="title pad-2-col max-7-col">
             {RichText.asText(section_1_title)}

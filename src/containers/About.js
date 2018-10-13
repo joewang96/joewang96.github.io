@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { RichText } from 'prismic-reactjs';
 import PrismicPageApi from '../prismic/PrismicPageApi';
 
+import Hero from '../components/Hero';
 import Button from '../components/Button';
 import JobItem from '../components/JobItem';
 import Sock from '../components/Sock';
@@ -64,23 +65,27 @@ class About extends Component {
     } = this.props.doc.data;
     return (
       <div>
-        <div className="hero-section">
-          <h1 className="title">{RichText.asText(hero_title)}</h1>
-          <p className="subtext">{RichText.asText(bio)}</p>
-        </div>
+        <Hero
+          title={RichText.asText(hero_title)}
+          subtitle={RichText.asText(bio)}
+        />
         <div className="headshot-image">
           <img src={headshot.url} width={350} />
         </div>
-        <div className="section-block">
-          <h2 className="title">{RichText.asText(current_info_title)}</h2>
-          <p className="body">{RichText.asText(current_info)}</p>
-          <div className="btn-group">
-            {this.state.buttonList.map((button, index) => (
-              <Button data={button.data} key={index} />
-            ))}
+        <div className="section">
+          <h2 className="title pad-2-col max-7-col">
+            {RichText.asText(current_info_title)}
+          </h2>
+          <div className="flex-parent flex-col m-l-auto max-7-col">
+            <p className="body">{RichText.asText(current_info)}</p>
+            <div className="btn-group">
+              {this.state.buttonList.map((button, index) => (
+                <Button data={button.data} key={index} />
+              ))}
+            </div>
           </div>
         </div>
-        <div className="section-block">
+        <div className="section">
           <h2 className="title">{RichText.asText(jobs_title)}</h2>
           <div className="job-listings">
             {this.state.jobs.map(job => (
