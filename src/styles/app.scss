@@ -2,10 +2,11 @@
 @import './variables.scss';
 
 // base for layout, general type across multiple, resets
-@import './base/reset.scss';
-@import './base/type.scss';
-@import './base/layout.scss';
-@import './base/flex.scss';
+@import './partials/reset.scss';
+@import './partials/type.scss';
+@import './partials/layout.scss';
+@import './partials/flex.scss';
+@import './partials/grid.scss';
 
 // component specific
 @import './components/nav.scss';

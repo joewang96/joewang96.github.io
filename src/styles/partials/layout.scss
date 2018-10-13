@@ -1,10 +1,24 @@
+.m-l-auto {
+  margin-left: auto;
+}
+.m-r-auto {
+  margin-right: auto;
+}
+
 .section {
   margin-left: $margin-desktop;
   margin-right: $margin-desktop;
 
+  .title {
+    margin-bottom: 47px;
+  }
+  .body {
+    margin-bottom: 60px;
+  }
+
   &.hero-section {
     margin-top: 100px;
-    padding-left: 61px;
+    // padding-left: 61px;
     max-width: 800px;
     .title {
       margin-bottom: 40px;

@@ -62,17 +62,21 @@ class Home extends Component {
     } = this.props.doc.data;
     return (
       <div>
-        <div className="section hero-section">
+        <div className="section hero-section pad-1-col">
           <h1 className="title">{RichText.asText(hero_text)}</h1>
           <p className="subtext">{RichText.asText(hero_subtext)}</p>
         </div>
         <div className="section">
-          <h2 className="title">{RichText.asText(section_1_title)}</h2>
-          <p className="body">{RichText.asText(section_1_body)}</p>
-          <div className="btn-group">
-            {this.state.buttonList.map((button, index) => (
-              <Button data={button.data} key={index} />
-            ))}
+          <h2 className="title pad-2-col">
+            {RichText.asText(section_1_title)}
+          </h2>
+          <div className="flex-parent flex-col m-l-auto max-7-col">
+            <p className="body">{RichText.asText(section_1_body)}</p>
+            <div className="btn-group">
+              {this.state.buttonList.map((button, index) => (
+                <Button data={button.data} key={index} />
+              ))}
+            </div>
           </div>
         </div>
         <div className="section">
