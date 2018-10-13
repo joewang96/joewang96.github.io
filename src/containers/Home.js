@@ -4,7 +4,6 @@ import PrismicPageApi from '../prismic/PrismicPageApi';
 
 import WorkItem from '../components/WorkItem';
 import Button from '../components/Button';
-import { Link } from 'react-router-dom';
 
 import { populateData, fetchById } from '../lib/fetch';
 
@@ -16,12 +15,14 @@ class Home extends Component {
     this.state = {
       work: [],
       buttonList: [],
+      sock_btn: null,
     };
   }
 
   componentDidMount() {
     this.populateWork();
     this.populateButtons();
+    this.fetchSock();
   }
 
   populateWork() {
@@ -42,6 +43,15 @@ class Home extends Component {
     });
   }
 
+  fetchSock() {
+    const { doc, api } = this.props;
+    fetchById(api, doc.data.sock_button.id).then(({ data }) => {
+      this.setState({
+        sock_btn: data,
+      });
+    });
+  }
+
   render() {
     const {
       hero_text,
@@ -52,26 +62,20 @@ class Home extends Component {
     } = this.props.doc.data;
     return (
       <div>
-        <div className="hero-section">
+        <div className="section hero-section">
           <h1 className="title">{RichText.asText(hero_text)}</h1>
           <p className="subtext">{RichText.asText(hero_subtext)}</p>
         </div>
-        <div className="section-block">
+        <div className="section">
           <h2 className="title">{RichText.asText(section_1_title)}</h2>
           <p className="body">{RichText.asText(section_1_body)}</p>
           <div className="btn-group">
             {this.state.buttonList.map((button, index) => (
               <Button data={button.data} key={index} />
             ))}
-            {/* <a href="/misc/Joseph_Wang_Resume.pdf" target="_blank">
-              <button className="btn primary">View resume</button>
-            </a>
-            <Link to="/about">
-              <button className="btn secondary">Learn more</button>
-            </Link> */}
           </div>
         </div>
-        <div className="section-block">
+        <div className="section">
           <h2 className="title">{RichText.asText(portfolio_preview_title)}</h2>
           <div className="work-grid home--work-grid">
             {this.state.work.map((p, index) => (
@@ -79,11 +83,9 @@ class Home extends Component {
             ))}
           </div>
         </div>
-        <div className="sock">
+        <div className="section section--sock">
           <div className="btn-group">
-            <Link to="/work">
-              <button className="btn primary">See all work</button>
-            </Link>
+            <Button data={this.state.sock_btn} />
           </div>
         </div>
       </div>

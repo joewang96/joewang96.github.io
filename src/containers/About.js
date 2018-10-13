@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { RichText } from 'prismic-reactjs';
 import PrismicPageApi from '../prismic/PrismicPageApi';
 
+import Button from '../components/Button';
 import JobItem from '../components/JobItem';
 
 import { populateData, fetchById } from '../lib/fetch';
@@ -13,11 +14,15 @@ class About extends Component {
     super(props);
     this.state = {
       jobs: [],
+      buttonList: [],
+      sock_btn: null,
     };
   }
 
   componentDidMount() {
     this.populateJobs();
+    this.populateButtons();
+    this.fetchSock();
   }
 
   populateJobs() {
@@ -25,6 +30,24 @@ class About extends Component {
     populateData(doc.data.job_list, api)('job', payload => {
       this.setState({
         jobs: [...this.state.jobs, payload],
+      });
+    });
+  }
+
+  populateButtons() {
+    const { doc, api } = this.props;
+    populateData(doc.data.button_list, api)('button', payload => {
+      this.setState({
+        buttonList: [...this.state.buttonList, payload],
+      });
+    });
+  }
+
+  fetchSock() {
+    const { doc, api } = this.props;
+    fetchById(api, doc.data.sock_button.id).then(({ data }) => {
+      this.setState({
+        sock_btn: data,
       });
     });
   }
@@ -51,9 +74,9 @@ class About extends Component {
           <h2 className="title">{RichText.asText(current_info_title)}</h2>
           <p className="body">{RichText.asText(current_info)}</p>
           <div className="btn-group">
-            <a href="mailto:wang.jo@husky.neu.edu">
-              <button className="btn primary">Get in touch</button>
-            </a>
+            {this.state.buttonList.map((button, index) => (
+              <Button data={button.data} key={index} />
+            ))}
           </div>
         </div>
         <div className="section-block">
@@ -66,9 +89,7 @@ class About extends Component {
         </div>
         <div className="sock">
           <div className="btn-group">
-            <a href="/misc/Joseph_Wang_Resume.pdf" target="_blank">
-              <button className="btn primary">View my resume</button>
-            </a>
+            <Button data={this.state.sock_btn} />
           </div>
         </div>
       </div>

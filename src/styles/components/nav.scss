@@ -1,0 +1,24 @@
+.navigation {
+  position: relative;
+  margin-top: 51px;
+  width: 100%;
+  .nav--container {
+    position: relative;
+    justify-content: space-between;
+    .brand--container {
+      .nav-logo {
+        width: 32px;
+        height: 32px;
+        background: $darkblack;
+      }
+    }
+    .nav--list {
+      height: 100%;
+      .nav--item {
+        &:not(:last-child) {
+          margin-right: 40px;
+        }
+      }
+    }
+  }
+}

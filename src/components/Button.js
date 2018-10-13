@@ -9,23 +9,39 @@ class Button extends Component {
 
   createLinkedButton(child, className) {
     const { link_to } = this.props.data;
-    return link_to.link_type === 'Media' ? (
-      <a href={link_to.url} target="_blank" className={className}>
-        {child}
-      </a>
-    ) : (
-      <Link to={link_to.uid} className={className}>
-        {child}
-      </Link>
-    );
+    if (link_to.link_type === 'Media') {
+      return (
+        <a href={link_to.url} target="_blank" className={className}>
+          {child}
+        </a>
+      );
+    } else if (link_to.url && link_to.url.includes('mailto:')) {
+      return (
+        <a href={link_to.url} className={className}>
+          {child}
+        </a>
+      );
+    } else {
+      return (
+        <Link to={link_to.uid} className={className}>
+          {child}
+        </Link>
+      );
+    }
   }
 
   render() {
     const { data } = this.props;
     return data
       ? this.createLinkedButton(
-          <button>{RichText.asText(data.display_text)}</button>,
-          data.type === 'Primary' ? 'btn btn-primary' : 'btn btn-secondary'
+          <button
+            className={
+              data.type === 'Primary' ? 'btn primary' : 'btn secondary'
+            }
+          >
+            {RichText.asText(data.display_text)}
+          </button>,
+          'btn-link--wrapper'
         )
       : null;
   }

@@ -1,31 +1,12 @@
-$scout: #00a1b6;
+// variables
+@import './variables.scss';
 
-body {
-  margin: 0;
-  font-family: 'IBM Plex Sans', 'Helvetica', sans-serif;
-}
+// base for layout, general type across multiple, resets
+@import './base/reset.scss';
+@import './base/type.scss';
+@import './base/layout.scss';
+@import './base/flex.scss';
 
-h1,
-h2 {
-  font-family: 'IBM Plex Mono', monospace;
-}
-
-.hero {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 80px 20px;
-  box-sizing: border-box;
-  background: $scout;
-  margin-bottom: 20px;
-  h1 {
-    color: white;
-  }
-}
-.info {
-  text-align: center;
-  margin: auto;
-  max-width: 500px;
-  font-family: sans-serif;
-}
+// component specific
+@import './components/nav.scss';
+@import './components/button.scss';

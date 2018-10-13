@@ -1,0 +1,51 @@
+// ------- Colors -------
+$darkblack: #252525;
+$accent: #503dfb;
+$offgrey: #dcdce2; // used in the job date strings
+$offwhite: #fafafc; // used in the decorative squares
+$white: #ffffff;
+
+$accent-highlight: rgba(79, 60, 251, 0.2);
+
+// ------- Typography -------
+// fonts
+$familymono: 'IBM Plex Mono', monospace;
+$familysans: 'IBM Plex Sans', 'Helvetica', sans-serif;
+
+// -- weights --
+$monobold: 700;
+$monosemi: 600;
+$sansreg: 400;
+$sansmed: 500;
+
+// -- sizes --
+$h1size: 36px;
+$h2size: 30px;
+$bodysizelg: 22px;
+$bodysizemd: 18px;
+$bodysizesm: 16px;
+$buttontagsize: 14px;
+$jobtitlesize: 24px;
+
+// -- letter spacing --
+$kerning-lg: 2.1px;
+$kerning-md: 1.8px;
+
+// ------- Screen Sizes -------
+
+$lgscreen: 1000px;
+$mdscreen: 800px;
+$smscreen: 600px;
+$xsscreen: 475px;
+$mobile: 400px;
+
+// ------- Padding & Margin -------
+$margin-desktop: 100px;
+$margin-tablet: 50px;
+$margin-mobile: 25px;
+
+$gutter-padh: $margin-desktop;
+$hero-padv: 170px;
+$nav-padv: 40px;
+$nav-padh: 30px;
+$hero-margin-b: 140px;

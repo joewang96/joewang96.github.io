@@ -1,0 +1,16 @@
+h1,
+h2 {
+  font-family: $familymono;
+  font-weight: $monobold;
+  color: $darkblack;
+}
+
+h1 {
+  font-size: $h1size;
+  letter-spacing: $kerning-lg;
+}
+
+h2 {
+  font-size: $h2size;
+  letter-spacing: $kerning-md;
+}

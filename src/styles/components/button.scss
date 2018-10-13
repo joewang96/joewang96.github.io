@@ -1,0 +1,23 @@
+.btn-link--wrapper {
+  .btn {
+    font-size: $buttontagsize;
+    font-family: $familysans;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 2px solid $darkblack;
+    padding: 20px 50px;
+    &.primary {
+      background: $darkblack;
+      color: $white;
+    }
+    &.secondary {
+      background: $white;
+    }
+  }
+}
+
+.btn-group {
+  .btn:first-child {
+    margin-right: 30px;
+  }
+}
