@@ -13,3 +13,9 @@
 .flex-jc {
   justify-content: center;
 }
+
+@media (max-width: $mdscreen) {
+  .flex-col-md {
+    flex-direction: column;
+  }
+}

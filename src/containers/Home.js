@@ -6,6 +6,7 @@ import WorkItem from '../components/WorkItem';
 import Button from '../components/Button';
 
 import { populateData, fetchById } from '../lib/fetch';
+import { htmlSerializer } from '../lib/parse';
 
 class Home extends Component {
   static pageType = 'homepage';
@@ -23,6 +24,7 @@ class Home extends Component {
     this.populateWork();
     this.populateButtons();
     this.fetchSock();
+    console.log(RichText);
   }
 
   populateWork() {
@@ -66,12 +68,12 @@ class Home extends Component {
           <h1 className="title">{RichText.asText(hero_text)}</h1>
           <p className="subtext">{RichText.asText(hero_subtext)}</p>
         </div>
-        <div className="section">
-          <h2 className="title pad-2-col">
+        <div className="section section-m-bottom-lg">
+          <h2 className="title pad-2-col max-7-col">
             {RichText.asText(section_1_title)}
           </h2>
           <div className="flex-parent flex-col m-l-auto max-7-col">
-            <p className="body">{RichText.asText(section_1_body)}</p>
+            {RichText.render(section_1_body, null, htmlSerializer)}
             <div className="btn-group">
               {this.state.buttonList.map((button, index) => (
                 <Button data={button.data} key={index} />
@@ -79,8 +81,10 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div className="section">
-          <h2 className="title">{RichText.asText(portfolio_preview_title)}</h2>
+        <div className="section section-m-bottom-md">
+          <h2 className="title m-l-auto m-r-auto text-center max-5-col">
+            {RichText.asText(portfolio_preview_title)}
+          </h2>
           <div className="work-grid home--work-grid">
             {this.state.work.map((p, index) => (
               <WorkItem key={p.id} featured={index < 2} data={p.data} />
@@ -88,7 +92,7 @@ class Home extends Component {
           </div>
         </div>
         <div className="section section--sock">
-          <div className="btn-group">
+          <div className="btn-group flex-parent flex-jc">
             <Button data={this.state.sock_btn} />
           </div>
         </div>

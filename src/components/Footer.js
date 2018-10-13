@@ -18,7 +18,6 @@ class Footer extends Component {
             </Link>
           </div>
           <div className="content-right">
-            <div className="site-map" />
             <div className="social-icons">
               <a
                 className="social-item"

@@ -5,6 +5,10 @@
   margin-right: auto;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .section {
   margin-left: $margin-desktop;
   margin-right: $margin-desktop;
@@ -13,7 +17,11 @@
     margin-bottom: 47px;
   }
   .body {
-    margin-bottom: 60px;
+    margin-bottom: 20px;
+    &:last-child {
+      // may need to change - want it to work with homepage button group
+      margin-bottom: 60px;
+    }
   }
 
   &.hero-section {
@@ -30,6 +38,13 @@
       letter-spacing: $kerning-lg;
     }
     margin-bottom: 287px;
+  }
+
+  &.section-m-bottom-lg {
+    margin-bottom: 280px;
+  }
+  &.section-m-bottom-md {
+    margin-bottom: 130px;
   }
 }
 

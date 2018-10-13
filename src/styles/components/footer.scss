@@ -1,0 +1,37 @@
+.footer {
+  position: relative;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-top: 2px solid $darkblack;
+  .container {
+    width: 100%;
+    justify-content: space-between;
+    .sitemap {
+      .list-item {
+        font-weight: 500;
+        font-family: $familymono;
+        &:not(:last-child) {
+          margin-right: 40px;
+        }
+      }
+    }
+    .social-icons {
+      .social-item {
+        width: 32px;
+        height: 32px;
+        display: inline-block;
+        background: $darkblack;
+        &:not(:last-child) {
+          margin-right: 40px;
+        }
+      }
+    }
+    @media (max-width: $mdscreen) {
+      align-items: center;
+      .sitemap {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
