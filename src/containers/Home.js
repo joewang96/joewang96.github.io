@@ -26,7 +26,6 @@ class Home extends Component {
     this.populateWork();
     this.populateButtons();
     this.fetchSock();
-    console.log(RichText);
   }
 
   populateWork() {

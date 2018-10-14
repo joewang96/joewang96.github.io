@@ -1,14 +1,15 @@
 // variables
 @import './variables.scss';
+@import './transitions.scss';
 
 // base for layout, general type across multiple, resets
-@import './partials/_reset.scss';
-@import './partials/_type.scss';
-@import './partials/_layout.scss';
-@import './partials/_flex.scss';
-@import './partials/_grid.scss';
-@import './partials/_devicon.scss';
-@import './partials/_logo_icon.scss';
+@import './partials/reset.scss';
+@import './partials/type.scss';
+@import './partials/layout.scss';
+@import './partials/flex.scss';
+@import './partials/grid.scss';
+@import './partials/devicon.scss';
+@import './partials/logo_icon.scss';
 
 // component specific
 @import './components/nav.scss';
