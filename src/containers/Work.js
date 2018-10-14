@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { RichText } from 'prismic-reactjs';
 import PrismicPageApi from '../prismic/PrismicPageApi';
 
+import WrappedNavFooter from '../composers/WrappedNavFooter';
 import Hero from '../components/Hero';
 import WorkItem from '../components/WorkItem';
 import Button from '../components/Button';
@@ -74,7 +75,7 @@ class Work extends Component {
       additional_title,
     } = this.props.doc.data;
     return (
-      <div>
+      <WrappedNavFooter>
         <Hero
           title={RichText.asText(hero_title)}
           subtitle={RichText.asText(subhero_text)}
@@ -98,7 +99,7 @@ class Work extends Component {
         <Sock>
           <Button data={this.state.sock_btn} />
         </Sock>
-      </div>
+      </WrappedNavFooter>
     );
   }
 }

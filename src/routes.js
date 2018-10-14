@@ -2,21 +2,17 @@ import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import { PrismicRoute } from 'prismic-react-router';
 
-import Nav from './components/Nav';
-import Footer from './components/Footer';
-
 import Home from './containers/Home';
 import Work from './containers/Work';
 import About from './containers/About';
 import NotFound from './containers/NotFound';
-import ScrollToTop from './containers/ScrollToTop';
+import ScrollToTop from './composers/ScrollToTop';
 
 const Routes = props => {
   return (
     <div>
       <Router>
         <ScrollToTop>
-          <Nav />
           <Switch>
             <PrismicRoute
               path="/"
@@ -41,7 +37,6 @@ const Routes = props => {
             />
             <Route component={NotFound} />
           </Switch>
-          <Footer />
         </ScrollToTop>
       </Router>
     </div>
