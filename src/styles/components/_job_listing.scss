@@ -7,13 +7,11 @@
       max-width: 2 * ($gcolumn + $ggap);
       flex-shrink: 0;
       margin-right: $gcolumn + $ggap;
-      p {
-        font-size: $h2size;
-        font-weight: $sansmed;
-        text-transform: uppercase;
-        color: $offgrey;
-        letter-spacing: 0.4;
-      }
+      font-size: $h2size;
+      font-weight: $sansmed;
+      text-transform: uppercase;
+      color: $offgrey;
+      letter-spacing: 0.4px;
     }
 
     .job-block--content {
@@ -47,6 +45,16 @@
 
     &:not(:last-child) {
       margin-bottom: 80px;
+    }
+
+    @media (max-width: $mdscreen) {
+      flex-direction: column;
+      .job-block--date {
+        max-width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+        font-size: 20px;
+      }
     }
   }
 }

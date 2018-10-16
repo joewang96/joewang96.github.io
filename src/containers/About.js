@@ -79,7 +79,7 @@ class About extends Component {
           <h2 className="title">{RichText.asText(current_info_title)}</h2>
           <div className="flex-parent flex-col pad-1-col">
             {RichText.render(current_info, null, htmlSerializer)}
-            <div className="btn-group">
+            <div className="btn-group square-about-second">
               {this.state.buttonList.map((button, index) => (
                 <Button data={button.data} key={index} />
               ))}

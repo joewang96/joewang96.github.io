@@ -11,9 +11,9 @@ class JobItem extends Component {
 
     return (
       <div className="job-block">
-        <div className="job-block--date">
-          <p>{RichText.asText(this.props.data.date_range)}</p>
-        </div>
+        <p className="job-block--date">
+          {RichText.asText(this.props.data.date_range)}
+        </p>
         <div className="job-block--content max-6-col">
           <p className="job-block--position">
             {RichText.asText(this.props.data.position)} @{' '}
