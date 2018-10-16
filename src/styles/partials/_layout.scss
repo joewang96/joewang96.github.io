@@ -30,6 +30,16 @@
   &.section-m-bottom-md {
     margin-bottom: 130px;
   }
+
+  @media (max-width: $lgscreen) {
+    margin-left: $margin-tablet;
+    margin-right: $margin-tablet;
+  }
+
+  @media (max-width: $smscreen) {
+    margin-left: $margin-mobile;
+    margin-right: $margin-mobile;
+  }
 }
 
 .pad {

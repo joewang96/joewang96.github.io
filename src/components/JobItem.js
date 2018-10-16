@@ -7,12 +7,14 @@ class JobItem extends Component {
   }
 
   render() {
+    const hasTakeaway = this.props.data.takeaways.length > 0;
+
     return (
       <div className="job-block">
         <div className="job-block--date">
           <p>{RichText.asText(this.props.data.date_range)}</p>
         </div>
-        <div className="job-block--content">
+        <div className="job-block--content max-6-col">
           <p className="job-block--position">
             {RichText.asText(this.props.data.position)} @{' '}
             {RichText.asText(this.props.data.company_name)}
@@ -20,12 +22,18 @@ class JobItem extends Component {
           {this.props.data.summary ? (
             <>
               <p className="job-block--tag">Summary</p>
-              <p className="job-block--summary">
+              <p
+                className={
+                  hasTakeaway
+                    ? 'job-block--summary m-bottom'
+                    : 'job-block--summary'
+                }
+              >
                 {RichText.asText(this.props.data.summary)}
               </p>
             </>
           ) : null}
-          {this.props.data.takeaways ? (
+          {hasTakeaway ? (
             <>
               <p className="job-block--tag">Key Takeaways</p>
               <p className="job-block--takeaway">

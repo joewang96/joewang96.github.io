@@ -1,0 +1,52 @@
+.job-listings {
+  .job-block {
+    display: flex;
+    flex-direction: row;
+
+    .job-block--date {
+      max-width: 2 * ($gcolumn + $ggap);
+      flex-shrink: 0;
+      margin-right: $gcolumn + $ggap;
+      p {
+        font-size: $h2size;
+        font-weight: $sansmed;
+        text-transform: uppercase;
+        color: $offgrey;
+        letter-spacing: 0.4;
+      }
+    }
+
+    .job-block--content {
+      flex-grow: 1;
+    }
+
+    .job-block--position {
+      margin-bottom: 30px;
+      font-family: $familymono;
+      font-size: $jobtitlesize;
+      font-weight: $monosemi;
+    }
+
+    .job-block--tag {
+      font-size: $buttontagsize;
+      color: $accent;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+      font-family: $familymono;
+      font-weight: $monosemi;
+    }
+
+    .job-block--summary {
+      &.m-bottom {
+        margin-bottom: 20px;
+      }
+    }
+
+    .job-block--takeaway {
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 80px;
+    }
+  }
+}

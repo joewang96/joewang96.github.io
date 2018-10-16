@@ -70,8 +70,8 @@ class Home extends Component {
           title={RichText.asText(hero_text)}
           subtitle={RichText.asText(hero_subtext)}
         />
-        <div className="section section-m-bottom-lg">
-          <h2 className="title pad-2-col max-7-col">
+        <div className="section section-m-bottom-lg pad-2-col">
+          <h2 className="title max-7-col">
             {RichText.asText(section_1_title)}
           </h2>
           <div className="flex-parent flex-col m-l-auto max-7-col">

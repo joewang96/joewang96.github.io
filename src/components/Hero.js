@@ -6,11 +6,11 @@ class Hero extends Component {
   }
 
   render() {
-    const { title, subtitle } = this.props;
+    const { title, subtitle, subtitleRender } = this.props;
     return (
       <div className="section hero-section pad-1-col">
         <h1 className="title">{title}</h1>
-        <p className="subtext">{subtitle}</p>
+        {subtitleRender ? subtitle : <p>{subtitle}</p>}
       </div>
     );
   }

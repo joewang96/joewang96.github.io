@@ -9,6 +9,7 @@ import JobItem from '../components/JobItem';
 import Sock from '../components/Sock';
 
 import { populateData, fetchById } from '../lib/fetch';
+import { htmlSerializer } from '../lib/parse';
 
 class About extends Component {
   static pageType = 'about_page';
@@ -68,17 +69,16 @@ class About extends Component {
       <WrappedNavFooter>
         <Hero
           title={RichText.asText(hero_title)}
-          subtitle={RichText.asText(bio)}
+          subtitle={RichText.render(bio, null, htmlSerializer)}
+          subtitleRender={true}
         />
         <div className="headshot-image">
           <img src={headshot.url} width={350} />
         </div>
-        <div className="section">
-          <h2 className="title pad-2-col max-7-col">
-            {RichText.asText(current_info_title)}
-          </h2>
-          <div className="flex-parent flex-col m-l-auto max-7-col">
-            <p className="body">{RichText.asText(current_info)}</p>
+        <div className="section pad-4-col max-7-col section-m-bottom-lg">
+          <h2 className="title">{RichText.asText(current_info_title)}</h2>
+          <div className="flex-parent flex-col pad-1-col">
+            {RichText.render(current_info, null, htmlSerializer)}
             <div className="btn-group">
               {this.state.buttonList.map((button, index) => (
                 <Button data={button.data} key={index} />
@@ -86,8 +86,8 @@ class About extends Component {
             </div>
           </div>
         </div>
-        <div className="section">
-          <h2 className="title">{RichText.asText(jobs_title)}</h2>
+        <div className="section pad-1-col">
+          <h2 className="title max-5-col">{RichText.asText(jobs_title)}</h2>
           <div className="job-listings">
             {this.state.jobs.map(job => (
               <JobItem key={job.id} data={job.data} />
