@@ -1,6 +1,5 @@
 .section.hero-section {
   margin-top: 100px;
-  // padding-left: 61px;
   max-width: 800px;
   .title {
     margin-bottom: 40px;
@@ -10,6 +9,11 @@
     font-size: $bodysizelg;
     max-width: 600px;
     letter-spacing: $kerning-lg;
+    @media (max-width: $mdscreen) {
+      & {
+        padding-left: 0px;
+      }
+    }
   }
   margin-bottom: 287px;
 

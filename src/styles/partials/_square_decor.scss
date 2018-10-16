@@ -25,6 +25,13 @@
     height: 144px;
   }
 }
+@media (max-width: $mdscreen) {
+  .square-about-second::before {
+    left: 70px;
+    height: 85px;
+    width: 340px;
+  }
+}
 
 .square-sock {
   position: relative;

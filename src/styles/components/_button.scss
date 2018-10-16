@@ -6,12 +6,24 @@
     box-sizing: border-box;
     border: 2px solid $darkblack;
     padding: 20px 50px;
+    transition-timing-function: ease-in-out;
+    transition-duration: 250ms;
+    transition-property: background-color, border-color, color;
+    &:hover {
+      border-color: $darkblack-hover;
+    }
     &.primary {
       background: $darkblack;
       color: $white;
+      &:hover {
+        background: $darkblack-hover;
+      }
     }
     &.secondary {
       background: $white;
+      &:hover {
+        color: $darkblack-hover;
+      }
     }
   }
 }
