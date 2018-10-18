@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { RichText } from 'prismic-reactjs';
 
+import { htmlSerializer } from '../lib/parse';
+
 class WorkItem extends Component {
   constructor(props) {
     super(props);
@@ -18,11 +20,11 @@ class WorkItem extends Component {
           <p className="work-block--title">
             {RichText.asText(this.props.data.title)}
           </p>
-          <p className="work-block--summary">
+          <div className="work-block--summary">
             {this.props.data.short_bio
-              ? RichText.asText(this.props.data.short_bio)
+              ? RichText.render(this.props.data.short_bio, null, htmlSerializer)
               : ''}
-          </p>
+          </div>
         </div>
       </div>
     );

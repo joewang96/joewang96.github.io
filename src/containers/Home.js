@@ -84,7 +84,7 @@ class Home extends Component {
           </div>
         </div>
         <div className="section section-m-bottom-md">
-          <h2 className="title m-l-auto m-r-auto text-center max-5-col">
+          <h2 className="title m-l-auto m-r-auto text-center text-left-md m-l-0-md max-5-col">
             {RichText.asText(portfolio_preview_title)}
           </h2>
           <div className="work-grid home--work-grid">

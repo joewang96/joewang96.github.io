@@ -9,6 +9,15 @@
   text-align: center;
 }
 
+@media (max-width: $mdscreen) {
+  .text-left-md {
+    text-align: left;
+  }
+  .m-l-0-md {
+    margin-left: 0;
+  }
+}
+
 .section {
   margin-left: $margin-desktop;
   margin-right: $margin-desktop;
