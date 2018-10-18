@@ -17,6 +17,7 @@
     width: 100%;
     box-sizing: border-box;
     margin-bottom: 30px;
+    position: relative;
   }
 
   @media (min-width: $mdscreen + 1px) {
@@ -64,12 +65,31 @@
   @media (min-width: $mdscreen + 1px) {
     .work-block.featured-work {
       align-items: center;
+      .work-block--image {
+        &::before {
+          z-index: -1;
+          content: ' ';
+          background: $offwhite;
+          position: absolute;
+          top: 50px;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      &:nth-child(odd) {
+        .work-block--image::before {
+          left: -50px;
+        }
+      }
       &:nth-child(even) {
         flex-direction: row-reverse;
         .work-block--image {
           margin-right: 0;
           margin-left: 128px;
           margin-bottom: 0px;
+          &::before {
+            right: -50px;
+          }
         }
       }
     }
