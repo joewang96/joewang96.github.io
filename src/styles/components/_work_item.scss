@@ -1,13 +1,20 @@
+// margin bottom for work block in the grid
+$work-block-mb: 120px;
+
 .work-grid {
   margin-top: 120px;
   position: relative;
+  // offset the last row of work-block items' margin-bottom
+  &:not(.featured-project-grid) {
+    margin-bottom: -($work-block-mb/2);
+  }
 }
 
 .work-block {
   display: inline-flex;
   align-items: flex-start;
   flex-direction: column;
-  margin-bottom: 120px;
+  margin-bottom: $work-block-mb;
 
   .work-block--image {
     height: 340px;
@@ -108,6 +115,40 @@
       width: 100%;
       max-width: 100%;
       height: 280px;
+    }
+  }
+}
+
+$work-section-title-lines-len: 186px;
+
+.work-section-title {
+  position: relative;
+  text-align: center;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  &::before,
+  &::after {
+    content: ' ';
+    background: $offgrey;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    width: $work-section-title-lines-len;
+    height: 2px;
+  }
+  &::before {
+    right: -($work-section-title-lines-len + 34);
+  }
+  &:after {
+    left: -($work-section-title-lines-len + 34);
+  }
+  @media (max-width: $mdscreen + 100px) {
+    width: 100%;
+    &::before,
+    &::after {
+      display: none;
+      content: none;
     }
   }
 }

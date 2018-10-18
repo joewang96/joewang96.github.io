@@ -81,16 +81,20 @@ class Work extends Component {
           subtitle={RichText.asText(subhero_text)}
         />
         <div className="section">
-          <h2 className="title">{RichText.asText(featured_title)}</h2>
-          <div className="featured-project-grid">
+          <h2 className="title work-section-title">
+            {RichText.asText(featured_title)}
+          </h2>
+          <div className="work-grid featured-project-grid">
             {this.state.work.featured.map(project => (
               <WorkItem key={project.id} featured={true} data={project.data} />
             ))}
           </div>
         </div>
         <div className="section">
-          <h2 className="title">{RichText.asText(additional_title)}</h2>
-          <div className="additional-project-grid">
+          <h2 className="title work-section-title">
+            {RichText.asText(additional_title)}
+          </h2>
+          <div className="work-grid additional-project-grid">
             {this.state.work.additional.map(project => (
               <WorkItem key={project.id} featured={false} data={project.data} />
             ))}
