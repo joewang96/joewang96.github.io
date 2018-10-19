@@ -24,12 +24,14 @@
     width: 400px;
     height: 144px;
   }
-}
-@media (max-width: $mdscreen) {
-  .square-about-second::before {
-    left: 70px;
-    height: 85px;
-    width: 340px;
+  @media (max-width: $mdscreen) {
+    &::before {
+      left: auto;
+      right: 10%;
+      height: 220px;
+      top: -120px;
+      width: 70%;
+    }
   }
 }
 
