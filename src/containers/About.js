@@ -75,7 +75,7 @@ class About extends Component {
         <div className="section hero-section pad-1-col no-max hero-section--about">
           <h1 className="title">{RichText.asText(hero_title)}</h1>
           <div className="about-hero--body-img-container">
-            <div className="about-hero--body ">
+            <div className="about-hero--body">
               {RichText.render(bio, null, htmlSerializer)}
             </div>
             <div className="headshot-image">
@@ -95,7 +95,7 @@ class About extends Component {
           </div>
         </div>
         <div className="section pad-1-col">
-          <h2 className="title max-5-col">{RichText.asText(jobs_title)}</h2>
+          <h2 className="title max-4-col">{RichText.asText(jobs_title)}</h2>
           <div className="job-listings">
             {this.state.jobs.map(job => (
               <JobItem key={job.id} data={job.data} />

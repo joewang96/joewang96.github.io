@@ -80,7 +80,7 @@ class Work extends Component {
           title={RichText.asText(hero_title)}
           subtitle={RichText.asText(subhero_text)}
         />
-        <div className="section">
+        <div className="section work-projects">
           <h2 className="title work-section-title">
             {RichText.asText(featured_title)}
           </h2>

@@ -1,3 +1,7 @@
+.section.work-projects {
+  margin-top: -87px;
+}
+
 .section.hero-section.hero-section--about {
   margin-bottom: 150px;
 }
@@ -9,7 +13,9 @@
   .about-hero--body {
     flex-shrink: 1;
     .body {
-      padding-left: 0;
+      @media (max-width: $mdscreen) {
+        padding-left: 0;
+      }
       &:last-child {
         margin-bottom: 0;
       }
