@@ -67,13 +67,21 @@ class About extends Component {
     } = this.props.doc.data;
     return (
       <WrappedNavFooter>
-        <Hero
+        {/* <Hero
           title={RichText.asText(hero_title)}
           subtitle={RichText.render(bio, null, htmlSerializer)}
           subtitleRender={true}
-        />
-        <div className="headshot-image">
-          <img src={headshot.url} width={350} />
+        /> */}
+        <div className="section hero-section pad-1-col no-max hero-section--about">
+          <h1 className="title">{RichText.asText(hero_title)}</h1>
+          <div className="about-hero--body-img-container">
+            <div className="about-hero--body ">
+              {RichText.render(bio, null, htmlSerializer)}
+            </div>
+            <div className="headshot-image">
+              <img src={headshot.url} />
+            </div>
+          </div>
         </div>
         <div className="section pad-4-col max-7-col section-m-bottom-lg">
           <h2 className="title">{RichText.asText(current_info_title)}</h2>

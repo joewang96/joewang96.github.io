@@ -1,9 +1,17 @@
 // ------- Colors -------
 $darkblack: #252525;
-$accent: #503dfb;
+$gold: #f2bf7e;
+$accent: /*#503dfb;*/ $gold;
 $offgrey: #dcdce2; // used in the job date strings
 $offwhite: /*#f5f5f9;*/ #fafafc; // used in the decorative squares
 $white: #ffffff;
+
+$darkblue: #363a56;
+$darkblue-hover: #292d49;
+$darkblue-focus: #1d213d;
+
+$nav-base: #565656;
+$nav-hover: $darkblack;
 
 // ------ Hover Colors -------
 $darkblack-hover: #121212;
@@ -12,12 +20,12 @@ $accent-highlight: rgba(79, 60, 251, 0.2);
 
 // ------- Typography -------
 // fonts
-$familymono: 'IBM Plex Mono', monospace;
+$familymono: /*'IBM Plex Mono', monospace;*/ 'Martel';
 $familysans: 'IBM Plex Sans', 'Helvetica', sans-serif;
 
 // -- weights --
-$monobold: 700;
-$monosemi: 600;
+$monobold: /*700;*/ 900;
+$monosemi: /*600;*/ 800;
 $sansreg: 400;
 $sansmed: 600;
 
@@ -28,7 +36,7 @@ $bodysizelg: 22px;
 $bodysizemd: 18px;
 $bodysizesm: 16px;
 $buttontagsize: 14px;
-$jobtitlesize: 24px;
+$jobtitlesize: 22px;
 
 // -- letter spacing --
 $kerning-lg: 2.1px;

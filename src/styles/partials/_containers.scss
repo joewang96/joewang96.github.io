@@ -1,0 +1,48 @@
+.section.hero-section.hero-section--about {
+  margin-bottom: 150px;
+}
+
+.about-hero--body-img-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .about-hero--body {
+    flex-shrink: 1;
+    .body {
+      padding-left: 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .headshot-image {
+    flex-grow: 1;
+    margin-top: 120px;
+    img {
+      border: 2px solid $darkblack;
+      box-sizing: content-box;
+      flex-grow: 1;
+      width: 350px;
+    }
+  }
+  @media (min-width: $mdscreen + 1px) {
+    .about-hero--body {
+      margin-right: 94px;
+    }
+  }
+  @media (max-width: $mdscreen) {
+    flex-direction: column;
+    .about-hero--body {
+      flex-shrink: 0;
+      margin-bottom: 30px;
+    }
+    .headshot-image {
+      margin-top: 0;
+      text-align: center;
+      img {
+        width: 100%;
+        max-width: 350px;
+      }
+    }
+  }
+}

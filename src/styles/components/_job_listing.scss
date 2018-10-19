@@ -19,7 +19,7 @@
     }
 
     .job-block--position {
-      margin-bottom: 30px;
+      margin-bottom: 15px;
       font-family: $familymono;
       font-size: $jobtitlesize;
       font-weight: $monosemi;
@@ -29,8 +29,8 @@
       font-size: $buttontagsize;
       color: $accent;
       text-transform: uppercase;
-      margin-bottom: 3px;
-      font-family: $familymono;
+      margin-bottom: 8px;
+      font-family: /*$familymono;*/ 'IBM Plex Mono', monospace;
       font-weight: $monosemi;
     }
 

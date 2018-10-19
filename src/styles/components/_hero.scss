@@ -1,6 +1,8 @@
 .section.hero-section {
   margin-top: 100px;
-  max-width: 800px;
+  &:not(.no-max) {
+    max-width: 800px;
+  }
   .title {
     margin-bottom: 40px;
   }
