@@ -7,7 +7,7 @@ class Sock extends Component {
 
   render() {
     return (
-      <div className="section section--sock square-sock">
+      <div className="pad section--sock square-sock">
         <div className="sock-btn--wrapper flex-parent flex-jc">
           {this.props.children}
         </div>
