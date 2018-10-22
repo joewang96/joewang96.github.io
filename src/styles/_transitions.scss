@@ -1,18 +1,94 @@
-.fade-enter {
-  opacity: 0.01;
+/* 
+--- Need to check if this is still necessary if I'm doing it after componentDidMount --
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
 }
+*/
 
-.fade-enter.fade-enter-active {
+#container {
   opacity: 1;
-  transition: opacity 500ms ease-in;
-  background: red;
-}
+  transition-duration: 1000ms;
+  transition-timing-function: ease-in-out;
+  transition-property: opacity;
+  will-change: opacity;
 
-.fade-leave {
-  opacity: 1;
-}
+  .section {
+    .title {
+      transition-timing-function: ease-in-out;
+      transition-duration: 700ms;
+      transition-property: opacity, transform;
+      will-change: opacity, transform;
+    }
+    .body {
+      transition-timing-function: ease-out;
+      transition-duration: 700ms;
+      transition-delay: 100ms;
+      transition-property: opacity, transform;
+      will-change: opacity, transform;
+    }
+  }
 
-.fade-leave.fade-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
+  .btn-group {
+    transition-timing-function: ease-out;
+    transition-duration: 700ms;
+    transition-delay: 100ms;
+    transition-property: opacity, transform;
+    will-change: opacity, transform;
+  }
+
+  .section.hero-section {
+    .title {
+      transition-timing-function: ease-in-out;
+      transition-duration: 700ms;
+      transition-property: opacity, transform;
+      will-change: opacity, transform;
+    }
+    p {
+      transition-timing-function: ease-out;
+      transition-duration: 700ms;
+      transition-delay: 100ms;
+      transition-property: opacity, transform;
+      will-change: opacity, transform;
+    }
+  }
+
+  &.preset {
+    opacity: 0;
+    transition: none;
+
+    .section {
+      .title {
+        opacity: 0;
+        transform: translateY(-50px);
+        transition: none;
+      }
+      .body {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: none;
+      }
+    }
+
+    .btn-group {
+      opacity: 0;
+      transform: translateY(100px);
+      transition: none;
+    }
+
+    .section.hero-section {
+      .title {
+        opacity: 0;
+        transform: translateY(-50px);
+        transition: none;
+      }
+      p {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: none;
+      }
+    }
+  }
 }

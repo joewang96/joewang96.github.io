@@ -12,6 +12,9 @@
       text-transform: uppercase;
       color: $offgrey;
       letter-spacing: 0.4px;
+      &::selection {
+        color: $darkblack;
+      }
     }
 
     .job-block--content {
