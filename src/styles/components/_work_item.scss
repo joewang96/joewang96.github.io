@@ -40,9 +40,11 @@ $work-block-mb: 120px;
     flex-direction: row;
     width: 100%;
     .work-block--image {
-      margin-right: 128px;
       max-width: 523px;
       height: 400px;
+      @media (min-width: $mdscreen + 1px) {
+        margin-right: 128px;
+      }
     }
   }
 
