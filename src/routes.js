@@ -10,36 +10,34 @@ import ScrollToTop from './composers/ScrollToTop';
 
 const Routes = props => {
   return (
-    <div>
-      <Router>
-        <ScrollToTop>
-          <Switch>
-            <PrismicRoute
-              path="/"
-              exact
-              routerProps={props}
-              componentProps={{
-                uid: 'home',
-              }} // pass in page UID if not in path
-              component={Home} // components should be of type PrismicPage
-            />
-            <PrismicRoute
-              path="/work"
-              routerProps={props}
-              componentProps={{ uid: 'work' }} // pass in page UID if not in path
-              component={Work} // components should be of type PrismicPage
-            />
-            <PrismicRoute
-              path="/about"
-              routerProps={props}
-              componentProps={{ uid: 'about' }} // pass in page UID if not in path
-              component={About} // components should be of type PrismicPage
-            />
-            <Route component={NotFound} />
-          </Switch>
-        </ScrollToTop>
-      </Router>
-    </div>
+    <Router>
+      <ScrollToTop>
+        <Switch>
+          <PrismicRoute
+            path="/"
+            exact
+            routerProps={props}
+            componentProps={{
+              uid: 'home',
+            }} // pass in page UID if not in path
+            component={Home} // components should be of type PrismicPage
+          />
+          <PrismicRoute
+            path="/work"
+            routerProps={props}
+            componentProps={{ uid: 'work' }} // pass in page UID if not in path
+            component={Work} // components should be of type PrismicPage
+          />
+          <PrismicRoute
+            path="/about"
+            routerProps={props}
+            componentProps={{ uid: 'about' }} // pass in page UID if not in path
+            component={About} // components should be of type PrismicPage
+          />
+          <Route component={NotFound} />
+        </Switch>
+      </ScrollToTop>
+    </Router>
   );
 };
 
