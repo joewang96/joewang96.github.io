@@ -31,6 +31,8 @@
   }
   .body {
     margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
     &:last-child {
       // may need to change - want it to work with homepage button group
       margin-bottom: 60px;
