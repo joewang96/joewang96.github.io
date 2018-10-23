@@ -10,7 +10,7 @@
     .sitemap {
       .list-item {
         font-weight: 600;
-        font-size: 16px;
+        font-size: $navfontsize;
         color: $nav-base;
         transition-duration: 250ms;
         transition-timing-function: ease-in-out;
