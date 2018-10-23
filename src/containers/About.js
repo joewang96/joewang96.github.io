@@ -84,7 +84,9 @@ class About extends Component {
           </div>
         </div>
         <div className="section pad-4-col max-7-col section-m-bottom-lg">
-          <h2 className="title">{RichText.asText(current_info_title)}</h2>
+          <h2 className="title maroon">
+            {RichText.asText(current_info_title)}
+          </h2>
           <div className="flex-parent flex-col pad-1-col">
             {RichText.render(current_info, null, htmlSerializer)}
             <div className="btn-group square-about-second">
@@ -95,7 +97,9 @@ class About extends Component {
           </div>
         </div>
         <div className="section pad-1-col">
-          <h2 className="title max-4-col">{RichText.asText(jobs_title)}</h2>
+          <h2 className="title teal max-4-col">
+            {RichText.asText(jobs_title)}
+          </h2>
           <div className="job-listings">
             {this.state.jobs.map(job => (
               <JobItem key={job.id} data={job.data} />

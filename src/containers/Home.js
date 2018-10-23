@@ -71,7 +71,7 @@ class Home extends Component {
           subtitle={RichText.asText(hero_subtext)}
         />
         <div className="section section-m-bottom-lg pad-2-col">
-          <h2 className="title max-6-col square-home-second">
+          <h2 className="title maroon max-6-col square-home-second">
             {RichText.asText(section_1_title)}
           </h2>
           <div className="flex-parent flex-col m-l-auto max-7-col">
@@ -84,7 +84,7 @@ class Home extends Component {
           </div>
         </div>
         <div className="section section-m-bottom-md">
-          <h2 className="title m-l-auto m-r-auto text-center text-left-md m-l-0-md max-5-col">
+          <h2 className="title teal m-l-auto m-r-auto text-center text-left-md m-l-0-md max-5-col">
             {RichText.asText(portfolio_preview_title)}
           </h2>
           <div className="work-grid home--work-grid">

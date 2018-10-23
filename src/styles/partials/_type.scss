@@ -12,9 +12,16 @@ h2 {
 h1 {
   font-size: $h1size;
   letter-spacing: $kerning-lg;
+  color: $vibrantblue;
 }
 
 h2 {
   font-size: $h2size;
   letter-spacing: $kerning-md;
+  &.maroon {
+    color: $maroon;
+  }
+  &.teal {
+    color: $teal;
+  }
 }
