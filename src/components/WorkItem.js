@@ -19,7 +19,7 @@ class WorkItem extends Component {
       >
         <Link className="work-block--image--wrapper" to={'#'}>
           <div
-            class="work-block--image--bg"
+            className="work-block--image--bg"
             style={{
               backgroundImage: `url(${preview_image ? preview_image.url : ''})`,
             }}

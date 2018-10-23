@@ -12,7 +12,7 @@
         background: $darkblack;
         border-radius: 4px;
         .icon-logo {
-          font-size: 20px;
+          font-size: $navlogosize;
           color: $white;
         }
       }
@@ -21,7 +21,7 @@
       height: 100%;
       .nav--item {
         font-weight: 600;
-        font-size: 16px;
+        font-size: $navfontsize;
         color: $nav-base;
         transition-duration: 250ms;
         transition-timing-function: ease-in-out;
@@ -30,7 +30,7 @@
           color: $nav-hover;
         }
         &:not(:last-child) {
-          margin-right: 40px;
+          margin-right: 2.5rem;
         }
       }
     }
