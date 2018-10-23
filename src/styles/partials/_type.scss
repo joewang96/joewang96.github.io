@@ -6,22 +6,16 @@ h1,
 h2 {
   font-family: $familymono;
   font-weight: $monobold;
-  color: $darkblack;
+  // color: $darkblack;
+  color: $vibrantblue;
 }
 
 h1 {
   font-size: $h1size;
   letter-spacing: $kerning-lg;
-  color: $vibrantblue;
 }
 
 h2 {
   font-size: $h2size;
   letter-spacing: $kerning-md;
-  &.maroon {
-    color: $maroon;
-  }
-  &.teal {
-    color: $teal;
-  }
 }

@@ -81,7 +81,7 @@ class Work extends Component {
           subtitle={RichText.asText(subhero_text)}
         />
         <div className="section work-projects">
-          <h2 className="title maroon work-section-title">
+          <h2 className="title work-section-title">
             {RichText.asText(featured_title)}
           </h2>
           <div className="work-grid featured-project-grid">
@@ -91,7 +91,7 @@ class Work extends Component {
           </div>
         </div>
         <div className="section">
-          <h2 className="title teal work-section-title">
+          <h2 className="title work-section-title">
             {RichText.asText(additional_title)}
           </h2>
           <div className="work-grid additional-project-grid">

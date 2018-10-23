@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { RichText } from 'prismic-reactjs';
 
 import { htmlSerializer } from '../lib/parse';
@@ -9,21 +10,25 @@ class WorkItem extends Component {
   }
 
   render() {
+    const { title, short_bio, preview_image } = this.props.data;
     return (
       <div
         className={
           this.props.featured ? 'work-block featured-work' : 'work-block'
         }
       >
-        <div className="work-block--image" />
+        <Link className="work-block--image--wrapper" to={'#'}>
+          <div
+            class="work-block--image--bg"
+            style={{
+              backgroundImage: `url(${preview_image ? preview_image.url : ''})`,
+            }}
+          />
+        </Link>
         <div className="work-block--content">
-          <p className="work-block--title">
-            {RichText.asText(this.props.data.title)}
-          </p>
+          <p className="work-block--title">{RichText.asText(title)}</p>
           <div className="work-block--summary">
-            {this.props.data.short_bio
-              ? RichText.render(this.props.data.short_bio, null, htmlSerializer)
-              : ''}
+            {short_bio ? RichText.render(short_bio, null, htmlSerializer) : ''}
           </div>
         </div>
       </div>
