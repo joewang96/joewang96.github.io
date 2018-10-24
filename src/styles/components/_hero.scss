@@ -1,6 +1,12 @@
 .section.hero-section {
   margin-top: 100px;
   margin-bottom: 287px;
+  @media (max-width: $mdscreen) {
+    margin-top: 60px;
+  }
+  @media (max-width: $smscreen) {
+    margin-top: 40px;
+  }
   &:not(.no-max) {
     max-width: 800px;
   }
