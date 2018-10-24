@@ -4,14 +4,17 @@
     flex-direction: row;
 
     .job-block--date {
-      max-width: 2 * ($gcolumn + $ggap);
+      max-width: 1.5 * ($gcolumn + $ggap);
       flex-shrink: 0;
       margin-right: $gcolumn + $ggap;
-      font-size: 34px;
+      // padding-right: 30px;
+      box-sizing: border-box;
+      font-size: 20px;
       font-weight: $sansmed;
       text-transform: uppercase;
-      color: $offgrey;
+      color: #6e6d6d;
       letter-spacing: 0.4px;
+      font-style: italic;
       &::selection {
         color: $darkblack;
       }
@@ -54,9 +57,9 @@
       flex-direction: column;
       .job-block--date {
         max-width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 6px;
         margin-right: 0;
-        font-size: 20px;
+        font-size: 14px;
       }
     }
   }

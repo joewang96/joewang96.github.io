@@ -5,8 +5,9 @@
 h1,
 h2 {
   font-family: $familymono;
-  font-weight: $monobold;
-  color: $darkblack;
+  font-weight: $headingbold;
+  // color: $darkblack;
+  color: $deepblue;
 }
 
 h1 {
@@ -24,6 +25,7 @@ h1 {
 h2 {
   font-size: $sec-title-fs-lg;
   letter-spacing: $kerning-md;
+  // font-style: italic;
   @media (max-width: $mdscreen) {
     font-size: $sec-title-fs-md;
   }
