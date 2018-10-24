@@ -15,10 +15,10 @@ h1 {
   @media (max-width: $mdscreen) {
     font-size: $hero-fs-md;
   }
-  @media (max-width: $smscreen) {
-    font-size: $hero-fs-sm;
-    letter-spacing: $kerning-md;
-  }
+  // @media (max-width: $smscreen) {
+  //   font-size: $hero-fs-sm;
+  //   letter-spacing: $kerning-md;
+  // }
 }
 
 h2 {
@@ -27,10 +27,10 @@ h2 {
   @media (max-width: $mdscreen) {
     font-size: $sec-title-fs-md;
   }
-  @media (max-width: $smscreen) {
-    font-size: $sec-title-fs-sm;
-    letter-spacing: $kerning-sm;
-  }
+  // @media (max-width: $smscreen) {
+  //   font-size: $sec-title-fs-sm;
+  //   letter-spacing: $kerning-sm;
+  // }
 }
 
 // ---- Responsive Font Size (rem) Overrides ----

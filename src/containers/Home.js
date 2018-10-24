@@ -67,6 +67,7 @@ class Home extends Component {
     return (
       <WrappedNavFooter>
         <Hero
+          id="hero--home"
           title={RichText.asText(hero_text)}
           subtitle={RichText.asText(hero_subtext)}
         />

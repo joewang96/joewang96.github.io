@@ -6,9 +6,9 @@ class Hero extends Component {
   }
 
   render() {
-    const { title, subtitle, subtitleRender } = this.props;
+    const { title, subtitle, subtitleRender, id } = this.props;
     return (
-      <div className="section hero-section pad-1-col">
+      <div className="section hero-section pad-1-col" id={id}>
         <h1 className="title">{title}</h1>
         {subtitleRender ? subtitle : <p>{subtitle}</p>}
       </div>
