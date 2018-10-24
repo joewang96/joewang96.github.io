@@ -8,7 +8,7 @@
   }
   p {
     padding-left: 60px;
-    font-size: $bodysizelg;
+    font-size: $body-fs-lg;
     max-width: 600px;
     letter-spacing: $kerning-lg;
     @media (max-width: $mdscreen) {
@@ -18,26 +18,4 @@
     }
   }
   margin-bottom: 287px;
-
-  &::before {
-    content: ' ';
-    position: absolute;
-    z-index: -1;
-    background: $offwhite;
-    // background: url(/img/patterns/topography.svg),
-    //   linear-gradient($offwhite, $offwhite);
-    background-repeat: repeat;
-    background-size: cover;
-    top: 0;
-    left: 0;
-    height: 500px;
-    width: 60%;
-    border-bottom-right-radius: 100%;
-    @media (max-width: $mdscreen) {
-      width: 80%;
-    }
-    @media (max-width: $smscreen) {
-      width: 100%;
-    }
-  }
 }

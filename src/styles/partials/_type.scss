@@ -6,18 +6,31 @@ h1,
 h2 {
   font-family: $familymono;
   font-weight: $monobold;
-  // color: $darkblack;
-  color: $vibrantblue;
+  color: $darkblack;
 }
 
 h1 {
-  font-size: $h1size;
+  font-size: $hero-fs-lg;
   letter-spacing: $kerning-lg;
+  @media (max-width: $mdscreen) {
+    font-size: $hero-fs-md;
+  }
+  @media (max-width: $smscreen) {
+    font-size: $hero-fs-sm;
+    letter-spacing: $kerning-md;
+  }
 }
 
 h2 {
-  font-size: $h2size;
+  font-size: $sec-title-fs-lg;
   letter-spacing: $kerning-md;
+  @media (max-width: $mdscreen) {
+    font-size: $sec-title-fs-md;
+  }
+  @media (max-width: $smscreen) {
+    font-size: $sec-title-fs-sm;
+    letter-spacing: $kerning-sm;
+  }
 }
 
 // ---- Responsive Font Size (rem) Overrides ----
