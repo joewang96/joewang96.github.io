@@ -33,15 +33,15 @@
     left: 0;
     top: 0;
     width: 40%;
-    height: 60%;
+    height: 390px;
     border-bottom-right-radius: 100%;
     @media (max-width: $mdscreen) {
       width: 80%;
-      height: 60%;
+      height: 370px;
     }
     @media (max-width: $smscreen) {
       width: 100%;
-      height: 60%;
+      height: 340px;
     }
   }
 }
