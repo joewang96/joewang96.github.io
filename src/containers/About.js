@@ -95,7 +95,9 @@ class About extends Component {
           </div>
         </div>
         <div className="section pad-1-col">
-          <h2 className="title max-5-col">{RichText.asText(jobs_title)}</h2>
+          <h2 className="title max-5-col mb-extra">
+            {RichText.asText(jobs_title)}
+          </h2>
           <div className="job-listings">
             {this.state.jobs.map(job => (
               <JobItem key={job.id} data={job.data} />

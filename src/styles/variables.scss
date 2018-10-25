@@ -26,18 +26,17 @@ $accent-highlight: rgba(79, 60, 251, 0.2);
 
 // ------- Typography -------
 // fonts
-$familymono: /*'IBM Plex Mono', monospace;*/ 'Vollkorn', 'Martel', 'Georgia',
-  serif;
+$familymono: 'Source Sans Pro', 'Avenir', 'Helvetica', sans-serif;
 $familysans: 'IBM Plex Sans', 'Helvetica', sans-serif;
 
 // -- weights --
-$headingbold: /*700;*/ 700;
-$monosemi: /*600;*/ 800;
+$headingbold: 700;
+$monosemi: 700;
 $sansreg: 400;
 $sansmed: 600;
 
 // -- sizes --
-$hero-fs-lg: 52px;
+$hero-fs-lg: 48px;
 $hero-fs-md: 38px;
 $hero-fs-sm: 32px;
 
