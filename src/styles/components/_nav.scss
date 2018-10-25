@@ -20,14 +20,30 @@
     .nav--list {
       height: 100%;
       .nav--item {
+        position: relative;
         font-weight: 600;
         font-size: 16px;
         color: $nav-base;
         transition-duration: 250ms;
         transition-timing-function: ease-in-out;
         transition-property: color;
+        &:before {
+          content: ' ';
+          position: absolute;
+          z-index: -1;
+          width: 115%;
+          height: 10px;
+          right: -10%;
+          bottom: -5%;
+          background-color: $white;
+          transition: ease-in-out 250ms;
+        }
         &:hover {
           color: $nav-hover;
+          &:before {
+            height: 105%;
+            width: 120%;
+          }
         }
         &:not(:last-child) {
           margin-right: 2.5rem;
