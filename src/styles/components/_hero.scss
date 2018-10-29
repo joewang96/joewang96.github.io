@@ -12,37 +12,50 @@
   }
   .title {
     margin-bottom: 40px;
+    color: $manilla;
   }
   p {
     padding-left: 60px;
+    color: $white;
+    font-family: $familymono;
     font-size: $body-fs-lg;
     max-width: 600px;
-    letter-spacing: $kerning-lg;
     @media (max-width: $mdscreen) {
       & {
         padding-left: 0px;
       }
     }
   }
-  // optional depending if i want it or not
   &::before {
     z-index: -1;
     content: ' ';
-    background: $white;
+    background-color: $darkbrown;
     position: absolute;
     left: 0;
     top: 0;
-    width: 40%;
-    height: 390px;
-    border-bottom-right-radius: 100%;
-    @media (max-width: $mdscreen) {
-      width: 80%;
-      height: 370px;
-    }
-    @media (max-width: $smscreen) {
-      width: 100%;
-      height: 340px;
-    }
+    right: 0;
+    width: 100%;
+    height: 100%;
+    // @media (max-width: $mdscreen) {
+    //   width: 80%;
+    //   height: 370px;
+    // }
+    // @media (max-width: $smscreen) {
+    //   width: 100%;
+    //   height: 340px;
+    // }
+  }
+  &::after {
+    z-index: -1;
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/hero_lines.svg');
+    background-repeat: no-repeat;
+    background-size: 1600px auto;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }
 
@@ -58,7 +71,21 @@
       padding: 0;
       margin-left: auto;
       margin-right: auto;
-      // text-align: left;
     }
+  }
+  &::after {
+    background-position: -275px -150px;
+  }
+}
+#hero--about {
+  @media (min-width: $mdscreen+1px) {
+    &::before,
+    &::after {
+      width: 70%;
+    }
+  }
+  &::after {
+    left: 0;
+    background-position: -150px -500px;
   }
 }

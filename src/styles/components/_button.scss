@@ -4,7 +4,8 @@
     z-index: 1;
     position: relative;
     font-size: $buttontagsize;
-    font-family: $familysans;
+    font-family: $familymono;
+    letter-spacing: 1.34px;
     cursor: pointer;
     box-sizing: border-box;
     border: 2px solid $darkblack;

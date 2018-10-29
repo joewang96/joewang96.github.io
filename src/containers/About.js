@@ -72,7 +72,10 @@ class About extends Component {
           subtitle={RichText.render(bio, null, htmlSerializer)}
           subtitleRender={true}
         /> */}
-        <div className="section hero-section pad-1-col no-max hero-section--about">
+        <div
+          className="section hero-section pad-1-col no-max hero-section--about"
+          id="hero--about"
+        >
           <h1 className="title">{RichText.asText(hero_title)}</h1>
           <div className="about-hero--body-img-container">
             <div className="about-hero--body">

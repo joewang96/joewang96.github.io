@@ -25,8 +25,8 @@ class JobItem extends Component {
               <p
                 className={
                   hasTakeaway
-                    ? 'job-block--summary m-bottom'
-                    : 'job-block--summary'
+                    ? 'body job-block--summary m-bottom'
+                    : 'body job-block--summary'
                 }
               >
                 {RichText.asText(this.props.data.summary)}
@@ -36,7 +36,7 @@ class JobItem extends Component {
           {hasTakeaway ? (
             <>
               <p className="job-block--tag">Key Takeaways</p>
-              <p className="job-block--takeaway">
+              <p className="body job-block--takeaway">
                 {RichText.asText(this.props.data.takeaways)}
               </p>
             </>

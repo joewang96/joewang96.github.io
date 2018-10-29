@@ -9,21 +9,22 @@
       .nav-logo {
         width: 32px;
         height: 32px;
-        background: $deepblue;
+        background: $manilla;
         border-radius: 4px;
         .icon-logo {
           font-size: $navlogosize;
-          color: $white;
+          color: $darkbrown;
         }
       }
     }
     .nav--list {
       height: 100%;
       .nav--item {
-        position: relative;
-        font-weight: 600;
-        font-size: 16px;
+        font-family: $familymono;
+        font-weight: 400;
+        font-size: 18px;
         color: $nav-base;
+        position: relative;
         transition-duration: 250ms;
         transition-timing-function: ease-in-out;
         transition-property: color;
@@ -49,6 +50,12 @@
           margin-right: 2.5rem;
         }
       }
+    }
+  }
+  &.on-dark .nav--container .nav--list .nav--item {
+    color: $manilla;
+    &:hover {
+      color: $offwhite;
     }
   }
 }

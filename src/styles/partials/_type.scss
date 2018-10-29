@@ -1,43 +1,35 @@
-* {
-  letter-spacing: $kerning-md;
-}
-
 h1,
 h2 {
-  font-family: $familymono;
   font-weight: $headingbold;
-  // color: $darkblack;
-  color: $deepblue;
 }
 
 h1 {
-  font-size: $hero-fs-lg;
-  letter-spacing: $kerning-lg;
+  font-size: $h1-desktop;
+  font-family: $familyserif;
+  letter-spacing: 1.34px;
   @media (max-width: $mdscreen) {
-    font-size: $hero-fs-md;
+    font-size: $h1-tablet;
   }
-  // @media (max-width: $smscreen) {
-  //   font-size: $hero-fs-sm;
-  //   letter-spacing: $kerning-md;
-  // }
 }
 
 h2 {
-  font-size: $sec-title-fs-lg;
-  letter-spacing: $kerning-md;
-  // font-style: italic;
+  color: $darkblack;
+  font-family: $familymono;
+  font-size: $h2-desktop;
   @media (max-width: $mdscreen) {
-    font-size: $sec-title-fs-md;
+    font-size: $h2-tablet;
   }
-  // @media (max-width: $smscreen) {
-  //   font-size: $sec-title-fs-sm;
-  //   letter-spacing: $kerning-sm;
-  // }
 }
 
 // ---- Responsive Font Size (rem) Overrides ----
 @media (max-width: $mdscreen) {
   html {
     font-size: 14px;
+  }
+}
+
+.section:not(.hero-section) {
+  .body {
+    letter-spacing: 1.73px;
   }
 }

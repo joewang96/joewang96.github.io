@@ -6,8 +6,7 @@
 }
 
 body {
-  background: #f9f9f9;
-  background: #fcf7f1;
+  background: $body;
   margin: 0;
   font-family: $familysans;
   font-size: $body-fs-md;
@@ -20,5 +19,5 @@ body {
 }
 
 ::selection {
-  background-color: $accent-highlight;
+  background-color: $selection;
 }

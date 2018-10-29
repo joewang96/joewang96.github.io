@@ -91,9 +91,9 @@ class Work extends Component {
           </div>
         </div>
         <div className="section">
-          <h2 className="title work-section-title">
+          {/* <h2 className="title work-section-title">
             {RichText.asText(additional_title)}
-          </h2>
+          </h2> */}
           <div className="work-grid additional-project-grid">
             {this.state.work.additional.map(project => (
               <WorkItem key={project.id} featured={false} data={project.data} />
