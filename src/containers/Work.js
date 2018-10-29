@@ -77,6 +77,7 @@ class Work extends Component {
     return (
       <WrappedNavFooter>
         <Hero
+          id="hero--work"
           title={RichText.asText(hero_title)}
           subtitle={RichText.asText(subhero_text)}
         />

@@ -73,38 +73,44 @@ class About extends Component {
           subtitleRender={true}
         /> */}
         <div
-          className="section hero-section pad-1-col no-max hero-section--about"
+          className="section hero-section no-max hero-section--about"
           id="hero--about"
         >
-          <h1 className="title">{RichText.asText(hero_title)}</h1>
-          <div className="about-hero--body-img-container">
-            <div className="about-hero--body">
-              {RichText.render(bio, null, htmlSerializer)}
-            </div>
-            <div className="headshot-image">
-              <img src={headshot.url} />
+          <div className="contaniner pad-1-col">
+            <h1 className="title">{RichText.asText(hero_title)}</h1>
+            <div className="about-hero--body-img-container">
+              <div className="about-hero--body">
+                {RichText.render(bio, null, htmlSerializer)}
+              </div>
+              <div className="headshot-image">
+                <img src={headshot.url} />
+              </div>
             </div>
           </div>
         </div>
-        <div className="section pad-4-col max-7-col section-m-bottom-lg">
-          <h2 className="title">{RichText.asText(current_info_title)}</h2>
-          <div className="flex-parent flex-col pad-1-col">
-            {RichText.render(current_info, null, htmlSerializer)}
-            <div className="btn-group square-about-second">
-              {this.state.buttonList.map((button, index) => (
-                <Button data={button.data} key={index} />
+        <div className="section section-m-bottom-lg">
+          <div className="contaniner pad-4-col max-7-col">
+            <h2 className="title">{RichText.asText(current_info_title)}</h2>
+            <div className="flex-parent flex-col pad-1-col">
+              {RichText.render(current_info, null, htmlSerializer)}
+              <div className="btn-group square-about-second">
+                {this.state.buttonList.map((button, index) => (
+                  <Button data={button.data} key={index} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="section">
+          <div className="contaniner pad-1-col">
+            <h2 className="title max-5-col mb-extra">
+              {RichText.asText(jobs_title)}
+            </h2>
+            <div className="job-listings">
+              {this.state.jobs.map(job => (
+                <JobItem key={job.id} data={job.data} />
               ))}
             </div>
-          </div>
-        </div>
-        <div className="section pad-1-col">
-          <h2 className="title max-5-col mb-extra">
-            {RichText.asText(jobs_title)}
-          </h2>
-          <div className="job-listings">
-            {this.state.jobs.map(job => (
-              <JobItem key={job.id} data={job.data} />
-            ))}
           </div>
         </div>
         <Sock>

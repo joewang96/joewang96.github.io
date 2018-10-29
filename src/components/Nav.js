@@ -7,7 +7,7 @@ class Nav extends Component {
     return (
       <nav
         className={`navigation${
-          path === '/' || path === '/work' ? ' on-dark' : ''
+          path === '/' || path === '/work' ? ' on-dark' : ' md-on-dark'
         }`}
       >
         <div className="nav--container flex-parent flex-ac pad pad-md-max">

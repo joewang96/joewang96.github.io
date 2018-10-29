@@ -1,6 +1,7 @@
 .navigation {
-  position: relative;
-  margin-top: 51px;
+  position: absolute;
+  z-index: 100;
+  top: 51px;
   width: 100%;
   .nav--container {
     position: relative;
@@ -28,24 +29,6 @@
         transition-duration: 250ms;
         transition-timing-function: ease-in-out;
         transition-property: color;
-        &:before {
-          content: ' ';
-          position: absolute;
-          z-index: -1;
-          width: 115%;
-          height: 10px;
-          right: -10%;
-          bottom: -5%;
-          background-color: $white;
-          transition: ease-in-out 250ms;
-        }
-        &:hover {
-          color: $nav-hover;
-          &:before {
-            height: 105%;
-            width: 120%;
-          }
-        }
         &:not(:last-child) {
           margin-right: 2.5rem;
         }
@@ -56,6 +39,14 @@
     color: $manilla;
     &:hover {
       color: $offwhite;
+    }
+  }
+  @media (max-width: $mdscreen) {
+    &.md-on-dark .nav--container .nav--list .nav--item {
+      color: $manilla;
+      &:hover {
+        color: $offwhite;
+      }
     }
   }
 }

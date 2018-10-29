@@ -71,16 +71,18 @@ class Home extends Component {
           title={RichText.asText(hero_text)}
           subtitle={RichText.asText(hero_subtext)}
         />
-        <div className="section section-m-bottom-lg pad-2-col">
-          <h2 className="title max-6-col square-home-second">
-            {RichText.asText(section_1_title)}
-          </h2>
-          <div className="flex-parent flex-col m-l-auto max-7-col">
-            {RichText.render(section_1_body, null, htmlSerializer)}
-            <div className="btn-group">
-              {this.state.buttonList.map((button, index) => (
-                <Button data={button.data} key={index} />
-              ))}
+        <div className="section section-m-bottom-lg">
+          <div className="container pad-2-col">
+            <h2 className="title max-6-col square-home-second">
+              {RichText.asText(section_1_title)}
+            </h2>
+            <div className="flex-parent flex-col m-l-auto max-7-col">
+              {RichText.render(section_1_body, null, htmlSerializer)}
+              <div className="btn-group">
+                {this.state.buttonList.map((button, index) => (
+                  <Button data={button.data} key={index} />
+                ))}
+              </div>
             </div>
           </div>
         </div>

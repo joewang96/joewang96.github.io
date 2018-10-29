@@ -23,8 +23,8 @@
 }
 
 .section {
-  margin-left: $margin-desktop;
-  margin-right: $margin-desktop;
+  padding-left: $margin-desktop;
+  padding-right: $margin-desktop;
 
   .title {
     margin-bottom: 47px;
@@ -50,13 +50,13 @@
   }
 
   @media (max-width: $lgscreen) {
-    margin-left: $margin-tablet;
-    margin-right: $margin-tablet;
+    padding-left: $margin-tablet;
+    padding-right: $margin-tablet;
   }
 
   @media (max-width: $smscreen) {
-    margin-left: $margin-mobile;
-    margin-right: $margin-mobile;
+    padding-left: $margin-mobile;
+    padding-right: $margin-mobile;
   }
 }
 
