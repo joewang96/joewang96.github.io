@@ -82,7 +82,8 @@ class Work extends Component {
         />
         <div className="section work-projects">
           <h2 className="title work-section-title">
-            {RichText.asText(featured_title)}
+            {/* {RichText.asText(featured_title)} */}
+            All Projects
           </h2>
           <div className="work-grid featured-project-grid">
             {this.state.work.featured.map(project => (
