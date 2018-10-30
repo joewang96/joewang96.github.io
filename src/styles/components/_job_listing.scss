@@ -52,11 +52,14 @@
     }
 
     &:not(:last-child) {
-      margin-bottom: 80px;
+      margin-bottom: 60px;
     }
 
     @media (max-width: $mdscreen) {
       flex-direction: column;
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
       .job-block--date {
         max-width: 100%;
         margin-bottom: 6px;

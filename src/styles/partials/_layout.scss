@@ -50,11 +50,19 @@
   @media (max-width: $lgscreen) {
     padding-left: $margin-tablet;
     padding-right: $margin-tablet;
+    margin-bottom: 110px;
+    &.section-m-bottom-lg {
+      margin-bottom: 180px;
+    }
   }
 
   @media (max-width: $smscreen) {
     padding-left: $margin-mobile;
     padding-right: $margin-mobile;
+    margin-bottom: 80px;
+    &.section-m-bottom-lg {
+      margin-bottom: 140px;
+    }
   }
 }
 
