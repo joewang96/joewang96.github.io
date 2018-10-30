@@ -1,6 +1,8 @@
 .section--sock {
-  margin-top: 150px; // for larger sock margins, add it to the section above the sock
-  .sock-btn--wrapper {
-    margin-bottom: 200px;
+  margin-top: 150px;
+  margin-bottom: 150px;
+  @media (max-width: $mdscreen) {
+    margin-top: 110px;
+    margin-bottom: 110px;
   }
 }

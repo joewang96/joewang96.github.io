@@ -41,24 +41,24 @@
     }
 
     .job-block--summary {
-      // font-size: 16px;
+      margin-bottom: 0;
       &.m-bottom {
         margin-bottom: 20px;
       }
     }
 
     .job-block--takeaway {
-      // font-size: 16px;
+      margin-bottom: 0;
     }
 
     &:not(:last-child) {
-      margin-bottom: 60px;
+      margin-bottom: 80px;
     }
 
     @media (max-width: $mdscreen) {
       flex-direction: column;
       &:not(:last-child) {
-        margin-bottom: 20px;
+        margin-bottom: 60px;
       }
       .job-block--date {
         max-width: 100%;

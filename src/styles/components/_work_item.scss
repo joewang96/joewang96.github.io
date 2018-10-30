@@ -1,13 +1,10 @@
 // margin bottom for work block in the grid
 $work-block-mb: 120px;
+$work-block-mb-md: 80px;
 
 .work-grid {
   margin-top: 120px;
   position: relative;
-  // offset the last row of work-block items' margin-bottom
-  &:not(.featured-project-grid) {
-    margin-bottom: -($work-block-mb/2);
-  }
 }
 
 .work-block {
@@ -52,6 +49,9 @@ $work-block-mb: 120px;
         margin-right: 10%;
       }
     }
+    &.featured-work .work-block--image--wrapper {
+      margin-bottom: 0;
+    }
   }
 
   &.featured-work {
@@ -89,6 +89,10 @@ $work-block-mb: 120px;
 
 .work-grid {
   @media (min-width: $mdscreen + 1px) {
+    // offset the last row of work-block items' margin-bottom
+    &:not(.featured-project-grid) {
+      margin-bottom: -($work-block-mb/2);
+    }
     .work-block.featured-work {
       align-items: center;
       .work-block--image--wrapper {
@@ -123,8 +127,12 @@ $work-block-mb: 120px;
 }
 
 @media (max-width: $mdscreen) {
+  .work-grid {
+    margin-top: 60px;
+  }
   .work-block,
   .work-block.featured-work {
+    margin-bottom: $work-block-mb-md;
     width: 100%;
     margin-right: 0;
     margin-left: 0;
