@@ -6,7 +6,6 @@ h2 {
 h1 {
   font-size: $h1-desktop;
   font-family: $familyserif;
-  letter-spacing: 1.34px;
   @media (max-width: $mdscreen) {
     font-size: $h1-tablet;
   }
