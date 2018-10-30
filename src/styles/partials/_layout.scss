@@ -25,6 +25,7 @@
 .section {
   padding-left: $margin-desktop;
   padding-right: $margin-desktop;
+  margin-bottom: 130px;
 
   .title {
     margin-bottom: 47px;
@@ -43,10 +44,7 @@
   }
 
   &.section-m-bottom-lg {
-    margin-bottom: 280px;
-  }
-  &.section-m-bottom-md {
-    margin-bottom: 130px;
+    margin-bottom: 200px;
   }
 
   @media (max-width: $lgscreen) {

@@ -3,13 +3,9 @@ import { Link, withRouter } from 'react-router-dom';
 
 class Nav extends Component {
   render() {
-    const { path } = this.props.match;
+    const { path, isExact } = this.props.match;
     return (
-      <nav
-        className={`navigation${
-          path === '/' || path === '/work' ? ' on-dark' : ' md-on-dark'
-        }`}
-      >
+      <nav className={`navigation ${this.props.className}`}>
         <div className="nav--container flex-parent flex-ac pad pad-md-max">
           <div className="brand--container">
             <Link className="nav-logo flex-parent flex-ac flex-jc" to="/">
@@ -18,9 +14,6 @@ class Nav extends Component {
           </div>
           <div className="nav--list flex-parent flex-ac">
             <Link className="nav--item" to="/">
-              Home
-            </Link>
-            <Link className="nav--item" to="/work">
               Work
             </Link>
             <Link className="nav--item" to="/about">

@@ -4,11 +4,13 @@ import WrappedNavFooter from '../composers/WrappedNavFooter';
 export default class NotFound extends Component {
   render() {
     return (
-      <WrappedNavFooter>
-        <h1>Oops, seems like there's nothing here!</h1>
-        <p>
-          Click <a href="/">here</a> to go back to home
-        </p>
+      <WrappedNavFooter className="on-light">
+        <div className="section not-found--main">
+          <div className="contaniner">
+            <h1 className="title">Oops, looks like this page doesn't exist!</h1>
+            <p className="body">Click here to go back home</p>
+          </div>
+        </div>
       </WrappedNavFooter>
     );
   }

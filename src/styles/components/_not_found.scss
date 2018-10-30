@@ -1,0 +1,19 @@
+.section.not-found--main {
+  width: 100%;
+  height: calc(100vh - 134px);
+  min-height: 440px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  justify-content: center;
+  @media (max-width: $mdscreen) {
+    height: 100vh;
+  }
+  .title {
+    max-width: 650px;
+    margin-right: auto;
+  }
+}

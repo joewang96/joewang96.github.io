@@ -66,7 +66,7 @@ class About extends Component {
       jobs_title,
     } = this.props.doc.data;
     return (
-      <WrappedNavFooter>
+      <WrappedNavFooter className="on-dark-md">
         {/* <Hero
           title={RichText.asText(hero_title)}
           subtitle={RichText.render(bio, null, htmlSerializer)}

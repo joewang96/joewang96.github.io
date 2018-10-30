@@ -49,4 +49,12 @@
       }
     }
   }
+  &.on-light .nav--container .brand--container {
+    .nav-logo {
+      background: $darkbrown;
+      .icon-logo {
+        color: $white;
+      }
+    }
+  }
 }

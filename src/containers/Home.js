@@ -65,7 +65,7 @@ class Home extends Component {
       portfolio_preview_title,
     } = this.props.doc.data;
     return (
-      <WrappedNavFooter>
+      <WrappedNavFooter className="on-dark">
         <Hero
           id="hero--home"
           title={RichText.asText(hero_text)}
