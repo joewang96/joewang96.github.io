@@ -63,6 +63,7 @@ class Home extends Component {
       section_1_title,
       section_1_body,
       portfolio_preview_title,
+      work_section_body,
     } = this.props.doc.data;
     return (
       <WrappedNavFooter className="on-dark">
@@ -71,9 +72,9 @@ class Home extends Component {
           title={RichText.asText(hero_text)}
           subtitle={RichText.asText(hero_subtext)}
         />
-        <div className="section section-m-bottom-lg">
+        <section className="section section-m-bottom-lg">
           <div className="container pad-2-col">
-            <h2 className="title max-6-col square-home-second">
+            <h2 className="title max-6-col">
               {RichText.asText(section_1_title)}
             </h2>
             <div className="flex-parent flex-col m-l-auto max-7-col">
@@ -85,17 +86,20 @@ class Home extends Component {
               </div>
             </div>
           </div>
-        </div>
-        <div className="section section-m-bottom-md">
-          <h2 className="title m-l-auto m-r-auto text-center text-left-md m-l-0-md max-5-col">
-            {RichText.asText(portfolio_preview_title)}
-          </h2>
+        </section>
+        <section className="section section-m-bottom-md">
+          <div className="max-7-col">
+            <h2 className="title max-4-col">
+              {RichText.asText(portfolio_preview_title)}
+            </h2>
+            {RichText.render(work_section_body, null, htmlSerializer)}
+          </div>
           <div className="work-grid home--work-grid">
             {this.state.work.map((p, index) => (
               <WorkItem key={p.id} featured={index < 2} data={p.data} />
             ))}
           </div>
-        </div>
+        </section>
         <Sock>
           <Button data={this.state.sock_btn} />
         </Sock>

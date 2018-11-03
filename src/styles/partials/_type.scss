@@ -5,7 +5,7 @@ h2 {
 
 h1 {
   font-size: $h1-desktop;
-  font-family: $familyserif;
+  font-family: $familysans;
   @media (max-width: $mdscreen) {
     font-size: $h1-tablet;
   }
@@ -13,7 +13,7 @@ h1 {
 
 h2 {
   color: $darkblack;
-  font-family: $familymono;
+  font-family: $familysans;
   font-size: $h2-desktop;
   @media (max-width: $mdscreen) {
     font-size: $h2-tablet;

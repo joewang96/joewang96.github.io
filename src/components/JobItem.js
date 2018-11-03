@@ -10,7 +10,7 @@ class JobItem extends Component {
     const hasTakeaway = this.props.data.takeaways.length > 0;
 
     return (
-      <div className="job-block">
+      <div className="job-block pad">
         <p className="job-block--date">
           {RichText.asText(this.props.data.date_range)}
         </p>

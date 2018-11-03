@@ -3,11 +3,17 @@
     display: flex;
     flex-direction: row;
 
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    &:nth-child(even) {
+      background: $lightgrey;
+    }
+
     .job-block--date {
       max-width: 1.5 * ($gcolumn + $ggap);
       flex-shrink: 0;
       margin-right: $gcolumn + $ggap;
-      // padding-right: 30px;
       box-sizing: border-box;
       font-size: 20px;
       font-weight: $sansmed;
@@ -22,6 +28,7 @@
 
     .job-block--content {
       flex-grow: 1;
+      letter-spacing: 1.73px;
     }
 
     .job-block--position {
@@ -36,7 +43,7 @@
       color: $accent;
       text-transform: uppercase;
       margin-bottom: 8px;
-      font-family: /*$familymono;*/ 'IBM Plex Mono', monospace;
+      font-family: $familymono;
       font-weight: $monosemi;
     }
 
@@ -51,15 +58,14 @@
       margin-bottom: 0;
     }
 
-    &:not(:last-child) {
-      margin-bottom: 80px;
+    @media (min-width: $lgscreen + 1px) {
+      padding-left: 100px + $gcolumn + $ggap;
     }
 
     @media (max-width: $mdscreen) {
       flex-direction: column;
-      &:not(:last-child) {
-        margin-bottom: 60px;
-      }
+      padding-top: 50px;
+      padding-bottom: 50px;
       .job-block--date {
         max-width: 100%;
         margin-bottom: 6px;

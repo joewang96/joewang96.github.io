@@ -1,23 +1,22 @@
 .footer {
-  background: $manilla;
+  background: $darkblue;
   position: relative;
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
-  border-top: 2px solid $darkblack;
   .container {
     width: 100%;
     justify-content: space-between;
     .sitemap {
       .list-item {
-        font-weight: 600;
-        font-size: 16px;
-        color: $nav-base;
+        font-family: $familymono;
+        font-size: 18px;
+        color: $lightpurple;
         transition-duration: 250ms;
         transition-timing-function: ease-in-out;
         transition-property: color;
         &:hover {
-          color: $nav-hover;
+          color: $lightpurple-hover;
         }
         &:not(:last-child) {
           margin-right: 40px;
@@ -31,13 +30,13 @@
         }
         .icon {
           display: inline-block;
-          color: $darkblack;
+          color: $lightpurple;
           font-size: 32px;
           transition-duration: 250ms;
           transition-timing-function: ease-in-out;
           transition-property: color;
           &:hover {
-            color: $darkblack-hover;
+            color: $lightpurple-hover;
           }
         }
       }

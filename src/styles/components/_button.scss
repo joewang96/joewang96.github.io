@@ -8,7 +8,7 @@
     letter-spacing: 1.34px;
     cursor: pointer;
     box-sizing: border-box;
-    border: 2px solid $darkblack;
+    border: 2px solid $darkblue;
     padding: 20px 50px;
     transition-timing-function: ease-in-out;
     transition-duration: 200ms;
@@ -16,25 +16,25 @@
     border-radius: 3px;
     box-shadow: 0 0 0 0 $boxshadowcol;
     &.primary {
-      background: $darkblack;
+      background: $darkblue;
       color: $white;
     }
     &.secondary {
       background: $white;
-      color: $darkblack;
+      color: $darkblue;
     }
   }
   &:hover {
     .btn {
-      border-color: $darkblack-hover;
+      border-color: $darkblue-hover;
       -moz-box-shadow: 0.6rem 0.6rem 0 0 $boxshadowcol;
       -webkit-box-shadow: 0.6rem 0.6rem 0 0 $boxshadowcol;
       box-shadow: 0.6rem 0.6rem 0 0 $boxshadowcol;
       &.primary {
-        background: $darkblack-hover;
+        background: $darkblue-hover;
       }
       &.secondary {
-        color: $darkblack-hover;
+        color: $darkblue-hover;
       }
     }
   }

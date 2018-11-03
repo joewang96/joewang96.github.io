@@ -10,11 +10,11 @@
       .nav-logo {
         width: 32px;
         height: 32px;
-        background: $manilla;
+        background: $lightpurple;
         border-radius: 4px;
         .icon-logo {
           font-size: $navlogosize;
-          color: $darkbrown;
+          color: $darkblue;
         }
       }
     }
@@ -36,14 +36,14 @@
     }
   }
   &.on-dark .nav--container .nav--list .nav--item {
-    color: $manilla;
+    color: $white;
     &:hover {
       color: $offwhite;
     }
   }
   @media (max-width: $mdscreen) {
     &.md-on-dark .nav--container .nav--list .nav--item {
-      color: $manilla;
+      color: $white;
       &:hover {
         color: $offwhite;
       }
@@ -51,7 +51,7 @@
   }
   &.on-light .nav--container .brand--container {
     .nav-logo {
-      background: $darkbrown;
+      background: $darkblue;
       .icon-logo {
         color: $white;
       }
