@@ -33,6 +33,9 @@
         &:not(:last-child) {
           margin-right: 2.5rem;
         }
+        &:hover {
+          color: $darkblack;
+        }
       }
     }
   }
