@@ -87,8 +87,12 @@ class Home extends Component {
             id="hero--home"
             title={RichText.asText(hero_text)}
             subtitle={RichText.render(hero_subtext, null)}
+            subtitleRender={true}
           />
-          <section className="section no-pad full-width flex-parent flex-row flex-col-md flex-ae">
+          <section
+            className="section no-pad full-width flex-parent flex-row flex-col-md flex-ae"
+            id="about"
+          >
             <div className="container pad container--white container--hero-about flex-parent flex-ac flex-jc">
               <div className="container--hero-about--inner">
                 <h2 className="title max-6-col">
@@ -112,7 +116,7 @@ class Home extends Component {
         </div>
 
         <section className="section section--dark-insert full-width flex-parent flex-ac flex-jc">
-          <div className="container container--about-before max-7-col">
+          <div className="container container--about-before">
             <h2 className="title max-4-col">
               {RichText.asText(portfolio_preview_title)}
             </h2>

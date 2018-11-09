@@ -1,0 +1,44 @@
+#about {
+  .headshot-image {
+    width: 436px;
+    height: 520px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 2px solid $darkblack;
+    margin-bottom: -2px;
+    margin-left: -68px;
+  }
+
+  .container--white {
+    background: $white;
+  }
+
+  .container--hero-about {
+    max-width: 812px;
+    width: 100%;
+    padding-top: 154px;
+    padding-bottom: 154px;
+    margin-left: 0px;
+    margin-right: 0px;
+    &--inner {
+      max-width: 500px;
+    }
+  }
+
+  @media (max-width: $mdscreen) {
+    .container--hero-about {
+      padding-top: 96px;
+      padding-bottom: 186px;
+    }
+
+    .headshot-image {
+      width: 90vw;
+      height: 90vw;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 88px;
+      margin-top: -96px;
+    }
+  }
+}

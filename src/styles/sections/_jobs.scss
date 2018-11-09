@@ -87,4 +87,13 @@
       }
     }
   }
+
+  @media (max-width: $mdscreen) {
+    padding-top: 72px;
+    padding-bottom: 0;
+    background: $white;
+    &::after {
+      content: none;
+    }
+  }
 }

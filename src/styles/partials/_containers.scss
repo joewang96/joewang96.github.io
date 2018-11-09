@@ -1,14 +1,3 @@
-.headshot-image {
-  width: 436px;
-  height: 520px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border: 2px solid $darkblack;
-  margin-bottom: -2px;
-  margin-left: -68px;
-}
-
 .gradient-bg-top,
 .gradient-bg-bot {
   position: relative;
@@ -39,22 +28,4 @@
 .gradient-bg-bot::after {
   background-image: url(../img/curved_lines_bottom.svg);
   background-position: -30px 57px;
-}
-
-.container--white {
-  background: $white;
-}
-.container--hero-about {
-  max-width: 812px;
-  width: 100%;
-  padding-top: 154px;
-  padding-bottom: 154px;
-  margin-left: 0px;
-  margin-right: 0px;
-  &--inner {
-    max-width: 500px;
-  }
-}
-.container--about-before {
-  max-width: 500px;
 }

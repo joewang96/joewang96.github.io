@@ -1,0 +1,29 @@
+.section {
+  &.section--non-max {
+    max-width: 75%;
+    @media (max-width: $mdscreen) {
+      max-width: 100%;
+    }
+  }
+  &.section--dark-insert {
+    background: $darkblack;
+    padding-top: 150px;
+    padding-bottom: 150px;
+
+    .container {
+      max-width: 500px;
+    }
+
+    .title {
+      color: $white;
+    }
+    .body {
+      color: $offwhite;
+    }
+
+    @media (max-width: $mdscreen) {
+      padding-top: 88px;
+      padding-bottom: 88px;
+    }
+  }
+}

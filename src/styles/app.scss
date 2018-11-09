@@ -21,6 +21,10 @@
 @import './components/sock.scss';
 @import './components/footer.scss';
 @import './components/button.scss';
-@import './components/job_listing.scss';
 @import './components/work_item.scss';
 @import './components/not_found.scss';
+@import './components/dark_section.scss';
+
+// specific sections of pages
+@import './sections/about.scss';
+@import './sections/jobs.scss';

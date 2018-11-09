@@ -41,22 +41,6 @@
     padding-right: 0;
   }
 
-  &.section--non-max {
-    max-width: 75%;
-  }
-
-  &.section--dark-insert {
-    background: $darkblack;
-    padding-top: 150px;
-    padding-bottom: 150px;
-    .title {
-      color: $white;
-    }
-    .body {
-      color: $offwhite;
-    }
-  }
-
   .title {
     margin-bottom: 47px;
     &.mb-extra {
