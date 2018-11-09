@@ -3,7 +3,6 @@ import { RichText } from 'prismic-reactjs';
 import PrismicPageApi from '../prismic/PrismicPageApi';
 
 import WrappedNavFooter from '../composers/WrappedNavFooter';
-import Hero from '../components/Hero';
 import Button from '../components/Button';
 import JobItem from '../components/JobItem';
 import Sock from '../components/Sock';

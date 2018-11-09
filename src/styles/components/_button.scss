@@ -8,33 +8,32 @@
     letter-spacing: 1.34px;
     cursor: pointer;
     box-sizing: border-box;
-    border: 2px solid $darkblue;
+    border: 2px solid $darkblack;
     padding: 20px 50px;
     transition-timing-function: ease-in-out;
     transition-duration: 200ms;
     transition-property: background-color, border-color, color, box-shadow;
-    border-radius: 3px;
     box-shadow: 0 0 0 0 $boxshadowcol;
     &.primary {
-      background: $darkblue;
+      background: $darkblack;
       color: $white;
     }
     &.secondary {
       background: $white;
-      color: $darkblue;
+      color: $darkblack;
     }
   }
   &:hover {
     .btn {
-      border-color: $darkblue-hover;
+      border-color: $darkblack-hover;
       -moz-box-shadow: 0.6rem 0.6rem 0 0 $boxshadowcol;
       -webkit-box-shadow: 0.6rem 0.6rem 0 0 $boxshadowcol;
       box-shadow: 0.6rem 0.6rem 0 0 $boxshadowcol;
       &.primary {
-        background: $darkblue-hover;
+        background: $darkblack-hover;
       }
       &.secondary {
-        color: $darkblue-hover;
+        color: $darkblack-hover;
       }
     }
   }
@@ -43,6 +42,9 @@
 .btn-group {
   .btn-link--wrapper:first-child {
     margin-right: 30px;
+  }
+  &.margin-top {
+    margin-top: 50px;
   }
   @media (max-width: $smscreen) {
     display: flex;

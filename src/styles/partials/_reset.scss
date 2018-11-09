@@ -3,10 +3,11 @@
   padding: 0;
   text-decoration: none;
   color: $darkblack;
+  box-sizing: border-box;
 }
 
 body {
-  background: $body;
+  background: $white;
   margin: 0;
   font-family: $familybody;
   font-size: $body-fs-md;

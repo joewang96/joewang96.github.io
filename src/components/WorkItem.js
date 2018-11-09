@@ -27,9 +27,9 @@ class WorkItem extends Component {
         </Link>
         <div className="work-block--content">
           <p className="work-block--title">{RichText.asText(title)}</p>
-          <div className="work-block--summary">
+          {/* <div className="work-block--summary">
             {short_bio ? RichText.render(short_bio, null, htmlSerializer) : ''}
-          </div>
+          </div> */}
         </div>
       </div>
     );

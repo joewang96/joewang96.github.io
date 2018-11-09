@@ -1,58 +1,58 @@
-$colandgap: $gcolumn + $ggap;
+// $colandgap: $gcolumn + $ggap;
 
-.pad-1-col {
-  padding-left: $colandgap;
-}
-.pad-2-col {
-  padding-left: $colandgap * 2;
-}
-.pad-3-col {
-  padding-left: $colandgap * 3;
-}
-.pad-4-col {
-  padding-left: $colandgap * 4;
-}
-.pad-5-col {
-  padding-left: $colandgap * 5;
-}
+// .pad-1-col {
+//   padding-left: $colandgap;
+// }
+// .pad-2-col {
+//   padding-left: $colandgap * 2;
+// }
+// .pad-3-col {
+//   padding-left: $colandgap * 3;
+// }
+// .pad-4-col {
+//   padding-left: $colandgap * 4;
+// }
+// .pad-5-col {
+//   padding-left: $colandgap * 5;
+// }
 
-@media (max-width: $lgscreen) {
-  .pad-1-col {
-    padding-left: $colandgap / 2;
-  }
-  .pad-2-col {
-    padding-left: $colandgap * 2 / 2;
-  }
-  .pad-3-col {
-    padding-left: $colandgap * 3 / 2;
-  }
-  .pad-4-col {
-    padding-left: $colandgap * 4 / 2;
-  }
-  .pad-5-col {
-    padding-left: $colandgap * 5 / 2;
-  }
-}
+// @media (max-width: $lgscreen) {
+//   .pad-1-col {
+//     padding-left: $colandgap / 2;
+//   }
+//   .pad-2-col {
+//     padding-left: $colandgap * 2 / 2;
+//   }
+//   .pad-3-col {
+//     padding-left: $colandgap * 3 / 2;
+//   }
+//   .pad-4-col {
+//     padding-left: $colandgap * 4 / 2;
+//   }
+//   .pad-5-col {
+//     padding-left: $colandgap * 5 / 2;
+//   }
+// }
 
-@media (max-width: $mdscreen) {
-  .pad-1-col,
-  .pad-2-col,
-  .pad-3-col,
-  .pad-4-col,
-  .pad-5-col {
-    padding-left: 0;
-  }
-}
+// @media (max-width: $mdscreen) {
+//   .pad-1-col,
+//   .pad-2-col,
+//   .pad-3-col,
+//   .pad-4-col,
+//   .pad-5-col {
+//     padding-left: 0;
+//   }
+// }
 
-.max-4-col {
-  max-width: $colandgap * 4;
-}
-.max-5-col {
-  max-width: $colandgap * 5;
-}
-.max-6-col {
-  max-width: $colandgap * 6;
-}
-.max-7-col {
-  max-width: $colandgap * 7;
-}
+// .max-4-col {
+//   max-width: $colandgap * 4;
+// }
+// .max-5-col {
+//   max-width: $colandgap * 5;
+// }
+// .max-6-col {
+//   max-width: $colandgap * 6;
+// }
+// .max-7-col {
+//   max-width: $colandgap * 7;
+// }

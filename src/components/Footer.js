@@ -9,10 +9,13 @@ class Footer extends Component {
         <div className="container pad flex-parent flex-ac flex-col-md">
           <div className="sitemap flex-parent flex-row flex-ac">
             <Link className="list-item" to="/">
-              Work
+              About
+            </Link>
+            <Link className="list-item" to="/">
+              Portfolio
             </Link>
             <Link className="list-item" to="/about">
-              About
+              Work
             </Link>
           </div>
           <div className="content-right">

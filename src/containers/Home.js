@@ -6,6 +6,7 @@ import WrappedNavFooter from '../composers/WrappedNavFooter';
 import Hero from '../components/Hero';
 import WorkItem from '../components/WorkItem';
 import Button from '../components/Button';
+import JobItem from '../components/JobItem';
 import Sock from '../components/Sock';
 
 import { populateData, fetchById } from '../lib/fetch';
@@ -19,6 +20,7 @@ class Home extends Component {
     this.state = {
       work: [],
       buttonList: [],
+      jobs: [],
       sock_btn: null,
     };
   }
@@ -26,6 +28,7 @@ class Home extends Component {
   componentDidMount() {
     this.populateWork();
     this.populateButtons();
+    this.populateJobs();
     this.fetchSock();
   }
 
@@ -34,6 +37,15 @@ class Home extends Component {
     populateData(doc.data.portfolio_items, api)('portfolio_piece', payload => {
       this.setState({
         work: [...this.state.work, payload],
+      });
+    });
+  }
+
+  populateJobs() {
+    const { doc, api } = this.props;
+    populateData(doc.data.job_list, api)('job', payload => {
+      this.setState({
+        jobs: [...this.state.jobs, payload],
       });
     });
   }
@@ -60,49 +72,76 @@ class Home extends Component {
     const {
       hero_text,
       hero_subtext,
+      headshot,
       section_1_title,
       section_1_body,
       portfolio_preview_title,
       work_section_body,
+      work_title,
+      work_body,
     } = this.props.doc.data;
     return (
-      <WrappedNavFooter className="on-dark">
-        <Hero
-          id="hero--home"
-          title={RichText.asText(hero_text)}
-          subtitle={RichText.asText(hero_subtext)}
-        />
-        <section className="section section-m-bottom-lg">
-          <div className="container pad-2-col">
-            <h2 className="title max-6-col">
-              {RichText.asText(section_1_title)}
-            </h2>
-            <div className="flex-parent flex-col m-l-auto max-7-col">
-              {RichText.render(section_1_body, null, htmlSerializer)}
-              <div className="btn-group">
-                {this.state.buttonList.map((button, index) => (
-                  <Button data={button.data} key={index} />
-                ))}
+      <WrappedNavFooter>
+        <div className="gradient-bg-top">
+          <Hero
+            id="hero--home"
+            title={RichText.asText(hero_text)}
+            subtitle={RichText.asText(hero_subtext)}
+          />
+          <section className="section no-pad full-width flex-parent flex-row flex-col-md flex-ae">
+            <div className="container pad container--white container--hero-about">
+              <div className="container--hero-about--inner">
+                <h2 className="title max-6-col">
+                  {RichText.asText(section_1_title)}
+                </h2>
+                <div className="flex-parent flex-col m-l-auto max-7-col">
+                  {RichText.render(section_1_body, null, htmlSerializer)}
+                  <div className="btn-group margin-top">
+                    {this.state.buttonList.map((button, index) => (
+                      <Button data={button.data} key={index} />
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-        <section className="section section-m-bottom-md">
-          <div className="max-7-col">
+            <div
+              className="headshot-image"
+              style={{ backgroundImage: `url(${headshot.url})` }}
+            />
+          </section>
+        </div>
+
+        <section className="section section--dark-insert full-width flex-parent flex-ac flex-jc">
+          <div className="container container--about-before max-7-col">
             <h2 className="title max-4-col">
               {RichText.asText(portfolio_preview_title)}
             </h2>
             {RichText.render(work_section_body, null, htmlSerializer)}
           </div>
+        </section>
+
+        <section className="section section-m-bottom-md">
           <div className="work-grid home--work-grid">
-            {this.state.work.map((p, index) => (
-              <WorkItem key={p.id} featured={index < 2} data={p.data} />
+            {this.state.work.map(p => (
+              <WorkItem key={p.id} data={p.data} />
             ))}
           </div>
         </section>
-        <Sock>
-          <Button data={this.state.sock_btn} />
-        </Sock>
+
+        <div className="gradient-bg-bot">
+          <section className="section section--dark-insert section--non-max flex-parent flex-ac flex-jc">
+            <div className="container container--about-before max-7-col">
+              <h2 className="title max-4-col">{RichText.asText(work_title)}</h2>
+              {RichText.render(work_body, null, htmlSerializer)}
+            </div>
+          </section>
+
+          <section className="job-listings">
+            {this.state.jobs.map(job => (
+              <JobItem key={job.id} data={job.data} />
+            ))}
+          </section>
+        </div>
       </WrappedNavFooter>
     );
   }

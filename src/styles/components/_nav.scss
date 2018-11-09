@@ -1,7 +1,7 @@
 .navigation {
   position: absolute;
   z-index: 100;
-  top: 51px;
+  top: 60px;
   width: 100%;
   .nav--container {
     position: relative;
@@ -10,11 +10,11 @@
       .nav-logo {
         width: 32px;
         height: 32px;
-        background: $lightpurple;
+        background: $darkblack;
         border-radius: 4px;
         .icon-logo {
           font-size: $navlogosize;
-          color: $darkblue;
+          color: $white;
         }
       }
     }
@@ -32,28 +32,6 @@
         &:not(:last-child) {
           margin-right: 2.5rem;
         }
-      }
-    }
-  }
-  &.on-dark .nav--container .nav--list .nav--item {
-    color: $white;
-    &:hover {
-      color: $offwhite;
-    }
-  }
-  @media (max-width: $mdscreen) {
-    &.md-on-dark .nav--container .nav--list .nav--item {
-      color: $white;
-      &:hover {
-        color: $offwhite;
-      }
-    }
-  }
-  &.on-light .nav--container .brand--container {
-    .nav-logo {
-      background: $darkblue;
-      .icon-logo {
-        color: $white;
       }
     }
   }

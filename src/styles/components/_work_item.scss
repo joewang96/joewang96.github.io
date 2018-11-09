@@ -1,9 +1,9 @@
 // margin bottom for work block in the grid
-$work-block-mb: 120px;
-$work-block-mb-md: 80px;
+$work-block-mb: 64px;
 
 .work-grid {
-  margin-top: 120px;
+  padding-top: 152px;
+  padding-bottom: 152px;
   position: relative;
 }
 
@@ -43,26 +43,9 @@ $work-block-mb-md: 80px;
   }
 
   @media (min-width: $mdscreen + 1px) {
-    &:not(.featured-work) {
-      width: 45%;
-      &:nth-child(odd) {
-        margin-right: 10%;
-      }
-    }
-    &.featured-work .work-block--image--wrapper {
-      margin-bottom: 0;
-    }
-  }
-
-  &.featured-work {
-    flex-direction: row;
-    width: 100%;
-    .work-block--image--wrapper {
-      max-width: 523px;
-      height: 400px;
-      @media (min-width: $mdscreen + 1px) {
-        margin-right: 128px;
-      }
+    width: 48%;
+    &:nth-child(odd) {
+      margin-right: 4%;
     }
   }
 
@@ -91,7 +74,7 @@ $work-block-mb-md: 80px;
   @media (min-width: $mdscreen + 1px) {
     // offset the last row of work-block items' margin-bottom
     &:not(.featured-project-grid) {
-      margin-bottom: -($work-block-mb/2);
+      margin-bottom: -($work-block-mb);
     }
     .work-block.featured-work {
       align-items: center;
@@ -130,9 +113,7 @@ $work-block-mb-md: 80px;
   .work-grid {
     margin-top: 60px;
   }
-  .work-block,
-  .work-block.featured-work {
-    margin-bottom: $work-block-mb-md;
+  .work-block {
     width: 100%;
     margin-right: 0;
     margin-left: 0;

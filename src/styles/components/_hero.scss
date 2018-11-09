@@ -1,113 +1,20 @@
-.section.hero-section {
-  position: relative;
-  padding-top: 187px;
-  padding-bottom: 200px;
-  margin-bottom: 100px;
-  background-color: $darkblue;
-  @media (max-width: $mdscreen) {
-    padding-top: 167px;
-  }
-  @media (max-width: $smscreen) {
-    padding-top: 147px;
-  }
+.hero-section {
+  padding-top: 188px;
+  margin-bottom: 142px;
   .hero--container {
-    z-index: 10;
-    position: relative;
-    &:not(.no-max) {
-      max-width: 800px;
+    .title {
+      max-width: 860px;
+      font-size: 54px;
+      color: $darkblack;
+      font-family: $familysans;
+      font-weight: 400;
+      margin-bottom: 40px;
     }
-  }
-  .title {
-    margin-bottom: 40px;
-    color: $lightpurple;
-  }
-  p {
-    padding-left: 60px;
-    color: $white;
-    font-family: $familymono;
-    font-size: $body-fs-lg;
-    max-width: 600px;
-    @media (max-width: $mdscreen) {
-      & {
-        padding-left: 0px;
-      }
+    p {
+      max-width: 528px;
+      font-family: $familybody;
+      font-size: 18px;
+      color: $midblack;
     }
-  }
-  &::before {
-    z-index: 0;
-    content: ' ';
-    width: 100%;
-    height: 100%;
-    background-image: url('../img/hero_lines.svg');
-    background-repeat: no-repeat;
-    background-size: 1600px auto;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-}
-
-#hero--home {
-  .hero--container {
-    max-width: 800px;
-    padding-left: 0;
-    @media (min-width: $mdscreen + 1px) {
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-      & > p {
-        padding: 0;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
-  }
-  &::before {
-    background-position: -275px -110px;
-  }
-  &::after {
-    z-index: 0;
-    content: ' ';
-    background-image: url('../img/round_edge.svg');
-    width: 100%;
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    padding-bottom: 3%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-}
-
-#hero--about {
-  &::before {
-    left: 0;
-    background-position: -150px -500px;
-  }
-  &:after {
-    z-index: 0;
-    content: ' ';
-    width: 310px;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    background-color: $offwhite;
-    @media (min-width: $mdscreen + 1px) {
-      top: 0;
-    }
-    @media (max-width: $lgscreen) {
-      width: 290px;
-    }
-    @media (max-width: $mdscreen) {
-      bottom: 0;
-      height: 150px;
-      width: 100%;
-    }
-  }
-  @media (max-width: $mdscreen) {
-    padding-bottom: 0;
   }
 }

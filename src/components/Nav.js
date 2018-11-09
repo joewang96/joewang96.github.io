@@ -14,10 +14,13 @@ class Nav extends Component {
           </div>
           <div className="nav--list flex-parent flex-ac">
             <Link className="nav--item" to="/">
-              Work
+              About
+            </Link>
+            <Link className="nav--item" to="/">
+              Portfolio
             </Link>
             <Link className="nav--item" to="/about">
-              About
+              Work
             </Link>
           </div>
         </div>
