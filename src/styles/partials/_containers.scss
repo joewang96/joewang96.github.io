@@ -12,7 +12,8 @@
 .gradient-bg-top,
 .gradient-bg-bot {
   position: relative;
-  &::before {
+  &::before,
+  &::after {
     content: ' ';
     position: absolute;
     z-index: -1;
@@ -22,13 +23,23 @@
     bottom: 0;
     width: 100%;
     height: 100%;
+    background-repeat: no-repeat;
   }
 }
 .gradient-bg-top::before {
-  background: $gradient;
+  background-image: $gradient;
+  background-position: top;
 }
 .gradient-bg-bot::before {
-  background: $gradient-rev;
+  background-image: $gradient-rev;
+}
+.gradient-bg-top::after {
+  background-image: url(../img/curved_lines_top.svg);
+  background-position: 90px 24px;
+}
+.gradient-bg-bot::after {
+  background-image: url(../img/curved_lines_bottom.svg);
+  background-position: -30px 57px;
 }
 
 .container--white {
@@ -48,68 +59,3 @@
 .container--about-before {
   max-width: 500px;
 }
-
-// .section.work-projects {
-//   margin-top: -87px;
-// }
-
-// .section.hero-section.hero-section--about {
-//   margin-bottom: 150px;
-//   @media (max-width: $lgscreen) and (min-width: $mdscreen + 1px) {
-//     p.body {
-//       padding-left: 0;
-//     }
-//   }
-// }
-
-// .about-hero--body-img-container {
-//   z-index: 1;
-//   position: relative;
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   .about-hero--body {
-//     flex-shrink: 1;
-//     .body {
-//       @media (max-width: $mdscreen) {
-//         padding-left: 0;
-//       }
-//       &:last-child {
-//         margin-bottom: 0;
-//       }
-//     }
-//   }
-//   .headshot-image {
-//     flex-grow: 1;
-//     margin-top: 120px;
-//     img {
-//       border: 2px solid $darkblack;
-//       box-sizing: content-box;
-//       flex-grow: 1;
-//       width: 350px;
-//       @media (max-width: $lgscreen) and (min-width: $mdscreen + 1px) {
-//         width: 300px;
-//       }
-//     }
-//   }
-//   @media (min-width: $mdscreen + 1px) {
-//     .about-hero--body {
-//       margin-right: 94px;
-//     }
-//   }
-//   @media (max-width: $mdscreen) {
-//     flex-direction: column;
-//     .about-hero--body {
-//       flex-shrink: 0;
-//       margin-bottom: 30px;
-//     }
-//     .headshot-image {
-//       margin-top: 0;
-//       text-align: center;
-//       img {
-//         width: 100%;
-//         max-width: 350px;
-//       }
-//     }
-//   }
-// }

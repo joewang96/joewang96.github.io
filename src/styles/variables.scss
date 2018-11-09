@@ -14,16 +14,11 @@ $darkblack-hover: #121212;
 $accent-highlight: rgba(79, 60, 251, 0.2);
 
 // --- To Sort Through
-$lightgrey: #f9faff;
-
-$salmon: #ffaa91;
-$selection: #ffab9158;
-
+$selection: rgba(255, 171, 145, 0.58);
 $nav-base: #565656;
 $nav-hover: $darkblack;
-
-// $boxshadowcol: rgba(242, 191, 126, 0.3);
-$boxshadowcol: #f4d8d0;
+// $boxshadowcol: #f4d8d0;
+$boxshadowcol: #cac4fd;
 
 // ------- Typography -------
 // fonts
@@ -32,17 +27,14 @@ $familymono: 'IBM Plex Mono', 'Courier', monospace;
 $familybody: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 
 // -- weights --
-$headingbold: 900;
 $monosemi: 700;
 $sansreg: 400;
 $sansmed: 600;
 
 // -- sizes --
-$body-fs-lg: 1.375rem;
 $body-fs-md: 1.125rem;
 $body-fs-sm: 1rem;
 
-// $buttontagsize: 0.875rem;
 $buttontagsize: 14px;
 $jobtitlesize: 1.5rem;
 

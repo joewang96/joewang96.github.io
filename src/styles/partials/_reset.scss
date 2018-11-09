@@ -11,12 +11,12 @@ body {
   margin: 0;
   font-family: $familybody;
   font-size: $body-fs-md;
-  &.large {
-    letter-spacing: 2.1px;
-  }
-  &.medium {
-    letter-spacing: 1.8px;
-  }
+}
+
+p a {
+  text-decoration: underline;
+  color: $accent;
+  font-weight: 600;
 }
 
 ::selection {

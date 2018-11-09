@@ -86,7 +86,7 @@ class Home extends Component {
           <Hero
             id="hero--home"
             title={RichText.asText(hero_text)}
-            subtitle={RichText.asText(hero_subtext)}
+            subtitle={RichText.render(hero_subtext, null)}
           />
           <section className="section no-pad full-width flex-parent flex-row flex-col-md flex-ae">
             <div className="container pad container--white container--hero-about flex-parent flex-ac flex-jc">
