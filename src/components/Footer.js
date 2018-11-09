@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import SocialIcon from './SocialIcon';
+import { scrollTo } from '../lib/scroll.js';
 
 class Footer extends Component {
   render() {
@@ -8,15 +9,15 @@ class Footer extends Component {
       <footer className="footer flex-parent flex-ac flex-jc flex-row">
         <div className="container pad flex-parent flex-ac flex-col-md">
           <div className="sitemap flex-parent flex-row flex-ac">
-            <Link className="list-item" to="/">
+            <a className="list-item" onClick={() => scrollTo('#about')}>
               About
-            </Link>
-            <Link className="list-item" to="/">
+            </a>
+            <a className="list-item" onClick={() => scrollTo('#portfolio')}>
               Portfolio
-            </Link>
-            <Link className="list-item" to="/about">
+            </a>
+            <a className="list-item" onClick={() => scrollTo('#work')}>
               Work
-            </Link>
+            </a>
           </div>
           <div className="content-right">
             <div className="social-icons flex-parent flex-row flex-ac">

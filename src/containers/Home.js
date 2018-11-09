@@ -115,24 +115,26 @@ class Home extends Component {
           </section>
         </div>
 
-        <section className="section section--dark-insert full-width flex-parent flex-ac flex-jc">
-          <div className="container container--about-before">
-            <h2 className="title max-4-col">
-              {RichText.asText(portfolio_preview_title)}
-            </h2>
-            {RichText.render(work_section_body, null, htmlSerializer)}
+        <section id="portfolio">
+          <div className="section section--dark-insert full-width flex-parent flex-ac flex-jc">
+            <div className="container container--about-before">
+              <h2 className="title max-4-col">
+                {RichText.asText(portfolio_preview_title)}
+              </h2>
+              {RichText.render(work_section_body, null, htmlSerializer)}
+            </div>
+          </div>
+
+          <div className="section section-m-bottom-md">
+            <div className="work-grid home--work-grid">
+              {this.state.work.map(p => (
+                <WorkItem key={p.id} data={p.data} />
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="section section-m-bottom-md">
-          <div className="work-grid home--work-grid">
-            {this.state.work.map(p => (
-              <WorkItem key={p.id} data={p.data} />
-            ))}
-          </div>
-        </section>
-
-        <div className="gradient-bg-bot">
+        <div className="gradient-bg-bot" id="work">
           <section className="section section--dark-insert section--non-max flex-parent flex-ac flex-jc">
             <div className="container container--about-before max-7-col">
               <h2 className="title max-4-col">{RichText.asText(work_title)}</h2>

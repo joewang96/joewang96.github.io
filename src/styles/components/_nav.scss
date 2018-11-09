@@ -21,6 +21,7 @@
     .nav--list {
       height: 100%;
       .nav--item {
+        cursor: pointer;
         font-family: $familymono;
         font-weight: 400;
         font-size: 18px;

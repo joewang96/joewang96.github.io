@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { scrollTo } from '../lib/scroll.js';
 
 class Nav extends Component {
   render() {
-    const { path, isExact } = this.props.match;
+    // const { path, isExact } = this.props.match;
     return (
       <nav className={`navigation ${this.props.className}`}>
         <div className="nav--container flex-parent flex-ac pad pad-md-max">
@@ -13,15 +14,15 @@ class Nav extends Component {
             </Link>
           </div>
           <div className="nav--list flex-parent flex-ac">
-            <Link className="nav--item" to="/">
+            <a className="nav--item" onClick={() => scrollTo('#about')}>
               About
-            </Link>
-            <Link className="nav--item" to="/">
+            </a>
+            <a className="nav--item" onClick={() => scrollTo('#portfolio')}>
               Portfolio
-            </Link>
-            <Link className="nav--item" to="/about">
+            </a>
+            <a className="nav--item" onClick={() => scrollTo('#work')}>
               Work
-            </Link>
+            </a>
           </div>
         </div>
       </nav>

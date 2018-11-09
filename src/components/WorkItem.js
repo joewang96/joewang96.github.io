@@ -10,7 +10,7 @@ class WorkItem extends Component {
   }
 
   render() {
-    const { title, short_bio, preview_image } = this.props.data;
+    const { title, short_bio, tag_list, preview_image } = this.props.data;
     return (
       <div
         className={
@@ -26,6 +26,7 @@ class WorkItem extends Component {
           />
         </Link>
         <div className="work-block--content">
+          <p className="work-block--tags">{RichText.asText(tag_list)}</p>
           <p className="work-block--title">{RichText.asText(title)}</p>
           {/* <div className="work-block--summary">
             {short_bio ? RichText.render(short_bio, null, htmlSerializer) : ''}
