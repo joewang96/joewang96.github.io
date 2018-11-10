@@ -1,8 +1,11 @@
 h1 {
-  font-size: 44px;
+  font-size: 54px;
   font-family: $familysans;
   @media (max-width: $mdscreen) {
-    font-size: 38px;
+    font-size: 48px;
+  }
+  @media (max-width: $smscreen) {
+    font-size: 40px;
   }
 }
 

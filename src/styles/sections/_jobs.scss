@@ -79,6 +79,8 @@
     @media (max-width: $mdscreen) {
       flex-direction: column;
       margin-bottom: 72px;
+      max-width: 600px;
+      margin-left: 0;
       .job-block--date {
         max-width: 100%;
         margin-bottom: 6px;

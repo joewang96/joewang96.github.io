@@ -24,7 +24,7 @@ class WrappedNavFooter extends Component {
         id="container"
         className={this.state.loaded ? 'preload' : 'preload preset'}
       >
-        <Nav className={this.props.className} />
+        <Nav className={this.props.className || ''} />
         {this.props.children}
         <Footer />
       </div>

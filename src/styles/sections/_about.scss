@@ -1,6 +1,7 @@
 #about {
   .headshot-image {
-    width: 436px;
+    max-width: 436px;
+    width: 90vw;
     height: 520px;
     background-position: center;
     background-size: cover;
@@ -26,15 +27,18 @@
     }
   }
 
-  @media (max-width: $mdscreen) {
+  @media (max-width: $lgscreen) {
+    flex-direction: column;
+    align-items: flex-start;
+
     .container--hero-about {
       padding-top: 96px;
       padding-bottom: 186px;
     }
 
     .headshot-image {
-      width: 90vw;
       height: 90vw;
+      max-height: 436px;
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 88px;

@@ -68,28 +68,17 @@
 }
 
 .pad {
-  padding-left: $gutter-padh;
-  padding-right: $gutter-padh;
+  padding-left: $margin-desktop;
+  padding-right: $margin-desktop;
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
-  @media (max-width: $mdscreen) {
-    padding-left: $gutter-padh/2;
-    padding-right: $gutter-padh/2;
-  }
-  @media (max-width: $xsscreen) {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
-  @media (max-width: $mobile) {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
   @media (max-width: $lgscreen) {
-    &.sm-pad-lg {
-      padding-left: $gutter-padh/2;
-      padding-right: $gutter-padh/2;
-    }
+    padding-left: $margin-tablet;
+    padding-right: $margin-tablet;
+  }
+  @media (max-width: $smscreen) {
+    padding-left: $margin-mobile;
+    padding-right: $margin-mobile;
   }
 }

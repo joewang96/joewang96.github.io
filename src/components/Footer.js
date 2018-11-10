@@ -7,7 +7,7 @@ class Footer extends Component {
   render() {
     return (
       <footer className="footer flex-parent flex-ac flex-jc flex-row">
-        <div className="container pad flex-parent flex-ac flex-col-md">
+        <div className="container pad flex-parent flex-ac">
           <div className="sitemap flex-parent flex-row flex-ac">
             <a className="list-item" onClick={() => scrollTo('#about')}>
               About
@@ -16,7 +16,7 @@ class Footer extends Component {
               Portfolio
             </a>
             <a className="list-item" onClick={() => scrollTo('#work')}>
-              Work
+              Experience
             </a>
           </div>
           <div className="content-right">

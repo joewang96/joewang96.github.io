@@ -37,6 +37,10 @@
           color: $darkblack;
         }
       }
+
+      @media (max-width: $smscreen) {
+        display: none;
+      }
     }
   }
 }

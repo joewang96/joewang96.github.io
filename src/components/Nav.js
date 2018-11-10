@@ -21,7 +21,7 @@ class Nav extends Component {
               Portfolio
             </a>
             <a className="nav--item" onClick={() => scrollTo('#work')}>
-              Work
+              Experience
             </a>
           </div>
         </div>
