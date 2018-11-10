@@ -16,10 +16,10 @@
   }
 }
 .gradient-bg-top::before {
-  background-image: $gradient2;
+  background-image: $gradient;
 }
 .gradient-bg-bot::before {
-  background-image: $gradient2-rev;
+  background-image: $gradient-rev;
 }
 .gradient-bg-top::after {
   background-image: url(../img/curved_lines_top.svg);
