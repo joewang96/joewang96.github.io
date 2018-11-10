@@ -1,7 +1,7 @@
 .job-listings {
   position: relative;
   padding-top: 132px;
-  padding-bottom: 222px;
+  padding-bottom: 132px;
 
   &::after {
     content: ' ';
@@ -10,7 +10,7 @@
     z-index: -1;
     top: -222px;
     right: 0;
-    height: calc(100% - 132px);
+    height: calc(100% + 90px);
     padding-bottom: 132px;
     background: $white;
   }
@@ -21,7 +21,7 @@
     margin-bottom: 100px;
 
     &:last-child {
-      margin-bottom: 132px;
+      margin-bottom: 0;
     }
 
     .job-block--date {
@@ -97,11 +97,6 @@
     &::after {
       content: none;
       padding-bottom: 0;
-    }
-    .job-block {
-      &:last-child {
-        margin-bottom: 0;
-      }
     }
   }
 }
