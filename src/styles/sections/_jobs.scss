@@ -1,7 +1,7 @@
 .job-listings {
   position: relative;
   padding-top: 132px;
-  padding-bottom: 132px * 2;
+  padding-bottom: 222px;
 
   &::after {
     content: ' ';
@@ -91,11 +91,17 @@
   }
 
   @media (max-width: $mdscreen) {
-    padding-top: 72px;
-    padding-bottom: 0;
+    padding-top: 88px;
+    padding-bottom: 88px;
     background: $white;
     &::after {
       content: none;
+      padding-bottom: 0;
+    }
+    .job-block {
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
