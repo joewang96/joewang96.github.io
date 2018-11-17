@@ -1,27 +1,21 @@
 h1 {
-  font-size: 54px;
-  font-family: $familysans;
-  @media (max-width: $mdscreen) {
-    font-size: 48px;
-  }
-  @media (max-width: $smscreen) {
-    font-size: 40px;
-  }
+  font-family: $font-sans;
+  color: $blue;
+  font-size: 100px;
+  font-weight: bold;
 }
 
 h2 {
-  color: $darkblack;
-  font-family: $familysans;
-  font-size: 32px;
-  font-weight: 600;
-  @media (max-width: $mdscreen) {
-    font-size: 30px;
-  }
+  color: $blue;
+  font-size: 64px;
+  font-family: $font-sans;
+  font-style: italic;
+
+  margin-bottom: 94px;
 }
 
-// ---- Responsive Font Size (rem) Overrides ----
-@media (max-width: $mdscreen) {
-  html {
-    font-size: 14px;
-  }
+p {
+  color: #000;
+  font-family: $font-mono;
+  font-size: 28px;
 }

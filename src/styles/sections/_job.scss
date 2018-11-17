@@ -1,24 +1,10 @@
 .job-listings {
   position: relative;
-  padding-top: 132px;
-  padding-bottom: 132px;
-
-  &::after {
-    content: ' ';
-    position: absolute;
-    width: 65%;
-    z-index: -1;
-    top: -222px;
-    right: 0;
-    height: calc(100% + 90px);
-    padding-bottom: 132px;
-    background: $white;
-  }
 
   .job-block {
     display: flex;
     flex-direction: row;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
 
     &:last-child {
       margin-bottom: 0;
@@ -27,14 +13,13 @@
     .job-block--date {
       max-width: 185px;
       flex-shrink: 0;
-      margin-right: 15vw;
+      margin-right: 92px;
       box-sizing: border-box;
-      font-size: 26px;
-      font-weight: 600;
+      font-size: 32px;
+      font-weight: bold;
       text-transform: uppercase;
-      color: #6e6e6e;
-      letter-spacing: 0.3px;
-      font-family: 'Work Sans', 'Helvetica', sans-serif;
+      color: #898989;
+      font-family: $font-sans;
       &::selection {
         color: $darkblack;
       }
@@ -44,11 +29,19 @@
       flex-grow: 1;
     }
 
+    .job-block--company {
+      margin-bottom: 8px;
+      font-family: $font-mono;
+      font-size: 48px;
+      font-weight: bold;
+    }
+
     .job-block--position {
-      margin-bottom: 15px;
-      font-family: $familymono;
-      font-size: $jobtitlesize;
-      font-weight: $monosemi;
+      margin-bottom: 16px;
+      font-family: $font-sans;
+      font-size: 32px;
+      font-weight: 600;
+      font-style: italic;
     }
 
     .job-block--tag {
@@ -72,7 +65,7 @@
     }
 
     @media (min-width: $lgscreen + 1px) {
-      padding-left: 100px + $gcolumn + $ggap;
+      padding-left: 60px;
     }
 
     @media (max-width: $mdscreen) {
@@ -84,18 +77,7 @@
         max-width: 100%;
         margin-bottom: 6px;
         margin-right: 0;
-        font-size: 14px;
       }
-    }
-  }
-
-  @media (max-width: $mdscreen) {
-    padding-top: 88px;
-    padding-bottom: 88px;
-    background: $white;
-    &::after {
-      content: none;
-      padding-bottom: 0;
     }
   }
 }

@@ -1,0 +1,51 @@
+.hero--section {
+  margin-top: 108px;
+  margin-bottom: 158px;
+  .hero--container {
+    .title {
+      max-width: 500px;
+      margin-bottom: 52px;
+    }
+    .tagline {
+      font-family: $font-sans;
+      font-size: 20px;
+      color: $darkblack;
+      font-weight: 500;
+      letter-spacing: 3.3px;
+    }
+  }
+  .headshot-image {
+    position: relative;
+    max-width: 428px;
+    width: 90vw;
+    height: 512px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+    &::before {
+      content: ' ';
+      left: -30%;
+      top: 0%;
+      position: absolute;
+      z-index: -1;
+      width: 150%;
+      padding-bottom: 150%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url(../img/curved_lines.svg);
+      background-position: center center;
+    }
+  }
+  .hero--summary {
+    max-width: 524px;
+    .text {
+      line-height: 54px;
+      font-family: $font-mono;
+      background: $white;
+      font-size: 32px;
+      color: #000;
+      display: inline;
+    }
+  }
+}

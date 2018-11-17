@@ -1,6 +1,3 @@
-// font families
-@import './partials/font_family.scss';
-
 // variables
 @import './variables.scss';
 @import './transitions.scss';
@@ -8,22 +5,20 @@
 // base for layout, general type across multiple, resets
 @import './partials/reset.scss';
 @import './partials/type.scss';
-@import './partials/layout.scss';
 @import './partials/flex.scss';
 @import './partials/devicon.scss';
 @import './partials/logo_icon.scss';
-@import './partials/gradient.scss';
+@import './partials/layout.scss';
 
 // component specific
 @import './components/nav.scss';
-@import './components/hero.scss';
-@import './components/sock.scss';
 @import './components/footer.scss';
 @import './components/button.scss';
-@import './components/work_item.scss';
 @import './components/not_found.scss';
-@import './components/dark_section.scss';
+@import './components/work_item.scss';
 
-// specific sections of pages
-@import './sections/about.scss';
-@import './sections/jobs.scss';
+// section specific
+@import './sections/hero.scss';
+// about
+// portfolio
+@import './sections/job.scss';

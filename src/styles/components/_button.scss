@@ -3,17 +3,24 @@
     -webkit-backface-visibility: hidden;
     z-index: 1;
     position: relative;
-    font-size: $buttontagsize;
-    font-family: $familymono;
-    letter-spacing: 1.34px;
+    font-size: 24px;
+    font-family: $font-sans;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+
     cursor: pointer;
     box-sizing: border-box;
     border: 2px solid $darkblack;
-    padding: 20px 50px;
+    border-radius: 4px;
+    padding: 20px 60px;
+
     transition-timing-function: ease-in-out;
     transition-duration: 200ms;
     transition-property: background-color, border-color, color, box-shadow;
-    box-shadow: 0 0 0 0 $boxshadowcol;
+
+    -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.3);
     &.primary {
       background: $darkblack;
       color: $white;
@@ -26,9 +33,6 @@
   &:hover {
     .btn {
       border-color: $darkblack-hover;
-      -moz-box-shadow: 0.6rem 0.6rem 0 0 $boxshadowcol;
-      -webkit-box-shadow: 0.6rem 0.6rem 0 0 $boxshadowcol;
-      box-shadow: 0.6rem 0.6rem 0 0 $boxshadowcol;
       &.primary {
         background: $darkblack-hover;
       }

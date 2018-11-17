@@ -1,28 +1,15 @@
 .flex-parent {
   display: flex;
-  flex-direction: row;
-}
-
-.flex-col {
-  flex-direction: column;
 }
 
 .flex-ac {
   align-items: center;
-}
-.flex-ae {
-  align-items: flex-end;
-}
-.flex-as {
-  align-items: flex-start;
 }
 
 .flex-jc {
   justify-content: center;
 }
 
-@media (max-width: $mdscreen) {
-  .flex-col-md {
-    flex-direction: column;
-  }
+.flex-jsb {
+  justify-content: space-between;
 }

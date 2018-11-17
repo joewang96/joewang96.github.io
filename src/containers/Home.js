@@ -4,10 +4,9 @@ import PrismicPageApi from '../prismic/PrismicPageApi';
 
 import WrappedNavFooter from '../composers/WrappedNavFooter';
 import Hero from '../components/Hero';
-import WorkItem from '../components/WorkItem';
+import PortfolioItem from '../components/PortfolioItem';
 import Button from '../components/Button';
 import JobItem from '../components/JobItem';
-import Sock from '../components/Sock';
 
 import { populateData, fetchById } from '../lib/fetch';
 import { htmlSerializer } from '../lib/parse';
@@ -82,72 +81,80 @@ class Home extends Component {
     } = this.props.doc.data;
     return (
       <WrappedNavFooter>
-        <div className="gradient-bg-top">
-          <Hero
-            id="hero--home"
-            title={RichText.asText(hero_text)}
-            subtitle={RichText.render(hero_subtext, null)}
-            subtitleRender={true}
-          />
-          <section
-            className="section no-pad full-width flex-parent flex-row flex-col-md flex-ae"
-            id="about"
-          >
-            <div className="container pad container--white container--hero-about flex-parent flex-ac flex-jc">
-              <div className="container--hero-about--inner">
-                <h2 className="title max-6-col">
-                  {RichText.asText(section_1_title)}
-                </h2>
-                <div className="flex-parent flex-col m-l-auto max-7-col">
-                  {RichText.render(section_1_body, null, htmlSerializer)}
-                  <div className="btn-group margin-top">
-                    {this.state.buttonList.map((button, index) => (
-                      <Button data={button.data} key={index} />
-                    ))}
-                  </div>
-                </div>
+        <section className="section hero--section" id="hero">
+          <div className="container hero--container">
+            <div className="flex-parent flex-jsb">
+              <div className="hero--info">
+                <h1 className="title">Hi, I'm Joe Wang</h1>
+                <p className="tagline">[ Designer / Developer / Maker ]</p>
               </div>
+              <div
+                className="headshot-image"
+                style={{ backgroundImage: `url(${headshot.url})` }}
+              />
             </div>
-            <div
-              className="headshot-image"
-              style={{ backgroundImage: `url(${headshot.url})` }}
-            />
-          </section>
-        </div>
-
-        <section id="portfolio">
-          <div className="section section--dark-insert full-width flex-parent flex-ac flex-jc">
-            <div className="container container--about-before">
-              <h2 className="title max-4-col">
-                {RichText.asText(portfolio_preview_title)}
-              </h2>
-              {RichText.render(work_section_body, null, htmlSerializer)}
-            </div>
-          </div>
-
-          <div className="section section-m-bottom-md">
-            <div className="work-grid home--work-grid">
-              {this.state.work.map(p => (
-                <WorkItem key={p.id} data={p.data} />
-              ))}
+            <div className="hero--summary">
+              <p className="text">
+                Creative coder passionate about UX and accessibility. Currently
+                serving as Technology Director for Scout.
+              </p>
             </div>
           </div>
         </section>
 
-        <div className="gradient-bg-bot" id="work">
-          <section className="section section--dark-insert section--non-max flex-parent flex-ac flex-jc">
-            <div className="container container--about-before max-7-col">
-              <h2 className="title max-4-col">{RichText.asText(work_title)}</h2>
-              {RichText.render(work_body, null, htmlSerializer)}
+        <section className="section" id="about">
+          <div className="container">
+            <div>
+              <h2>First, a bit about myself</h2>
+              <p>
+                I grew up in Northern Virginia, and currently go to school at
+                Northeastern University, where I’m pursuing a B.S. in Computer
+                Science and Interactive Media. At Northeastern I’ve become a
+                part of Scout Studio, a community of passionate creatives aimed
+                at fostering the design community on campus.
+              </p>
+              <a
+                href="mailto:wang.jo@husky.neu.edu"
+                className="btn-link--wrapper"
+              >
+                <button className="btn primary">Get in touch</button>
+              </a>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section className="job-listings">
-            {this.state.jobs.map(job => (
-              <JobItem key={job.id} data={job.data} />
-            ))}
-          </section>
-        </div>
+        <section className="section" id="portfolio">
+          <div className="container">
+            <h2>I've made some cool things</h2>
+
+            <div className="section section-m-bottom-md">
+              <div className="work-grid home--work-grid">
+                {this.state.work.map(p => (
+                  <PortfolioItem key={p.id} data={p.data} />
+                ))}
+              </div>
+            </div>
+          </div>
+          <a href="#" className="btn-link--wrapper">
+            <button className="btn primary">Load more</button>
+          </a>
+        </section>
+
+        <section className="section" id="work">
+          <div className="container">
+            <h2>And have worked places</h2>
+
+            <div className="job-listings">
+              {this.state.jobs.map(job => (
+                <JobItem key={job.id} data={job.data} />
+              ))}
+            </div>
+          </div>
+
+          <a href="#" className="btn-link--wrapper">
+            <button className="btn primary">View resume</button>
+          </a>
+        </section>
       </WrappedNavFooter>
     );
   }

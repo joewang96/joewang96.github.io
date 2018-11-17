@@ -1,31 +1,31 @@
 .navigation {
-  position: absolute;
-  z-index: 100;
-  top: 60px;
+  position: relative;
   width: 100%;
   .nav--container {
     position: relative;
     justify-content: space-between;
-    .brand--container {
-      .nav-logo {
-        width: 32px;
-        height: 32px;
-        background: $darkblack;
-        border-radius: 4px;
-        .icon-logo {
-          font-size: $navlogosize;
-          color: $white;
-        }
+    margin-left: 110px;
+    .nav-logo {
+      width: 40px;
+      height: 40px;
+      background: $darkblack;
+      border-radius: 4px;
+      .icon-logo {
+        font-size: 23px;
+        color: $white;
       }
     }
     .nav--list {
       height: 100%;
+      background: $white;
+      padding: 38px 75px;
       .nav--item {
         cursor: pointer;
-        font-family: $familymono;
-        font-weight: 400;
-        font-size: 18px;
+        font-family: $font-sans;
+        font-weight: 600;
+        font-size: 22px;
         color: $nav-base;
+        letter-spacing: 2px;
         position: relative;
         transition-duration: 250ms;
         transition-timing-function: ease-in-out;

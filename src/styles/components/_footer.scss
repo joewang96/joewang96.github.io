@@ -1,5 +1,5 @@
 .footer {
-  background: $darkblack;
+  background: $white;
   position: relative;
   width: 100%;
   padding-top: 50px;
@@ -12,12 +12,12 @@
         cursor: pointer;
         font-family: $familymono;
         font-size: 18px;
-        color: $offwhite;
+        color: $darkblack;
         transition-duration: 250ms;
         transition-timing-function: ease-in-out;
         transition-property: color;
         &:hover {
-          color: $white;
+          color: $darkblack-hover;
         }
         &:not(:last-child) {
           margin-right: 40px;
@@ -31,13 +31,13 @@
         }
         .icon {
           display: inline-block;
-          color: $offwhite;
+          color: $darkblack;
           font-size: 32px;
           transition-duration: 250ms;
           transition-timing-function: ease-in-out;
           transition-property: color;
           &:hover {
-            color: $white;
+            color: $darkblack-hover;
           }
         }
       }
