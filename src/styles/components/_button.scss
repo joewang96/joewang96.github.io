@@ -10,13 +10,13 @@
 
     cursor: pointer;
     box-sizing: border-box;
-    border: 2px solid $darkblack;
+    border: none;
     border-radius: 4px;
     padding: 20px 60px;
 
     transition-timing-function: ease-in-out;
     transition-duration: 200ms;
-    transition-property: background-color, border-color, color, box-shadow;
+    transition-property: background-color, color, box-shadow, transform;
 
     -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.3);
@@ -25,19 +25,17 @@
       background: $darkblack;
       color: $white;
     }
-    &.secondary {
-      background: $white;
-      color: $darkblack;
-    }
   }
   &:hover {
     .btn {
+      transform: translateY(-4px);
+      -moz-box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.3);
+      box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.3);
+
       border-color: $darkblack-hover;
       &.primary {
         background: $darkblack-hover;
-      }
-      &.secondary {
-        color: $darkblack-hover;
       }
     }
   }
