@@ -1,6 +1,7 @@
 $pink: #f8f2f2;
 $blue: #001ddf;
 
+// ------- Typography -------
 $font-sans: 'IBM Plex Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 $font-mono: 'IBM Plex Mono', 'Courier', monospace;
 
@@ -8,6 +9,8 @@ $highlight: #ffe3ad;
 
 $bounce-lg: cubic-bezier(0.13, 0.63, 0.54, 2.82);
 $bounce-sm: cubic-bezier(0.13, 0.63, 0.54, 1.82);
+
+$nav-footer-size: 20px;
 
 // ------- Colors -------
 $darkblack: #121212;
@@ -25,29 +28,6 @@ $accent-highlight: rgba(79, 60, 251, 0.2);
 $selection: rgba(255, 171, 145, 0.58);
 $nav-base: #565656;
 $nav-hover: $darkblack;
-// $boxshadowcol: #f4d8d0;
-$boxshadowcol: #e7e3f3;
-
-// ------- Typography -------
-// fonts
-$familysans: 'Cabin', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-$familymono: 'IBM Plex Mono', 'Courier', monospace;
-$familybody: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-
-// -- weights --
-$monosemi: 700;
-$sansreg: 400;
-$sansmed: 600;
-
-// -- sizes --
-$body-fs-md: 1.125rem;
-$body-fs-sm: 1rem;
-
-$buttontagsize: 14px;
-$jobtitlesize: 1.5rem;
-
-$navlogosize: 20px;
-$navfontsize: 1.25rem;
 
 // ------- Screen Sizes -------
 

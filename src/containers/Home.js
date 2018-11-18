@@ -69,7 +69,7 @@ class Home extends Component {
       <WrappedNavFooter>
         <section className="section hero--section" id="hero">
           <div className="container hero--container">
-            <div className="flex-parent flex-jsb">
+            <div className="flex-parent">
               <div className="hero--info">
                 <h1 className="title">{RichText.asText(hero_title)}</h1>
                 <p className="tagline">{RichText.asText(tagline)}</p>
@@ -102,7 +102,9 @@ class Home extends Component {
 
         <section className="section" id="portfolio">
           <div className="container">
-            <h2>{RichText.asText(portfolio_section_title)}</h2>
+            <h2 className="text-center m-l-auto m-r-auto">
+              {RichText.asText(portfolio_section_title)}
+            </h2>
 
             <div className="work-grid home--work-grid">
               {this.state.work.map(p => (

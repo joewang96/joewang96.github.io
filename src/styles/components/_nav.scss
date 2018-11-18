@@ -22,8 +22,8 @@
       .nav--item {
         cursor: pointer;
         font-family: $font-sans;
-        font-weight: 600;
-        font-size: 22px;
+        font-weight: 500;
+        font-size: $nav-footer-size;
         color: $nav-base;
         letter-spacing: 2px;
         position: relative;

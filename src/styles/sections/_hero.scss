@@ -1,6 +1,7 @@
 .hero--section {
   margin-top: 108px;
   margin-bottom: 158px;
+  overflow-x: hidden;
   .hero--container {
     .title {
       max-width: 500px;
@@ -14,6 +15,13 @@
       letter-spacing: 3.3px;
     }
   }
+
+  .hero--info {
+    @media (min-width: $mdscreen) {
+      margin-right: 120px;
+    }
+  }
+
   .headshot-image {
     position: relative;
     max-width: 428px;
@@ -25,7 +33,7 @@
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
     &::before {
       content: ' ';
-      left: -30%;
+      left: -25%;
       top: 0%;
       position: absolute;
       z-index: -1;

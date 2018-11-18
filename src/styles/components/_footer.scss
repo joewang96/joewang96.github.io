@@ -10,9 +10,11 @@
     .sitemap {
       .list-item {
         cursor: pointer;
-        font-family: $familymono;
-        font-size: 18px;
-        color: $darkblack;
+        font-family: $font-sans;
+        font-weight: 500;
+        font-size: $nav-footer-size;
+        letter-spacing: 2px;
+        color: $nav-base;
         transition-duration: 250ms;
         transition-timing-function: ease-in-out;
         transition-property: color;

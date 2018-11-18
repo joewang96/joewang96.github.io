@@ -1,21 +1,17 @@
-.about-bio {
-  margin-bottom: 88px;
-}
-
-#about h2 {
-  max-width: 450px;
+#portfolio h2 {
+  max-width: 550px;
   position: relative;
   &::before {
     content: ' ';
-    width: 181.5px;
-    height: 150px;
-    background-image: url('../img/about_tri.svg');
+    width: 167px;
+    height: 138px;
+    background-image: url('../img/portfolio_tri.svg');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    left: 0;
-    top: 0;
+    right: 10px;
+    top: 10px;
     z-index: -1;
   }
 }
