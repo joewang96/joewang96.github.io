@@ -12,11 +12,7 @@ class WorkItem extends Component {
   render() {
     const { title, short_bio, tag_list, preview_image } = this.props.data;
     return (
-      <div
-        className={
-          this.props.featured ? 'work-block featured-work' : 'work-block'
-        }
-      >
+      <div className="work-block">
         <Link className="work-block--image--wrapper" to={'#'}>
           <div
             className="work-block--image--bg"
@@ -28,9 +24,6 @@ class WorkItem extends Component {
         <div className="work-block--content">
           <p className="work-block--tags">{RichText.asText(tag_list)}</p>
           <p className="work-block--title">{RichText.asText(title)}</p>
-          {/* <div className="work-block--summary">
-            {short_bio ? RichText.render(short_bio, null, htmlSerializer) : ''}
-          </div> */}
         </div>
       </div>
     );

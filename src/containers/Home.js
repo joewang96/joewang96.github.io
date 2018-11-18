@@ -25,13 +25,11 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.populateWork();
-    this.populateButtons();
-    this.populateJobs();
-    this.fetchSock();
+    this.fetchPortfolio();
+    this.fetchJobs();
   }
 
-  populateWork() {
+  fetchPortfolio() {
     const { doc, api } = this.props;
     populateData(doc.data.portfolio_items, api)('portfolio_piece', payload => {
       this.setState({
@@ -40,7 +38,7 @@ class Home extends Component {
     });
   }
 
-  populateJobs() {
+  fetchJobs() {
     const { doc, api } = this.props;
     populateData(doc.data.job_list, api)('job', payload => {
       this.setState({
@@ -49,44 +47,32 @@ class Home extends Component {
     });
   }
 
-  populateButtons() {
-    const { doc, api } = this.props;
-    populateData(doc.data.button_list, api)('button', payload => {
-      this.setState({
-        buttonList: [...this.state.buttonList, payload],
-      });
-    });
-  }
-
-  fetchSock() {
-    const { doc, api } = this.props;
-    fetchById(api, doc.data.sock_button.id).then(({ data }) => {
-      this.setState({
-        sock_btn: data,
-      });
-    });
-  }
-
   render() {
     const {
-      hero_text,
-      hero_subtext,
+      hero_title,
+      tagline,
+      hero_blurb,
       headshot,
-      section_1_title,
-      section_1_body,
-      portfolio_preview_title,
-      work_section_body,
-      work_title,
-      work_body,
+      about_section_title,
+      about_section_body,
+      email_button_text,
+      email_button_link,
+      portfolio_section_title,
+      load_button_text,
+      job_section_title,
+      resume_button_text,
+      resume_link,
     } = this.props.doc.data;
+
+    console.log(resume_link);
     return (
       <WrappedNavFooter>
         <section className="section hero--section" id="hero">
           <div className="container hero--container">
             <div className="flex-parent flex-jsb">
               <div className="hero--info">
-                <h1 className="title">Hi, I'm Joe Wang</h1>
-                <p className="tagline">[ Designer / Developer / Maker ]</p>
+                <h1 className="title">{RichText.asText(hero_title)}</h1>
+                <p className="tagline">{RichText.asText(tagline)}</p>
               </div>
               <div
                 className="headshot-image"
@@ -94,10 +80,7 @@ class Home extends Component {
               />
             </div>
             <div className="hero--summary">
-              <p className="text">
-                Creative coder passionate about UX and accessibility. Currently
-                serving as Technology Director for Scout.
-              </p>
+              <p className="text">{RichText.asText(hero_blurb)}</p>
             </div>
           </div>
         </section>
@@ -105,44 +88,40 @@ class Home extends Component {
         <section className="section" id="about">
           <div className="container">
             <div>
-              <h2>First, a bit about myself</h2>
-              <p>
-                I grew up in Northern Virginia, and currently go to school at
-                Northeastern University, where I’m pursuing a B.S. in Computer
-                Science and Interactive Media. At Northeastern I’ve become a
-                part of Scout Studio, a community of passionate creatives aimed
-                at fostering the design community on campus.
-              </p>
-              <a
-                href="mailto:wang.jo@husky.neu.edu"
-                className="btn-link--wrapper"
-              >
-                <button className="btn primary">Get in touch</button>
-              </a>
+              <h2>{RichText.asText(about_section_title)}</h2>
+              <div className="about-bio">
+                {RichText.render(about_section_body, null, htmlSerializer)}
+              </div>
+              <Button
+                text={RichText.asText(email_button_text)}
+                link={email_button_link}
+              />
             </div>
           </div>
         </section>
 
         <section className="section" id="portfolio">
           <div className="container">
-            <h2>I've made some cool things</h2>
+            <h2>{RichText.asText(portfolio_section_title)}</h2>
 
-            <div className="section section-m-bottom-md">
-              <div className="work-grid home--work-grid">
-                {this.state.work.map(p => (
-                  <PortfolioItem key={p.id} data={p.data} />
-                ))}
-              </div>
+            <div className="work-grid home--work-grid">
+              {this.state.work.map(p => (
+                <PortfolioItem key={p.id} data={p.data} />
+              ))}
             </div>
           </div>
-          <a href="#" className="btn-link--wrapper">
-            <button className="btn primary">Load more</button>
-          </a>
+          <div className="text-center">
+            <a href="#" className="btn-link--wrapper">
+              <button className="btn primary">
+                {RichText.asText(load_button_text)}
+              </button>
+            </a>
+          </div>
         </section>
 
         <section className="section" id="work">
           <div className="container">
-            <h2>And have worked places</h2>
+            <h2>{RichText.asText(job_section_title)}</h2>
 
             <div className="job-listings">
               {this.state.jobs.map(job => (
@@ -151,9 +130,12 @@ class Home extends Component {
             </div>
           </div>
 
-          <a href="#" className="btn-link--wrapper">
-            <button className="btn primary">View resume</button>
-          </a>
+          <div className="text-center">
+            <Button
+              text={RichText.asText(resume_button_text)}
+              link={resume_link}
+            />
+          </div>
         </section>
       </WrappedNavFooter>
     );

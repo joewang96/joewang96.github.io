@@ -1,5 +1,6 @@
 .job-listings {
   position: relative;
+  margin-bottom: 88px;
 
   .job-block {
     display: flex;
@@ -54,9 +55,23 @@
     }
 
     .job-block--summary {
+      font-family: $font-mono;
+      font-size: 24px;
+      color: #000;
       margin-bottom: 0;
-      &.m-bottom {
-        margin-bottom: 20px;
+      ul {
+        list-style-type: none;
+        li {
+          position: relative;
+          padding-left: 24px;
+          margin-bottom: 12px;
+          &:before {
+            content: '-';
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
       }
     }
 

@@ -39,6 +39,11 @@
   }
   .hero--summary {
     max-width: 524px;
+    margin-left: auto;
+    margin-right: 20vw;
+    margin-top: -80px;
+    position: relative;
+    z-index: 1;
     .text {
       line-height: 54px;
       font-family: $font-mono;
