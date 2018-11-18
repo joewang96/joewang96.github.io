@@ -1,21 +1,30 @@
-.about-bio {
-  margin-bottom: 88px;
-}
-
-#about h2 {
-  max-width: 450px;
-  position: relative;
-  &::before {
-    content: ' ';
-    width: 181.5px;
-    height: 150px;
-    background-image: url('../img/about_tri.svg');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
+#about {
+  h2 {
+    max-width: 450px;
+    position: relative;
+    &::before {
+      content: ' ';
+      width: 181.5px;
+      height: 150px;
+      background-image: url('../img/about_tri.svg');
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+    }
+  }
+  .about--content {
+    margin-left: auto;
+    max-width: 983px;
+  }
+  .about--bio-button {
+    max-width: 705px;
+    margin-left: auto;
+    .bio {
+      margin-bottom: 88px;
+    }
   }
 }

@@ -64,7 +64,6 @@ class Home extends Component {
       resume_link,
     } = this.props.doc.data;
 
-    console.log(resume_link);
     return (
       <WrappedNavFooter>
         <section className="section hero--section" id="hero">
@@ -87,15 +86,17 @@ class Home extends Component {
 
         <section className="section" id="about">
           <div className="container">
-            <div>
+            <div className="about--content">
               <h2>{RichText.asText(about_section_title)}</h2>
-              <div className="about-bio">
-                {RichText.render(about_section_body, null, htmlSerializer)}
+              <div className="about--bio-button">
+                <div className="bio">
+                  {RichText.render(about_section_body, null, htmlSerializer)}
+                </div>
+                <Button
+                  text={RichText.asText(email_button_text)}
+                  link={email_button_link}
+                />
               </div>
-              <Button
-                text={RichText.asText(email_button_text)}
-                link={email_button_link}
-              />
             </div>
           </div>
         </section>
@@ -123,20 +124,20 @@ class Home extends Component {
 
         <section className="section" id="work">
           <div className="container">
-            <h2>{RichText.asText(job_section_title)}</h2>
-
-            <div className="job-listings">
-              {this.state.jobs.map(job => (
-                <JobItem key={job.id} data={job.data} />
-              ))}
+            <div className="job--content">
+              <h2>{RichText.asText(job_section_title)}</h2>
+              <div className="job-listings">
+                {this.state.jobs.map(job => (
+                  <JobItem key={job.id} data={job.data} />
+                ))}
+              </div>
             </div>
-          </div>
-
-          <div className="text-center">
-            <Button
-              text={RichText.asText(resume_button_text)}
-              link={resume_link}
-            />
+            <div className="text-center">
+              <Button
+                text={RichText.asText(resume_button_text)}
+                link={resume_link}
+              />
+            </div>
           </div>
         </section>
       </WrappedNavFooter>
