@@ -23,7 +23,7 @@ class Nav extends Component {
               Portfolio
             </button>
             <button className="nav--item" onClick={() => scrollTo('#work')}>
-              Experience
+              Work
             </button>
           </div>
         </div>

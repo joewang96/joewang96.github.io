@@ -19,7 +19,7 @@ class Footer extends Component {
               Portfolio
             </button>
             <button className="list-item" onClick={() => scrollTo('#work')}>
-              Experience
+              Work
             </button>
           </div>
           <div className="content-right">
