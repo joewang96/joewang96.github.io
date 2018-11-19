@@ -108,9 +108,9 @@ class Home extends Component {
             </h2>
 
             <div className="work-grid home--work-grid">
-              {this.state.work.map(p => (
-                <PortfolioItem key={p.id} data={p.data} />
-              ))}
+              {this.state.work.map(p => {
+                return <PortfolioItem key={p.id} uid={p.uid} data={p.data} />;
+              })}
             </div>
           </div>
           <div className="text-center">

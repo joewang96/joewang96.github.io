@@ -9,7 +9,9 @@ export const fetchById = (api, id) => {
 export const populateData = (dataToMap, api) => (dataKey, callback) => {
   dataToMap.map(({ [dataKey]: val }, index) => {
     fetchById(api, val.id).then(({ data }) => {
-      callback({ id: val.id, data }, index);
+      const obj = { id: val.id, data };
+      if (val.uid) obj.uid = val.uid;
+      callback(obj, index);
     });
   });
 };

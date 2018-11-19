@@ -13,27 +13,18 @@ class Nav extends Component {
           </Link>
 
           <div className="nav--list flex-parent flex-ac">
-            <a
-              className="nav--item"
-              onClick={() => scrollTo('#about')}
-              tabIndex={0}
-            >
+            <button className="nav--item" onClick={() => scrollTo('#about')}>
               About
-            </a>
-            <a
+            </button>
+            <button
               className="nav--item"
               onClick={() => scrollTo('#portfolio')}
-              tabIndex={0}
             >
               Portfolio
-            </a>
-            <a
-              className="nav--item"
-              onClick={() => scrollTo('#work')}
-              tabIndex={0}
-            >
+            </button>
+            <button className="nav--item" onClick={() => scrollTo('#work')}>
               Experience
-            </a>
+            </button>
           </div>
         </div>
       </nav>

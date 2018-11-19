@@ -9,27 +9,18 @@ class Footer extends Component {
       <footer className="footer flex-parent flex-ac flex-jc flex-row">
         <div className="container pad flex-parent flex-ac">
           <div className="sitemap flex-parent flex-row flex-ac">
-            <a
-              className="list-item"
-              onClick={() => scrollTo('#about')}
-              tabIndex={0}
-            >
+            <button className="list-item" onClick={() => scrollTo('#about')}>
               About
-            </a>
-            <a
+            </button>
+            <button
               className="list-item"
               onClick={() => scrollTo('#portfolio')}
-              tabIndex={0}
             >
               Portfolio
-            </a>
-            <a
-              className="list-item"
-              onClick={() => scrollTo('#work')}
-              tabIndex={0}
-            >
+            </button>
+            <button className="list-item" onClick={() => scrollTo('#work')}>
               Experience
-            </a>
+            </button>
           </div>
           <div className="content-right">
             <div className="social-icons flex-parent flex-row flex-ac">

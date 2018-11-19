@@ -20,6 +20,8 @@
       background: $white;
       padding: 38px 75px;
       .nav--item {
+        border: none;
+        background: none;
         cursor: pointer;
         font-family: $font-sans;
         font-weight: 500;

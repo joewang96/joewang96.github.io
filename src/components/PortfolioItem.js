@@ -10,10 +10,13 @@ class WorkItem extends Component {
   }
 
   render() {
-    const { title, short_bio, tag_list, preview_image } = this.props.data;
+    const { title, tag_list, preview_image } = this.props.data;
     return (
       <div className="work-block">
-        <Link className="work-block--image--wrapper" to={'#'}>
+        <Link
+          className="work-block--image--wrapper"
+          to={`portfolio/${this.props.uid}`}
+        >
           <div
             className="work-block--image--bg"
             style={{
