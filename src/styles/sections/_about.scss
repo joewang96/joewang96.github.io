@@ -14,6 +14,10 @@
       left: 0;
       top: 0;
       z-index: -1;
+      @media (max-width: $mdscreen) {
+        width: 150px;
+        height: 124px;
+      }
     }
   }
   .about--content {
@@ -23,8 +27,5 @@
   .about--bio-button {
     max-width: 705px;
     margin-left: auto;
-    .bio {
-      margin-bottom: 88px;
-    }
   }
 }

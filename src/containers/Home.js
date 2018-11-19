@@ -89,7 +89,7 @@ class Home extends Component {
             <div className="about--content">
               <h2>{RichText.asText(about_section_title)}</h2>
               <div className="about--bio-button">
-                <div className="bio">
+                <div className="bio m-b-for-btn">
                   {RichText.render(about_section_body, null, htmlSerializer)}
                 </div>
                 <Button
@@ -107,7 +107,7 @@ class Home extends Component {
               {RichText.asText(portfolio_section_title)}
             </h2>
 
-            <div className="work-grid home--work-grid">
+            <div className="work-grid home--work-grid m-b-for-btn">
               {this.state.work.map(p => {
                 return <PortfolioItem key={p.id} uid={p.uid} data={p.data} />;
               })}
@@ -124,7 +124,7 @@ class Home extends Component {
 
         <section className="section" id="work">
           <div className="container">
-            <div className="job--content">
+            <div className="job--content m-b-for-btn">
               <h2>{RichText.asText(job_section_title)}</h2>
               <div className="job-listings">
                 {this.state.jobs.map(job => (

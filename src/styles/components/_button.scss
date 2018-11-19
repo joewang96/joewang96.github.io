@@ -25,7 +25,13 @@
       background: $darkblack;
       color: $white;
     }
+
+    @media (max-width: $mdscreen) {
+      padding: 20px 48px;
+      font-size: 20px;
+    }
   }
+
   &:hover {
     .btn {
       transform: translateY(-4px);
@@ -37,23 +43,6 @@
       &.primary {
         background: $darkblack-hover;
       }
-    }
-  }
-}
-
-.btn-group {
-  .btn-link--wrapper:first-child {
-    margin-right: 30px;
-  }
-  &.margin-top {
-    margin-top: 50px;
-  }
-  @media (max-width: $smscreen) {
-    display: flex;
-    flex-direction: column;
-    .btn-link--wrapper:first-child {
-      margin-right: 0;
-      margin-bottom: 20px;
     }
   }
 }

@@ -14,6 +14,10 @@
       left: 10px;
       bottom: -8px;
       z-index: -1;
+      @media (max-width: $mdscreen) {
+        width: 150px;
+        height: 124px;
+      }
     }
   }
   .job--content {
@@ -24,7 +28,6 @@
 
 .job-listings {
   position: relative;
-  margin-bottom: 88px;
 
   .job-block {
     display: flex;
@@ -97,13 +100,22 @@
 
     @media (max-width: $mdscreen) {
       flex-direction: column;
-      margin-bottom: 72px;
-      max-width: 600px;
-      margin-left: 0;
+      margin-bottom: 54px;
+      padding-left: 0;
       .job-block--date {
         max-width: 100%;
         margin-bottom: 6px;
         margin-right: 0;
+        font-size: 22px;
+      }
+      .job-block--company {
+        font-size: 36px;
+      }
+      .job-block--position {
+        font-size: 26px;
+      }
+      .job-block--summary {
+        font-size: 20px;
       }
     }
   }

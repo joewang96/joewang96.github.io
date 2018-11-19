@@ -1,0 +1,7 @@
+.m-b-for-btn {
+  margin-bottom: 88px;
+
+  @media (max-width: $mdscreen) {
+    margin-bottom: 40px;
+  }
+}
