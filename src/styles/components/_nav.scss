@@ -5,6 +5,13 @@
     position: relative;
     justify-content: space-between;
     margin-left: 110px;
+    @media (max-width: $lgscreen) {
+      margin-left: $margin-tablet;
+    }
+    @media (max-width: $smscreen) {
+      margin-left: $margin-mobile;
+    }
+
     .nav-logo {
       width: 40px;
       height: 40px;

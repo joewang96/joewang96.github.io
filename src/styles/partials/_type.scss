@@ -5,6 +5,9 @@ h1 {
   font-weight: bold;
 
   @media (max-width: $mdscreen) {
+    font-size: 80px;
+  }
+  @media (max-width: $smscreen) {
     font-size: 64px;
   }
 }
