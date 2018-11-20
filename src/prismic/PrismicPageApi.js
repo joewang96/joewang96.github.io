@@ -1,4 +1,5 @@
 import React from 'react';
+import NotFound from '../containers/NotFound';
 
 export default Wrapped =>
   class PrismicPageV2 extends React.Component {
