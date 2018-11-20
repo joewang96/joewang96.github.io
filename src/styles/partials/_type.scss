@@ -1,14 +1,26 @@
 h1 {
   font-family: $font-sans;
   color: $blue;
-  font-size: 100px;
   font-weight: bold;
 
-  @media (max-width: $mdscreen) {
-    font-size: 80px;
+  &.h1--home {
+    font-size: 100px;
+    @media (max-width: $mdscreen) {
+      font-size: 80px;
+    }
+    @media (max-width: $smscreen) {
+      font-size: 64px;
+    }
   }
-  @media (max-width: $smscreen) {
-    font-size: 64px;
+
+  &.h1--case-study {
+    font-size: 72px;
+    @media (max-width: $mdscreen) {
+      font-size: 64px;
+    }
+    @media (max-width: $smscreen) {
+      font-size: 48px;
+    }
   }
 }
 

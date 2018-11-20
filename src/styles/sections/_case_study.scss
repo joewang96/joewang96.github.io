@@ -1,0 +1,50 @@
+// .case-study--wrapper {
+//   &::before {
+//     content: ' ';
+//     left: -25%;
+//     top: 0%;
+//     position: absolute;
+//     z-index: -1;
+//     width: 150%;
+//     padding-bottom: 150%;
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//     background-image: url(../img/curved_lines.svg);
+//     background-position: center center;
+//   }
+// }
+.h1--case-study {
+  max-width: 712px;
+  margin-bottom: 112px;
+  margin-top: 128px;
+}
+
+.case-study--info {
+  margin-bottom: 200px;
+  .summary {
+    max-width: 523px;
+    margin-right: 64px;
+    flex-grow: 1;
+  }
+
+  .info-section {
+    max-width: 431px;
+    .info-piece {
+      &:not(:last-child) {
+        margin-bottom: 32px;
+      }
+      .title {
+        margin-bottom: 10px;
+        font-size: 32px;
+        color: $blue;
+        font-style: italic;
+        font-weight: bold;
+        font-family: $font-sans;
+      }
+      .content {
+        font-size: 32px;
+        font-family: $font-sans;
+      }
+    }
+  }
+}

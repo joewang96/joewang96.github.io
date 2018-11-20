@@ -70,7 +70,9 @@ class Home extends Component {
           <div className="container hero--container">
             <div className="flex-parent">
               <div className="hero--info">
-                <h1 className="title">{RichText.asText(hero_title)}</h1>
+                <h1 className="title h1--home">
+                  {RichText.asText(hero_title)}
+                </h1>
                 <p className="tagline">{RichText.asText(tagline)}</p>
               </div>
               <div
@@ -78,7 +80,7 @@ class Home extends Component {
                 style={{ backgroundImage: `url(${headshot.url})` }}
               />
             </div>
-            <div className="hero--summary">
+            <div className="hero--summary stripe-text">
               <p className="text">{RichText.asText(hero_blurb)}</p>
             </div>
           </div>
