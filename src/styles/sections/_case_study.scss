@@ -17,6 +17,9 @@
   max-width: 712px;
   margin-bottom: 112px;
   margin-top: 128px;
+  @media (max-width: $mdscreen) {
+    margin-bottom: 80px;
+  }
 }
 
 .case-study--info {
@@ -45,6 +48,102 @@
         font-size: 32px;
         font-family: $font-sans;
       }
+    }
+  }
+  @media (max-width: $mdscreen) {
+    flex-direction: column;
+    .summary {
+      margin-bottom: 40px;
+      max-width: 640px;
+    }
+    .info-section .info-piece {
+      @media (max-width: $smscreen) {
+        .title {
+          font-size: 28px;
+        }
+        .content {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+
+.case-study--body {
+  .text-section,
+  .image-section {
+    width: 100%;
+    margin-bottom: 148px;
+  }
+  .text-section {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    .section-title {
+      color: $blue;
+      font-style: italic;
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 35px;
+      position: relative;
+      &::before {
+        content: ' ';
+        -moz-transform-origin: center center;
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        width: 150px;
+        height: 124px;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('../img/about_tri.svg');
+        position: absolute;
+        left: -7%;
+        bottom: -40%;
+        z-index: -1;
+        @media (max-width: $mdscreen) {
+          width: 124px;
+          height: 110px;
+        }
+      }
+    }
+    &:nth-child(n + 2) {
+      .section-title::before {
+        background-image: url('../img/case_tri_2.svg');
+      }
+    }
+    &:nth-child(n + 3) {
+      .section-title::before {
+        background-image: url('../img/case_tri_3.svg');
+      }
+    }
+    .body {
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+    }
+  }
+  .image-section {
+    padding-top: 63px;
+    padding-bottom: 63px;
+    background: $white;
+    .case-study--img {
+      width: 100%;
+      margin-bottom: 32px;
+      &.img-horizontal {
+        max-width: 1080px;
+      }
+      &.img-vertical {
+        max-width: 775px;
+      }
+    }
+    .case-study--caption {
+      color: $grey;
+      font-size: 20px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 762px;
     }
   }
 }

@@ -10,14 +10,67 @@ import { htmlSerializer } from '../lib/parse';
 class CaseStudy extends Component {
   static pageType = 'portfolio-piece';
 
+  renderBody() {
+    const { body } = this.props.doc.data;
+    const bodyContent = body.map((slice, index) => {
+      // Render the right markup for the given slice type
+      const isTextSection = !!slice.text_content;
+      // Text Section
+      if (slice.slice_type === 'text_section') {
+        const { section_title, paragraph } = slice.primary;
+        return (
+          <div className="text-section pad" key={index}>
+            <h3 className="section-title">{RichText.asText(section_title)}</h3>
+            {RichText.render(paragraph, null, htmlSerializer)}
+          </div>
+        );
+      }
+      // Image Section
+      else if (slice.slice_type === 'image_section') {
+        const { case_study_image, caption } = slice.primary;
+        const { alt, dimensions, url } = case_study_image;
+        return (
+          <div
+            className="image-section pad flex-parent flex-ac flex-jc flex-col"
+            key={index}
+          >
+            <img
+              className={`case-study--img ${
+                dimensions.width > dimensions.height
+                  ? 'img-horizontal'
+                  : 'img-vertical'
+              }`}
+              src={url}
+              alt={alt}
+            />
+            <p className="case-study--caption">{RichText.asText(caption)}</p>
+          </div>
+        );
+        // Return null by default
+      } else {
+        return null;
+      }
+    });
+    return bodyContent;
+  }
+
   render() {
-    console.log(this.props.doc.data);
-    const { body, dates, position, tag_list, title } = this.props.doc.data;
+    const {
+      body,
+      dates,
+      position,
+      tag_list,
+      title,
+      alt_title,
+    } = this.props.doc.data;
+
     return (
       <WrappedNavFooter>
         <div className="section case-study--wrapper">
           <div className="contaniner">
-            <h1 className="h1--case-study">{RichText.asText(title)}</h1>
+            <h1 className="h1--case-study">
+              {RichText.asText(alt_title.length > 0 ? alt_title : title)}
+            </h1>
 
             <div className="case-study--info flex-parent flex-jsb">
               <div className="summary stripe-text">
@@ -43,6 +96,9 @@ class CaseStudy extends Component {
               </div>
             </div>
           </div>
+        </div>
+        <div className="case-study--body flex-parent flex-ac flex-jc flex-col">
+          {this.renderBody()}
         </div>
       </WrappedNavFooter>
     );
