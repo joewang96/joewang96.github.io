@@ -4,11 +4,10 @@ $work-translate-shift: 72px;
 
 .work-grid {
   position: relative;
-  padding-bottom: 32px;
   margin-top: 72px;
-  @media (min-width: $mdscreen + 1px) {
-    padding-bottom: $work-translate-shift; // reset translation
-  }
+  // @media (min-width: $mdscreen + 1px) {
+  //   padding-bottom: $work-translate-shift; // reset translation
+  // }
 }
 
 .work-block {

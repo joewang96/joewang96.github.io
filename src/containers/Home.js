@@ -115,13 +115,6 @@ class Home extends Component {
               })}
             </div>
           </div>
-          <div className="text-center">
-            <a href="#" className="btn-link--wrapper">
-              <button className="btn primary">
-                {RichText.asText(load_button_text)}
-              </button>
-            </a>
-          </div>
         </section>
 
         <section className="section" id="work">
