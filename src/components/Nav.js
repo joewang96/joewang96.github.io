@@ -29,10 +29,14 @@ class Nav extends Component {
   }
 
   render() {
-    // const { path, isExact } = this.props.match;
+    const { path } = this.props.match;
+    let className = 'nav--container';
+    if (path !== '/') {
+      className += ' lines-before';
+    }
     return (
       <nav className={`navigation ${this.props.className}`}>
-        <div className="nav--container flex-parent flex-ac">
+        <div className={`${className} flex-parent flex-ac`}>
           <Link className="nav-logo flex-parent flex-ac flex-jc" to="/">
             <i className="icon-logo" />
           </Link>

@@ -63,7 +63,7 @@ class CaseStudy extends Component {
 
   render() {
     const {
-      body,
+      short_bio,
       dates,
       position,
       tag_list,
@@ -80,12 +80,11 @@ class CaseStudy extends Component {
             </h1>
 
             <div className="case-study--info flex-parent flex-jsb">
-              <div className="summary stripe-text">
-                <p className="text">
-                  My first Scout Studio project where I worked with a team of
-                  designers building a brand and website
-                </p>
-              </div>
+              {(
+                <div className="summary stripe-text">
+                  <p className="text">{RichText.asText(short_bio)}</p>
+                </div>
+              ) || null}
 
               <div className="info-section">
                 <div className="info-piece">

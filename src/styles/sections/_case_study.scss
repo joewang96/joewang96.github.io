@@ -116,12 +116,12 @@
         }
       }
     }
-    &:nth-child(n + 2) {
+    &:nth-child(2n) {
       .section-title::before {
         background-image: url('../img/case_tri_2.svg');
       }
     }
-    &:nth-child(n + 3) {
+    &:nth-child(3n) {
       .section-title::before {
         background-image: url('../img/case_tri_3.svg');
       }
