@@ -29,9 +29,16 @@ class CaseStudy extends Component {
       else if (slice.slice_type === 'image_section') {
         const { case_study_image, caption } = slice.primary;
         const { alt, dimensions, url } = case_study_image;
+        let className = 'image-section';
+        if (
+          body.length > index + 1 &&
+          body[index + 1].slice_type === 'image_section'
+        ) {
+          className += ' no-bottom';
+        }
         return (
           <div
-            className="image-section pad flex-parent flex-ac flex-jc flex-col"
+            className={`${className} pad flex-parent flex-ac flex-jc flex-col`}
             key={index}
           >
             <img

@@ -16,12 +16,14 @@
     display: inline;
     line-height: 54px;
     font-size: 32px;
-    @media (max-width: $smscreen) {
-      margin-right: 0;
-      .text {
-        line-height: 48px;
-        font-size: 24px;
-      }
+  }
+  @media (max-width: $mdscreen) {
+    margin-right: 0;
+  }
+  @media (max-width: $smscreen) {
+    .text {
+      line-height: 48px;
+      font-size: 24px;
     }
   }
 }
