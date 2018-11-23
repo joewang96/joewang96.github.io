@@ -7,7 +7,7 @@ class Nav extends Component {
     const { path } = this.props.match;
     if (path === '/') {
       return (
-        <>
+        <div className="nav--list flex-parent flex-ac">
           <button className="nav--item" onClick={() => scrollTo('#about')}>
             About
           </button>
@@ -17,14 +17,19 @@ class Nav extends Component {
           <button className="nav--item" onClick={() => scrollTo('#work')}>
             Work
           </button>
-        </>
+        </div>
       );
     }
-    // otherwise on portfolio or 404 path
+    // otherwise on case study or 404 path
     return (
-      <Link className="nav--item" to="/">
-        Back to Home →
-      </Link>
+      <>
+        <div className="nav--list flex-parent flex-ac">
+          <Link className="nav--item" to="/">
+            Back to Home →
+          </Link>
+        </div>
+        <div className="nav--lines" />
+      </>
     );
   }
 
@@ -40,10 +45,7 @@ class Nav extends Component {
           <Link className="nav-logo flex-parent flex-ac flex-jc" to="/">
             <i className="icon-logo" />
           </Link>
-
-          <div className="nav--list flex-parent flex-ac">
-            {this.renderLinks()}
-          </div>
+          {this.renderLinks()}
         </div>
       </nav>
     );
