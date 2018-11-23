@@ -3,12 +3,10 @@ import { RichText } from 'prismic-reactjs';
 import PrismicPageApi from '../prismic/PrismicPageApi';
 
 import WrappedNavFooter from '../composers/WrappedNavFooter';
-import Hero from '../components/Hero';
 import PortfolioItem from '../components/PortfolioItem';
 import Button from '../components/Button';
 import JobItem from '../components/JobItem';
 
-import { populateData, fetchById } from '../lib/fetch';
 import { htmlSerializer } from '../lib/parse';
 
 class Home extends Component {
@@ -16,35 +14,6 @@ class Home extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      work: [],
-      buttonList: [],
-      jobs: [],
-      sock_btn: null,
-    };
-  }
-
-  componentDidMount() {
-    this.fetchPortfolio();
-    this.fetchJobs();
-  }
-
-  fetchPortfolio() {
-    const { doc, api } = this.props;
-    populateData(doc.data.portfolio_items, api)('portfolio_piece', payload => {
-      this.setState({
-        work: [...this.state.work, payload],
-      });
-    });
-  }
-
-  fetchJobs() {
-    const { doc, api } = this.props;
-    populateData(doc.data.job_list, api)('job', payload => {
-      this.setState({
-        jobs: [...this.state.jobs, payload],
-      });
-    });
   }
 
   render() {
@@ -58,8 +27,9 @@ class Home extends Component {
       email_button_text,
       email_button_link,
       portfolio_section_title,
-      load_button_text,
+      portfolio_items,
       job_section_title,
+      job_list,
       resume_button_text,
       resume_link,
     } = this.props.doc.data;
@@ -110,8 +80,10 @@ class Home extends Component {
             </h2>
 
             <div className="work-grid home--work-grid m-b-for-btn">
-              {this.state.work.map(p => {
-                return <PortfolioItem key={p.id} uid={p.uid} data={p.data} />;
+              {portfolio_items.map(({ portfolio_piece: p }) => {
+                return (
+                  <PortfolioItem key={p.id} uid={p.uid} api={this.props.api} />
+                );
               })}
             </div>
           </div>
@@ -122,8 +94,8 @@ class Home extends Component {
             <div className="job--content m-b-for-btn">
               <h2>{RichText.asText(job_section_title)}</h2>
               <div className="job-listings">
-                {this.state.jobs.map(job => (
-                  <JobItem key={job.id} data={job.data} />
+                {job_list.map(({ job }) => (
+                  <JobItem key={job.id} id={job.id} api={this.props.api} />
                 ))}
               </div>
             </div>

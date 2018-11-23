@@ -2,15 +2,28 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { RichText } from 'prismic-reactjs';
 
-import { htmlSerializer } from '../lib/parse';
-
-class WorkItem extends Component {
+class PortfolioItem extends Component {
   constructor(props) {
     super(props);
+    this.state = {};
+  }
+
+  componentDidMount() {
+    const { api, uid } = this.props;
+    api.getByUID('portfolio-piece', uid).then(document => {
+      this.setState(document.data);
+    });
   }
 
   render() {
-    const { title, tag_list, preview_image } = this.props.data;
+    const { title, tag_list, preview_image } = this.state;
+    if (
+      title === undefined ||
+      tag_list === undefined ||
+      preview_image === undefined
+    ) {
+      return null;
+    }
     return (
       <div className="work-block">
         <Link
@@ -33,4 +46,4 @@ class WorkItem extends Component {
   }
 }
 
-export default WorkItem;
+export default PortfolioItem;

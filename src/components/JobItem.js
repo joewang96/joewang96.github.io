@@ -5,6 +5,14 @@ import HighlightLink from './HighlightLink';
 class JobItem extends Component {
   constructor(props) {
     super(props);
+    this.state = {};
+  }
+
+  componentDidMount() {
+    const { api, id } = this.props;
+    api.getByID(id).then(document => {
+      this.setState(document.data);
+    });
   }
 
   render() {
@@ -14,7 +22,15 @@ class JobItem extends Component {
       position,
       summary,
       company_link,
-    } = this.props.data;
+    } = this.state;
+    if (
+      date_range === undefined ||
+      company_name === undefined ||
+      position === undefined ||
+      summary === undefined
+    ) {
+      return null;
+    }
     return (
       <div className="job-block pad">
         <p className="job-block--date">{RichText.asText(date_range)}</p>
