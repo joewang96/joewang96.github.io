@@ -74,7 +74,7 @@ class CaseStudy extends Component {
     return (
       <WrappedNavFooter>
         <div className="section case-study--wrapper">
-          <div className="contaniner">
+          <div className="container">
             <h1 className="h1--case-study">
               {RichText.asText(alt_title.length > 0 ? alt_title : title)}
             </h1>

@@ -1,20 +1,83 @@
+$not-found-rotate: -20deg;
+$not-found-rotate-sm: -90deg;
+
 .section.not-found--main {
   width: 100%;
-  height: calc(100vh - 134px);
+  height: 100vh;
   min-height: 440px;
   position: relative;
   display: flex;
   align-items: center;
-  padding-top: 100px;
-  padding-bottom: 0;
+  padding-top: 234px;
+  padding-bottom: 300px;
   box-sizing: border-box;
   justify-content: center;
   margin-bottom: 0;
   @media (max-width: $mdscreen) {
-    height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    align-items: flex-start;
   }
-  .title {
-    max-width: 650px;
-    margin-right: auto;
+  .container {
+    max-width: 640px;
+    .title--container {
+      width: 100%;
+      max-width: 540px;
+      position: relative;
+      margin-bottom: 40px;
+      .title {
+        font-size: 200px;
+        letter-spacing: 16px;
+        margin-bottom: 0;
+      }
+      .background--lines {
+        position: absolute;
+        bottom: -30%;
+        left: 0%;
+        right: 0%;
+        width: 100%;
+        -o-transform: rotate($not-found-rotate);
+        -moz-transform: rotate($not-found-rotate);
+        -webkit-transform: rotate($not-found-rotate);
+        transform: rotate($not-found-rotate);
+      }
+    }
+    @media (max-width: $mdscreen) {
+      .title--container {
+        .title {
+          font-size: 160px;
+        }
+        .background--lines {
+          width: 80%;
+          left: 10%;
+          bottom: -30%;
+        }
+      }
+    }
+    @media (max-width: $smscreen) {
+      .title--container {
+        max-width: 100%;
+        margin-bottom: 20px;
+        .title {
+          font-size: 120px;
+          text-align: left;
+        }
+        .background--lines {
+          // position: absolute;
+          // bottom: -50%;
+          // left: -0%;
+          // right: 0%;
+          // width: 100%;
+          // -o-transform: rotate($not-found-rotate-sm);
+          // -moz-transform: rotate($not-found-rotate-sm);
+          // -webkit-transform: rotate($not-found-rotate-sm);
+          // transform: rotate($not-found-rotate-sm);
+          display: none;
+        }
+      }
+      .body {
+        text-align: left;
+      }
+    }
   }
 }

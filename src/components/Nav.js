@@ -4,8 +4,20 @@ import { scrollTo } from '../lib/scroll.js';
 
 class Nav extends Component {
   renderLinks() {
-    const { path } = this.props.match;
+    const { path, isExact } = this.props.match;
     if (path === '/') {
+      // if on 404
+      if (!isExact) {
+        return (
+          <>
+            <div className="nav--list flex-parent flex-ac">
+              <Link className="nav--item" to="/">
+                Back to Home →
+              </Link>
+            </div>
+          </>
+        );
+      }
       return (
         <div className="nav--list flex-parent flex-ac">
           <button className="nav--item" onClick={() => scrollTo('#about')}>
@@ -20,7 +32,7 @@ class Nav extends Component {
         </div>
       );
     }
-    // otherwise on case study or 404 path
+    // otherwise on case study path
     return (
       <>
         <div className="nav--list flex-parent flex-ac">
