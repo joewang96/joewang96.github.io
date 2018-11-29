@@ -57,7 +57,7 @@
   @media (max-width: $lgscreen + 80px) {
     overflow-x: visible;
     @media (max-width: $smscreen) {
-      margin-top: 72px;
+      margin-top: 56px;
       overflow-x: hidden;
       overflow-y: hidden; // needed to stop the overflow-x: hidden + overflow-y: visible -> overflow-y: auto
       .hero--container .title {

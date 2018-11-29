@@ -78,6 +78,20 @@
       padding: 38px 75px;
       position: relative;
       z-index: 1;
+
+      @media (min-width: $smscreen + 1px) {
+        .nav--mobile {
+          display: none;
+        }
+      }
+
+      @media (max-width: $smscreen) {
+        padding: 38px 64px;
+        .nav--desktop {
+          display: none;
+        }
+      }
+
       .nav--item {
         border: none;
         background: none;
@@ -99,8 +113,10 @@
         }
       }
 
-      @media (max-width: $smscreen) {
-        display: none;
+      @media (max-width: $smscreen + 80px) {
+        &.hide-sm {
+          display: none;
+        }
       }
     }
   }

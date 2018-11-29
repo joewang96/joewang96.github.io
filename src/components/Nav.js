@@ -3,6 +3,22 @@ import { Link, withRouter } from 'react-router-dom';
 import { scrollTo } from '../lib/scroll.js';
 
 class Nav extends Component {
+  renderNonHome() {
+    return (
+      <>
+        <div className="nav--desktop">
+          <Link className="nav--item" to="/">
+            Back to Home →
+          </Link>
+        </div>
+        <div className="nav--mobile">
+          <Link className="nav--item" to="/">
+            Back →
+          </Link>
+        </div>
+      </>
+    );
+  }
   renderLinks() {
     const { path, isExact } = this.props.match;
     if (path === '/') {
@@ -11,15 +27,13 @@ class Nav extends Component {
         return (
           <>
             <div className="nav--list flex-parent flex-ac">
-              <Link className="nav--item" to="/">
-                Back to Home →
-              </Link>
+              {this.renderNonHome()}
             </div>
           </>
         );
       }
       return (
-        <div className="nav--list flex-parent flex-ac">
+        <div className="nav--list flex-parent flex-ac hide-sm">
           <button className="nav--item" onClick={() => scrollTo('#about')}>
             About
           </button>
@@ -36,9 +50,7 @@ class Nav extends Component {
     return (
       <>
         <div className="nav--list flex-parent flex-ac">
-          <Link className="nav--item" to="/">
-            Back to Home →
-          </Link>
+          {this.renderNonHome()}
         </div>
         <div className="nav--lines" />
       </>
