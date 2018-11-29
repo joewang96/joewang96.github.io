@@ -10,11 +10,10 @@ export default class NotFound extends Component {
         <div className="section not-found--main">
           <div className="container flex-parent flex-ac flex-jc flex-col">
             <div className="title--container">
-              <h1 className="title text-center">404</h1>
-              <img className="background--lines" src={backgroundLines} />
+              <h1 className="title text-center">¯\_(ツ)_/¯</h1>
             </div>
             <p className="body text-center">
-              Sorry, it looks like that URL isn't valid. Try a different one.
+              Sorry, it looks like there's nothing here. Try a different link.
             </p>
           </div>
         </div>

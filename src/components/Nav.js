@@ -22,17 +22,7 @@ class Nav extends Component {
   }
   renderLinks() {
     const { path, isExact } = this.props.match;
-    if (path === '/') {
-      // if on 404
-      if (!isExact) {
-        return (
-          <>
-            <div className="nav--list flex-parent flex-ac">
-              {this.renderNonHome()}
-            </div>
-          </>
-        );
-      }
+    if (path === '/' && isExact) {
       return (
         <div className="nav--list flex-parent flex-ac hide-sm">
           <button className="nav--item" onClick={() => scrollTo('#about')}>

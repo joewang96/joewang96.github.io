@@ -22,35 +22,17 @@ $not-found-rotate-sm: -90deg;
     max-width: 640px;
     .title--container {
       width: 100%;
-      max-width: 540px;
       position: relative;
       margin-bottom: 40px;
       .title {
-        font-size: 200px;
-        letter-spacing: 16px;
+        font-size: 120px;
         margin-bottom: 0;
-      }
-      .background--lines {
-        position: absolute;
-        bottom: -30%;
-        left: 0%;
-        right: 0%;
-        width: 100%;
-        -o-transform: rotate($not-found-rotate);
-        -moz-transform: rotate($not-found-rotate);
-        -webkit-transform: rotate($not-found-rotate);
-        transform: rotate($not-found-rotate);
       }
     }
     @media (max-width: $mdscreen) {
       .title--container {
         .title {
-          font-size: 160px;
-        }
-        .background--lines {
-          width: 80%;
-          left: 10%;
-          bottom: -30%;
+          font-size: 100px;
         }
       }
     }
@@ -59,20 +41,8 @@ $not-found-rotate-sm: -90deg;
         max-width: 100%;
         margin-bottom: 20px;
         .title {
-          font-size: 120px;
+          font-size: 60px;
           text-align: left;
-        }
-        .background--lines {
-          // position: absolute;
-          // bottom: -50%;
-          // left: -0%;
-          // right: 0%;
-          // width: 100%;
-          // -o-transform: rotate($not-found-rotate-sm);
-          // -moz-transform: rotate($not-found-rotate-sm);
-          // -webkit-transform: rotate($not-found-rotate-sm);
-          // transform: rotate($not-found-rotate-sm);
-          display: none;
         }
       }
       .body {

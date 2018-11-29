@@ -40,9 +40,9 @@ export default Wrapped =>
           api={this.props.prismicCtx && this.props.prismicCtx.api}
           doc={this.state.doc}
         />
-      ) : // TODO: add better loading state
-      this.state.err ? (
+      ) : (
+        // TODO: add better loading state
         <NotFound />
-      ) : null;
+      );
     }
   };
