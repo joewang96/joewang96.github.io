@@ -61,8 +61,8 @@
     }
 
     .nav-logo {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       background: $darkblack;
       border-radius: 4px;
       margin-top: 28px;
@@ -86,7 +86,7 @@
       }
 
       @media (max-width: $smscreen) {
-        padding: 38px 64px;
+        padding: 38px 38px;
         .nav--desktop {
           display: none;
         }
@@ -108,8 +108,20 @@
         &:not(:last-child) {
           margin-right: 2.5rem;
         }
+        .nav--icon {
+          width: 22px;
+          margin-left: 4px;
+          opacity: 0.7;
+          transition-timing-function: $bounce-sm;
+          transition-duration: 250ms;
+          transition-property: opacity, transform;
+        }
         &:hover {
           color: $darkblack;
+          .nav--icon {
+            opacity: 1;
+            transform: translateX(5px);
+          }
         }
       }
 

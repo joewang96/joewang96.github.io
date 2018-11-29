@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { scrollTo } from '../lib/scroll.js';
+import BackArrow from './icons/BackArrow';
 
 class Nav extends Component {
   renderNonHome() {
     return (
       <>
         <div className="nav--desktop">
-          <Link className="nav--item" to="/">
-            Back to Home →
+          <Link className="nav--item flex-parent" to="/">
+            Back to Home <BackArrow className="nav--icon" />
           </Link>
         </div>
         <div className="nav--mobile">
-          <Link className="nav--item" to="/">
-            Back →
+          <Link className="nav--item flex-parent" to="/">
+            Back <BackArrow className="nav--icon" />
           </Link>
         </div>
       </>
