@@ -1,18 +1,5 @@
-// .case-study--wrapper {
-//   &::before {
-//     content: ' ';
-//     left: -25%;
-//     top: 0%;
-//     position: absolute;
-//     z-index: -1;
-//     width: 150%;
-//     padding-bottom: 150%;
-//     background-size: contain;
-//     background-repeat: no-repeat;
-//     background-image: url(../img/curved_lines.svg);
-//     background-position: center center;
-//   }
-// }
+$body-mb: 24px;
+
 .h1--case-study {
   max-width: 712px;
   margin-bottom: 112px;
@@ -105,7 +92,13 @@
         font-size: 20px;
       }
       &:not(:last-child) {
-        margin-bottom: 24px;
+        margin-bottom: $body-mb;
+      }
+    }
+    .project-button-link {
+      margin-top: ($body-mb * 2);
+      @media (max-width: $smscreen) {
+        text-align: left;
       }
     }
   }

@@ -10,18 +10,59 @@ import { htmlSerializer } from '../lib/parse';
 class CaseStudy extends Component {
   static pageType = 'portfolio-piece';
 
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  componentDidMount() {
+    const { body } = this.props.doc.data;
+    body.map(slice => {
+      if (slice.slice_type === 'text_section') {
+        const { button_link } = slice.primary;
+        if (button_link && button_link.id) {
+          this.fetchButtonLink(button_link);
+        }
+      }
+    });
+  }
+
+  renderButtonLink(button_link) {
+    const statefulButton = this.state[button_link.id];
+    console.log('yup', button_link.id);
+    console.log(this.state);
+    return statefulButton ? (
+      <div className="project-button-link text-center">
+        <Button text={statefulButton.text} link={statefulButton.link} />
+      </div>
+    ) : null;
+  }
+
+  fetchButtonLink(button_link) {
+    console.log(button_link);
+    this.props.api.getByID(button_link.id).then(document => {
+      const { text, link } = document.data;
+      console.log(document);
+      this.setState({
+        [button_link.id]: { text: RichText.asText(text), link },
+      });
+    });
+  }
+
   renderBody() {
     const { body } = this.props.doc.data;
     const bodyContent = body.map((slice, index) => {
       // Render the right markup for the given slice type
-      const isTextSection = !!slice.text_content;
       // Text Section
       if (slice.slice_type === 'text_section') {
-        const { section_title, paragraph } = slice.primary;
+        const { section_title, paragraph, button_link } = slice.primary;
         return (
           <div className="text-section pad" key={index}>
             <h3 className="section-title">{RichText.asText(section_title)}</h3>
             {RichText.render(paragraph, null, htmlSerializer)}
+            {button_link && button_link.id
+              ? this.renderButtonLink(button_link)
+              : null}
           </div>
         );
       }

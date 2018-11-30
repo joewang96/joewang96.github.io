@@ -1,4 +1,6 @@
 .btn-link--wrapper {
+  // have <a> wrap around the button element
+  display: inline-block;
   .btn {
     -webkit-backface-visibility: hidden;
     z-index: 1;
