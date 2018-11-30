@@ -24,9 +24,14 @@ export default Wrapped =>
           {},
           (err, doc) => {
             if (err) {
+              // explicit error
               this.setState(() => ({ err }));
             } else if (doc) {
+              // everything is fine
               this.setState(() => ({ doc }));
+            } else {
+              // api finds route, but no doc data
+              this.setState(() => ({ err: 'Unable to fetch doc from path' }));
             }
           }
         );
@@ -40,9 +45,9 @@ export default Wrapped =>
           api={this.props.prismicCtx && this.props.prismicCtx.api}
           doc={this.state.doc}
         />
-      ) : (
+      ) : this.state.err ? (
         // TODO: add better loading state
         <NotFound />
-      );
+      ) : null;
     }
   };
