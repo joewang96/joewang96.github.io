@@ -25,16 +25,28 @@ class Nav extends Component {
     if (path === '/' && isExact) {
       return (
         <div className="nav--list flex-parent flex-ac hide-sm">
-          <button className="nav--item" onClick={() => scrollTo('#about')}>
-            About
-          </button>
-          <button className="nav--item" onClick={() => scrollTo('#portfolio')}>
+          <Link className="nav--item" to="/">
             Portfolio
-          </button>
-          <button className="nav--item" onClick={() => scrollTo('#work')}>
-            Work
-          </button>
+          </Link>
+          <Link className="nav--item" to="/about">
+            About
+          </Link>
         </div>
+      );
+    }
+    if (path === '/about' && isExact) {
+      return (
+        <>
+          <div className="nav--list flex-parent flex-ac hide-sm">
+            <Link className="nav--item" to="/">
+              Portfolio
+            </Link>
+            <Link className="nav--item" to="/about">
+              About
+            </Link>
+          </div>
+          <div className="nav--lines about--lines" />
+        </>
       );
     }
     // otherwise on case study path

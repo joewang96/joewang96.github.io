@@ -6,6 +6,9 @@
     .title {
       max-width: 500px;
       margin-bottom: 52px;
+      &.about--title {
+        max-width: 708px;
+      }
     }
     .tagline {
       font-family: $font-sans;
@@ -17,7 +20,7 @@
     }
   }
 
-  .hero--info {
+  .hero--info:not(.about--info) {
     flex-shrink: 0;
     @media (min-width: $mdscreen) {
       margin-right: 9vw;
@@ -54,6 +57,34 @@
     margin-top: -80px;
   }
 
+  .quick-info {
+    flex-wrap: wrap;
+    margin-top: 64px;
+    max-width: 338px * 2 + 33px;
+    .info-piece {
+      max-width: 338px;
+      margin-bottom: 48px;
+      &:nth-child(odd) {
+        margin-right: 32px;
+      }
+      &:last-child {
+        margin-bottom: 0px;
+      }
+      .title {
+        margin-bottom: 10px;
+        font-size: 32px;
+        color: $blue;
+        font-style: italic;
+        font-weight: bold;
+        font-family: $font-sans;
+      }
+      .content {
+        font-size: 32px;
+        font-family: $font-sans;
+      }
+    }
+  }
+
   @media (max-width: $lgscreen + 80px) {
     overflow-x: visible;
     @media (max-width: $smscreen) {
@@ -65,7 +96,7 @@
       }
     }
     .hero--container {
-      .flex-parent {
+      .layout--container {
         flex-direction: column;
       }
       .headshot-image {
