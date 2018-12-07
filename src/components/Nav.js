@@ -1,9 +1,29 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { scrollTo } from '../lib/scroll.js';
 import BackArrow from './icons/BackArrow';
 
 class Nav extends Component {
+  renderHomeAbout() {
+    return (
+      <div className="nav--list flex-parent flex-ac">
+        <div className="hide-sm">
+          <Link className="nav--item" to="/">
+            Portfolio
+          </Link>
+          <Link className="nav--item" to="/about">
+            About
+          </Link>
+        </div>
+        <div className="show-sm">
+          <div className="mobile-nav">
+            <div className="mobile-line" />
+            <div className="mobile-line" />
+            <div className="mobile-line" />
+          </div>
+        </div>
+      </div>
+    );
+  }
   renderNonHome() {
     return (
       <>
@@ -23,28 +43,12 @@ class Nav extends Component {
   renderLinks() {
     const { path, isExact } = this.props.match;
     if (path === '/' && isExact) {
-      return (
-        <div className="nav--list flex-parent flex-ac hide-sm">
-          <Link className="nav--item" to="/">
-            Portfolio
-          </Link>
-          <Link className="nav--item" to="/about">
-            About
-          </Link>
-        </div>
-      );
+      return this.renderHomeAbout();
     }
     if (path === '/about' && isExact) {
       return (
         <>
-          <div className="nav--list flex-parent flex-ac hide-sm">
-            <Link className="nav--item" to="/">
-              Portfolio
-            </Link>
-            <Link className="nav--item" to="/about">
-              About
-            </Link>
-          </div>
+          {this.renderHomeAbout()}
           <div className="nav--lines about--lines" />
         </>
       );
