@@ -169,6 +169,7 @@ $mobile-nav-break: $smscreen + 80px;
         background: $darkblack;
         transition-timing-function: ease-in-out;
         transition-duration: 250ms;
+        opacity: 0.8;
         &:not(:last-child) {
           margin-bottom: 6px;
         }
@@ -184,12 +185,13 @@ $mobile-nav-break: $smscreen + 80px;
       }
       &:hover {
         .mobile-line {
-          // TODO: ANIMATION
+          opacity: 1;
           &:nth-child(1),
           &:nth-child(2),
           &:nth-child(3) {
             width: 38px;
           }
+          // TODO: ANIMATION -> X
         }
       }
     }
