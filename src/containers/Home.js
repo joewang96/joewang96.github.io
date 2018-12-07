@@ -21,6 +21,8 @@ class Home extends Component {
       headshot,
       portfolio_section_title,
       portfolio_items,
+      resume_button_text,
+      resume_link,
     } = this.props.doc.data;
 
     return (
@@ -35,7 +37,7 @@ class Home extends Component {
                 <p className="tagline">{RichText.asText(tagline)}</p>
               </div>
               <div
-                className="headshot-image"
+                className="headshot-image bordered"
                 style={{ backgroundImage: `url(${headshot.url})` }}
               />
             </div>
@@ -57,6 +59,13 @@ class Home extends Component {
                   <PortfolioItem key={p.id} uid={p.uid} api={this.props.api} />
                 );
               })}
+            </div>
+
+            <div className="text-center">
+              <Button
+                text={RichText.asText(resume_button_text)}
+                link={resume_link}
+              />
             </div>
           </div>
         </section>

@@ -27,7 +27,7 @@ class PortfolioItem extends Component {
     return (
       <div className="work-block">
         <Link
-          className="work-block--image--wrapper"
+          className="work-block--image--wrapper bordered"
           to={`portfolio/${this.props.uid}`}
         >
           <div
