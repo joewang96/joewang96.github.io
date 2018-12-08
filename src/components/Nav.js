@@ -27,12 +27,12 @@ class Nav extends Component {
   renderNonHome() {
     return (
       <>
-        <div className="nav--desktop">
+        <div className="hide-sm">
           <Link className="nav--item flex-parent" to="/">
             Back to Home <BackArrow className="nav--icon" />
           </Link>
         </div>
-        <div className="nav--mobile">
+        <div className="show-sm">
           <Link className="nav--item flex-parent" to="/">
             Back <BackArrow className="nav--icon" />
           </Link>
