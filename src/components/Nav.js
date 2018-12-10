@@ -3,14 +3,20 @@ import { Link, withRouter } from 'react-router-dom';
 import BackArrow from './icons/BackArrow';
 
 class Nav extends Component {
-  renderHomeAbout() {
+  renderHomeAbout(isAbout) {
     return (
       <div className="nav--list flex-parent flex-ac">
         <div className="hide-sm">
-          <Link className="nav--item" to="/">
+          <Link
+            className={`nav-type nav--item${isAbout ? '' : ' active'}`}
+            to="/"
+          >
             Portfolio
           </Link>
-          <Link className="nav--item" to="/about">
+          <Link
+            className={`nav-type nav--item${isAbout ? ' active' : ''}`}
+            to="/about"
+          >
             About
           </Link>
         </div>
@@ -28,12 +34,12 @@ class Nav extends Component {
     return (
       <>
         <div className="hide-sm">
-          <Link className="nav--item flex-parent" to="/">
+          <Link className="nav-type nav--item flex-parent" to="/">
             Back to Home <BackArrow className="nav--icon" />
           </Link>
         </div>
         <div className="show-sm">
-          <Link className="nav--item flex-parent" to="/">
+          <Link className="nav-type nav--item flex-parent" to="/">
             Back <BackArrow className="nav--icon" />
           </Link>
         </div>
@@ -43,12 +49,12 @@ class Nav extends Component {
   renderLinks() {
     const { path, isExact } = this.props.match;
     if (path === '/' && isExact) {
-      return this.renderHomeAbout();
+      return this.renderHomeAbout(false);
     }
     if (path === '/about' && isExact) {
       return (
         <>
-          {this.renderHomeAbout()}
+          {this.renderHomeAbout(true)}
           <div className="nav--lines about--lines" />
         </>
       );

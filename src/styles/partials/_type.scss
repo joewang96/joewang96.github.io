@@ -53,3 +53,28 @@ p {
     font-size: 22px;
   }
 }
+
+.nav-type {
+  font-family: $font-sans;
+  font-weight: 600;
+  font-size: $nav-footer-size;
+  color: $nav-base;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+  transition-property: color;
+  &:hover {
+    color: $darkblack-hover;
+  }
+  &.active {
+    color: $darkblack-hover;
+    position: relative;
+    &::before {
+      content: ' ';
+      width: 100%;
+      height: 4px;
+      background: $darkblack-hover;
+      bottom: -150%;
+      position: absolute;
+    }
+  }
+}

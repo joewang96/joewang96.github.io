@@ -116,16 +116,7 @@ $mobile-nav-break: $smscreen + 80px;
       .nav--item {
         border: none;
         background: none;
-        cursor: pointer;
-        font-family: $font-sans;
-        font-weight: 500;
-        font-size: $nav-footer-size;
-        color: $nav-base;
-        letter-spacing: 2px;
         position: relative;
-        transition-duration: 250ms;
-        transition-timing-function: ease-in-out;
-        transition-property: color;
         &:not(:last-child) {
           margin-right: 50px;
         }
@@ -138,7 +129,6 @@ $mobile-nav-break: $smscreen + 80px;
           transition-property: opacity, transform;
         }
         &:hover {
-          color: $darkblack;
           .nav--icon {
             opacity: 1;
             transform: translateX(5px);
