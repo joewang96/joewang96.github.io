@@ -1,5 +1,28 @@
 $mobile-nav-break: $smscreen + 80px;
 
+@keyframes nav_x_t {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(9px);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+@keyframes nav_x_b {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+  100% {
+    transform: rotate(-45deg);
+  }
+}
+
 .mobile--nav-overlay {
   position: fixed;
   width: 100%;
@@ -15,7 +38,7 @@ $mobile-nav-break: $smscreen + 80px;
       transition-duration: 400ms;
       transition-property: opacity, transform;
       opacity: 1;
-      color: $white;
+      color: $pink;
       font-family: $font-sans;
       font-size: 48px;
       font-weight: 500;
@@ -204,23 +227,24 @@ $mobile-nav-break: $smscreen + 80px;
       align-items: flex-end;
       padding: 2px 0;
       outline: none;
+      transition-duration: 250ms;
+      transition-delay: 0ms;
+      transition-property: transform;
       .mobile-line {
         height: 3px;
         background: $darkblack;
         transition-timing-function: ease-in-out;
         transition-duration: 250ms;
+        transition-delay: 250ms;
+        transition-property: opacity, transform;
+        will-change: opacity, transform;
         opacity: 0.8;
+        width: 38px;
         &:not(:last-child) {
           margin-bottom: 6px;
         }
-        &:nth-child(1) {
-          width: 38px;
-        }
         &:nth-child(2) {
-          width: 28px;
-        }
-        &:nth-child(3) {
-          width: 18px;
+          transition-delay: 0ms;
         }
       }
       &:hover,
@@ -228,12 +252,23 @@ $mobile-nav-break: $smscreen + 80px;
       &.active {
         .mobile-line {
           opacity: 1;
-          &:nth-child(1),
-          &:nth-child(2),
-          &:nth-child(3) {
-            width: 38px;
+        }
+      }
+      &.active {
+        transform: rotate(-45deg);
+        transition-delay: 250ms;
+        .mobile-line {
+          transition-delay: 0ms;
+          &:nth-child(1) {
+            transform: translateY(9px);
           }
-          // TODO: ANIMATION -> X
+          &:nth-child(2) {
+            transform: rotate(90deg);
+            transition-delay: 250ms;
+          }
+          &:nth-child(3) {
+            transform: translateY(-9px);
+          }
         }
       }
     }
