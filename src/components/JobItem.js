@@ -16,18 +16,11 @@ class JobItem extends Component {
   }
 
   render() {
-    const {
-      date_range,
-      company_name,
-      position,
-      summary,
-      company_link,
-    } = this.state;
+    const { date_range, company_name, position, company_link } = this.state;
     if (
       date_range === undefined ||
       company_name === undefined ||
-      position === undefined ||
-      summary === undefined
+      position === undefined
     ) {
       return null;
     }
