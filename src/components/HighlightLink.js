@@ -6,9 +6,13 @@ class HoverLink extends Component {
   }
 
   render() {
-    const { children, ...rest } = this.props;
+    const { children, small, ...rest } = this.props;
     return (
-      <a {...rest} className="highlight-link" target="_blank">
+      <a
+        {...rest}
+        className={`highlight-link${small ? ' highlight-sm' : ''}`}
+        target="_blank"
+      >
         {children}
       </a>
     );

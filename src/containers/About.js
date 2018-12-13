@@ -3,8 +3,8 @@ import { RichText } from 'prismic-reactjs';
 import PrismicPageApi from '../prismic/PrismicPageApi';
 
 import WrappedNavFooter from '../composers/WrappedNavFooter';
-import Button from '../components/Button';
 import JobItem from '../components/JobItem';
+import BackArrow from '../components/icons/BackArrow';
 
 import { htmlSerializer } from '../lib/parse';
 
@@ -15,20 +15,48 @@ class About extends Component {
     super(props);
   }
 
-  renderQuickInfo() {
+  renderInfo() {
     const { body } = this.props.doc.data;
     const bodyContent = body.map((slice, index) => {
       // Render the right markup for the given slice type
       // Quick Info Section
-      if (slice.slice_type === 'quick_info') {
+      if (slice.slice_type === 'text_info') {
         const { title, text } = slice.primary;
         return (
-          <div className="info-piece" key={index}>
+          <div className="info-block" key={index}>
             <p className="title">{RichText.asText(title)}</p>
-            <p className="content">{RichText.asText(text)}</p>
+            <div className="content">
+              {RichText.render(text, null, htmlSerializer)}
+            </div>
           </div>
         );
         // Return null by default
+      } else if (slice.slice_type === 'job_info') {
+        const { title, resume_link, resume_button_text } = slice.primary;
+        const job_list = slice.items;
+        console.log(slice);
+        return (
+          <div className="info-block" key={index}>
+            <p className="title">{RichText.asText(title)}</p>
+            <div className="job-listings">
+              {job_list.map(({ job }) => (
+                <JobItem key={job.id} id={job.id} api={this.props.api} />
+              ))}
+            </div>
+            <div className="full-resume-container flex-parent flex-jc">
+              <a
+                className="resume-link flex-parent flex-ac"
+                href={resume_link}
+                target="_blank"
+              >
+                <span className="text">
+                  {RichText.asText(resume_button_text)}
+                </span>{' '}
+                <BackArrow className="arrow--icon" />
+              </a>
+            </div>
+          </div>
+        );
       } else {
         return null;
       }
@@ -36,69 +64,21 @@ class About extends Component {
     return bodyContent;
   }
   render() {
-    const {
-      hero_title,
-      tagline,
-      about_section_title,
-      about_section_body,
-      email_button_text,
-      email_button_link,
-      job_section_title,
-      job_list,
-      resume_button_text,
-      resume_link,
-    } = this.props.doc.data;
+    const { hero_title } = this.props.doc.data;
 
     return (
       <WrappedNavFooter>
-        <section className="section hero--section" id="hero">
+        <section className="section hero--section about--section" id="hero">
           <div className="container hero--container">
             <div className="flex-parent">
               <div className="hero--info about--info">
                 <h1 className="title h1--home about--title">
                   {RichText.asText(hero_title)}
                 </h1>
-                <p className="tagline">{RichText.asText(tagline)}</p>
               </div>
             </div>
-            <div className="quick-info flex-parent">
-              {this.renderQuickInfo()}
-            </div>
-          </div>
-        </section>
-
-        <section className="section" id="about">
-          <div className="container">
-            <div className="about--content">
-              <h2>{RichText.asText(about_section_title)}</h2>
-              <div className="about--bio-button">
-                <div className="bio m-b-for-btn">
-                  {RichText.render(about_section_body, null, htmlSerializer)}
-                </div>
-                <Button
-                  text={RichText.asText(email_button_text)}
-                  link={email_button_link}
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section" id="work">
-          <div className="container">
-            <div className="job--content m-b-for-btn">
-              <h2>{RichText.asText(job_section_title)}</h2>
-              <div className="job-listings">
-                {job_list.map(({ job }) => (
-                  <JobItem key={job.id} id={job.id} api={this.props.api} />
-                ))}
-              </div>
-            </div>
-            <div className="text-center">
-              <Button
-                text={RichText.asText(resume_button_text)}
-                link={resume_link}
-              />
+            <div className="info-section flex-parent flex-col">
+              {this.renderInfo()}
             </div>
           </div>
         </section>

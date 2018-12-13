@@ -1,13 +1,9 @@
 // margin bottom for work block in the grid
 $work-block-mb: 24px;
-$work-translate-shift: 72px;
 
 .work-grid {
   position: relative;
   margin-top: 72px;
-  // @media (min-width: $mdscreen + 1px) {
-  //   padding-bottom: $work-translate-shift; // reset translation
-  // }
 }
 
 .work-block {
@@ -51,9 +47,6 @@ $work-translate-shift: 72px;
     width: 49%;
     &:nth-child(odd) {
       margin-right: 2%;
-    }
-    &:nth-child(even) {
-      transform: translateY($work-translate-shift);
     }
   }
 

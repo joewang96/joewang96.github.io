@@ -11,7 +11,7 @@ export const htmlSerializer = (type, element, content, children, key) => {
   switch (type) {
     // Add a class to paragraph elements
     case Elements.paragraph:
-      const props = { className: 'body' };
+      const props = { className: 'body leading' };
       return React.createElement('p', propsWithUniqueKey(props, key), children);
 
     // Don't wrap images in a <p> tag

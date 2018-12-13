@@ -44,13 +44,16 @@ h2 {
 
 p {
   color: #000;
-  font-family: $font-mono;
+  font-family: $font-sans;
   font-size: 28px;
   @media (max-width: $mdscreen) {
     font-size: 24px;
   }
   @media (max-width: $smscreen) {
     font-size: 22px;
+  }
+  &.leading {
+    line-height: 1.55;
   }
 }
 

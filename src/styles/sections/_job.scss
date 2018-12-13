@@ -1,57 +1,19 @@
-#work {
-  h2 {
-    max-width: 466px;
-    position: relative;
-    &::before {
-      content: ' ';
-      width: 181.5px;
-      height: 150px;
-      background-image: url('../img/job_tri.svg');
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      position: absolute;
-      left: 10px;
-      bottom: -8px;
-      z-index: -1;
-      @media (max-width: $mdscreen) {
-        width: 150px;
-        height: 124px;
-      }
-    }
-  }
-  .job--content {
-    margin-left: auto;
-    max-width: 983px;
-  }
-}
-
 .job-listings {
   position: relative;
+  margin-top: 32px;
+  @media (max-width: $smscreen) {
+    margin-top: 24px;
+  }
 
   .job-block {
     display: flex;
-    flex-direction: row;
-    margin-bottom: 80px;
-    padding-right: 0;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
+    flex-direction: column;
+    margin-bottom: 30px;
 
     .job-block--date {
-      max-width: 185px;
       flex-shrink: 0;
-      margin-right: 92px;
-      box-sizing: border-box;
-      font-size: 32px;
-      font-weight: bold;
-      text-transform: uppercase;
-      color: #898989;
+      font-size: 20px;
       font-family: $font-sans;
-      &::selection {
-        color: $darkblack;
-      }
     }
 
     .job-block--content {
@@ -59,63 +21,32 @@
     }
 
     .job-block--company {
-      margin-bottom: 8px;
-      font-family: $font-mono;
-      font-size: 48px;
-      font-weight: bold;
-    }
-
-    .job-block--position {
-      margin-bottom: 16px;
+      margin-bottom: 4px;
       font-family: $font-sans;
       font-size: 32px;
       font-weight: 600;
+    }
+
+    .job-block--position {
+      font-family: $font-sans;
+      font-size: 24px;
+      font-weight: 500;
       font-style: italic;
     }
 
-    .job-block--summary {
-      font-family: $font-mono;
-      font-size: 24px;
-      color: #000;
-      margin-bottom: 0;
-      ul {
-        list-style-type: none;
-        li {
-          position: relative;
-          padding-left: 24px;
-          margin-bottom: 12px;
-          &:before {
-            content: '-';
-            position: absolute;
-            top: 0;
-            left: 0;
-          }
-        }
+    @media (min-width: $smscreen + 1px) {
+      flex-direction: row;
+      .job-block--date {
+        padding-top: 12px;
       }
     }
 
-    @media (min-width: $lgscreen + 1px) {
-      padding-left: 60px;
-    }
-
-    @media (max-width: $mdscreen) {
-      flex-direction: column;
+    @media (max-width: $smscreen) {
       margin-bottom: 54px;
-      padding-left: 0;
+      margin-bottom: 24px;
       .job-block--date {
         max-width: 100%;
-        margin-bottom: 6px;
-        margin-right: 0;
-        font-size: 22px;
-      }
-      .job-block--company {
-        font-size: 36px;
-      }
-      .job-block--position {
-        font-size: 26px;
-      }
-      .job-block--summary {
-        font-size: 20px;
+        margin-top: 12px;
       }
     }
   }

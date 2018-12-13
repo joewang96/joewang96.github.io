@@ -32,12 +32,12 @@ class JobItem extends Component {
       return null;
     }
     return (
-      <div className="job-block pad">
-        <p className="job-block--date">{RichText.asText(date_range)}</p>
+      <div className="job-block">
         <div className="job-block--content max-6-col">
           <p className="job-block--company">
             {company_link && company_link.url ? (
               <HighlightLink
+                small
                 href={company_link && company_link.url ? company_link.url : '#'}
               >
                 {RichText.asText(company_name)}
@@ -47,8 +47,8 @@ class JobItem extends Component {
             )}
           </p>
           <p className="job-block--position">{RichText.asText(position)}</p>
-          <div className="job-block--summary">{RichText.render(summary)}</div>
         </div>
+        <p className="job-block--date">{RichText.asText(date_range)}</p>
       </div>
     );
   }
