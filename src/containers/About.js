@@ -46,7 +46,7 @@ class About extends Component {
             <div className="full-resume-container flex-parent flex-jc">
               <a
                 className="resume-link flex-parent flex-ac"
-                href={resume_link}
+                href={resume_link.url}
                 target="_blank"
               >
                 <span className="text">
