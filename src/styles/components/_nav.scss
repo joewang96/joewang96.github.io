@@ -1,27 +1,6 @@
 $mobile-nav-break: $smscreen + 80px;
 
-@keyframes nav_x_t {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(9px);
-  }
-  100% {
-    transform: rotate(45deg);
-  }
-}
-@keyframes nav_x_b {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-9px);
-  }
-  100% {
-    transform: rotate(-45deg);
-  }
-}
+$mobile-nav-transition-time: 250ms;
 
 .mobile--nav-overlay {
   position: fixed;
@@ -49,9 +28,9 @@ $mobile-nav-break: $smscreen + 80px;
   }
   &.active {
     .mobile--nav-item {
-      transition-delay: 300ms;
+      transition-delay: 260ms;
       &:nth-child(2) {
-        transition-delay: 400ms;
+        transition-delay: 380ms;
       }
     }
   }
@@ -227,15 +206,15 @@ $mobile-nav-break: $smscreen + 80px;
       align-items: flex-end;
       padding: 2px 0;
       outline: none;
-      transition-duration: 250ms;
+      transition-duration: $mobile-nav-transition-time;
       transition-delay: 0ms;
       transition-property: transform;
       .mobile-line {
         height: 3px;
         background: $darkblack;
         transition-timing-function: ease-in-out;
-        transition-duration: 250ms;
-        transition-delay: 250ms;
+        transition-duration: $mobile-nav-transition-time;
+        transition-delay: $mobile-nav-transition-time;
         transition-property: opacity, transform;
         will-change: opacity, transform;
         opacity: 0.8;
@@ -256,7 +235,7 @@ $mobile-nav-break: $smscreen + 80px;
       }
       &.active {
         transform: rotate(-45deg);
-        transition-delay: 250ms;
+        transition-delay: $mobile-nav-transition-time;
         .mobile-line {
           transition-delay: 0ms;
           &:nth-child(1) {
@@ -264,7 +243,7 @@ $mobile-nav-break: $smscreen + 80px;
           }
           &:nth-child(2) {
             transform: rotate(90deg);
-            transition-delay: 250ms;
+            transition-delay: $mobile-nav-transition-time;
           }
           &:nth-child(3) {
             transform: translateY(-9px);
