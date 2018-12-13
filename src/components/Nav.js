@@ -40,6 +40,7 @@ class Nav extends Component {
         className={`mobile--nav-overlay flex-parent flex-jc flex-ac${
           mobileOpen ? ' active' : ''
         }`}
+        onClick={this.toggleMobileNav}
       >
         <div className="mobile--nav-menu flex-parent flex-col flex-jc flex-ac">
           <Link className="mobile--nav-item" to="/">
