@@ -21,17 +21,17 @@ class Footer extends Component {
               <SocialIcon
                 href="https://github.com/joewang96"
                 targetBlank={true}
-                iconClass="devicon-github-plain"
+                iconClass="icon-github"
               />
               <SocialIcon
                 href="https://www.linkedin.com/in/joseph-wang-7b0751129/"
                 targetBlank={true}
-                iconClass="devicon-linkedin-plain"
+                iconClass="icon-linkedin"
               />
               <SocialIcon
                 href="mailto:wang.jo@husky.neu.edu"
                 targetBlank={false}
-                iconClass="devicon-google-plain"
+                iconClass="icon-google"
               />
               <SocialIcon
                 href="https://dribbble.com/josephwang"
