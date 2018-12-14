@@ -5,15 +5,22 @@ class SocialIcon extends Component {
     super(props);
   }
 
+  renderIcon() {
+    const { iconClass } = this.props;
+    return <i className={`icon ${iconClass}`} />;
+  }
+
   render() {
-    const { href, targetBlank, iconClass } = this.props;
-    return (
+    const { href, targetBlank = true } = this.props;
+    return !href ? (
+      this.renderIcon()
+    ) : (
       <a
-        className="social-item flex-parent flex-ac flex-jc"
+        className="social-icon flex-parent flex-ac flex-jc"
         href={href}
         target={targetBlank ? '_blank' : ''}
       >
-        <i className={`icon ${iconClass}`} />
+        {this.renderIcon()}
       </a>
     );
   }

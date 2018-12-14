@@ -1,0 +1,12 @@
+.social-icon {
+  .icon {
+    display: inline-block;
+    color: $nav-base;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
+    transition-property: color;
+  }
+  &:hover .icon {
+    color: $darkblack-hover;
+  }
+}
