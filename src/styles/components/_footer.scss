@@ -17,14 +17,8 @@
           }
         }
       }
-      .social-icons {
+      .social-icon-list {
         justify-content: right;
-        .social-icon {
-          font-size: 32px;
-          &:not(:last-child) {
-            margin-right: 40px;
-          }
-        }
       }
     }
     .built-copyright {

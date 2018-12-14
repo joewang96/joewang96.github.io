@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import SocialIcon from './SocialIcon';
-import { scrollTo } from '../lib/scroll.js';
+import SocialIconList from './SocialIconList';
 
 class Footer extends Component {
   getYear() {
@@ -23,28 +23,7 @@ class Footer extends Component {
               </Link>
             </div>
 
-            <div className="social-icons flex-parent flex-row flex-ac">
-              <SocialIcon
-                href="https://github.com/joewang96"
-                targetBlank={true}
-                iconClass="icon-github"
-              />
-              <SocialIcon
-                href="https://www.linkedin.com/in/joseph-wang-7b0751129/"
-                targetBlank={true}
-                iconClass="icon-linkedin"
-              />
-              <SocialIcon
-                href="mailto:wang.jo@husky.neu.edu"
-                targetBlank={false}
-                iconClass="icon-google"
-              />
-              <SocialIcon
-                href="https://dribbble.com/josephwang"
-                targetBlank={true}
-                iconClass="icon-dribbble"
-              />
-            </div>
+            <SocialIconList />
           </div>
           <div className="built-copyright flex-parent flex-jsb">
             <p className="copyright">&copy; {this.getYear()} Joseph Wang</p>

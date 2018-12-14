@@ -1,3 +1,15 @@
+.social-icon-list {
+  .social-icon {
+    font-size: 32px;
+    &:not(:last-child) {
+      margin-right: 40px;
+      @media (max-width: $mobile) {
+        margin-right: 32px;
+      }
+    }
+  }
+}
+
 .social-icon {
   .icon {
     display: inline-block;

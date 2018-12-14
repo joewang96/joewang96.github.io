@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import BackArrow from './icons/BackArrow';
+import SocialIconList from './SocialIconList';
 
 class Nav extends Component {
   static mobileWidth = 680;
@@ -49,6 +50,8 @@ class Nav extends Component {
           <Link className="mobile--nav-item" to="/about">
             About
           </Link>
+
+          <SocialIconList />
         </div>
       </div>
     );

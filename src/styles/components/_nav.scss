@@ -1,6 +1,6 @@
 $mobile-nav-break: $smscreen + 80px;
-
 $mobile-nav-transition-time: 250ms;
+$overlay-offset: 56px;
 
 .mobile--nav-overlay {
   position: fixed;
@@ -12,6 +12,7 @@ $mobile-nav-transition-time: 250ms;
   transition-duration: 250ms;
   transition-property: opacity;
   .mobile--nav-menu {
+    margin-bottom: $overlay-offset;
     .mobile--nav-item {
       transition-timing-function: ease-in-out;
       transition-duration: 400ms;
@@ -23,6 +24,14 @@ $mobile-nav-transition-time: 250ms;
       font-weight: 500;
       &:not(:last-child) {
         margin-bottom: 40px;
+      }
+    }
+    .social-icon-list {
+      position: absolute;
+      bottom: $overlay-offset;
+      align-items: center;
+      .icon {
+        color: $white;
       }
     }
   }
