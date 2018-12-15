@@ -26,7 +26,9 @@ class Footer extends Component {
             <SocialIconList />
           </div>
           <div className="built-copyright flex-parent flex-jsb">
-            <p className="copyright">&copy; {this.getYear()} Joseph Wang</p>
+            <p className="copyright">
+              Copyright &copy; {this.getYear()} Joseph Wang
+            </p>
             <p className="built-with">
               Made with{' '}
               <SocialIcon iconClass="icon-react" href="https://reactjs.org/" />{' '}
