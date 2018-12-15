@@ -7,7 +7,7 @@
   .container {
     width: 100%;
     .sitemap-social {
-      margin-bottom: 32px;
+      margin-bottom: 24px;
       .sitemap {
         .list-item {
           border: none;
@@ -27,9 +27,6 @@
         font-size: 16px;
         font-family: $font-mono;
         color: $grey;
-      }
-      .copyright {
-        margin-bottom: 8px;
       }
       .built-with {
         .social-icon {
