@@ -8,15 +8,11 @@
 
 body {
   background: $pink;
+  background-image: url('../img/texture.svg');
+  background-size: 8px;
   margin: 0;
   font-family: $font-sans;
 }
-
-// p a {
-//   text-decoration: underline;
-//   color: $accent;
-//   font-weight: 600;
-// }
 
 ::selection {
   background-color: $selection;
