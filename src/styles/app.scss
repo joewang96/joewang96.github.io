@@ -1,0 +1,26 @@
+// variables
+@import './variables.scss';
+@import './transitions.scss';
+
+// base for layout, general type across multiple, resets
+@import './partials/reset.scss';
+@import './partials/type.scss';
+@import './partials/flex.scss';
+@import './partials/icons.scss';
+@import './partials/layout.scss';
+@import './partials/util.scss';
+
+// component specific
+@import './components/social_icon.scss';
+@import './components/nav.scss';
+@import './components/footer.scss';
+@import './components/button.scss';
+@import './components/not_found.scss';
+@import './components/portfolio_item.scss';
+
+// section specific
+@import './sections/hero.scss';
+@import './sections/about.scss';
+@import './sections/portfolio.scss';
+@import './sections/job.scss';
+@import './sections/case_study.scss';

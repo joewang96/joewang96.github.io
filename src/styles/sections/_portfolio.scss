@@ -1,0 +1,25 @@
+#portfolio h2 {
+  max-width: 550px;
+  position: relative;
+  &::before {
+    content: ' ';
+    width: 167px;
+    height: 138px;
+    background-image: url('../img/portfolio_tri.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: -1;
+    @media (max-width: $mdscreen) {
+      width: 136px;
+      height: 113px;
+      right: 100px;
+    }
+    @media (max-width: $smscreen) {
+      right: 50px;
+    }
+  }
+}

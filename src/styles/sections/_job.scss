@@ -1,0 +1,53 @@
+.job-listings {
+  position: relative;
+  margin-top: 32px;
+  @media (max-width: $smscreen) {
+    margin-top: 24px;
+  }
+
+  .job-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    .job-block--date {
+      flex-shrink: 0;
+      font-size: 20px;
+      font-family: $font-sans;
+    }
+
+    .job-block--content {
+      flex-grow: 1;
+    }
+
+    .job-block--company {
+      margin-bottom: 4px;
+      font-family: $font-sans;
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    .job-block--position {
+      font-family: $font-sans;
+      font-size: 24px;
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    @media (min-width: $smscreen + 1px) {
+      flex-direction: row;
+      .job-block--date {
+        padding-top: 12px;
+      }
+    }
+
+    @media (max-width: $smscreen) {
+      margin-bottom: 54px;
+      margin-bottom: 24px;
+      .job-block--date {
+        max-width: 100%;
+        margin-top: 12px;
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+/* 
+--- Need to check if this is still necessary if I'm doing it after componentDidMount --
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+*/
+
+#container {
+  opacity: 1;
+  transition-duration: 1000ms;
+  transition-timing-function: ease-in-out;
+  transition-property: opacity;
+  will-change: opacity;
+
+  .section {
+    .title {
+      transition-timing-function: ease-in-out;
+      transition-duration: 700ms;
+      transition-property: opacity, transform;
+      will-change: opacity, transform;
+    }
+    .body {
+      transition-timing-function: ease-out;
+      transition-duration: 700ms;
+      transition-delay: 100ms;
+      transition-property: opacity, transform;
+      will-change: opacity, transform;
+    }
+  }
+
+  .btn-group {
+    transition-timing-function: ease-out;
+    transition-duration: 700ms;
+    transition-delay: 100ms;
+    transition-property: opacity, transform;
+    will-change: opacity, transform;
+  }
+
+  .section.hero-section {
+    .title {
+      transition-timing-function: ease-in-out;
+      transition-duration: 700ms;
+      transition-property: opacity, transform;
+      will-change: opacity, transform;
+    }
+    p {
+      transition-timing-function: ease-out;
+      transition-duration: 700ms;
+      transition-delay: 100ms;
+      transition-property: opacity, transform;
+      will-change: opacity, transform;
+    }
+  }
+
+  .work-block--image--wrapper {
+    transition-timing-function: ease-out;
+    transition-duration: 700ms;
+    transition-delay: 100ms;
+    transition-property: transform;
+  }
+
+  &.preset {
+    opacity: 0;
+    transition: none;
+
+    .section {
+      .title {
+        opacity: 0;
+        transform: translateY(-50px);
+        transition: none;
+      }
+      .body {
+        opacity: 0;
+        // do -50 instead of 50 due to overflow issue
+        transform: translateX(-50px);
+        transition: none;
+      }
+    }
+
+    .btn-group {
+      opacity: 0;
+      transform: translateY(100px);
+      transition: none;
+    }
+
+    .section.hero-section {
+      .title {
+        opacity: 0;
+        transform: translateY(-50px);
+        transition: none;
+      }
+      p {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: none;
+      }
+    }
+
+    .work-grid .work-block--image--wrapper {
+      transform: translateY(-50px);
+    }
+  }
+}

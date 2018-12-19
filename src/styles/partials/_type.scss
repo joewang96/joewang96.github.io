@@ -1,0 +1,83 @@
+h1 {
+  font-family: $font-sans;
+  color: $blue;
+  font-weight: bold;
+
+  &.h1--home {
+    font-size: 100px;
+    @media (max-width: $mdscreen) {
+      font-size: 80px;
+    }
+    @media (max-width: $smscreen) {
+      font-size: 64px;
+    }
+  }
+
+  &.h1--case-study {
+    font-size: 72px;
+    @media (max-width: $mdscreen) {
+      font-size: 64px;
+    }
+    @media (max-width: $smscreen) {
+      font-size: 48px;
+    }
+  }
+}
+
+h2 {
+  color: $blue;
+  font-size: 64px;
+  font-family: $font-sans;
+  font-style: italic;
+
+  margin-bottom: 94px;
+
+  @media (max-width: $mdscreen) {
+    font-size: 54px;
+    margin-bottom: 64px;
+  }
+  @media (max-width: $smscreen) {
+    font-size: 44px;
+    margin-bottom: 48px;
+  }
+}
+
+p {
+  color: #000;
+  font-family: $font-sans;
+  font-size: 28px;
+  @media (max-width: $mdscreen) {
+    font-size: 24px;
+  }
+  @media (max-width: $smscreen) {
+    font-size: 22px;
+  }
+  &.leading {
+    line-height: 1.55;
+  }
+}
+
+.nav-type {
+  font-family: $font-sans;
+  font-weight: 600;
+  font-size: $nav-footer-size;
+  color: $nav-base;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+  transition-property: color;
+  &:hover {
+    color: $darkblack-hover;
+  }
+  &.active {
+    color: $darkblack-hover;
+    position: relative;
+    &::before {
+      content: ' ';
+      width: 100%;
+      height: 4px;
+      background: $darkblack-hover;
+      bottom: -125%;
+      position: absolute;
+    }
+  }
+}

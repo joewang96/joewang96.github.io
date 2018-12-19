@@ -1,0 +1,24 @@
+.social-icon-list {
+  .social-icon {
+    font-size: 32px;
+    &:not(:last-child) {
+      margin-right: 40px;
+      @media (max-width: $mobile) {
+        margin-right: 32px;
+      }
+    }
+  }
+}
+
+.social-icon {
+  .icon {
+    display: inline-block;
+    color: $nav-base;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
+    transition-property: color;
+  }
+  &:hover .icon {
+    color: $darkblack-hover;
+  }
+}

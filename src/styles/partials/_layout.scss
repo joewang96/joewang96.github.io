@@ -1,0 +1,98 @@
+.m-l-auto {
+  margin-left: auto;
+}
+.m-r-auto {
+  margin-right: auto;
+}
+
+.m-b-0 {
+  margin-bottom: 0 !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@media (max-width: $mdscreen) {
+  .text-left-md {
+    text-align: left;
+  }
+  .m-l-0-md {
+    margin-left: 0;
+  }
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.full-width {
+  width: 100%;
+}
+
+// -----------
+
+.section {
+  padding-left: $margin-desktop;
+  padding-right: $margin-desktop;
+
+  // fix zoom out issue?
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // temp
+  margin-bottom: 200px;
+
+  &.no-pad {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .title {
+    margin-bottom: 47px;
+    &.mb-extra {
+      margin-bottom: 67px;
+    }
+  }
+  .body {
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  @media (max-width: $lgscreen) {
+    padding-left: $margin-tablet;
+    padding-right: $margin-tablet;
+  }
+
+  @media (max-width: $mdscreen) {
+    margin-bottom: 175px;
+  }
+
+  @media (max-width: $smscreen) {
+    padding-left: $margin-mobile;
+    padding-right: $margin-mobile;
+  }
+}
+
+.pad {
+  padding-left: $margin-desktop;
+  padding-right: $margin-desktop;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  @media (max-width: $lgscreen) {
+    padding-left: $margin-tablet;
+    padding-right: $margin-tablet;
+  }
+  @media (max-width: $smscreen) {
+    padding-left: $margin-mobile;
+    padding-right: $margin-mobile;
+  }
+}
