@@ -29,8 +29,6 @@ class CaseStudy extends Component {
 
   renderButtonLink(button_link) {
     const statefulButton = this.state[button_link.id];
-    console.log('yup', button_link.id);
-    console.log(this.state);
     return statefulButton ? (
       <div className="project-button-link text-center">
         <Button text={statefulButton.text} link={statefulButton.link} />
@@ -39,10 +37,8 @@ class CaseStudy extends Component {
   }
 
   fetchButtonLink(button_link) {
-    console.log(button_link);
     this.props.api.getByID(button_link.id).then(document => {
       const { text, link } = document.data;
-      console.log(document);
       this.setState({
         [button_link.id]: { text: RichText.asText(text), link },
       });
