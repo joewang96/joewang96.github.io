@@ -57,7 +57,9 @@ class Nav extends Component {
     );
   }
 
-  renderHomeAbout(isAbout) {
+  renderHomeAbout(activeState) {
+    const portfolioActive = activeState === true;
+    const aboutActive = activeState === false;
     return (
       <div
         className={`nav--list flex-parent flex-ac${
@@ -66,13 +68,13 @@ class Nav extends Component {
       >
         <div className="hide-sm">
           <Link
-            className={`nav-type nav--item${isAbout ? '' : ' active'}`}
+            className={`nav-type nav--item${portfolioActive ? ' active' : ''}`}
             to="/"
           >
             Portfolio
           </Link>
           <Link
-            className={`nav-type nav--item${isAbout ? ' active' : ''}`}
+            className={`nav-type nav--item${aboutActive ? ' active' : ''}`}
             to="/about"
           >
             About
@@ -116,12 +118,12 @@ class Nav extends Component {
   renderLinks() {
     const { path, isExact } = this.props.match;
     if (path === '/' && isExact) {
-      return this.renderHomeAbout(false);
+      return this.renderHomeAbout(true);
     }
     if (path === '/about' && isExact) {
       return (
         <>
-          {this.renderHomeAbout(true)}
+          {this.renderHomeAbout(false)}
           <div className="nav--lines about--lines" />
         </>
       );
@@ -130,7 +132,7 @@ class Nav extends Component {
     if (path === '/portfolio/:uid' && isExact) {
       return (
         <>
-          {this.renderHomeAbout(false)}
+          {this.renderHomeAbout(null)}
           <div className="nav--lines" />
         </>
       );
