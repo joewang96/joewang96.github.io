@@ -13,6 +13,22 @@ class About extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      yPos: 0,
+    };
+    this.scrollListener = this.scrollListener.bind(this);
+  }
+
+  scrollListener() {
+    this.setState({ yPos: document.documentElement.scrollTop });
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.scrollListener);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.scrollListener);
   }
 
   renderInfo() {
@@ -71,7 +87,13 @@ class About extends Component {
           <div className="container hero--container">
             <div className="flex-parent">
               <div className="hero--info about--info">
-                <h1 className="title h1--home about--title">
+                <h1
+                  className="title h1--home about--title"
+                  style={{
+                    top: (this.state.yPos / 10) * -1,
+                    position: 'relative',
+                  }}
+                >
                   {RichText.asText(hero_title)}
                 </h1>
               </div>

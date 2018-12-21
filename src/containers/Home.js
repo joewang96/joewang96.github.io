@@ -11,6 +11,22 @@ class Home extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      yPos: 0,
+    };
+    this.scrollListener = this.scrollListener.bind(this);
+  }
+
+  scrollListener() {
+    this.setState({ yPos: document.documentElement.scrollTop });
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.scrollListener);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.scrollListener);
   }
 
   render() {
@@ -27,7 +43,14 @@ class Home extends Component {
 
     return (
       <WrappedNavFooter>
-        <section className="section hero--section" id="hero">
+        <section
+          className="section hero--section"
+          id="hero"
+          style={{
+            top: (this.state.yPos / 10) * -1,
+            position: 'relative',
+          }}
+        >
           <div className="container hero--container">
             <div className="flex-parent layout--container">
               <div className="hero--info">
@@ -38,7 +61,10 @@ class Home extends Component {
               </div>
               <div
                 className="headshot-image bordered"
-                style={{ backgroundImage: `url(${headshot.url})` }}
+                style={{
+                  backgroundImage: `url(${headshot.url})`,
+                  top: this.state.yPos / 15,
+                }}
               />
             </div>
             <div className="hero--summary stripe-text">
@@ -49,7 +75,12 @@ class Home extends Component {
 
         <section className="section" id="portfolio">
           <div className="container">
-            <h2 className="text-center m-l-auto m-r-auto">
+            <h2
+              className="text-center m-l-auto m-r-auto"
+              style={{
+                top: -80 + (this.state.yPos / 15) * 1,
+              }}
+            >
               {RichText.asText(portfolio_section_title)}
             </h2>
 

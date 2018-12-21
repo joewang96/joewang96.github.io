@@ -12,7 +12,14 @@ class CaseStudy extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      yPos: 0,
+    };
+    this.scrollListener = this.scrollListener.bind(this);
+  }
+
+  scrollListener() {
+    this.setState({ ...this.state, yPos: document.documentElement.scrollTop });
   }
 
   componentDidMount() {
@@ -25,6 +32,11 @@ class CaseStudy extends Component {
         }
       }
     });
+    window.addEventListener('scroll', this.scrollListener);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.scrollListener);
   }
 
   renderButtonLink(button_link) {
@@ -40,6 +52,7 @@ class CaseStudy extends Component {
     this.props.api.getByID(button_link.id).then(document => {
       const { text, link } = document.data;
       this.setState({
+        ...this.state,
         [button_link.id]: { text: RichText.asText(text), link },
       });
     });
@@ -54,7 +67,11 @@ class CaseStudy extends Component {
         const { section_title, paragraph, button_link } = slice.primary;
         return (
           <div className="text-section pad" key={index}>
-            <h3 className="section-title">{RichText.asText(section_title)}</h3>
+            {!!RichText.asText(section_title) ? (
+              <h3 className="section-title">
+                {RichText.asText(section_title)}
+              </h3>
+            ) : null}
             {RichText.render(paragraph, null, htmlSerializer)}
             {button_link && button_link.id
               ? this.renderButtonLink(button_link)
@@ -112,11 +129,20 @@ class CaseStudy extends Component {
       <WrappedNavFooter>
         <div className="section case-study--wrapper">
           <div className="container">
-            <h1 className="h1--case-study">
+            <h1
+              className="h1--case-study"
+              style={{
+                top: (this.state.yPos / 15) * -1,
+                position: 'relative',
+              }}
+            >
               {RichText.asText(alt_title.length > 0 ? alt_title : title)}
             </h1>
 
-            <div className="case-study--info flex-parent flex-jsb">
+            <div
+              className="case-study--info flex-parent flex-jsb"
+              style={{ top: this.state.yPos / 20, position: 'relative' }}
+            >
               {(
                 <div className="summary stripe-text">
                   <p className="text">{RichText.asText(short_bio)}</p>

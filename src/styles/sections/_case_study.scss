@@ -70,6 +70,11 @@ $body-mb: 32px;
   .image-section {
     width: 100%;
     margin-bottom: 148px;
+    @media (max-width: $mdscreen) {
+      &:not(:last-child) {
+        margin-bottom: 80px;
+      }
+    }
   }
   .text-section {
     max-width: 980px;
