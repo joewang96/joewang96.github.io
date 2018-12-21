@@ -34,7 +34,6 @@ class About extends Component {
       } else if (slice.slice_type === 'job_info') {
         const { title, resume_link, resume_button_text } = slice.primary;
         const job_list = slice.items;
-        console.log(slice);
         return (
           <div className="info-block" key={index}>
             <p className="title">{RichText.asText(title)}</p>

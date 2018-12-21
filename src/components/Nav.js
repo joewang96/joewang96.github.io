@@ -127,6 +127,14 @@ class Nav extends Component {
       );
     }
     // otherwise on case study path
+    if (path === '/portfolio/:uid' && isExact) {
+      return (
+        <>
+          {this.renderHomeAbout(false)}
+          <div className="nav--lines" />
+        </>
+      );
+    }
     return (
       <>
         <div className="nav--list flex-parent flex-ac">
