@@ -7,6 +7,8 @@ import JobItem from '../components/JobItem';
 import BackArrow from '../components/icons/BackArrow';
 
 import { htmlSerializer } from '../lib/parse';
+import { isFirefox } from '../lib/browser';
+import { getScrollOffset } from '../lib/scroll';
 
 class About extends Component {
   static pageType = 'about_page';
@@ -20,15 +22,15 @@ class About extends Component {
   }
 
   scrollListener() {
-    this.setState({ yPos: document.documentElement.scrollTop });
+    this.setState({ yPos: getScrollOffset() });
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.scrollListener);
+    if (!isFirefox) window.addEventListener('scroll', this.scrollListener);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.scrollListener);
+    if (!isFirefox) window.removeEventListener('scroll', this.scrollListener);
   }
 
   renderInfo() {
@@ -90,7 +92,7 @@ class About extends Component {
                 <h1
                   className="title h1--home about--title"
                   style={{
-                    top: (this.state.yPos / 10) * -1,
+                    top: !isFirefox ? (this.state.yPos / 10) * -1 : 0,
                     position: 'relative',
                   }}
                 >

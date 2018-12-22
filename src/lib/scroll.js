@@ -3,3 +3,7 @@ export const scrollTo = (selector, delta) => {
   const yDist = document.querySelector(selector).offsetTop;
   window.scroll({ top: yDist - offset, left: 0, behavior: 'smooth' });
 };
+
+export const getScrollOffset = () => {
+  return document.body.getBoundingClientRect().top * -1;
+};
