@@ -15,21 +15,29 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      yPos: 0,
+      yPos: getScrollOffset(),
+      isMobile: window.innerWidth < 800,
     };
     this.scrollListener = this.scrollListener.bind(this);
+    this.resizeListener = this.resizeListener.bind(this);
   }
 
   scrollListener() {
     this.setState({ yPos: getScrollOffset() });
   }
 
+  resizeListener() {
+    this.setState({ ...this.state, isMobile: window.innerWidth < 800 });
+  }
+
   componentDidMount() {
     if (!isFirefox) window.addEventListener('scroll', this.scrollListener);
+    window.addEventListener('resize', this.resizeListener);
   }
 
   componentWillUnmount() {
     if (!isFirefox) window.removeEventListener('scroll', this.scrollListener);
+    window.removeEventListener('resize', this.resizeListener);
   }
 
   render() {
@@ -50,8 +58,9 @@ class Home extends Component {
           className="section hero--section"
           id="hero"
           style={{
-            top: !isFirefox ? (this.state.yPos / 10) * -1 : 0,
-            position: 'relative',
+            transform: `translateY(${
+              !isFirefox ? Math.min(this.state.yPos / 10, 100) * -1 : 0
+            }px)`,
           }}
         >
           <div className="container hero--container">
@@ -66,7 +75,7 @@ class Home extends Component {
                 className="headshot-image bordered"
                 style={{
                   backgroundImage: `url(${headshot.url})`,
-                  top: !isFirefox ? this.state.yPos / 15 : 0,
+                  top: !isFirefox ? Math.min(this.state.yPos / 10, 80) : 0,
                 }}
               />
             </div>
@@ -81,16 +90,41 @@ class Home extends Component {
             <h2
               className="text-center m-l-auto m-r-auto"
               style={{
-                top: !isFirefox ? -80 + (this.state.yPos / 15) * 1 : 0,
+                transform: `translateY(${
+                  !isFirefox
+                    ? Math.min(
+                        Math.max(-80 + (this.state.yPos / 15) * 1, -30),
+                        0
+                      )
+                    : 0
+                }px)`,
               }}
             >
               {RichText.asText(portfolio_section_title)}
             </h2>
 
             <div className="work-grid home--work-grid m-b-for-btn">
-              {portfolio_items.map(({ portfolio_piece: p }) => {
+              {portfolio_items.map(({ portfolio_piece: p }, index) => {
+                let delta =
+                  this.state.yPos -
+                  ((document.querySelector('#portfolio') &&
+                    document.querySelector('#portfolio').offsetTop) ||
+                    0) -
+                  Math.floor(index / 2) * 500;
+                delta =
+                  !isFirefox && !this.state.isMobile
+                    ? Math.max(Math.min((delta * -1) / 10, 40), 0)
+                    : 0;
+                const mult = index % 2 === 0 ? -1 : 1;
                 return (
-                  <PortfolioItem key={p.id} uid={p.uid} api={this.props.api} />
+                  <PortfolioItem
+                    key={p.id}
+                    uid={p.uid}
+                    api={this.props.api}
+                    style={{
+                      transform: `translate(${delta * mult}px, ${delta}px)`,
+                    }}
+                  />
                 );
               })}
             </div>

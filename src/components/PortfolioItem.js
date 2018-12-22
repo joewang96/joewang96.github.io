@@ -17,6 +17,7 @@ class PortfolioItem extends Component {
 
   render() {
     const { title, tag_list, preview_image } = this.state;
+    const { style } = this.props;
     if (
       title === undefined ||
       tag_list === undefined ||
@@ -25,7 +26,7 @@ class PortfolioItem extends Component {
       return null;
     }
     return (
-      <div className="work-block">
+      <div className="work-block" style={style}>
         <Link
           className="work-block--image--wrapper bordered"
           to={`portfolio/${this.props.uid}`}

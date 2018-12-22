@@ -11,6 +11,7 @@ $work-block-mb: 24px;
   align-items: flex-start;
   flex-direction: column;
   margin-bottom: $work-block-mb;
+  will-change: transform;
 
   .work-block--image--wrapper {
     padding-bottom: 80%;

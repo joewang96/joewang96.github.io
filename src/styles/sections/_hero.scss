@@ -36,7 +36,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
-    &::before {
+    &::after {
       content: ' ';
       left: -25%;
       top: 0%;

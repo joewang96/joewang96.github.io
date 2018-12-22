@@ -134,8 +134,9 @@ class CaseStudy extends Component {
             <h1
               className="h1--case-study"
               style={{
-                top: !isFirefox ? (this.state.yPos / 15) * -1 : 0,
-                position: 'relative',
+                transform: `translateY(${
+                  !isFirefox ? (this.state.yPos / 15) * -1 : 0
+                }px)`,
               }}
             >
               {RichText.asText(alt_title.length > 0 ? alt_title : title)}
@@ -144,8 +145,9 @@ class CaseStudy extends Component {
             <div
               className="case-study--info flex-parent flex-jsb"
               style={{
-                top: !isFirefox ? this.state.yPos / 20 : 0,
-                position: 'relative',
+                transform: `translateY(${
+                  !isFirefox ? this.state.yPos / 20 : 0
+                }px)`,
               }}
             >
               {(
