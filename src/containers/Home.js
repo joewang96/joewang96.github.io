@@ -6,6 +6,9 @@ import WrappedNavFooter from '../composers/WrappedNavFooter';
 import PortfolioItem from '../components/PortfolioItem';
 import Button from '../components/Button';
 
+import { isFirefox } from '../lib/browser';
+import { getScrollOffset } from '../lib/scroll';
+
 class Home extends Component {
   static pageType = 'homepage';
 
@@ -18,15 +21,15 @@ class Home extends Component {
   }
 
   scrollListener() {
-    this.setState({ yPos: document.documentElement.scrollTop });
+    this.setState({ yPos: getScrollOffset() });
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.scrollListener);
+    if (!isFirefox) window.addEventListener('scroll', this.scrollListener);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.scrollListener);
+    if (!isFirefox) window.removeEventListener('scroll', this.scrollListener);
   }
 
   render() {
@@ -47,7 +50,7 @@ class Home extends Component {
           className="section hero--section"
           id="hero"
           style={{
-            top: (this.state.yPos / 10) * -1,
+            top: !isFirefox ? (this.state.yPos / 10) * -1 : 0,
             position: 'relative',
           }}
         >
@@ -63,7 +66,7 @@ class Home extends Component {
                 className="headshot-image bordered"
                 style={{
                   backgroundImage: `url(${headshot.url})`,
-                  top: this.state.yPos / 15,
+                  top: !isFirefox ? this.state.yPos / 15 : 0,
                 }}
               />
             </div>
@@ -78,7 +81,7 @@ class Home extends Component {
             <h2
               className="text-center m-l-auto m-r-auto"
               style={{
-                top: -80 + (this.state.yPos / 15) * 1,
+                top: !isFirefox ? -80 + (this.state.yPos / 15) * 1 : 0,
               }}
             >
               {RichText.asText(portfolio_section_title)}

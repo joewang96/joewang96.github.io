@@ -6,6 +6,8 @@ import { RichText } from 'prismic-reactjs';
 
 import Button from '../components/Button';
 import { htmlSerializer } from '../lib/parse';
+import { isFirefox } from '../lib/browser';
+import { getScrollOffset } from '../lib/scroll';
 
 class CaseStudy extends Component {
   static pageType = 'portfolio-piece';
@@ -19,7 +21,7 @@ class CaseStudy extends Component {
   }
 
   scrollListener() {
-    this.setState({ ...this.state, yPos: document.documentElement.scrollTop });
+    this.setState({ ...this.state, yPos: getScrollOffset() });
   }
 
   componentDidMount() {
@@ -32,11 +34,11 @@ class CaseStudy extends Component {
         }
       }
     });
-    window.addEventListener('scroll', this.scrollListener);
+    if (!isFirefox) window.addEventListener('scroll', this.scrollListener);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.scrollListener);
+    if (!isFirefox) window.removeEventListener('scroll', this.scrollListener);
   }
 
   renderButtonLink(button_link) {
@@ -132,7 +134,7 @@ class CaseStudy extends Component {
             <h1
               className="h1--case-study"
               style={{
-                top: (this.state.yPos / 15) * -1,
+                top: !isFirefox ? (this.state.yPos / 15) * -1 : 0,
                 position: 'relative',
               }}
             >
@@ -141,7 +143,10 @@ class CaseStudy extends Component {
 
             <div
               className="case-study--info flex-parent flex-jsb"
-              style={{ top: this.state.yPos / 20, position: 'relative' }}
+              style={{
+                top: !isFirefox ? this.state.yPos / 20 : 0,
+                position: 'relative',
+              }}
             >
               {(
                 <div className="summary stripe-text">
