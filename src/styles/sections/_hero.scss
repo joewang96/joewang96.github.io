@@ -89,6 +89,7 @@
     overflow-x: visible;
     @media (max-width: $smscreen) {
       margin-top: 56px;
+      margin-bottom: 84px;
       overflow-x: hidden;
       overflow-y: hidden; // needed to stop the overflow-x: hidden + overflow-y: visible -> overflow-y: auto
       .hero--container .title {
