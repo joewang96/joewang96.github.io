@@ -158,7 +158,7 @@ class Nav extends Component {
         {this.renderMobileMenu()}
         <div className={`${className} flex-parent flex-ac`}>
           <Link className="nav-logo flex-parent flex-ac flex-jc" to="/">
-            <i className="icon-logo" />
+            <i className="icon-logo" aria-label="Link to homepage" />
           </Link>
           {this.renderLinks()}
         </div>

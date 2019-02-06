@@ -69,7 +69,7 @@ class About extends Component {
                 <span className="text">
                   {RichText.asText(resume_button_text)}
                 </span>{' '}
-                <BackArrow className="arrow--icon" />
+                <BackArrow className="arrow--icon" alt="" role="presentation" />
               </a>
             </div>
           </div>

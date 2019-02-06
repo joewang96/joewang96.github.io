@@ -6,8 +6,8 @@ class SocialIcon extends Component {
   }
 
   renderIcon() {
-    const { iconClass } = this.props;
-    return <i className={`icon ${iconClass}`} />;
+    const { iconClass, ariaLabel } = this.props;
+    return <i className={`icon ${iconClass}`} aria-label={ariaLabel} />;
   }
 
   render() {
