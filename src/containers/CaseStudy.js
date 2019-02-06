@@ -70,9 +70,9 @@ class CaseStudy extends Component {
         return (
           <div className="text-section pad" key={index}>
             {!!RichText.asText(section_title) ? (
-              <h3 className="section-title">
+              <h2 className="section-title">
                 {RichText.asText(section_title)}
-              </h3>
+              </h2>
             ) : null}
             {RichText.render(paragraph, null, htmlSerializer)}
             {button_link && button_link.id

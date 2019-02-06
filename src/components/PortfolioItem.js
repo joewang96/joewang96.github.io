@@ -30,6 +30,7 @@ class PortfolioItem extends Component {
         <Link
           className="work-block--image--wrapper bordered"
           to={`portfolio/${this.props.uid}`}
+          aria-label={RichText.asText(title)}
         >
           <div
             className="work-block--image--bg"

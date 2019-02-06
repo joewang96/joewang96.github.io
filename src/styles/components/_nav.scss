@@ -60,6 +60,7 @@ $overlay-offset: 56px;
     }
   }
   &:not(.active) {
+    visibility: hidden;
     opacity: 0;
     pointer-events: none;
     .mobile--nav-item {

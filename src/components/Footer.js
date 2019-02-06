@@ -31,11 +31,16 @@ class Footer extends Component {
             </p>
             <p className="built-with">
               Made with{' '}
-              <SocialIcon iconClass="icon-react" href="https://reactjs.org/" />{' '}
+              <SocialIcon
+                iconClass="icon-react"
+                href="https://reactjs.org/"
+                ariaLabel="React JS"
+              />{' '}
               and hosted with{' '}
               <SocialIcon
                 iconClass="icon-netlify"
                 href="https://www.netlify.com/"
+                ariaLabel="Netlify"
               />
             </p>
           </div>
