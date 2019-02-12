@@ -1,12 +1,22 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import Loadable from 'react-loadable';
 import { PrismicRoute } from 'prismic-react-router';
-
-import Home from './containers/Home';
-import About from './containers/About';
-import CaseStudy from './containers/CaseStudy';
 import NotFound from './containers/NotFound';
 import ScrollToTop from './composers/ScrollToTop';
+
+const Home = Loadable({
+  loader: () => import('./containers/Home'),
+  loading: () => <div />,
+});
+const About = Loadable({
+  loader: () => import('./containers/About'),
+  loading: () => <div />,
+});
+const CaseStudy = Loadable({
+  loader: () => import('./containers/CaseStudy'),
+  loading: () => <div />,
+});
 
 const Routes = props => {
   return (
