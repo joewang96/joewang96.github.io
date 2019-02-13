@@ -19,6 +19,7 @@ class SocialIcon extends Component {
         className="social-icon flex-parent flex-ac flex-jc"
         href={href}
         target={targetBlank ? '_blank' : ''}
+        rel="noopener noreferrer"
       >
         {this.renderIcon()}
       </a>
