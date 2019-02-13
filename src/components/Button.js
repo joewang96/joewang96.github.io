@@ -9,7 +9,12 @@ class Button extends Component {
     const { link } = this.props;
     if (link.link_type === 'Media') {
       return (
-        <a href={link.url} target="_blank" className={className}>
+        <a
+          href={link.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={className}
+        >
           {child}
         </a>
       );

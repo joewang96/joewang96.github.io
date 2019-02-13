@@ -12,6 +12,7 @@ class HoverLink extends Component {
         {...rest}
         className={`highlight-link${small ? ' highlight-sm' : ''}`}
         target="_blank"
+        rel="noopener noreferrer"
       >
         {children}
       </a>

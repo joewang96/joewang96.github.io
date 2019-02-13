@@ -65,6 +65,7 @@ class About extends Component {
                 className="resume-link flex-parent flex-ac"
                 href={resume_link.url}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <span className="text">
                   {RichText.asText(resume_button_text)}
