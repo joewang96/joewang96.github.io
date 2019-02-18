@@ -22,6 +22,12 @@
   }
 }
 
+@media (max-width: $smscreen) {
+  .text-left-sm {
+    text-align: left;
+  }
+}
+
 .pos-rel {
   position: relative;
 }

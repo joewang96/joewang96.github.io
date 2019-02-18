@@ -144,7 +144,7 @@ class Home extends Component {
 
         <section className="section" id="portfolio">
           <div className="container">
-            <h2 className="text-center m-l-auto m-r-auto">
+            <h2 className="text-center text-left-sm m-l-auto m-r-auto">
               {RichText.asText(portfolio_section_title)}
             </h2>
 
