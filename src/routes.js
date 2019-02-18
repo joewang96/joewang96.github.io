@@ -9,10 +9,6 @@ const Home = Loadable({
   loader: () => import('./containers/Home'),
   loading: () => <div />,
 });
-const About = Loadable({
-  loader: () => import('./containers/About'),
-  loading: () => <div />,
-});
 const CaseStudy = Loadable({
   loader: () => import('./containers/CaseStudy'),
   loading: () => <div />,
@@ -31,15 +27,6 @@ const Routes = props => {
               uid: 'home',
             }} // pass in page UID if not in path
             component={Home} // components should be of type PrismicPage
-          />
-          <PrismicRoute
-            path="/about"
-            exact
-            routerProps={props}
-            componentProps={{
-              uid: 'about',
-            }} // pass in page UID if not in path
-            component={About} // components should be of type PrismicPage
           />
           <PrismicRoute
             path="/portfolio/:uid"

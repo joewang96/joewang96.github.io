@@ -1,6 +1,6 @@
 .hero--section {
   margin-top: 108px;
-  margin-bottom: 158px;
+  margin-bottom: 100px;
   overflow-x: hidden;
   .hero--container {
     .title {
@@ -88,8 +88,8 @@
   @media (max-width: $lgscreen + 80px) {
     overflow-x: visible;
     @media (max-width: $smscreen) {
-      margin-top: 56px;
-      margin-bottom: 84px;
+      margin-top: 46px;
+      margin-bottom: 64px;
       overflow-x: hidden;
       overflow-y: hidden; // needed to stop the overflow-x: hidden + overflow-y: visible -> overflow-y: auto
       .hero--container .title {

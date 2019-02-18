@@ -28,17 +28,16 @@ h2 {
   color: $blue;
   font-size: 64px;
   font-family: $font-sans;
-  font-style: italic;
 
   margin-bottom: 94px;
 
   @media (max-width: $mdscreen) {
     font-size: 54px;
-    margin-bottom: 64px;
+    margin-bottom: 72px;
   }
   @media (max-width: $smscreen) {
     font-size: 44px;
-    margin-bottom: 48px;
+    margin-bottom: 60px;
   }
 }
 
