@@ -40,8 +40,8 @@ class PortfolioItem extends Component {
           />
         </Link>
         <div className="work-block--content">
-          <p className="work-block--tags">{RichText.asText(tag_list)}</p>
           <p className="work-block--title">{RichText.asText(title)}</p>
+          <p className="work-block--tags">{RichText.asText(tag_list)}</p>
         </div>
       </div>
     );

@@ -44,7 +44,7 @@
   }
 
   // temp
-  margin-bottom: 200px;
+  margin-bottom: 150px;
 
   &.no-pad {
     padding-left: 0;
@@ -72,7 +72,7 @@
   }
 
   @media (max-width: $mdscreen) {
-    margin-bottom: 175px;
+    margin-bottom: 100px;
   }
 
   @media (max-width: $smscreen) {
