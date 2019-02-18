@@ -3,9 +3,11 @@ import { RichText } from 'prismic-reactjs';
 import PrismicPageApi from '../prismic/PrismicPageApi';
 
 import WrappedNavFooter from '../composers/WrappedNavFooter';
+import JobItem from '../components/JobItem';
 import PortfolioItem from '../components/PortfolioItem';
 import Button from '../components/Button';
 
+import { htmlSerializer } from '../lib/parse';
 import { isFirefox } from '../lib/browser';
 import { getScrollOffset } from '../lib/scroll';
 
@@ -40,8 +42,45 @@ class Home extends Component {
     window.removeEventListener('resize', this.resizeListener);
   }
 
+  renderInfo() {
+    const { body } = this.props.doc.data;
+    const bodyContent = body.map((slice, index) => {
+      // Render the right markup for the given slice type
+      // Quick Info Section
+      if (slice.slice_type === 'info_text') {
+        const { block_title, info } = slice.primary;
+        return (
+          <div className="info-block" key={index}>
+            <p className="title">{RichText.asText(block_title)}</p>
+            <div className="content">
+              {RichText.render(info, null, htmlSerializer)}
+            </div>
+          </div>
+        );
+        // Return null by default
+      } else if (slice.slice_type === 'job_section') {
+        const { title } = slice.primary;
+        const job_list = slice.items;
+        return (
+          <div className="info-block" key={index}>
+            <p className="title">{RichText.asText(title)}</p>
+            <div className="job-listings">
+              {job_list.map(({ job }) => (
+                <JobItem key={job.id} id={job.id} api={this.props.api} />
+              ))}
+            </div>
+          </div>
+        );
+      } else {
+        return null;
+      }
+    });
+    return bodyContent;
+  }
+
   render() {
     const {
+      about_section_title,
       hero_title,
       tagline,
       hero_blurb,
@@ -85,55 +124,36 @@ class Home extends Component {
           </div>
         </section>
 
-        <section className="section" id="portfolio">
+        <section className="section about--section" id="about">
           <div className="container">
-            <h2
-              className="text-center m-l-auto m-r-auto"
-              style={{
-                transform: `translateY(${
-                  !isFirefox
-                    ? Math.min(
-                        Math.max(-80 + (this.state.yPos / 15) * 1, -30),
-                        0
-                      )
-                    : 0
-                }px)`,
-              }}
-            >
-              {RichText.asText(portfolio_section_title)}
+            <h2 className="about--section-title">
+              {RichText.asText(about_section_title)}
             </h2>
-
-            <div className="work-grid home--work-grid m-b-for-btn">
-              {portfolio_items.map(({ portfolio_piece: p }, index) => {
-                let delta =
-                  this.state.yPos -
-                  ((document.querySelector('#portfolio') &&
-                    document.querySelector('#portfolio').offsetTop) ||
-                    0) -
-                  Math.floor(index / 2) * 500;
-                delta =
-                  !isFirefox && !this.state.isMobile
-                    ? Math.max(Math.min((delta * -1) / 10, 40), 0)
-                    : 0;
-                const mult = index % 2 === 0 ? -1 : 1;
-                return (
-                  <PortfolioItem
-                    key={p.id}
-                    uid={p.uid}
-                    api={this.props.api}
-                    style={{
-                      transform: `translate(${delta * mult}px, ${delta}px)`,
-                    }}
-                  />
-                );
-              })}
+            <div className="info-section flex-parent flex-col">
+              {this.renderInfo()}
             </div>
 
-            <div className="text-center">
+            <div className="text-center resume--wrapper">
               <Button
                 text={RichText.asText(resume_button_text)}
                 link={resume_link}
               />
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="portfolio">
+          <div className="container">
+            <h2 className="text-center text-left-sm m-l-auto m-r-auto">
+              {RichText.asText(portfolio_section_title)}
+            </h2>
+
+            <div className="work-grid home--work-grid m-b-for-btn">
+              {portfolio_items.map(({ portfolio_piece: p }) => {
+                return (
+                  <PortfolioItem key={p.id} uid={p.uid} api={this.props.api} />
+                );
+              })}
             </div>
           </div>
         </section>

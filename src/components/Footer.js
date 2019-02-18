@@ -18,9 +18,14 @@ class Footer extends Component {
               <Link className="nav-type list-item" to="/">
                 Portfolio
               </Link>
-              <Link className="nav-type list-item" to="/about">
-                About
-              </Link>
+              <a
+                className="nav-type list-item"
+                href="https://josephwang.cdn.prismic.io/josephwang%2Fe7f9733c-58c3-42a2-8839-9d5dc8093248_joseph_wang_resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Resume
+              </a>
             </div>
 
             <SocialIconList />
