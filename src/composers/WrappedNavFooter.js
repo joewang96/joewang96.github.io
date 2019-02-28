@@ -20,14 +20,14 @@ class WrappedNavFooter extends Component {
 
   render() {
     return (
-      <main
+      <div
         id="container"
         className={this.state.loaded ? 'preload' : 'preload preset'}
       >
         <Nav className={this.props.className || ''} />
-        {this.props.children}
+        <main>{this.props.children}</main>
         <Footer />
-      </main>
+      </div>
     );
   }
 }

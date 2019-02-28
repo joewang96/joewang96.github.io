@@ -1,25 +1,38 @@
-#portfolio h2 {
-  max-width: 550px;
+#portfolio {
+  background: $lightpurple;
+  margin-bottom: 0;
+  padding-bottom: 130px;
+  padding-top: 130px;
+
   position: relative;
   &::before {
     content: ' ';
-    width: 167px;
-    height: 138px;
-    background-image: url('../img/portfolio_tri.svg');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-image: url('../img/texture.svg');
+    background-size: 30px;
+    opacity: 0.8;
+    width: 154px;
+    height: 440px;
     position: absolute;
-    right: 10px;
-    top: 10px;
-    z-index: -1;
-    @media (max-width: $mdscreen) {
-      width: 136px;
-      height: 113px;
-      right: 100px;
-    }
-    @media (max-width: $smscreen) {
-      right: 50px;
-    }
+    top: 0px;
+    left: 0;
+  }
+  &::after {
+    content: ' ';
+    background-image: url('../img/texture.svg');
+    background-size: 30px;
+    opacity: 0.8;
+    width: 154px;
+    height: 440px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  h2 {
+    max-width: 490px;
+    position: relative;
+  }
+  .container {
+    max-width: 850px;
   }
 }

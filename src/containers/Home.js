@@ -7,40 +7,12 @@ import JobItem from '../components/JobItem';
 import PortfolioItem from '../components/PortfolioItem';
 import Button from '../components/Button';
 
+import * as roundBottom from '../img/round-bottom.svg';
+
 import { htmlSerializer } from '../lib/parse';
-import { isFirefox } from '../lib/browser';
-import { getScrollOffset } from '../lib/scroll';
 
 class Home extends Component {
   static pageType = 'homepage';
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      yPos: getScrollOffset(),
-      isMobile: window.innerWidth < 800,
-    };
-    this.scrollListener = this.scrollListener.bind(this);
-    this.resizeListener = this.resizeListener.bind(this);
-  }
-
-  scrollListener() {
-    this.setState({ yPos: getScrollOffset() });
-  }
-
-  resizeListener() {
-    this.setState({ ...this.state, isMobile: window.innerWidth < 800 });
-  }
-
-  componentDidMount() {
-    if (!isFirefox) window.addEventListener('scroll', this.scrollListener);
-    window.addEventListener('resize', this.resizeListener);
-  }
-
-  componentWillUnmount() {
-    if (!isFirefox) window.removeEventListener('scroll', this.scrollListener);
-    window.removeEventListener('resize', this.resizeListener);
-  }
 
   renderInfo() {
     const { body } = this.props.doc.data;
@@ -63,9 +35,9 @@ class Home extends Component {
         const job_list = slice.items;
         return (
           <div className="info-block" key={index}>
-            <p className="title">{RichText.asText(title)}</p>
+            <p className="title no-smooth">{RichText.asText(title)}</p>
             <div className="job-listings">
-              {job_list.map(({ job }) => (
+              {job_list.slice(0, 3).map(({ job }) => (
                 <JobItem key={job.id} id={job.id} api={this.props.api} />
               ))}
             </div>
@@ -93,51 +65,33 @@ class Home extends Component {
 
     return (
       <WrappedNavFooter>
-        <section
-          className="section hero--section"
-          id="hero"
-          style={{
-            transform: `translateY(${
-              !isFirefox ? Math.min(this.state.yPos / 10, 100) * -1 : 0
-            }px)`,
-          }}
-        >
-          <div className="container hero--container">
-            <div className="flex-parent layout--container">
-              <div className="hero--info">
-                <h1 className="title h1--home">
-                  {RichText.asText(hero_title)}
-                </h1>
-                <p className="tagline">{RichText.asText(tagline)}</p>
-              </div>
-              <div
-                className="headshot-image bordered"
-                style={{
-                  backgroundImage: `url(${headshot.url})`,
-                  top: !isFirefox ? Math.min(this.state.yPos / 10, 80) : 0,
-                }}
-              />
-            </div>
-            <div className="hero--summary stripe-text">
-              <p className="text">{RichText.asText(hero_blurb)}</p>
-            </div>
+        <section className="section hero--section" id="hero">
+          <div className="container hero--container flex-parent flex-ac flex-col">
+            <h1 className="title text-center h1--home">
+              {/* {RichText.asText(hero_title)} */}
+              Hi, I’m Joe: a front-end engineer turned designer
+            </h1>
+            <p className="description">
+              {/* {RichText.asText(tagline)} */}
+              Interaction and UX Designer who knows how to code the designs I
+              create. Currently at HubSpot working on design systems, previous
+              Technology Director for Scout Studio.
+            </p>
           </div>
         </section>
+        <div
+          className="hero--rounded-bottom"
+          style={{ backgroundImage: `url(${roundBottom})` }}
+        />
 
         <section className="section about--section" id="about">
           <div className="container">
             <h2 className="about--section-title">
-              {RichText.asText(about_section_title)}
+              {/* {RichText.asText(about_section_title)} */}
+              So what do you want to know?
             </h2>
             <div className="info-section flex-parent flex-col">
               {this.renderInfo()}
-            </div>
-
-            <div className="text-center resume--wrapper">
-              <Button
-                text={RichText.asText(resume_button_text)}
-                link={resume_link}
-              />
             </div>
           </div>
         </section>
@@ -145,10 +99,11 @@ class Home extends Component {
         <section className="section" id="portfolio">
           <div className="container">
             <h2 className="text-center text-left-sm m-l-auto m-r-auto">
-              {RichText.asText(portfolio_section_title)}
+              {/* {RichText.asText(portfolio_section_title)} */}
+              Here's what I've worked on:
             </h2>
 
-            <div className="work-grid home--work-grid m-b-for-btn">
+            <div className="work-grid home--work-grid">
               {portfolio_items.map(({ portfolio_piece: p }) => {
                 return (
                   <PortfolioItem key={p.id} uid={p.uid} api={this.props.api} />

@@ -73,14 +73,14 @@ $mobile-nav-break: $smscreen + 80px;
     }
 
     .nav-logo {
-      width: 44px;
-      height: 44px;
-      background: $darkblack;
+      width: 32px;
+      height: 32px;
+      background: $darkpurple;
       border-radius: 4px;
       margin-top: 28px;
       margin-bottom: 28px;
       .icon-logo {
-        font-size: 23px;
+        font-size: 18px;
         color: $white;
       }
     }

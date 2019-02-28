@@ -16,7 +16,13 @@ class JobItem extends Component {
   }
 
   render() {
-    const { date_range, company_name, position, company_link } = this.state;
+    const {
+      date_range,
+      company_name,
+      position,
+      company_link,
+      description,
+    } = this.state;
     if (
       date_range === undefined ||
       company_name === undefined ||
@@ -28,18 +34,12 @@ class JobItem extends Component {
       <div className="job-block">
         <div className="job-block--content max-6-col">
           <p className="job-block--company">
-            {company_link && company_link.url ? (
-              <HighlightLink
-                small
-                href={company_link && company_link.url ? company_link.url : '#'}
-              >
-                {RichText.asText(company_name)}
-              </HighlightLink>
-            ) : (
-              RichText.asText(company_name)
-            )}
+            <strong>{RichText.asText(position)}</strong> at{' '}
+            <strong>{RichText.asText(company_name)}</strong>
           </p>
-          <p className="job-block--position">{RichText.asText(position)}</p>
+          <p className="job-block--description">
+            {RichText.asText(description)}
+          </p>
         </div>
         <p className="job-block--date">{RichText.asText(date_range)}</p>
       </div>

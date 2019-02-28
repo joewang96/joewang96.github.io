@@ -16,21 +16,19 @@ class PortfolioItem extends Component {
   }
 
   render() {
-    const { title, tag_list, preview_image } = this.state;
+    const { preview_title, description, preview_image } = this.state;
     const { style } = this.props;
-    if (
-      title === undefined ||
-      tag_list === undefined ||
-      preview_image === undefined
-    ) {
+    if (preview_title === undefined || preview_image === undefined) {
       return null;
     }
     return (
       <div className="work-block" style={style}>
         <Link
-          className="work-block--image--wrapper bordered"
+          className="work-block--image--wrapper"
           to={`portfolio/${this.props.uid}`}
-          aria-label={RichText.asText(title)}
+          aria-label={
+            RichText.asText(preview_title) - RichText.asText(description)
+          }
         >
           <div
             className="work-block--image--bg"
@@ -39,9 +37,9 @@ class PortfolioItem extends Component {
             }}
           />
         </Link>
-        <div className="work-block--content">
-          <p className="work-block--title">{RichText.asText(title)}</p>
-          <p className="work-block--tags">{RichText.asText(tag_list)}</p>
+        <div className="work-block--title">
+          <strong>{RichText.asText(preview_title)} &mdash; </strong>
+          {RichText.asText(description)}
         </div>
       </div>
     );

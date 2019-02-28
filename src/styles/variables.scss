@@ -3,8 +3,14 @@ $blue: #001ddf;
 $grey: #595959;
 $gypsum: #f5f8fa;
 
+$lightpurple: #fafafc;
+$darkpurple: #363a56;
+
 // ------- Typography -------
-$font-sans: 'IBM Plex Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$font-serif: 'Martel', 'Georgia', sans-serif;
+$font-sans: 'Work Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$font-source: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Arial',
+  sans-serif;
 $font-mono: 'IBM Plex Mono', 'Courier', monospace;
 
 $highlight: #ffe3ad;
@@ -15,11 +21,10 @@ $bounce-sm: cubic-bezier(0.13, 0.63, 0.54, 1.82);
 $nav-footer-size: 22px;
 
 // ------- Colors -------
-$darkblack: #121212;
+$darkblack: #252525;
 $accent: #503dfb;
 $white: #ffffff;
-
-$midblack: #252525;
+$offblack: #343434;
 $offwhite: #f4f1ed;
 
 // ------ Hover Colors -------
