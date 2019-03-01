@@ -17,9 +17,10 @@ class WrappedNavFooter extends Component {
         loaded: true,
       });
     }, 100);
-    this.props.api
-      .getSingle('navigation')
-      .then(obj => this.setState({ resume: obj.data.resume.url }));
+    this.props.api &&
+      this.props.api
+        .getSingle('navigation')
+        .then(obj => this.setState({ resume: obj.data.resume.url }));
   }
 
   componentWillReceiveProps() {

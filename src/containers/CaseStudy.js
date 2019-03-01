@@ -30,6 +30,18 @@ class CaseStudy extends Component {
     });
   }
 
+  componentWillReceiveProps(props) {
+    const { body } = props.doc.data;
+    body.map(slice => {
+      if (slice.slice_type === 'text_section') {
+        const { button_link } = slice.primary;
+        if (button_link && button_link.id) {
+          this.fetchButtonLink(button_link);
+        }
+      }
+    });
+  }
+
   renderButtonLink(button_link) {
     const statefulButton = this.state[button_link.id];
     return statefulButton ? (

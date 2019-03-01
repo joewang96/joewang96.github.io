@@ -20,7 +20,7 @@
     padding: 24px 40px;
 
     transition-timing-function: ease-in-out;
-    transition-duration: 200ms;
+    transition-duration: 250ms;
     transition-property: background-color, color, box-shadow, transform;
 
     -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.3);
@@ -35,7 +35,7 @@
 
   &:hover {
     .btn {
-      transform: translateY(-4px);
+      transform: translateY(-2px);
       -moz-box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.3);
       -webkit-box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.3);
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);

@@ -2,7 +2,6 @@ import React from 'react';
 import { scrollTo } from '../lib/scroll';
 
 const NavItem = ({ selector, children, href, ...rest }) => {
-  console.log(href);
   const conditionalProps =
     href === null || href === undefined
       ? {

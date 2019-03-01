@@ -8,6 +8,13 @@ class CaseStudyNextPrevious extends Component {
     this.state = {};
   }
 
+  componentDidMount() {
+    const { api, uid } = this.props;
+    api.getByUID('portfolio-piece', uid).then(document => {
+      this.setState(document.data);
+    });
+  }
+
   componentWillReceiveProps(nextProps) {
     const { api, uid } = nextProps;
     api.getByUID('portfolio-piece', uid).then(document => {

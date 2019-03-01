@@ -11,6 +11,9 @@
   background: $lightpurple;
   padding: 80px 96px;
   flex: 1;
+  transition-timing-function: ease-in-out;
+  transition-duration: 250ms;
+
   &:last-child {
     margin-left: 8px;
   }

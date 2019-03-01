@@ -7,8 +7,8 @@ import JobItem from '../components/JobItem';
 import PortfolioItem from '../components/PortfolioItem';
 import Button from '../components/Button';
 
-import * as roundBottom from '../img/round-bottom.svg';
 import * as largeCircle from '../img/large_circle.svg';
+import * as slantTop from '../img/slant_top.svg';
 
 import { htmlSerializer } from '../lib/parse';
 
@@ -96,6 +96,8 @@ class Home extends Component {
             </div>
           </div>
         </section>
+
+        <div className="portfolio--slant-top" />
 
         <section className="section" id="portfolio">
           <div className="container">
