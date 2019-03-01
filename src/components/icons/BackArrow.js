@@ -8,6 +8,7 @@ class BackArrow extends Component {
       <img
         src={backArrowSvg}
         className={className === null ? 'icon' : `icon ${className}`}
+        alt=""
         {...rest}
       />
     );

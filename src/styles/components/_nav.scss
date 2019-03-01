@@ -2,6 +2,8 @@ $mobile-nav-break: $smscreen + 80px;
 
 .navigation {
   width: 100%;
+  max-width: 1440px;
+  margin: auto;
   z-index: 1001;
   .nav--container {
     position: relative;

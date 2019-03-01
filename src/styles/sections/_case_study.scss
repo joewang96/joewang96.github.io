@@ -10,7 +10,35 @@ $imgWidth: 662px;
   background-position: bottom;
   padding-top: $caseStudyHeroPad;
   padding-bottom: $caseStudyHeroPad;
+  position: relative;
+  &::before {
+    content: ' ';
+    z-index: 0;
+    background-image: url('../img/texture.svg');
+    background-size: 30px;
+    opacity: 0.8;
+    width: 287px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    content: ' ';
+    z-index: 0;
+    background-image: url('../img/texture.svg');
+    background-size: 30px;
+    opacity: 0.8;
+    width: 250px;
+    height: 200px;
+    position: absolute;
+    bottom: 35%;
+    right: 0;
+  }
+
   .h1--case-study {
+    z-index: 1;
+    position: relative;
     max-width: 800px;
     margin-bottom: $caseStudyHeroPad - 16;
     margin-top: 0;
