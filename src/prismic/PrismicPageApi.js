@@ -20,7 +20,7 @@ export default Wrapped =>
       if (props.prismicCtx) {
         props.prismicCtx.api.getByUID(
           Wrapped.pageType,
-          this.props.uid || this.props.match.params.uid,
+          props.uid || props.match.params.uid,
           {},
           (err, doc) => {
             if (err) {
@@ -29,6 +29,7 @@ export default Wrapped =>
             } else if (doc) {
               // everything is fine
               this.setState(() => ({ doc }));
+              console.log('update doc', doc);
             } else {
               // api finds route, but no doc data
               this.setState(() => ({ err: 'Unable to fetch doc from path' }));
