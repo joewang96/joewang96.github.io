@@ -1,0 +1,15 @@
+<svg width="1280px" height="655px" viewBox="0 0 1280 655" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M1280,3866.48183 C531.190384,3577.43482 0,2850.75049 0,2000 C0,895.4305 895.4305,0 2000,0 C3104.5695,0 4000,895.4305 4000,2000 C4000,3104.5695 3104.5695,4000 2000,4000 C1845.52566,4004.79727 1725.52566,4015.14329 1640,4031.03808 C1554.47434,4046.93286 1434.47434,4081.19038 1280,4133.81064 L1280,3866.48183 Z" id="path-1"></path>
+    </defs>
+    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Case-Study">
+            <g id="Hero-BG" transform="translate(-1280.000000, -3479.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="hero-abstract-shape" fill="#FAFAFC" fill-rule="nonzero" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

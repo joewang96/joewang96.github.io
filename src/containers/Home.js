@@ -8,6 +8,7 @@ import PortfolioItem from '../components/PortfolioItem';
 import Button from '../components/Button';
 
 import * as roundBottom from '../img/round-bottom.svg';
+import * as largeCircle from '../img/large_circle.svg';
 
 import { htmlSerializer } from '../lib/parse';
 
@@ -81,7 +82,7 @@ class Home extends Component {
         </section>
         <div
           className="hero--rounded-bottom"
-          style={{ backgroundImage: `url(${roundBottom})` }}
+          style={{ backgroundImage: `url(${largeCircle})` }}
         />
 
         <section className="section about--section" id="about">

@@ -1,7 +1,9 @@
 #hero {
   position: relative;
+  margin-bottom: 0;
   &::before {
     content: ' ';
+    z-index: 0;
     background-image: url('../img/texture.svg');
     background-size: 30px;
     opacity: 0.8;
@@ -31,6 +33,8 @@
   margin-bottom: 0;
 
   .hero--container {
+    z-index: 1;
+    position: relative;
     display: flex;
     align-items: center;
 
@@ -66,8 +70,8 @@
 .hero--rounded-bottom {
   width: 100%;
   margin-bottom: 100px;
-  background-size: 135vw;
+  background-size: 100vw;
   padding-bottom: 10vw;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom center;
 }

@@ -12,7 +12,7 @@ const Footer = () => (
   <footer className="footer flex-parent flex-ac flex-jc flex-row">
     <div className="container pad flex-parent flex-col">
       <div className="sitemap-social flex-parent flex-jsb">
-        <div className="sitemap">
+        <div className="sitemap flex-parent flex-ac">
           <Link className="nav-type list-item" to="/">
             Portfolio
           </Link>

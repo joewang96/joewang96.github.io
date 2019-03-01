@@ -40,13 +40,11 @@ export default Wrapped =>
 
     render() {
       return this.state.doc ? (
-        // TODO: have this automatically create the header/footer
         <Wrapped
           api={this.props.prismicCtx && this.props.prismicCtx.api}
           doc={this.state.doc}
         />
       ) : this.state.err ? (
-        // TODO: add better loading state
         <NotFound />
       ) : null;
     }

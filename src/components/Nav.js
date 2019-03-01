@@ -7,7 +7,7 @@ class Nav extends Component {
   renderHomeAbout() {
     return (
       <div className="nav--list flex-parent flex-ac hide-sm">
-        <NavItem selector="#about">About</NavItem>
+        <NavItem selector="#about">Home</NavItem>
         <NavItem selector="#portfolio">Portfolio</NavItem>
       </div>
     );

@@ -1,0 +1,31 @@
+.next-previous--wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  @media (max-width: $smscreen) {
+    flex-direction: column;
+  }
+}
+
+.case-study--navigator {
+  background: $lightpurple;
+  padding: 80px 96px;
+  flex: 1;
+  &:last-child {
+    margin-left: 8px;
+  }
+  .case-study--navigator--label {
+    font-size: 16px;
+    margin-bottom: 16px;
+    color: $darkpurple;
+    font-weight: 600;
+    font-family: $font-source;
+  }
+  .case-study--navigator--title {
+    color: $darkpurple;
+    font-size: 24px;
+    strong {
+      font-weight: 600;
+    }
+  }
+}

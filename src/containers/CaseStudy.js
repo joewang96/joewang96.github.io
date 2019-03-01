@@ -5,9 +5,12 @@ import PrismicPageApi from '../prismic/PrismicPageApi';
 import { RichText } from 'prismic-reactjs';
 
 import Button from '../components/Button';
+import CaseStudyNextPrevious from '../components/CaseStudyNextPrevious';
 import { htmlSerializer } from '../lib/parse';
 import { isFirefox } from '../lib/browser';
 import { getScrollOffset } from '../lib/scroll';
+
+import * as caseStudyCurve from '../img/case_study_curve.svg';
 
 class CaseStudy extends Component {
   static pageType = 'portfolio-piece';
@@ -119,43 +122,44 @@ class CaseStudy extends Component {
 
   render() {
     const {
-      short_bio,
+      preview_title,
+      description,
+      previous_case_study,
+      next_case_study,
       dates,
       position,
       tag_list,
-      title,
-      alt_title,
     } = this.props.doc.data;
 
     return (
       <WrappedNavFooter>
+        <div
+          className="case-study--hero pad"
+          style={{ backgroundImage: `url(${caseStudyCurve})` }}
+        >
+          <h1
+            className="h1--case-study"
+            style={{
+              transform: `translateY(${
+                !isFirefox ? (this.state.yPos / 15) * -1 : 0
+              }px)`,
+            }}
+          >
+            <strong>{RichText.asText(preview_title)} &mdash; </strong>
+            {RichText.asText(description)}
+          </h1>
+        </div>
         <div className="section case-study--wrapper">
           <div className="container">
-            <h1
-              className="h1--case-study"
-              style={{
-                transform: `translateY(${
-                  !isFirefox ? (this.state.yPos / 15) * -1 : 0
-                }px)`,
-              }}
-            >
-              {RichText.asText(alt_title.length > 0 ? alt_title : title)}
-            </h1>
-
             <div
               className="case-study--info flex-parent flex-jsb"
               style={{
                 transform: `translateY(${
                   !isFirefox ? this.state.yPos / 20 : 0
                 }px)`,
+                justifyContent: 'flex-end',
               }}
             >
-              {(
-                <div className="summary stripe-text">
-                  <p className="text">{RichText.asText(short_bio)}</p>
-                </div>
-              ) || null}
-
               <div className="info-section">
                 <div className="info-piece">
                   <p className="title">Position:</p>
@@ -175,6 +179,18 @@ class CaseStudy extends Component {
         </div>
         <div className="case-study--body flex-parent flex-ac flex-jc flex-col">
           {this.renderBody()}
+        </div>
+        <div className="next-previous--wrapper">
+          <CaseStudyNextPrevious
+            uid={previous_case_study.uid}
+            api={this.props.api}
+            label="Previous case study"
+          />
+          <CaseStudyNextPrevious
+            uid={next_case_study.uid}
+            api={this.props.api}
+            label="Next case study"
+          />
         </div>
       </WrappedNavFooter>
     );

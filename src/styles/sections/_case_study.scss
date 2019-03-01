@@ -1,16 +1,21 @@
-$body-mb: 32px;
-
-.h1--case-study {
-  max-width: 712px;
-  margin-bottom: 112px;
-  margin-top: 128px;
-  @media (max-width: $mdscreen) {
-    margin-bottom: 80px;
-    margin-top: 100px;
-  }
-  @media (max-width: $smscreen) {
-    margin-bottom: 64px;
-    margin-top: 64px;
+$body-mb: 20px;
+$caseStudyHeroPad: 128px;
+.case-study--hero {
+  margin-top: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  padding-top: $caseStudyHeroPad;
+  padding-bottom: $caseStudyHeroPad;
+  .h1--case-study {
+    max-width: 800px;
+    margin-bottom: $caseStudyHeroPad - 16;
+    margin-top: 0;
+    font-size: 46px;
+    font-weight: 400;
+    strong {
+      font-weight: 600;
+    }
   }
 }
 
@@ -84,19 +89,17 @@ $body-mb: 32px;
     }
   }
   .text-section {
-    max-width: 980px;
+    max-width: 860px;
     margin-left: auto;
     margin-right: auto;
     .section-title {
-      color: $blue;
-      font-style: italic;
-      font-size: 40px;
+      color: $darkpurple;
+      font-size: 32px;
       font-weight: bold;
-      margin-bottom: 35px;
-      position: relative;
+      margin-bottom: 32px;
     }
     .body {
-      font-size: 24px;
+      font-size: 19px;
       strong {
         font-weight: 600;
       }
@@ -115,9 +118,6 @@ $body-mb: 32px;
     }
   }
   .image-section {
-    padding-top: 63px;
-    padding-bottom: 63px;
-    background: $white;
     .case-study--img {
       width: 100%;
       margin-bottom: 32px;
