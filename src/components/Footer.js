@@ -8,17 +8,17 @@ const getYear = () => {
   return date.getFullYear();
 };
 
-const Footer = () => (
+const Footer = props => (
   <footer className="footer flex-parent flex-ac flex-jc flex-row">
     <div className="container pad flex-parent flex-col">
       <div className="sitemap-social flex-parent flex-jsb">
         <div className="sitemap flex-parent flex-ac">
           <Link className="nav-type list-item" to="/">
-            Portfolio
+            Home
           </Link>
           <a
             className="nav-type list-item"
-            href="https://josephwang.cdn.prismic.io/josephwang%2Fe7f9733c-58c3-42a2-8839-9d5dc8093248_joseph_wang_resume.pdf"
+            href={props.resume || null}
             target="_blank"
             rel="noopener noreferrer"
           >

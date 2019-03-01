@@ -7,28 +7,26 @@ class Nav extends Component {
   renderHomeAbout() {
     return (
       <div className="nav--list flex-parent flex-ac hide-sm">
-        <NavItem selector="#about">Home</NavItem>
-        <NavItem selector="#portfolio">Portfolio</NavItem>
+        <Link className="nav-type nav--item flex-parent" to="/">
+          Home
+        </Link>
+        <NavItem
+          href={this.props.resume || null}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Resume
+        </NavItem>
       </div>
     );
   }
   renderNonHome() {
     return (
-      <>
-        <div className="nav--list flex-parent flex-ac">
-          <div className="hide-sm">
-            <Link className="nav-type nav--item flex-parent" to="/">
-              Back to Home <BackArrow className="nav--icon" />
-            </Link>
-          </div>
-          <div className="show-sm">
-            <Link className="nav-type nav--item flex-parent" to="/">
-              Back <BackArrow className="nav--icon" />
-            </Link>
-          </div>
-        </div>
-        <div className="nav--lines" />
-      </>
+      <div className="nav--list flex-parent flex-ac">
+        <Link className="nav-type nav--item flex-parent" to="/">
+          Back to Home <BackArrow className="nav--icon" />
+        </Link>
+      </div>
     );
   }
 

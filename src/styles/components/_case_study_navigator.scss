@@ -28,4 +28,17 @@
       font-weight: 600;
     }
   }
+  @media (max-width: $mdscreen) {
+    padding: 56px 64px;
+    .case-study--navigator--title {
+      font-size: 20px;
+    }
+  }
+  @media (max-width: $smscreen) {
+    padding: 52px 52px;
+    &:last-child {
+      margin-left: 0px;
+      margin-top: 8px;
+    }
+  }
 }

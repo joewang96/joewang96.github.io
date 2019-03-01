@@ -65,7 +65,7 @@ class Home extends Component {
     } = this.props.doc.data;
 
     return (
-      <WrappedNavFooter>
+      <WrappedNavFooter api={this.props.api}>
         <section className="section hero--section" id="hero">
           <div className="container hero--container flex-parent flex-ac flex-col">
             <h1 className="title text-center h1--home">

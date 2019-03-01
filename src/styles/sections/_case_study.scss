@@ -1,5 +1,8 @@
 $body-mb: 20px;
 $caseStudyHeroPad: 128px;
+$columnWidth: 662px + 200px;
+$imgWidth: 662px;
+
 .case-study--hero {
   margin-top: 0;
   background-size: cover;
@@ -20,59 +23,43 @@ $caseStudyHeroPad: 128px;
 }
 
 .case-study--wrapper {
-  margin-bottom: 200px;
-  @media (max-width: $mdscreen) {
-    margin-bottom: 175px;
+  @media (min-width: $mdscreen + 1px) {
+    margin-top: 40px;
+    margin-bottom: 120px;
   }
 }
 
 .case-study--info {
-  .summary {
-    max-width: 523px;
-    margin-right: 64px;
-    flex-grow: 1;
-  }
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 
-  .info-section {
-    max-width: 431px;
-    .info-piece {
-      &:not(:last-child) {
-        margin-bottom: 32px;
-      }
-      .title {
-        margin-bottom: 10px;
-        font-size: 32px;
-        color: $blue;
-        font-style: italic;
-        font-weight: bold;
-        font-family: $font-sans;
-      }
-      .content {
-        font-size: 32px;
-        font-family: $font-sans;
-      }
-    }
-  }
   @media (max-width: $mdscreen) {
     flex-direction: column;
-    .summary {
-      margin-bottom: 40px;
-      max-width: 100%;
-      margin-right: 0;
+  }
+
+  .info-piece {
+    flex: 1;
+    &:not(:last-child) {
+      margin-right: 20px;
     }
-    .info-section .info-piece {
+    @media (max-width: $mdscreen) {
       &:not(:last-child) {
+        margin-right: 0px;
         margin-bottom: 24px;
       }
-      @media (max-width: $smscreen) {
-        .title {
-          font-size: 28px;
-          margin-bottom: 4px;
-        }
-        .content {
-          font-size: 24px;
-        }
-      }
+    }
+
+    .title {
+      margin-bottom: 8px;
+      font-size: 20px;
+      color: $darkpurple;
+      font-weight: bold;
+      font-family: $font-sans;
+    }
+    .content {
+      font-size: 20px;
+      font-family: $font-source;
     }
   }
 }
@@ -89,7 +76,7 @@ $caseStudyHeroPad: 128px;
     }
   }
   .text-section {
-    max-width: 860px;
+    max-width: $columnWidth;
     margin-left: auto;
     margin-right: auto;
     .section-title {
@@ -118,27 +105,26 @@ $caseStudyHeroPad: 128px;
     }
   }
   .image-section {
+    & + & {
+      margin-top: 100px;
+    }
     .case-study--img {
       width: 100%;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
       &.img-horizontal {
-        max-width: 1080px;
+        max-width: 830px;
       }
       &.img-vertical {
-        max-width: 775px;
+        max-width: $imgWidth;
       }
     }
     .case-study--caption {
       color: $grey;
-      font-size: 20px;
+      font-size: 16px;
       text-align: center;
       margin-left: auto;
       margin-right: auto;
-      max-width: 762px;
-    }
-    &.no-bottom {
-      margin-bottom: 0;
-      padding-bottom: 0;
+      max-width: $imgWidth;
     }
   }
 }

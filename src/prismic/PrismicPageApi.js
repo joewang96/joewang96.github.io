@@ -29,7 +29,6 @@ export default Wrapped =>
             } else if (doc) {
               // everything is fine
               this.setState(() => ({ doc }));
-              console.log('update doc', doc);
             } else {
               // api finds route, but no doc data
               this.setState(() => ({ err: 'Unable to fetch doc from path' }));
