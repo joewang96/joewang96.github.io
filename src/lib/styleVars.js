@@ -12,6 +12,11 @@ export const COLORS = {
   WHITE: '#FFFFFF',
 };
 
+export const EASING = {
+  BOUNCE_SM: 'cubic-bezier(0.13, 0.63, 0.54, 2.82)',
+  BOUNCE_LG: 'cubic-bezier(0.13, 0.63, 0.54, 1.82)',
+};
+
 export const FONTS = {
   SANS: "'Work Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
   SERIF: "'Martel', 'Georgia', sans-serif",
@@ -20,7 +25,11 @@ export const FONTS = {
 };
 
 export const SIZES = {
+  MARGIN_DESKTOP: 100,
+  MARGIN_TABLET: 50,
+  MARGIN_MOBILE: 25,
   NAV_FOOTER_MAX_WIDTH: 1280,
+  // screen sizes
   LG_SCREEN: 1020,
   MD_SCREEN: 800,
   SM_SCREEN: 600,

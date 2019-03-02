@@ -3,17 +3,6 @@ h1 {
   color: $darkpurple;
   font-weight: bold;
 
-  &.h1--home {
-    font-size: 46px;
-
-    // @media (max-width: $mdscreen) {
-    //   font-size: 80px;
-    // }
-    // @media (max-width: $smscreen) {
-    //   font-size: 64px;
-    // }
-  }
-
   &.h1--case-study {
     font-size: 72px;
     @media (max-width: $mdscreen) {

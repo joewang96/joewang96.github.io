@@ -5,10 +5,7 @@ import PrismicPageApi from '../prismic/PrismicPageApi';
 import WrappedNavFooter from '../composers/WrappedNavFooter';
 import JobItem from '../components/JobItem';
 import PortfolioItem from '../components/PortfolioItem';
-
 import HomeHero from '../components/home/HomeHero';
-
-import * as largeCircle from '../img/large_circle.svg';
 
 import { htmlSerializer } from '../lib/parse';
 
@@ -67,10 +64,6 @@ class Home extends Component {
     return (
       <WrappedNavFooter api={this.props.api}>
         <HomeHero />
-        <div
-          className="hero--rounded-bottom"
-          style={{ backgroundImage: `url(${largeCircle})` }}
-        />
 
         <section className="section about--section" id="about">
           <div className="container">
