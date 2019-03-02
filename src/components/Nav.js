@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
 import { Link, withRouter } from 'react-router-dom';
+import Headroom from 'react-headroom';
 import BackArrow from './icons/BackArrow';
 import NavItem from './NavItem';
 
@@ -13,10 +13,10 @@ const Styled_Navigation = styled.nav`
   width: 100%;
   max-width: ${SIZES.NAV_FOOTER_MAX_WIDTH}px;
   margin: auto;
-  z-index: 1001;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.025);
   position: relative;
-  padding: 32px 0;
+  padding: 28px 0;
+  background: ${COLORS.WHITE};
 `;
 
 const Nav_Container = styled.div`
@@ -124,19 +124,21 @@ class Nav extends Component {
   render() {
     const { path, isExact } = this.props.match;
     return (
-      <Styled_Navigation className="navigation">
-        <Nav_Container className="nav--container">
-          <Nav_Logo to="/">
-            <Nav_Logo__Icon
-              className="icon-logo"
-              aria-label="Link to homepage"
-            />
-          </Nav_Logo>
-          {path === '/' && isExact
-            ? this.renderHomeAbout()
-            : this.renderNonHome()}
-        </Nav_Container>
-      </Styled_Navigation>
+      <Headroom style={{ zIndex: 100 }}>
+        <Styled_Navigation className="navigation">
+          <Nav_Container className="nav--container">
+            <Nav_Logo to="/">
+              <Nav_Logo__Icon
+                className="icon-logo"
+                aria-label="Link to homepage"
+              />
+            </Nav_Logo>
+            {path === '/' && isExact
+              ? this.renderHomeAbout()
+              : this.renderNonHome()}
+          </Nav_Container>
+        </Styled_Navigation>
+      </Headroom>
     );
   }
 }
