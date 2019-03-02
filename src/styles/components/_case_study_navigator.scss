@@ -25,11 +25,21 @@
     font-family: $font-source;
   }
   .case-study--navigator--title {
+    display: inline;
     color: $darkpurple;
     font-size: 24px;
+    background-image: linear-gradient(to right, $highlight 0, $highlight 100%);
+    background-repeat: no-repeat;
+    background-position: 0 18px;
+    background-size: 0 100%;
+    transition: background 350ms ease-in-out;
     strong {
       font-weight: 600;
     }
+  }
+  &:hover .case-study--navigator--title {
+    background-size: 100% 100%;
+    transition-duration: 450ms;
   }
   @media (max-width: $mdscreen) {
     padding: 56px 64px;

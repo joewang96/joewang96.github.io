@@ -1,4 +1,52 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+import { COLORS, FONTS } from '../lib/styleVars';
+
+const Styled_Button = styled.button`
+  background: ${COLORS.DARK_PURPLE};
+  color: ${COLORS.WHITE};
+
+  -webkit-backface-visibility: hidden;
+  z-index: 1;
+  position: relative;
+  font-size: 14px;
+  font-family: ${FONTS.SANS};
+  letter-spacing: 0.5px;
+  font-weight: 500;
+
+  cursor: pointer;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 2px;
+  padding: 20px 36px;
+
+  transition-timing-function: ease-in-out;
+  transition-duration: 250ms;
+  transition-property: background-color, color, box-shadow, transform;
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0);
+
+  @media (max-width: $mdscreen) {
+    padding: 20px 48px;
+    font-size: 20px;
+  }
+`;
+
+const Styled_Button_Wrapper = styled.a`
+  display: inline-block;
+
+  &:hover {
+    ${Styled_Button} {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px 4px rgba(0, 0, 0, 0.15);
+      background: ${COLORS.DARK_PURPLE_HOVER};
+    }
+  }
+  &:active {
+    ${Styled_Button} {
+      background: ${COLORS.DARK_PURPLE_ACTIVE};
+    }
+  }
+`;
 
 class Button extends Component {
   constructor(props) {
@@ -8,34 +56,21 @@ class Button extends Component {
   createLinkedButton(child, className) {
     const { link } = this.props;
     if (link.link_type === 'Media') {
-      return (
-        <a
-          href={link.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={className}
-        >
-          {child}
-        </a>
-      );
+      return { child };
     }
-
-    return (
-      <a
-        href={link.url}
-        target={link.url && link.url.includes('mailto:') ? '' : '_blank'}
-        className={className}
-      >
-        {child}
-      </a>
-    );
   }
 
   render() {
-    const { text } = this.props;
-    return this.createLinkedButton(
-      <button className="btn primary">{text}</button>,
-      'btn-link--wrapper'
+    const { link, text, ...rest } = this.props;
+    return (
+      <Styled_Button_Wrapper
+        href={link.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        {...rest}
+      >
+        <Styled_Button>{text}</Styled_Button>
+      </Styled_Button_Wrapper>
     );
   }
 }

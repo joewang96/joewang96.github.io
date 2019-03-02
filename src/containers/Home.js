@@ -5,10 +5,10 @@ import PrismicPageApi from '../prismic/PrismicPageApi';
 import WrappedNavFooter from '../composers/WrappedNavFooter';
 import JobItem from '../components/JobItem';
 import PortfolioItem from '../components/PortfolioItem';
-import Button from '../components/Button';
+
+import HomeHero from '../components/home/HomeHero';
 
 import * as largeCircle from '../img/large_circle.svg';
-import * as slantTop from '../img/slant_top.svg';
 
 import { htmlSerializer } from '../lib/parse';
 
@@ -66,20 +66,7 @@ class Home extends Component {
 
     return (
       <WrappedNavFooter api={this.props.api}>
-        <section className="section hero--section" id="hero">
-          <div className="container hero--container flex-parent flex-ac flex-col">
-            <h1 className="title text-center h1--home">
-              {/* {RichText.asText(hero_title)} */}
-              Hi, I’m Joe: a front-end engineer turned designer
-            </h1>
-            <p className="description">
-              {/* {RichText.asText(tagline)} */}
-              Interaction and UX Designer who knows how to code the designs I
-              create. Currently at HubSpot working on design systems, previous
-              Technology Director for Scout Studio.
-            </p>
-          </div>
-        </section>
+        <HomeHero />
         <div
           className="hero--rounded-bottom"
           style={{ backgroundImage: `url(${largeCircle})` }}
