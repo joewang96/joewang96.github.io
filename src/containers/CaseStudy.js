@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
-import WrappedNavFooter from '../composers/WrappedNavFooter';
-
-import PrismicPageApi from '../prismic/PrismicPageApi';
+import styled from 'styled-components';
 import { RichText } from 'prismic-reactjs';
-
+import WrappedNavFooter from '../composers/WrappedNavFooter';
+import PrismicPageApi from '../prismic/PrismicPageApi';
 import Button from '../components/Button';
 import CaseStudyNextPrevious from '../components/CaseStudyNextPrevious';
 import { htmlSerializer } from '../lib/parse';
+import { SIZES } from '../lib/styleVars';
 
 import * as caseStudyCurve from '../img/case_study_curve.svg';
+
+const CaseStudy_Navigator = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  @media (max-width: ${SIZES.SM_SCREEN}px) {
+    flex-direction: column;
+  }
+`;
 
 class CaseStudy extends Component {
   static pageType = 'portfolio-piece';
@@ -161,7 +170,7 @@ class CaseStudy extends Component {
         <div className="case-study--body flex-parent flex-ac flex-jc flex-col">
           {this.renderBody()}
         </div>
-        <div className="next-previous--wrapper">
+        <CaseStudy_Navigator>
           <CaseStudyNextPrevious
             uid={previous_case_study.uid}
             api={this.props.api}
@@ -172,7 +181,7 @@ class CaseStudy extends Component {
             api={this.props.api}
             label="Next case study"
           />
-        </div>
+        </CaseStudy_Navigator>
       </WrappedNavFooter>
     );
   }

@@ -15,7 +15,7 @@ const Styled_Navigation = styled.nav`
   margin: auto;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.025);
   position: relative;
-  padding: 28px 0;
+  padding: 24px 0;
   background: ${COLORS.WHITE};
 `;
 

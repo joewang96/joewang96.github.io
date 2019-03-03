@@ -24,11 +24,6 @@ const Styled_Button = styled.button`
   transition-duration: 250ms;
   transition-property: background-color, color, box-shadow, transform;
   box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0);
-
-  @media (max-width: $mdscreen) {
-    padding: 20px 48px;
-    font-size: 20px;
-  }
 `;
 
 const Styled_Button_Wrapper = styled.a`

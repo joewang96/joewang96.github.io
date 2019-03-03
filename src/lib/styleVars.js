@@ -10,6 +10,8 @@ export const COLORS = {
   OFF_BLACK: '#343434',
   GREY: '#595959',
   WHITE: '#FFFFFF',
+  // other
+  HIGHLIGHT: '#ffe3ad',
 };
 
 export const EASING = {

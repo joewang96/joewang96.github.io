@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { RichText } from 'prismic-reactjs';
-import HighlightLink from './HighlightLink';
 
 class JobItem extends Component {
   constructor(props) {
