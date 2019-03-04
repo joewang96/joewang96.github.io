@@ -22,11 +22,11 @@ h2 {
   margin-bottom: 67px;
 
   @media (max-width: $mdscreen) {
-    font-size: 54px;
     margin-bottom: 72px;
   }
   @media (max-width: $smscreen) {
-    font-size: 44px;
+    font-size: 36px;
+    line-height: 1.6;
     margin-bottom: 60px;
   }
 }

@@ -54,22 +54,6 @@
         font-family: $font-source;
         margin-bottom: 20px;
       }
-      @media (max-width: $mdscreen) {
-        .title {
-          font-size: 30px;
-        }
-        .body {
-          font-size: 26px;
-        }
-      }
-      @media (max-width: $smscreen) {
-        .title {
-          font-size: 28px;
-        }
-        .body {
-          font-size: 24px;
-        }
-      }
     }
   }
 }

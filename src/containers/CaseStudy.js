@@ -7,7 +7,7 @@ import Button from '../components/Button';
 import CaseStudyNextPrevious from '../components/CaseStudyNextPrevious';
 import { htmlSerializer } from '../lib/parse';
 import { SIZES } from '../lib/styleVars';
-
+import H1 from '../components/type/H1';
 import * as caseStudyCurve from '../img/case_study_curve.svg';
 
 const CaseStudy_Navigator = styled.div`
@@ -144,10 +144,10 @@ class CaseStudy extends Component {
           className="case-study--hero pad"
           style={{ backgroundImage: `url(${caseStudyCurve})` }}
         >
-          <h1 className="h1--case-study">
+          <H1 className="h1--case-study">
             <strong>{RichText.asText(preview_title)} &mdash; </strong>
             {RichText.asText(description)}
-          </h1>
+          </H1>
         </div>
         <div className="section case-study--wrapper">
           <div className="container">

@@ -11,7 +11,6 @@ const MOBILE_NAV_BREAK = SIZES.SM_SCREEN - 80;
 
 const Styled_Navigation = styled.nav`
   width: 100%;
-  max-width: ${SIZES.NAV_FOOTER_MAX_WIDTH}px;
   margin: auto;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.025);
   position: relative;
@@ -20,17 +19,22 @@ const Styled_Navigation = styled.nav`
 `;
 
 const Nav_Container = styled.div`
+  max-width: ${SIZES.NAV_FOOTER_MAX_WIDTH}px;
   display: flex;
   align-items: center;
   position: relative;
   justify-content: space-between;
-  margin-left: 110px;
+  padding-left: ${SIZES.MARGIN_DESKTOP}px;
+  padding-right: ${SIZES.MARGIN_DESKTOP}px;
+  margin: 0 auto;
 
   @media (max-width: ${SIZES.LG_SCREEN}px) {
-    margin-left: ${SIZES.MARGIN_TABLET}px;
+    padding-left: ${SIZES.MARGIN_TABLET}px;
+    padding-right: ${SIZES.MARGIN_TABLET}px;
   }
   @media (max-width: ${SIZES.SM_SCREEN}px) {
-    margin-left: ${SIZES.MARGIN_MOBILE}px;
+    padding-left: ${SIZES.MARGIN_MOBILE}px;
+    padding-right: ${SIZES.MARGIN_MOBILE}px;
   }
 `;
 
@@ -57,13 +61,11 @@ const Nav_List = styled.div`
 
   height: 100%;
   background: ${COLORS.WHITE};
-  padding: 0 85px;
   position: relative;
   z-index: 100;
   max-height: 101px;
 
   @media (max-width: ${MOBILE_NAV_BREAK}px) {
-    padding: 0 38px;
     ${({ hideSmall }) => (hideSmall ? `display: none` : null)};
   }
 `;
@@ -100,7 +102,7 @@ const Styled_Nav_Item = styled(NavItem)`
 class Nav extends Component {
   renderHomeAbout() {
     return (
-      <Nav_List className="nav--list" hideSmall={true}>
+      <Nav_List className="nav--list" hideSmall={false}>
         <Styled_Nav_Item
           href={this.props.resume || null}
           target="_blank"
