@@ -112,6 +112,16 @@ $imgWidth: 662px;
       font-size: 32px;
       font-weight: bold;
       margin-bottom: 32px;
+
+      @media (max-width: $mdscreen) {
+        font-size: 28px;
+        margin-bottom: 28px;
+      }
+
+      @media (max-width: $smscreen) {
+        font-size: 24px;
+        margin-bottom: 24px;
+      }
     }
     .body {
       font-size: 19px;
@@ -126,9 +136,10 @@ $imgWidth: 662px;
       }
     }
     .project-button-link {
-      margin-top: ($body-mb * 2);
+      margin-top: 40px;
       @media (max-width: $smscreen) {
         text-align: left;
+        margin-top: 32px;
       }
     }
   }
