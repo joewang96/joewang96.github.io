@@ -14,7 +14,6 @@ const Home_Hero = styled.section`
   padding-top: 154px;
   padding-bottom: 84px;
   background: ${COLORS.LIGHT_PURPLE};
-  margin-bottom: 0;
 
   &::before {
     content: ' ';
@@ -38,6 +37,10 @@ const Home_Hero = styled.section`
     position: absolute;
     bottom: -20px;
     right: 0;
+  }
+
+  @media (max-width: ${SIZES.SM_SCREEN}px) {
+    padding-top: 100px;
   }
 `;
 
@@ -86,6 +89,10 @@ const Home_Hero__Semicircle = styled.div`
   background-image: url(${largeCircle});
   background-repeat: no-repeat;
   background-position: bottom center;
+
+  @media (max-width: ${SIZES.SM_SCREEN}px) {
+    margin-bottom: 100px;
+  }
 `;
 
 class HomeHero extends Component {

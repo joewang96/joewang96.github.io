@@ -23,6 +23,13 @@
     right: 0;
   }
 
+  @media (max-width: $smscreen) {
+    &::before {
+      content: none;
+    }
+    margin-bottom: 72px;
+  }
+
   .about--section-title {
     max-width: 490px;
     position: relative;
