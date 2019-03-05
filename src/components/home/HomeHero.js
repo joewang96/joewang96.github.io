@@ -40,7 +40,7 @@ const Home_Hero = styled.section`
   }
 
   @media (max-width: ${SIZES.SM_SCREEN}px) {
-    padding-top: 100px;
+    padding-top: 80px;
   }
 `;
 

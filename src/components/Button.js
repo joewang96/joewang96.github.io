@@ -9,7 +9,7 @@ const Styled_Button = styled.button`
   -webkit-backface-visibility: hidden;
   z-index: 1;
   position: relative;
-  font-size: 14px;
+  font-size: 16px;
   font-family: ${FONTS.SANS};
   letter-spacing: 0.5px;
   font-weight: 500;
@@ -18,7 +18,7 @@ const Styled_Button = styled.button`
   box-sizing: border-box;
   border: none;
   border-radius: 2px;
-  padding: 20px 36px;
+  padding: 20px 32px;
 
   transition-timing-function: ease-in-out;
   transition-duration: 250ms;

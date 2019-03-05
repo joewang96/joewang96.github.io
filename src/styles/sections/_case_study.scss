@@ -37,8 +37,8 @@ $imgWidth: 662px;
   }
 
   @media (max-width: $smscreen) {
-    padding-top: 100px;
-    padding-bottom: 120px;
+    padding-top: 80px;
+    padding-bottom: 100px;
   }
 
   .h1--case-study {
@@ -58,11 +58,14 @@ $imgWidth: 662px;
 .case-study--wrapper {
   @media (min-width: $mdscreen + 1px) {
     margin-top: 40px;
-    margin-bottom: 120px;
+    margin-bottom: 100px;
+  }
+  @media (max-width: $mdscreen) {
+    margin-top: 0px;
+    margin-bottom: 80px;
   }
   @media (max-width: $smscreen) {
     margin-top: -40px;
-    margin-bottom: 80px;
   }
 }
 
