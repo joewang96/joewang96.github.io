@@ -144,10 +144,12 @@ class CaseStudy extends Component {
           className="case-study--hero pad"
           style={{ backgroundImage: `url(${caseStudyCurve})` }}
         >
-          <H1 className="h1--case-study">
-            <strong>{RichText.asText(preview_title)} &mdash; </strong>
-            {RichText.asText(description)}
-          </H1>
+          <div className="case-study--title-wrapper">
+            <H1 className="h1--case-study">
+              <strong>{RichText.asText(preview_title)} &mdash; </strong>
+              {RichText.asText(description)}
+            </H1>
+          </div>
         </div>
         <div className="section case-study--wrapper">
           <div className="container">
