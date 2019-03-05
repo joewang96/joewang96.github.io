@@ -1,6 +1,5 @@
 $body-mb: 20px;
 $caseStudyHeroPad: 128px;
-$columnWidth: /* 662px + 200px; */ 980px;
 $imgWidth: 662px;
 
 .case-study--hero {
@@ -76,9 +75,13 @@ $imgWidth: 662px;
 }
 
 .case-study--info {
-  max-width: $columnWidth - 200px;
+  max-width: 662px;
   margin-left: auto;
   margin-right: auto;
+
+  @media (min-width: 1380px) {
+    max-width: 780px;
+  }
 
   @media (max-width: $mdscreen) {
     flex-direction: column;
@@ -122,7 +125,11 @@ $imgWidth: 662px;
     }
   }
   .text-section {
-    max-width: $columnWidth;
+    max-width: 662px + 200px;
+
+    @media (min-width: 1380px) {
+      max-width: 980px;
+    }
     margin-left: auto;
     margin-right: auto;
     .section-title {

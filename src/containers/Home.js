@@ -1,13 +1,34 @@
 import React, { Component } from 'react';
 import { RichText } from 'prismic-reactjs';
 import PrismicPageApi from '../prismic/PrismicPageApi';
-
+import styled from 'styled-components';
 import WrappedNavFooter from '../composers/WrappedNavFooter';
 import JobItem from '../components/JobItem';
 import PortfolioItem from '../components/PortfolioItem';
 import HomeHero from '../components/home/HomeHero';
 
 import { htmlSerializer } from '../lib/parse';
+import AboutSection from '../components/home/AboutSection';
+import { COLORS, FONTS } from '../lib/styleVars';
+
+const About_Section__Info_Block = styled.div`
+  z-index: 1;
+  position: relative;
+  &:not(:last-child) {
+    margin-bottom: 60px;
+  }
+`;
+
+const About_Section__Info_Block__Title = styled.p`
+  color: ${COLORS.DARK_PURPLE};
+  font-style: italic;
+  font-size: 26px;
+  font-weight: bold;
+  font-family: ${FONTS.SOURCE};
+  && {
+    margin-bottom: 20px;
+  }
+`;
 
 class Home extends Component {
   static pageType = 'homepage';
@@ -20,26 +41,30 @@ class Home extends Component {
       if (slice.slice_type === 'info_text') {
         const { block_title, info } = slice.primary;
         return (
-          <div className="info-block" key={index}>
-            <p className="title">{RichText.asText(block_title)}</p>
+          <About_Section__Info_Block className="info-block" key={index}>
+            <About_Section__Info_Block__Title className="title">
+              {RichText.asText(block_title)}
+            </About_Section__Info_Block__Title>
             <div className="content">
               {RichText.render(info, null, htmlSerializer)}
             </div>
-          </div>
+          </About_Section__Info_Block>
         );
         // Return null by default
       } else if (slice.slice_type === 'job_section') {
         const { title } = slice.primary;
         const job_list = slice.items;
         return (
-          <div className="info-block" key={index}>
-            <p className="title no-smooth">{RichText.asText(title)}</p>
+          <About_Section__Info_Block className="info-block" key={index}>
+            <About_Section__Info_Block__Title className="title no-smooth">
+              {RichText.asText(title)}
+            </About_Section__Info_Block__Title>
             <div className="job-listings">
               {job_list.slice(0, 3).map(({ job }) => (
                 <JobItem key={job.id} id={job.id} api={this.props.api} />
               ))}
             </div>
-          </div>
+          </About_Section__Info_Block>
         );
       } else {
         return null;
@@ -60,24 +85,18 @@ class Home extends Component {
       resume_button_text,
       resume_link,
     } = this.props.doc.data;
+    const { body } = this.props.doc.data;
 
     return (
       <WrappedNavFooter api={this.props.api}>
         <HomeHero />
+        <AboutSection
+          info={this.renderInfo()}
+          // title={/* {RichText.asText(about_section_title)} */}
+          title="So what do you want to know?"
+        />
 
-        <section className="section about--section" id="about">
-          <div className="container">
-            <h2 className="about--section-title">
-              {/* {RichText.asText(about_section_title)} */}
-              So what do you want to know?
-            </h2>
-            <div className="info-section flex-parent flex-col">
-              {this.renderInfo()}
-            </div>
-          </div>
-        </section>
-
-        <div className="portfolio--slant-top" />
+        {/* <div className="portfolio--slant-top" /> */}
 
         <section className="section" id="portfolio">
           <div className="container">

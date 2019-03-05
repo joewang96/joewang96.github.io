@@ -11,9 +11,25 @@ import { COLORS, FONTS, SIZES } from '../../lib/styleVars';
 const Home_Hero = styled.section`
   position: relative;
   margin-bottom: 0;
-  padding-top: 154px;
-  padding-bottom: 84px;
+  padding-top: 120px;
+  padding-bottom: 20px;
   background: ${COLORS.LIGHT_PURPLE};
+
+  @media (min-width: 1281px) {
+    padding-bottom: 0px;
+  }
+
+  @media (max-width: ${SIZES.LG_SCREEN}px) {
+    padding-bottom: 20px;
+  }
+
+  @media (max-width: ${SIZES.MD_SCREEN}px) {
+    padding-bottom: 40px;
+  }
+
+  @media (max-width: ${SIZES.SM_SCREEN}px) {
+    padding-bottom: 60px;
+  }
 
   &::before {
     content: ' ';
