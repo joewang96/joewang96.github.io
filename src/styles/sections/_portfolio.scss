@@ -19,7 +19,7 @@
   background: $lightpurple;
   margin-bottom: 0;
   padding-bottom: 130px;
-  padding-top: 110px;
+  padding-top: 60px;
 
   @media (max-width: $smscreen) {
     padding-top: 40px;
@@ -52,6 +52,12 @@
   h2 {
     max-width: 490px;
     position: relative;
+    @media (max-width: $mdscreen) {
+      margin-bottom: 60px;
+    }
+    @media (max-width: $smscreen) {
+      margin-bottom: 40px;
+    }
   }
   .container {
     max-width: 850px;
@@ -60,7 +66,6 @@
 
 .work-grid {
   position: relative;
-  margin-top: 72px;
   z-index: 1;
 }
 

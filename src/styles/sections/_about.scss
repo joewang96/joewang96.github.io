@@ -1,5 +1,7 @@
 .about--section {
   position: relative;
+  margin-bottom: 110px; // 110 - 50 from slant offset = 60
+
   &::before {
     content: ' ';
     background-image: url('../img/texture.svg');
@@ -27,7 +29,7 @@
     &::before {
       content: none;
     }
-    margin-bottom: 72px;
+    margin-bottom: 80px;
   }
 
   .about--section-title {

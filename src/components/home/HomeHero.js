@@ -41,6 +41,7 @@ const Home_Hero = styled.section`
 
   @media (max-width: ${SIZES.SM_SCREEN}px) {
     padding-top: 80px;
+    padding-bottom: 64px;
   }
 `;
 
@@ -75,12 +76,14 @@ const Home_Hero__Description = styled.p`
   text-align: center;
   @media (max-width: ${SIZES.SM_SCREEN}px) {
     text-align: left;
+    font-size: 18px;
+    line-height: 30px;
   }
 `;
 
 const Home_Hero__Semicircle = styled.div`
   width: 100%;
-  margin-bottom: 160px;
+  margin-bottom: 120px;
   background-size: 100vw;
   padding-bottom: 10vw;
   position: relative;
@@ -90,8 +93,12 @@ const Home_Hero__Semicircle = styled.div`
   background-repeat: no-repeat;
   background-position: bottom center;
 
-  @media (max-width: ${SIZES.SM_SCREEN}px) {
+  @media (max-width: ${SIZES.MD_SCREEN}px) {
     margin-bottom: 100px;
+  }
+
+  @media (max-width: ${SIZES.SM_SCREEN}px) {
+    margin-bottom: 80px;
   }
 `;
 
