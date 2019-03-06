@@ -19,23 +19,26 @@
   background: $lightpurple;
   margin-bottom: 0;
   padding-bottom: 130px;
-  padding-top: 60px;
-
-  @media (max-width: $smscreen) {
-    padding-top: 40px;
-  }
-
+  margin-top: 60px;
   position: relative;
+
+  // slant
   &::before {
     content: ' ';
     position: absolute;
     z-index: 0;
     width: 100%;
     height: 100%;
-    top: -50px;
+    top: -110px;
     left: 0;
     transform: skewY(4deg);
     background: $lightpurple;
+  }
+  @media (max-width: $smscreen) {
+    margin-top: 40px;
+    &::before {
+      top: -90px;
+    }
   }
   &::after {
     content: ' ';
