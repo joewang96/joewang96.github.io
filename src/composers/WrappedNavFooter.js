@@ -7,6 +7,7 @@ class WrappedNavFooter extends Component {
     super(props);
     this.state = {
       loaded: false,
+      resume: null,
     };
   }
 
@@ -16,18 +17,36 @@ class WrappedNavFooter extends Component {
         loaded: true,
       });
     }, 100);
+    this.props.api &&
+      this.props.api
+        .getSingle('navigation')
+        .then(obj => this.setState({ resume: obj.data.resume.url }));
+  }
+
+  componentWillReceiveProps() {
+    this.setState({
+      loaded: false,
+    });
+    setTimeout(() => {
+      this.setState({
+        loaded: true,
+      });
+    }, 100);
   }
 
   render() {
     return (
-      <main
+      <div
         id="container"
         className={this.state.loaded ? 'preload' : 'preload preset'}
       >
-        <Nav className={this.props.className || ''} />
-        {this.props.children}
-        <Footer />
-      </main>
+        <Nav
+          className={this.props.className || ''}
+          resume={this.state.resume}
+        />
+        <main>{this.props.children}</main>
+        <Footer resume={this.state.resume} />
+      </div>
     );
   }
 }

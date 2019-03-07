@@ -1,17 +1,7 @@
 h1 {
-  font-family: $font-sans;
-  color: $blue;
+  font-family: $font-serif;
+  color: $darkpurple;
   font-weight: bold;
-
-  &.h1--home {
-    font-size: 100px;
-    @media (max-width: $mdscreen) {
-      font-size: 80px;
-    }
-    @media (max-width: $smscreen) {
-      font-size: 64px;
-    }
-  }
 
   &.h1--case-study {
     font-size: 72px;
@@ -25,34 +15,47 @@ h1 {
 }
 
 h2 {
-  color: $blue;
-  font-size: 64px;
-  font-family: $font-sans;
-
-  margin-bottom: 94px;
+  color: $darkpurple;
+  font-size: 40px;
+  font-family: $font-serif;
+  letter-spacing: 1.45px;
+  margin-bottom: 67px;
 
   @media (max-width: $mdscreen) {
-    font-size: 54px;
     margin-bottom: 72px;
   }
   @media (max-width: $smscreen) {
-    font-size: 44px;
+    font-size: 36px;
+    line-height: 1.6;
     margin-bottom: 60px;
   }
 }
 
 p {
-  color: #000;
+  color: $offblack;
   font-family: $font-sans;
-  font-size: 28px;
-  @media (max-width: $mdscreen) {
-    font-size: 24px;
-  }
-  @media (max-width: $smscreen) {
-    font-size: 22px;
-  }
+  font-size: 19px;
+  font-weight: normal;
+  // @media (max-width: $mdscreen) {
+  //   font-size: 24px;
+  // }
+  // @media (max-width: $smscreen) {
+  //   font-size: 22px;
+  // }
   &.leading {
     line-height: 1.55;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  &:not(.no-smooth) {
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
   }
 }
 

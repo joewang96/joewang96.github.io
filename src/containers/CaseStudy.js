@@ -1,27 +1,30 @@
 import React, { Component } from 'react';
-import WrappedNavFooter from '../composers/WrappedNavFooter';
-
-import PrismicPageApi from '../prismic/PrismicPageApi';
+import styled from 'styled-components';
 import { RichText } from 'prismic-reactjs';
-
+import WrappedNavFooter from '../composers/WrappedNavFooter';
+import PrismicPageApi from '../prismic/PrismicPageApi';
 import Button from '../components/Button';
+import CaseStudyNextPrevious from '../components/CaseStudyNextPrevious';
 import { htmlSerializer } from '../lib/parse';
-import { isFirefox } from '../lib/browser';
-import { getScrollOffset } from '../lib/scroll';
+import { SIZES } from '../lib/styleVars';
+import H1 from '../components/type/H1';
+import * as caseStudyCurve from '../img/case_study_curve.svg';
+
+const CaseStudy_Navigator = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  @media (max-width: ${SIZES.SM_SCREEN}px) {
+    flex-direction: column;
+  }
+`;
 
 class CaseStudy extends Component {
   static pageType = 'portfolio-piece';
 
   constructor(props) {
     super(props);
-    this.state = {
-      yPos: 0,
-    };
-    this.scrollListener = this.scrollListener.bind(this);
-  }
-
-  scrollListener() {
-    this.setState({ ...this.state, yPos: getScrollOffset() });
+    this.state = {};
   }
 
   componentDidMount() {
@@ -34,11 +37,18 @@ class CaseStudy extends Component {
         }
       }
     });
-    if (!isFirefox) window.addEventListener('scroll', this.scrollListener);
   }
 
-  componentWillUnmount() {
-    if (!isFirefox) window.removeEventListener('scroll', this.scrollListener);
+  componentWillReceiveProps(props) {
+    const { body } = props.doc.data;
+    body.map(slice => {
+      if (slice.slice_type === 'text_section') {
+        const { button_link } = slice.primary;
+        if (button_link && button_link.id) {
+          this.fetchButtonLink(button_link);
+        }
+      }
+    });
   }
 
   renderButtonLink(button_link) {
@@ -119,56 +129,42 @@ class CaseStudy extends Component {
 
   render() {
     const {
-      short_bio,
+      preview_title,
+      description,
+      previous_case_study,
+      next_case_study,
       dates,
       position,
       tag_list,
-      title,
-      alt_title,
     } = this.props.doc.data;
 
     return (
-      <WrappedNavFooter>
+      <WrappedNavFooter api={this.props.api}>
+        <div
+          className="case-study--hero pad"
+          style={{ backgroundImage: `url(${caseStudyCurve})` }}
+        >
+          <div className="case-study--title-wrapper">
+            <H1 className="h1--case-study">
+              <strong>{RichText.asText(preview_title)} &mdash; </strong>
+              {RichText.asText(description)}
+            </H1>
+          </div>
+        </div>
         <div className="section case-study--wrapper">
           <div className="container">
-            <h1
-              className="h1--case-study"
-              style={{
-                transform: `translateY(${
-                  !isFirefox ? (this.state.yPos / 15) * -1 : 0
-                }px)`,
-              }}
-            >
-              {RichText.asText(alt_title.length > 0 ? alt_title : title)}
-            </h1>
-
-            <div
-              className="case-study--info flex-parent flex-jsb"
-              style={{
-                transform: `translateY(${
-                  !isFirefox ? this.state.yPos / 20 : 0
-                }px)`,
-              }}
-            >
-              {(
-                <div className="summary stripe-text">
-                  <p className="text">{RichText.asText(short_bio)}</p>
-                </div>
-              ) || null}
-
-              <div className="info-section">
-                <div className="info-piece">
-                  <p className="title">Position:</p>
-                  <p className="content">{RichText.asText(position)}</p>
-                </div>
-                <div className="info-piece">
-                  <p className="title">Dates:</p>
-                  <p className="content">{RichText.asText(dates)}</p>
-                </div>
-                <div className="info-piece">
-                  <p className="title">Tags:</p>
-                  <p className="content">{RichText.asText(tag_list)}</p>
-                </div>
+            <div className="case-study--info flex-parent flex-jsb flex-row">
+              <div className="info-piece">
+                <p className="title">Position:</p>
+                <p className="content">{RichText.asText(position)}</p>
+              </div>
+              <div className="info-piece">
+                <p className="title">Dates:</p>
+                <p className="content">{RichText.asText(dates)}</p>
+              </div>
+              <div className="info-piece">
+                <p className="title">Tags:</p>
+                <p className="content">{RichText.asText(tag_list)}</p>
               </div>
             </div>
           </div>
@@ -176,6 +172,18 @@ class CaseStudy extends Component {
         <div className="case-study--body flex-parent flex-ac flex-jc flex-col">
           {this.renderBody()}
         </div>
+        <CaseStudy_Navigator>
+          <CaseStudyNextPrevious
+            uid={previous_case_study.uid}
+            api={this.props.api}
+            label="Previous case study"
+          />
+          <CaseStudyNextPrevious
+            uid={next_case_study.uid}
+            api={this.props.api}
+            label="Next case study"
+          />
+        </CaseStudy_Navigator>
       </WrappedNavFooter>
     );
   }

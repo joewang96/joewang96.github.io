@@ -8,12 +8,13 @@
   .job-block {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 
     .job-block--date {
       flex-shrink: 0;
-      font-size: 20px;
-      font-family: $font-sans;
+      font-size: 16px;
+      font-family: $font-source;
+      font-weight: 600;
     }
 
     .job-block--content {
@@ -21,29 +22,30 @@
     }
 
     .job-block--company {
-      margin-bottom: 4px;
-      font-family: $font-sans;
-      font-size: 32px;
-      font-weight: 600;
+      margin-bottom: 14px;
+      font-family: $font-source;
+      font-size: 20px;
+      color: $darkpurple;
+      strong {
+        font-weight: 600;
+        color: $darkpurple;
+      }
     }
 
-    .job-block--position {
+    .job-block--description {
       font-family: $font-sans;
-      font-size: 24px;
-      font-weight: 500;
-      font-style: italic;
+      font-size: 16px;
+      line-height: 1.47;
     }
 
     @media (min-width: $smscreen + 1px) {
       flex-direction: row;
       .job-block--date {
-        padding-top: 12px;
+        margin-left: 16px;
       }
     }
 
     @media (max-width: $smscreen) {
-      margin-bottom: 54px;
-      margin-bottom: 24px;
       .job-block--date {
         max-width: 100%;
         margin-top: 12px;

@@ -1,42 +1,36 @@
-$pink: #f8f2f2;
-$blue: #001ddf;
-$grey: #595959;
-$gypsum: #f5f8fa;
-
 // ------- Typography -------
-$font-sans: 'IBM Plex Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-$font-mono: 'IBM Plex Mono', 'Courier', monospace;
-
-$highlight: #ffe3ad;
-
-$bounce-lg: cubic-bezier(0.13, 0.63, 0.54, 2.82);
-$bounce-sm: cubic-bezier(0.13, 0.63, 0.54, 1.82);
-
-$nav-footer-size: 22px;
+$font-serif: 'Martel', 'Georgia', sans-serif;
+$font-sans: 'Work Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$font-source: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Arial',
+  sans-serif;
 
 // ------- Colors -------
-$darkblack: #121212;
-$accent: #503dfb;
+$lightpurple: #fafafc;
+$darkpurple: #363a56;
+$darkblack: #252525;
+$grey: #595959;
 $white: #ffffff;
-
-$midblack: #252525;
+$offblack: #343434;
 $offwhite: #f4f1ed;
 
 // ------ Hover Colors -------
 $darkblack-hover: #121212;
-$accent-highlight: rgba(79, 60, 251, 0.2);
+$darkpurple-hover: #434763; // 030723
+$darkpurple-active: #292d49; // 696D89
 
-// --- To Sort Through
-$selection: rgba(255, 171, 145, 0.58);
+// ----- Other Colors -------
+$highlight: #ffe3ad;
+$selection: rgba(242, 191, 126, 0.4);
 $nav-base: #565656;
-$nav-hover: $darkblack;
+
+// ------- Transitions --------
+$bounce-lg: cubic-bezier(0.13, 0.63, 0.54, 2.82);
+$bounce-sm: cubic-bezier(0.13, 0.63, 0.54, 1.82);
 
 // ------- Screen Sizes -------
-
 $lgscreen: 1020px;
 $mdscreen: 800px;
 $smscreen: 600px;
-$xsscreen: 475px;
 $mobile: 400px;
 
 // ------- Padding & Margin -------
@@ -44,11 +38,5 @@ $margin-desktop: 100px;
 $margin-tablet: 50px;
 $margin-mobile: 25px;
 
-$gcolumn: 60px;
-$ggap: 32px;
-
-$gutter-padh: $margin-desktop;
-$hero-padv: 170px;
-$nav-padv: 40px;
-$nav-padh: 30px;
-$hero-margin-b: 140px;
+// --------- Misc ---------
+$nav-footer-size: 22px;

@@ -20,7 +20,7 @@ export default Wrapped =>
       if (props.prismicCtx) {
         props.prismicCtx.api.getByUID(
           Wrapped.pageType,
-          this.props.uid || this.props.match.params.uid,
+          props.uid || props.match.params.uid,
           {},
           (err, doc) => {
             if (err) {
@@ -40,13 +40,11 @@ export default Wrapped =>
 
     render() {
       return this.state.doc ? (
-        // TODO: have this automatically create the header/footer
         <Wrapped
           api={this.props.prismicCtx && this.props.prismicCtx.api}
           doc={this.state.doc}
         />
       ) : this.state.err ? (
-        // TODO: add better loading state
         <NotFound />
       ) : null;
     }

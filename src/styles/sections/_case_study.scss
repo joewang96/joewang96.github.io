@@ -1,73 +1,114 @@
-$body-mb: 32px;
+$body-mb: 20px;
+$caseStudyHeroPad: 128px;
+$imgWidth: 662px;
 
-.h1--case-study {
-  max-width: 712px;
-  margin-bottom: 112px;
-  margin-top: 128px;
-  @media (max-width: $mdscreen) {
-    margin-bottom: 80px;
-    margin-top: 100px;
+.case-study--hero {
+  margin-top: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  padding-top: $caseStudyHeroPad;
+  padding-bottom: $caseStudyHeroPad;
+  position: relative;
+  &::before {
+    content: ' ';
+    z-index: 0;
+    background-image: url('../img/texture.svg');
+    background-size: 30px;
+    opacity: 0.8;
+    width: 287px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
+  &::after {
+    content: ' ';
+    z-index: 0;
+    background-image: url('../img/texture.svg');
+    background-size: 30px;
+    opacity: 0.8;
+    width: 250px;
+    height: 200px;
+    position: absolute;
+    bottom: 35%;
+    right: 0;
+  }
+
   @media (max-width: $smscreen) {
-    margin-bottom: 64px;
-    margin-top: 64px;
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+
+  .case-study--title-wrapper {
+    max-width: 1080px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .h1--case-study {
+    z-index: 1;
+    position: relative;
+    max-width: 800px;
+    margin-bottom: $caseStudyHeroPad - 16;
+    margin-top: 0;
+    font-size: 46px;
+    font-weight: 400;
+    strong {
+      font-weight: 600;
+    }
   }
 }
 
 .case-study--wrapper {
-  margin-bottom: 200px;
+  @media (min-width: $mdscreen + 1px) {
+    margin-top: 40px;
+    margin-bottom: 100px;
+  }
   @media (max-width: $mdscreen) {
-    margin-bottom: 175px;
+    margin-top: 0px;
+    margin-bottom: 80px;
+  }
+  @media (max-width: $smscreen) {
+    margin-top: -40px;
   }
 }
 
 .case-study--info {
-  .summary {
-    max-width: 523px;
-    margin-right: 64px;
-    flex-grow: 1;
+  max-width: 662px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 1380px) {
+    max-width: 780px;
   }
 
-  .info-section {
-    max-width: 431px;
-    .info-piece {
-      &:not(:last-child) {
-        margin-bottom: 32px;
-      }
-      .title {
-        margin-bottom: 10px;
-        font-size: 32px;
-        color: $blue;
-        font-style: italic;
-        font-weight: bold;
-        font-family: $font-sans;
-      }
-      .content {
-        font-size: 32px;
-        font-family: $font-sans;
-      }
-    }
-  }
   @media (max-width: $mdscreen) {
     flex-direction: column;
-    .summary {
-      margin-bottom: 40px;
-      max-width: 100%;
-      margin-right: 0;
+  }
+
+  .info-piece {
+    flex: 1;
+    &:not(:last-child) {
+      margin-right: 24px;
     }
-    .info-section .info-piece {
+    @media (max-width: $mdscreen) {
       &:not(:last-child) {
-        margin-bottom: 24px;
+        margin-right: 0px;
+        margin-bottom: 20px;
       }
-      @media (max-width: $smscreen) {
-        .title {
-          font-size: 28px;
-          margin-bottom: 4px;
-        }
-        .content {
-          font-size: 24px;
-        }
-      }
+    }
+
+    .title {
+      margin-bottom: 4px;
+      font-size: 16px;
+      color: $darkpurple;
+      font-weight: bold;
+      font-family: $font-sans;
+    }
+    .content {
+      font-size: 18px;
+      font-family: $font-source;
     }
   }
 }
@@ -76,7 +117,7 @@ $body-mb: 32px;
   .text-section,
   .image-section {
     width: 100%;
-    margin-bottom: 148px;
+    margin-bottom: 100px;
     @media (max-width: $mdscreen) {
       &:not(:last-child) {
         margin-bottom: 80px;
@@ -84,61 +125,70 @@ $body-mb: 32px;
     }
   }
   .text-section {
-    max-width: 980px;
+    max-width: 662px + 200px;
+
+    @media (min-width: 1380px) {
+      max-width: 980px;
+    }
     margin-left: auto;
     margin-right: auto;
     .section-title {
-      color: $blue;
-      font-style: italic;
-      font-size: 40px;
+      color: $darkpurple;
+      font-size: 32px;
       font-weight: bold;
-      margin-bottom: 35px;
-      position: relative;
+      margin-bottom: 32px;
+
+      @media (max-width: $mdscreen) {
+        font-size: 28px;
+        margin-bottom: 28px;
+      }
+
+      @media (max-width: $smscreen) {
+        font-size: 24px;
+        margin-bottom: 24px;
+      }
     }
     .body {
-      font-size: 24px;
+      font-size: 19px;
       strong {
         font-weight: 600;
       }
       @media (max-width: $mdscreen) {
-        font-size: 20px;
+        font-size: 17px;
       }
       &:not(:last-child) {
         margin-bottom: $body-mb;
       }
     }
     .project-button-link {
-      margin-top: ($body-mb * 2);
+      margin-top: 40px;
       @media (max-width: $smscreen) {
         text-align: left;
+        margin-top: 32px;
       }
     }
   }
   .image-section {
-    padding-top: 63px;
-    padding-bottom: 63px;
-    background: $white;
+    & + & {
+      margin-top: 100px;
+    }
     .case-study--img {
       width: 100%;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
       &.img-horizontal {
-        max-width: 1080px;
+        max-width: 830px;
       }
       &.img-vertical {
-        max-width: 775px;
+        max-width: $imgWidth;
       }
     }
     .case-study--caption {
       color: $grey;
-      font-size: 20px;
+      font-size: 16px;
       text-align: center;
       margin-left: auto;
       margin-right: auto;
-      max-width: 762px;
-    }
-    &.no-bottom {
-      margin-bottom: 0;
-      padding-bottom: 0;
+      max-width: $imgWidth;
     }
   }
 }

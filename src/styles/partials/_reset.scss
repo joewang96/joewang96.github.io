@@ -2,40 +2,15 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  color: $darkblack;
   box-sizing: border-box;
 }
 
 body {
-  background: $pink;
-  background-image: url('../img/texture.svg');
-  background-size: 12px;
+  background: $white;
   margin: 0;
   font-family: $font-sans;
 }
 
 ::selection {
   background-color: $selection;
-}
-
-.highlight-link {
-  font-weight: 600;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  box-shadow: inset 0 -16px 0 0 $highlight;
-  transition-timing-function: $bounce-sm;
-  transition-duration: 250ms;
-  // outline: none; // can do because of focus set below
-  &:hover,
-  &:focus {
-    box-shadow: inset 0 -28px 0 0 $highlight;
-  }
-  &.highlight-sm {
-    box-shadow: inset 0 -12 0 0 $highlight;
-    &:hover,
-    &:focus {
-      box-shadow: inset 0 -20px 0 0 $highlight;
-    }
-  }
 }

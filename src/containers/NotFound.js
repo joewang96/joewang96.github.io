@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import WrappedNavFooter from '../composers/WrappedNavFooter';
 import { Link } from 'react-router-dom';
-import backgroundLines from '../img/curved_lines.svg';
+// import backgroundLines from '../img/curved_lines.svg';
 
 export default class NotFound extends Component {
   render() {

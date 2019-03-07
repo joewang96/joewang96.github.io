@@ -1,9 +1,8 @@
-export const scrollTo = (selector, delta) => {
-  const offset = delta || 40;
+export const scrollTo = (selector, offset = 60) => {
   const yDist = document.querySelector(selector).offsetTop;
   window.scroll({ top: yDist - offset, left: 0, behavior: 'smooth' });
 };
 
 export const getScrollOffset = () => {
-  return document.body.getBoundingClientRect().top * -1;
+  return window.pageYOffset;
 };
