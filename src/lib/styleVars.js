@@ -12,6 +12,7 @@ export const COLORS = {
   WHITE: '#FFFFFF',
   // other
   HIGHLIGHT: '#ffe3ad',
+  GOLD: '#F2BF7E',
 };
 
 export const EASING = {

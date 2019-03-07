@@ -3,12 +3,13 @@ import { scrollTo } from '../lib/scroll';
 
 const NavItem = ({ className, selector, children, href, ...rest }) => {
   const conditionalProps =
-    href === null || href === undefined
+    href === null ||
+    (href === undefined && (selector !== null || selector !== undefined))
       ? {
-          onClick: () => scrollTo(selector, 60),
+          onClick: () => scrollTo(selector),
           onKeyDown: e => {
             if (e.key === 'Enter') {
-              scrollTo(selector, 60);
+              scrollTo(selector);
             }
           },
         }

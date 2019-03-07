@@ -133,7 +133,7 @@ class HomeHero extends Component {
   render() {
     return (
       <>
-        <Home_Hero className="section">
+        <Home_Hero className="section" id="hero">
           <Home_Hero__Container className="container">
             <Home_Hero__Title className="title">
               {/* {RichText.asText(hero_title)} */}

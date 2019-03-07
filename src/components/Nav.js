@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link, withRouter } from 'react-router-dom';
 import Headroom from 'react-headroom';
 import BackArrow from './icons/BackArrow';
 import NavItem from './NavItem';
+import { getScrollOffset } from '../lib/scroll';
 
 import { COLORS, EASING, FONTS, SIZES } from '../lib/styleVars';
 
@@ -79,7 +80,10 @@ const Styled_Back_Arrow = styled(BackArrow)`
   transition-property: transform;
 `;
 
-const Styled_Nav_Item = styled(NavItem)`
+const Styled_Nav_Item = styled(props => {
+  const { active, hideSmall, ...rest } = props;
+  return <NavItem {...rest} />;
+})`
   display: flex;
   border: none;
   background: none;
@@ -88,21 +92,99 @@ const Styled_Nav_Item = styled(NavItem)`
   font-family: ${FONTS.SOURCE};
   letter-spacing: 0.82px;
   cursor: pointer;
+  padding-left: 8px;
+
   &:not(:last-child) {
-    margin-right: 32px;
+    margin-right: 16px;
+    padding-right: 8px;
   }
+
   &:hover {
     ${Styled_Back_Arrow} {
       opacity: 1;
       transform: translateX(4px);
     }
   }
+  outline: none;
+  &:focus {
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.5);
+  }
+
+  ${({ active }) =>
+    active
+      ? css`
+          &::before {
+            content: ' ';
+            left: 0;
+            right: 0;
+            bottom: -28px;
+            width: 100%;
+            height: 4px;
+            position: absolute;
+            background: ${COLORS.GOLD};
+          }
+        `
+      : null};
+
+  @media (max-width: ${SIZES.SM_SCREEN}px) {
+    ${({ hideSmall }) => (hideSmall ? `display: none` : null)};
+  }
 `;
 
 class Nav extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      yPos: getScrollOffset(),
+    };
+    this.scrollListener = this.scrollListener.bind(this);
+  }
+
+  scrollListener(e) {
+    this.setState({ yPos: getScrollOffset() });
+  }
+
+  componentDidMount() {
+    this.props.match.path === '/'
+      ? window.addEventListener('scroll', this.scrollListener)
+      : null;
+  }
+
+  componentWillUnmount() {
+    this.props.match.path === '/'
+      ? window.removeEventListener('scroll', this.scrollListener)
+      : null;
+  }
+
   renderHomeAbout() {
+    const { yPos } = this.state;
+    const getPortfolioY = () =>
+      document.querySelector('#portfolio').offsetTop - window.innerHeight / 2;
     return (
       <Nav_List className="nav--list" hideSmall={false}>
+        <Styled_Nav_Item
+          hideSmall={true}
+          selector="#hero"
+          active={
+            document.querySelector('#portfolio')
+              ? yPos < getPortfolioY()
+              : false
+          }
+        >
+          About
+        </Styled_Nav_Item>
+        <Styled_Nav_Item
+          hideSmall={true}
+          selector="#portfolio"
+          active={
+            document.querySelector('#portfolio')
+              ? yPos >= getPortfolioY()
+              : false
+          }
+        >
+          Portfolio
+        </Styled_Nav_Item>
+
         <Styled_Nav_Item
           href={this.props.resume || null}
           target="_blank"
