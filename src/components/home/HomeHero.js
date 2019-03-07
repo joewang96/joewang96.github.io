@@ -58,6 +58,16 @@ const Home_Hero = styled.section`
   @media (max-width: ${SIZES.SM_SCREEN}px) {
     padding-top: 80px;
     padding-bottom: 64px;
+
+    &::before {
+      height: 100px;
+      width: 60%;
+      max-width: 300px;
+    }
+
+    &::after {
+      content: none;
+    }
   }
 `;
 
@@ -75,10 +85,11 @@ const Home_Hero__Container = styled.div`
 const Home_Hero__Title = styled(H1)`
   text-align: center;
   max-width: 800px;
-  margin-bottom: 32px;
+  && {
+    margin-bottom: 32px;
+  }
   @media (max-width: ${SIZES.SM_SCREEN}px) {
     text-align: left;
-    margin-bottom: 32px;
   }
 `;
 

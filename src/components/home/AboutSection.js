@@ -34,9 +34,18 @@ const About_Section = styled.section`
 
   @media (max-width: ${SIZES.SM_SCREEN}px) {
     &::before {
-      content: none;
+      height: 230px;
+      z-index: -1;
+      width: 30%;
+      max-width: 300px;
+      min-width: 100px;
     }
     padding-bottom: 80px;
+
+    &::after {
+      height: 320px;
+      width: 112px;
+    }
   }
 `;
 
