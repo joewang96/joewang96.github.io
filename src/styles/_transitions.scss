@@ -16,7 +16,8 @@
   will-change: opacity;
 
   .section {
-    .title {
+    h1,
+    h2 {
       transition-timing-function: ease-in-out;
       transition-duration: 700ms;
       transition-property: opacity, transform;
@@ -62,7 +63,8 @@
     transition: none;
 
     .section {
-      .title {
+      h1,
+      h2 {
         opacity: 0;
         transform: translateY(-50px);
         transition: none;
