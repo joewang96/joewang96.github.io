@@ -11,7 +11,6 @@ const NavItem = ({ className, selector, children, href, ...rest }) => {
             e.target.blur();
           },
           onKeyDown: e => {
-            console.log(e.key);
             if (e.key === 'Enter' || e.key === ' ') {
               scrollTo(selector);
               e.preventDefault();
