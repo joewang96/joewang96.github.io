@@ -6,10 +6,16 @@ const NavItem = ({ className, selector, children, href, ...rest }) => {
     href === null ||
     (href === undefined && (selector !== null || selector !== undefined))
       ? {
-          onClick: () => scrollTo(selector),
+          onClick: e => {
+            scrollTo(selector);
+            e.target.blur();
+          },
           onKeyDown: e => {
-            if (e.key === 'Enter') {
+            console.log(e.key);
+            if (e.key === 'Enter' || e.key === ' ') {
               scrollTo(selector);
+              e.preventDefault();
+              e.target.blur();
             }
           },
         }
